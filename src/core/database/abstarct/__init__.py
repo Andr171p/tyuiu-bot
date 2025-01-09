@@ -1,7 +1,5 @@
 __all__ = (
-    "AbstractContext",
-    "AbstractCRUD"
+    "AbstractContext"
 )
 
 from src.core.database.abstarct.context import AbstractContext
-from src.core.database.abstarct.crud import AbstractCRUD
