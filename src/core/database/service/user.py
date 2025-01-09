@@ -1,11 +1,21 @@
+from sqlalchemy import select
+
 from src.core.database.models import User
-from src.core.database.crud import CRUD
+from src.core.database.context import DBContext
 
 
-class UserService(CRUD):
-    async def get_user_by_id(self, id: int) -> User | None:\
-        return await self._read(id)
+class UserService(DBContext):
+    async def get_user_by_user_id(self, user_id: int) -> User | None:
+        async with self.session() as session:
+            stmt = (
+                select(User)
+                .where(User.user_id == user_id)
+            )
+            user = await session.execute(stmt)
+            return user.scalar_one_or_none()
 
     async def add_user(self, user: User) -> User | None:
-        db_user = await self._create(user)
-        return db_user
+        async with self.session() as session:
+            session.add(user)
+            await session.commit()
+            return user

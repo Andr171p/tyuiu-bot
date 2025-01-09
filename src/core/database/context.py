@@ -9,10 +9,11 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine
 )
 
+from src.core.database.abstarct.context import AbstractContext
 from src.core.database.base import get_db_url
 
 
-class DBContext:
+class DBContext(AbstractContext):
     def __init__(self) -> None:
         self._engine: Optional[AsyncEngine] = None
         self._sessionmaker: Optional[async_sessionmaker[AsyncSession]] = None
