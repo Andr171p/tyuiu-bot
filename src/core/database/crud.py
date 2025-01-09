@@ -10,16 +10,16 @@ class CRUD(AbstractCRUD, DBContext):
         super().__init__()
         self.init()
 
-    async def read(self, id: int) -> ModelType | None:
+    async def _read(self, id: int) -> ModelType | None:
         async with self.session() as session:
             stmt = (
                 select(ModelType)
                 .where(ModelType.id == id)
             )
             model = await session.execute(stmt)
-            return model
+            return model.scalar_one_or_none()
 
-    async def create(self, model: ModelType) -> ModelType | None:
+    async def _create(self, model: ModelType) -> ModelType | None:
         async with self.session() as session:
             session.add(model)
             await session.commit()
