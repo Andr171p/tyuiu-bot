@@ -25,7 +25,12 @@ class DBSettings(BaseSettings):
     url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
 
 
+class APISettings(BaseSettings):
+    base_url: str = os.getenv("API_BASE_URL")
+
+
 class Settings(BaseSettings):
+    api: APISettings = APISettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
 
