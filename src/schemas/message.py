@@ -4,6 +4,6 @@ from pydantic import BaseModel
 
 
 class MessageSchema(BaseModel):
-    question: str
-    answer: str
+    user_message: str
+    bot_message: str
     created_at: datetime
