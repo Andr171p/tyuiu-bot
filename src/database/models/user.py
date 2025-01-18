@@ -4,10 +4,10 @@ from datetime import datetime
 from sqlalchemy import BigInteger, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from src.core.database.base import Base
+from src.database.base import Base
 
 if TYPE_CHECKING:
-    from src.core.database.models.message import Message
+    from src.database.models.message import Message
 
 
 class User(Base):

@@ -4,23 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 09.01.2025">
-      <change afterPath="$PROJECT_DIR$/src/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/commands/menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/database/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/database/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/database/models/message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/database/models/user.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 10.01.2025 add chat with bot">
+      <change afterPath="$PROJECT_DIR$/src/database/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/commands/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routers/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routers/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/abstarct/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/abstarct/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/abstarct/context.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/abstarct/context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/context.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/models/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/models/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/service/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/service/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/service/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/service/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/service/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/http/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/http/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/http/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/http/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/rag_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/chat_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +50,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2rMPXEyutqg99XRitQvw1kiyIsR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,12 +61,43 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.base.executor": "Run",
     "Python.bot.executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.start.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/http" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/http/base.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -76,8 +120,78 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/http" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/http/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/app/routers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/app/routers/start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.client" />
+        <item itemvalue="Python.base" />
+        <item itemvalue="Python.start" />
         <item itemvalue="Python.bot" />
       </list>
     </recent_temporary>
@@ -106,11 +220,119 @@
       <option name="project" value="LOCAL" />
       <updated>1736431872527</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[tyuiu-rag-bot] 09.01.2025 bot template">
+      <option name="closed" value="true" />
+      <created>1736434837564</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736434837564</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[tyuiu-rag-bot] 09.01.2025 create tables">
+      <option name="closed" value="true" />
+      <created>1736437251107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736437251107</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[tyuiu-rag-bot] 09.01.2025 create tables with alembic">
+      <option name="closed" value="true" />
+      <created>1736437293787</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736437293788</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[tyuiu-rag-bot] 09.01.2025 add crud">
+      <option name="closed" value="true" />
+      <created>1736438350827</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736438350827</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[tyuiu-rag-bot] 10.01.2025 add db services">
+      <option name="closed" value="true" />
+      <created>1736451368661</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736451368661</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[tyuiu-rag-bot] 10.01.2025 new db services">
+      <option name="closed" value="true" />
+      <created>1736454585404</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736454585404</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[tyuiu-rag-bot] 10.01.2025 add repository">
+      <option name="closed" value="true" />
+      <created>1736455737555</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736455737555</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[tyuiu-rag-bot] 10.01.2025">
+      <option name="closed" value="true" />
+      <created>1736456356513</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736456356513</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[tyuiu-rag-bot] 10.01.2025 create analytics service">
+      <option name="closed" value="true" />
+      <created>1736495277939</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736495277939</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[tyuiu-rag-bot] 10.01.2025 async http client">
+      <option name="closed" value="true" />
+      <created>1736499216998</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736499216998</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[tyuiu-rag-bot] 10.01.2025 rag api service">
+      <option name="closed" value="true" />
+      <created>1736500802184</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736500802184</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[tyuiu-rag-bot] 10.01.2025 add chat with bot">
+      <option name="closed" value="true" />
+      <created>1736501335482</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736501335482</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[tyuiu-rag-bot] 09.01.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 09.01.2025" />
+    <MESSAGE value="[tyuiu-rag-bot] 09.01.2025 bot template" />
+    <MESSAGE value="[tyuiu-rag-bot] 09.01.2025 create tables" />
+    <MESSAGE value="[tyuiu-rag-bot] 09.01.2025 create tables with alembic" />
+    <MESSAGE value="[tyuiu-rag-bot] 09.01.2025 add crud" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 add db services" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 new db services" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 add repository" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 create analytics service" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 async http client" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 rag api service" />
+    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 add chat with bot" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 10.01.2025 add chat with bot" />
   </component>
 </project>

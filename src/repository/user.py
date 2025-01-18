@@ -1,5 +1,5 @@
-from src.core.database.service import UserService
-from src.core.database.models import User
+from src.database.service import UserService
+from src.database.models import User
 from src.schemas import UserSchema
 
 

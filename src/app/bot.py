@@ -3,6 +3,7 @@ from aiogram.enums.parse_mode import ParseMode
 from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.storage.memory import MemoryStorage
 
+from src.app.routers import start_router, chat_router
 from src.config import settings
 
 
@@ -12,4 +13,9 @@ bot: Bot = Bot(
 )
 dp: Dispatcher = Dispatcher(
     storage=MemoryStorage()
+)
+
+dp.include_routers(
+    start_router,
+    chat_router
 )

@@ -1,10 +1,14 @@
 from sqlalchemy import select
 
-from src.core.database.models import User, Message
-from src.core.database.context import DBContext
+from src.database.models import User, Message
+from src.database.context import DBContext
 
 
 class MessageService(DBContext):
+    def __init__(self) -> None:
+        super().__init__()
+        self.init()
+
     async def add_message_by_user_id(
             self,
             user_id: int,

@@ -1,7 +1,7 @@
 __all__ = (
     "AnalyticsService",
-    "RAGAPIService"
+    "ChatAPIService"
 )
 
 from src.services.analytics import AnalyticsService
-from src.services.rag_api import RAGAPIService
+from src.services.chat_api import ChatAPIService

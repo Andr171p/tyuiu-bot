@@ -11,3 +11,4 @@ start_router = Router()
 @start_router.message(Command("start"))
 async def start(message: Message) -> None:
     await AnalyticsService().register_user_by_message(message)
+    await message.reply("Здарова заебал")

@@ -3,8 +3,8 @@ from datetime import datetime
 from sqlalchemy import Text, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
-from src.core.database.base import Base
-from src.core.database.models.mixins import UserRelationMixin
+from src.database.base import Base
+from src.database.models.mixins import UserRelationMixin
 
 
 class Message(UserRelationMixin, Base):

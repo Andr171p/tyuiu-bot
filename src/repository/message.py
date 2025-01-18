@@ -1,5 +1,5 @@
-from src.core.database.service import MessageService
-from src.core.database.models import Message
+from src.database.service import MessageService
+from src.database.models import Message
 from src.schemas import MessageSchema
 
 

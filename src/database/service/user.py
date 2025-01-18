@@ -1,10 +1,14 @@
 from sqlalchemy import select
 
-from src.core.database.models import User
-from src.core.database.context import DBContext
+from src.database.models import User
+from src.database.context import DBContext
 
 
 class UserService(DBContext):
+    def __init__(self) -> None:
+        super().__init__()
+        self.init()
+
     async def get_user_by_user_id(self, user_id: int) -> User | None:
         async with self.session() as session:
             stmt = (

@@ -1,5 +1,5 @@
-from src.core.http.base import BaseHTTP
-from src.core.http.request import HTTPRequests
+from src.http.base import BaseHTTP
+from src.http.request import HTTPRequests
 
 
 class HTTPClient(HTTPRequests, BaseHTTP):

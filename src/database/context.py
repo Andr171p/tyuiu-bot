@@ -9,8 +9,8 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine
 )
 
-from src.core.database.abstarct.context import AbstractContext
-from src.core.database.base import get_db_url
+from src.database.abstarct.context import AbstractContext
+from src.database.base import get_db_url
 
 
 class DBContext(AbstractContext):

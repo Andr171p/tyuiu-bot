@@ -1,7 +1,7 @@
 from aiogram import F, Router
 from aiogram.types import Message
 
-from src.services import RAGAPIService, AnalyticsService
+from src.services import ChatAPIService, AnalyticsService
 
 
 chat_router = Router()
@@ -11,7 +11,7 @@ chat_router = Router()
 async def get_answer_on_question(message: Message) -> None:
     user_id: int = message.from_user.id
     question: str = message.text
-    response = await RAGAPIService().get_answer(question)
+    response = await ChatAPIService().get_answer_on_question(question)
     await AnalyticsService().save_message_by_user_id(
         user_id=user_id,
         user_message=question,
