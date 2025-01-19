@@ -25,6 +25,10 @@ class DBSettings(BaseSettings):
     url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
 
 
+class StaticSettings(BaseSettings):
+    texts_dir: Path = BASE_DIR / "static" / "texts"
+
+
 class APISettings(BaseSettings):
     base_url: str = os.getenv("API_BASE_URL")
 
@@ -33,6 +37,7 @@ class Settings(BaseSettings):
     api: APISettings = APISettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
+    static: StaticSettings = StaticSettings()
 
 
 settings = Settings()

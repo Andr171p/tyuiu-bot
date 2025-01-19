@@ -14,6 +14,6 @@ class ChatAPIService:
     async def get_answer_on_question(self, query: str) -> ResponseSchema:
         async with HTTPClient() as http_client:
             response = await http_client.get(
-                url=f"{self._base_url}/rag/answer/?query={query}"
+                url=f"{self._base_url}/chat/answer/?query={query}"
             )
         return ResponseSchema.parse_obj(response)
