@@ -4,7 +4,7 @@ from src.schemas import MessageSchema
 
 
 class MessageRepository:
-    _message_service = MessageService()
+    message_service = MessageService()
 
     @classmethod
     async def add_message_by_user_id(
@@ -12,7 +12,7 @@ class MessageRepository:
             user_id: int,
             message: MessageSchema
     ) -> MessageSchema:
-        added_message = await cls._message_service.add_message_by_user_id(
+        added_message = await cls.message_service.add_message_by_user_id(
             user_id=user_id,
             message=Message(**message.dict())
         )
