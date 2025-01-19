@@ -3,7 +3,14 @@ from aiogram.enums.parse_mode import ParseMode
 from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from src.app.routers import start_router, chat_router
+from dishka.integrations.aiogram import setup_dishka
+
+from src.app.routers import (
+    start_router,
+    info_router,
+    chat_router
+)
+from src.app.container import container
 from src.config import settings
 
 
@@ -17,5 +24,12 @@ dp: Dispatcher = Dispatcher(
 
 dp.include_routers(
     start_router,
+    info_router,
     chat_router
+)
+
+setup_dishka(
+    container=container,
+    router=dp,
+    auto_inject=True
 )

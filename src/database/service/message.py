@@ -20,10 +20,10 @@ class MessageService(DBContext):
                 .where(User.user_id == user_id)
             )
             user = await session.execute(stmt)
-            user = user.scalars_one_or_none()
+            user = user.scalar_one_or_none()
             if not user:
                 raise ValueError(f"User with user_id={user_id}")
-            user.messages.append(message)
-            session.add(user)
+            message.user_id = user_id
+            session.add(message)
             await session.commit()
-            return message
+        return message

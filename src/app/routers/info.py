@@ -10,7 +10,7 @@ info_router = Router()
 
 
 @info_router.message(Command("info"))
-async def get_info(message: Message) -> None:
+async def info(message: Message) -> None:
     file_path = settings.static.texts_dir / "info.txt"
     text = await load_txt_async(file_path)
     await message.answer(text)

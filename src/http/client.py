@@ -9,7 +9,7 @@ class HTTPClient(HTTPRequests, BaseHTTP):
 import asyncio
 
 
-async def main() -> None:
+'''async def main() -> None:
     text = "Как поступить в ТИУ"
     url = f"https://tyuiu-rag-api-production.up.railway.app/api/v1/chat/answer/?query={text}"
     async with HTTPClient() as client:
@@ -17,4 +17,4 @@ async def main() -> None:
         print(resp)
 
 
-asyncio.run(main())
+asyncio.run(main())'''

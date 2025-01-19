@@ -4,7 +4,7 @@ from src.schemas import ResponseSchema
 from src.config import settings
 
 
-class ChatAPIService:
+class ChatService:
     def __init__(
             self,
             base_url: str = settings.api.base_url
