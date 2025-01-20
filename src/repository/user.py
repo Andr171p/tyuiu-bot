@@ -7,8 +7,10 @@ class UserRepository:
     user_service = UserService()
 
     @classmethod
-    async def get_user_by_user_id(cls, user_id: int) -> UserSchema:
+    async def get_user_by_user_id(cls, user_id: int) -> UserSchema | None:
         user = await cls.user_service.get_user_by_user_id(user_id)
+        if user is None:
+            return
         return UserSchema(**user.__dict__)
 
     @classmethod
