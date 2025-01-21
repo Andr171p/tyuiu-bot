@@ -8,6 +8,7 @@ from src.database.base import Base
 
 if TYPE_CHECKING:
     from src.database.models.message import Message
+    from src.database.models.contact import Contact
 
 
 class User(Base):
@@ -16,6 +17,7 @@ class User(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
     messages: Mapped[list["Message"]] = relationship(back_populates="user")
+    contact: Mapped["Contact"] = relationship(back_populates="user")
 
     def __str__(self) -> str:
         return f"{self.__class__.__name__}(user_id={self.user_id}, username={self.username})"

@@ -19,14 +19,14 @@ class AnalyticsService:
             cls,
             message: Message
     ) -> "AnalyticsService":
-        if await cls.user_repository.get_user_by_user_id(message.from_user.id) is not None:
+        if await cls.user_repository.get_by_user_id(message.from_user.id) is not None:
             return cls()
         user = UserSchema(
             user_id=message.from_user.id,
             username=message.from_user.username,
             created_at=datetime.now()
         )
-        registered_user = await cls.user_repository.add_user(user)
+        registered_user = await cls.user_repository.add(user)
         log.info("User %s registered successfully", registered_user)
         return cls()
 
@@ -39,13 +39,11 @@ class AnalyticsService:
             created_at: datetime = datetime.now()
     ) -> "AnalyticsService":
         message = MessageSchema(
+            user_id=user_id,
             user_message=user_message,
             bot_message=bot_message,
             created_at=created_at
         )
-        saved_message = await cls.message_repository.add_message_by_user_id(
-            user_id=user_id,
-            message=message
-        )
+        saved_message = await cls.message_repository.add(message)
         log.info("Message %s message saved successfully", saved_message)
         return cls()

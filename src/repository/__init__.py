@@ -1,7 +1,9 @@
 __all__ = (
     "UserRepository",
-    "MessageRepository"
+    "MessageRepository",
+    "ContactRepository"
 )
 
 from src.repository.user import UserRepository
 from src.repository.message import MessageRepository
+from src.repository.contact import ContactRepository

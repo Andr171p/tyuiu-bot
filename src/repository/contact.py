@@ -1,0 +1,26 @@
+from typing import List
+
+from src.repository.base import BaseRepository
+from src.database.crud import ContactCRUD
+from src.database.models import Contact
+from src.schemas import ContactSchema
+
+
+class ContactRepository(BaseRepository):
+    crud = ContactCRUD()
+
+    async def add(self, contact: ContactSchema) -> ContactSchema:
+        added_contact = await self.crud.create(Contact(**contact.dict()))
+        return ContactSchema(**added_contact.__dict__)
+
+    async def get_by_user_id(self, user_id: int) -> ContactSchema:
+        contact = await self.crud.read_by_user_id(user_id)
+        return ContactSchema(**contact.__dict__)
+
+    async def get_by_phone_number(self, phone_number: str) -> ContactSchema:
+        contact = await self.crud.read_by_phone_number(phone_number)
+        return ContactSchema(**contact.__dict__)
+
+    async def get_all(self) -> List[ContactSchema]:
+        contacts = await self.crud.read_all()
+        return [ContactSchema(**contact.__dict__) for contact in contacts]

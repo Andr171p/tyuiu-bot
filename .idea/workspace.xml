@@ -4,33 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 21.01.2025">
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/lifespan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/webhook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bot/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bot/keyboards/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bot/keyboards/menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/bot/middlewares/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 21.01.2025 refactor">
+      <change afterPath="$PROJECT_DIR$/src/app/bot/routers/notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/providers/notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/abstarct/crud.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/crud/contact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/models/contact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/contact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/contact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/sender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/texts/subscribe.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/commands/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/commands/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/commands/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/keyboards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/keyboards/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/keyboards/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/keyboards/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/middlewares/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/middlewares/message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routers/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routers/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot/commands/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/commands/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot/keyboards/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/keyboards/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/providers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/providers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/service/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/service/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/analytics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/analytics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/texts/start.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/texts/start.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +362,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737402956515</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="[tyuiu-rag-bot] 21.01.2025 webhook">
+      <option name="closed" value="true" />
+      <created>1737459614338</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1737459614338</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[tyuiu-rag-bot] 21.01.2025 webhook set wh">
+      <option name="closed" value="true" />
+      <created>1737459850962</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737459850962</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[tyuiu-rag-bot] 21.01.2025 refactor">
+      <option name="closed" value="true" />
+      <created>1737459976926</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737459976926</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -380,6 +408,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 chat DIP" />
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 demo version" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 21.01.2025" />
+    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 webhook" />
+    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 webhook set wh" />
+    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 21.01.2025 refactor" />
   </component>
 </project>

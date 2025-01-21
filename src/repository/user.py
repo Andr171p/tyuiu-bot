@@ -1,19 +1,18 @@
-from src.database.service import UserService
+from src.repository.base import BaseRepository
+from src.database.crud import UserCRUD
 from src.database.models import User
 from src.schemas import UserSchema
 
 
-class UserRepository:
-    user_service = UserService()
+class UserRepository(BaseRepository):
+    crud = UserCRUD()
 
-    @classmethod
-    async def get_user_by_user_id(cls, user_id: int) -> UserSchema | None:
-        user = await cls.user_service.get_user_by_user_id(user_id)
+    async def get_by_user_id(self, user_id: int) -> UserSchema | None:
+        user = await self.crud.read_by_user_id(user_id)
         if user is None:
             return
         return UserSchema(**user.__dict__)
 
-    @classmethod
-    async def add_user(cls, user: UserSchema) -> UserSchema:
-        added_user = await cls.user_service.add_user(User(**user.dict()))
+    async def add(self, user: UserSchema) -> UserSchema:
+        added_user = await self.crud.create(User(**user.dict()))
         return UserSchema(**added_user.__dict__)
