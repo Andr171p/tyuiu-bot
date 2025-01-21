@@ -8,7 +8,7 @@ admin_router = APIRouter(
     prefix="/admin"
 )
 
-admin_router.mount("/static", StaticFiles(directory="static"), name="static")
+# admin_router.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="static/templates")
 
