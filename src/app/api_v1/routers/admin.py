@@ -6,14 +6,14 @@ from fastapi.templating import Jinja2Templates
 from src.config import settings
 
 
+static_path = str(settings.static.static_dir)
+template_path = str(settings.static.template_dir)
+
 admin_router = APIRouter(
     prefix="/admin"
 )
 
-static_path = str(settings.static.static_dir)
-template_path = str(settings.static.template_dir)
-
-admin_router.mount(static_path, StaticFiles(directory="static"), name="static")
+admin_router.mount(static_path, StaticFiles(directory=static_path), name="static")
 
 templates = Jinja2Templates(directory=template_path)
 
