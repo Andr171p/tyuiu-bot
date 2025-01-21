@@ -4,9 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 20.01.2025 demo version">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 21.01.2025">
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/lifespan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/webhook.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/bot/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/bot/keyboards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/bot/keyboards/menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/bot/middlewares/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/commands/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/commands/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/commands/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/keyboards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/keyboards/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/keyboards/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/keyboards/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/middlewares/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/middlewares/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,23 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\src\app\bot" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
     </key>
   </component>
@@ -325,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737320391100</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="[tyuiu-rag-bot] 21.01.2025">
+      <option name="closed" value="true" />
+      <created>1737402956515</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737402956515</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -346,6 +379,7 @@
     <MESSAGE value="[tyuiu-rag-bot] 19.01.2025 add info" />
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 chat DIP" />
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 demo version" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 20.01.2025 demo version" />
+    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 21.01.2025" />
   </component>
 </project>

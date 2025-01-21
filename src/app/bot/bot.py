@@ -5,7 +5,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 
 from dishka.integrations.aiogram import setup_dishka
 
-from src.app.routers import (
+from src.app.bot.routers import (
     start_router,
     info_router,
     chat_router

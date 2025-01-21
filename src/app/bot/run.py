@@ -1,5 +1,5 @@
 from src.app.bot import bot, dp
-from src.app.commands import set_commands
+from src.app.bot.commands import set_commands
 
 
 async def run_chat_bot() -> None:

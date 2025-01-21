@@ -11,6 +11,10 @@ ENV_PATH: Path = BASE_DIR / ".env"
 load_dotenv(ENV_PATH)
 
 
+class AppSettings(BaseSettings):
+    url: str = os.getenv("APP_BASE_URL")
+
+
 class BotSettings(BaseSettings):
     token: str = os.getenv("BOT_TOKEN")
 
@@ -34,6 +38,7 @@ class APISettings(BaseSettings):
 
 
 class Settings(BaseSettings):
+    app: AppSettings = AppSettings()
     api: APISettings = APISettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()

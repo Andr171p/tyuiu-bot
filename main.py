@@ -1,7 +1,7 @@
-import logging
+'''import logging
 import asyncio
 
-from src.app.run import run_chat_bot
+from src.app.bot.run import run_chat_bot
 
 
 async def main() -> None:
@@ -10,4 +10,4 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main())'''
