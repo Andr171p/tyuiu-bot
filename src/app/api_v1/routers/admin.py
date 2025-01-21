@@ -10,11 +10,12 @@ admin_router = APIRouter(
     prefix="/admin"
 )
 
-static_path = settings.static.static_dir
+static_path = str(settings.static.static_dir)
+template_path = str(settings.static.template_dir)
 
 admin_router.mount(static_path, StaticFiles(directory="static"), name="static")
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=template_path)
 
 
 @admin_router.get(path="/")
