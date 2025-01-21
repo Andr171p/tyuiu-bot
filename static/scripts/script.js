@@ -1,4 +1,4 @@
-// static/script.js
+// static/scripts/script.js
 function validateForm() {
     let valid = true;
     const forms = document.querySelectorAll('form');
