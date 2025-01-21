@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 
 from aiogram import Bot
 from aiogram.types import Message
@@ -23,7 +24,8 @@ class NotificationService:
             return
         contact = ContactSchema(
             user_id=user_id,
-            phone_number=phone_number
+            phone_number=phone_number,
+            created_at=datetime.now()
         )
         subscribed_contact = await cls.contact_repository.add(contact)
         log.info(
