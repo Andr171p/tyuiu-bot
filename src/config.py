@@ -31,7 +31,7 @@ class DBSettings(BaseSettings):
 
 class StaticSettings(BaseSettings):
     static_dir: Path = BASE_DIR / "static"
-    template_dir: Path = BASE_DIR / "static" / "template"
+    template_dir: Path = BASE_DIR / "static" / "templates"
     texts_dir: Path = BASE_DIR / "static" / "texts"
 
 
