@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 
 
 admin_router = APIRouter(
-    prefix="/admin/"
+    prefix="/admin"
 )
 
 admin_router.mount(
