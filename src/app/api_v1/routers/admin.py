@@ -3,16 +3,16 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from src.config import settings
+
 
 admin_router = APIRouter(
     prefix="/admin"
 )
 
-admin_router.mount(
-    path="/static",
-    app=StaticFiles(directory="static"),
-    name="static"
-)
+static_path = settings.static.static_dir
+
+admin_router.mount(static_path, StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 

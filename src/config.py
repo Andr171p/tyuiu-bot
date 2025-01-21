@@ -30,6 +30,7 @@ class DBSettings(BaseSettings):
 
 
 class StaticSettings(BaseSettings):
+    static_dir: str = str(BASE_DIR / "static")
     texts_dir: Path = BASE_DIR / "static" / "texts"
 
 
