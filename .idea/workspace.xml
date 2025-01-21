@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 static">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 new static path">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,13 +439,34 @@
       <option name="project" value="LOCAL" />
       <updated>1737490116325</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="[tyuiu-rag-bot] 22.01.2025 template">
+      <option name="closed" value="true" />
+      <created>1737490489630</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737490489630</updated>
+    </task>
+    <task id="LOCAL-00033" summary="[tyuiu-rag-bot] 22.01.2025 templates">
+      <option name="closed" value="true" />
+      <created>1737490582274</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737490582274</updated>
+    </task>
+    <task id="LOCAL-00034" summary="[tyuiu-rag-bot] 22.01.2025 new static path">
+      <option name="closed" value="true" />
+      <created>1737491529450</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1737491529450</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 new db services" />
-    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 add repository" />
-    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 create analytics service" />
     <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 async http client" />
     <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 rag api service" />
@@ -469,6 +489,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 remove response class" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 register router" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 static" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 static" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 template" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 templates" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static path" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 new static path" />
   </component>
 </project>
