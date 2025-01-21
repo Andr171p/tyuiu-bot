@@ -19,8 +19,10 @@ class ContactRepository(BaseRepository):
             return
         return ContactSchema(**contact.__dict__)
 
-    async def get_by_phone_number(self, phone_number: str) -> ContactSchema:
+    async def get_by_phone_number(self, phone_number: str) -> ContactSchema | None:
         contact = await self.crud.read_by_phone_number(phone_number)
+        if contact is None:
+            return
         return ContactSchema(**contact.__dict__)
 
     async def get_all(self) -> List[ContactSchema]:

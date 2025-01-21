@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Административная панель</h1>
+    <div class="container">
+        <form id="send-to-user-form" method="post" action="/send-to-user/" onsubmit="return validateForm();">
+            <label for="user-id">ID пользователя:</label><br>
+            <input type="text" id="user-id" name="user_id"><br>
+            <label for="message">Сообщение:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+
+        <form id="send-to-all-form" method="post" action="/send-to-all/" onsubmit="return validateForm();">
+            <label for="all-message">Сообщение для всех:</label><br>
+            <textarea id="all-message" name="message"></textarea><br>
+            <button type="submit">Отправить всем</button>
+        </form>
+
+        <p>Количество пользователей: {{ count }}</p>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
