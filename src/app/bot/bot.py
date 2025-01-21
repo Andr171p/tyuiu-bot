@@ -8,6 +8,7 @@ from dishka.integrations.aiogram import setup_dishka
 from src.app.bot.routers import (
     start_router,
     info_router,
+    notification_router,
     chat_router
 )
 from src.app.container import container
@@ -25,6 +26,7 @@ dp: Dispatcher = Dispatcher(
 dp.include_routers(
     start_router,
     info_router,
+    notification_router,
     chat_router
 )
 
