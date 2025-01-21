@@ -1,6 +1,7 @@
 import logging
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from src.app.api_v1.lifespan import lifespan
 from src.app.api_v1.routers import (
@@ -15,6 +16,8 @@ logging.basicConfig(level=logging.INFO)
 app = FastAPI(
     lifespan=lifespan
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(wh_router)
 app.include_router(admin_router)
