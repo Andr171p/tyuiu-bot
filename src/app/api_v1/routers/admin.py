@@ -17,6 +17,6 @@ admin_router.mount(
 templates = Jinja2Templates(directory="templates")
 
 
-@admin_router.get(path="/", response_model=HTMLResponse)
+@admin_router.get(path="/")
 async def home(request: Request) -> HTMLResponse:
     return templates.TemplateResponse("index.html", {"request": request})
