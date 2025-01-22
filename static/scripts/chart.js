@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadData(url, callback) {
         const response = await fetch(url);
         const data = await response.json();
-        callback(data.content.data);
+        callback(data.data);
     }
 
     function formatDates(data) {
