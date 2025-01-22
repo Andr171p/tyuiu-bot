@@ -9,12 +9,26 @@ h1 {
     text-align: center;
 }
 
-.charts {
+.wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
+.left-side {
+    width: 60%;
+}
+
+.right-side {
+    width: 35%;
+    padding-left: 20px;
+}
+
 .chart-container {
-    width: 48%;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100%!important;
 }

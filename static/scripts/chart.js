@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
-    const messageCountCtx = document.getElementById('messageCountChart').getContext('2d');
-
     async function loadData(url, callback) {
         const response = await fetch(url);
         const data = await response.json();
-        callback(data.data);
+        callback(data.content.data);
     }
 
     function formatDates(data) {
@@ -20,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderUserGrowthChart(data) {
         const { dates, counts } = formatDates(data);
-        new Chart(userGrowthCtx, {
+        new Chart(document.getElementById('userGrowthChart'), {
             type: 'line',
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Новые пользователи',
+                    label: 'Рост пользователей',
                     data: counts,
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
@@ -44,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderMessageCountChart(data) {
         const { dates, counts } = formatDates(data);
-        new Chart(messageCountCtx, {
+        new Chart(document.getElementById('messageCountChart'), {
             type: 'bar',
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Количество сообщений за каждый день',
+                    label: 'Количество сообщений',
                     data: counts,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -76,27 +73,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    loadData('/api/v1/statistics/getUserCountPerDay/', renderUserGrowthChart);
-    loadData('/api/v1/statistics/getMessagesCountPerDay/', renderMessageCountChart);
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    async function fetchAndDisplayData(endpoint, elementId) {
-        try {
-            const response = await fetch(`/api/v1/statistics/${endpoint}`);
-            const data = await response.json();
-
-            if (data.status === 'ok') {
-                document.getElementById(elementId).innerText = data.count;
-            } else {
-                console.error(`Ошибка при получении данных: ${data.message}`);
-            }
-        } catch (error) {
-            console.error(`Ошибка при выполнении запроса: ${error}`);
+    function calculateSubscriberRatio(usersCount, subscribersCount) {
+        if (usersCount > 0) {
+            return Math.round((subscribersCount / usersCount) * 100);
+        } else {
+            return 0;
         }
     }
 
-    fetchAndDisplayData('getUsersCount/', 'usersCount');
-    fetchAndDisplayData('getSubscribersCount/', 'subscribersCount');
+    function renderSubscriberRatioChart(usersCount, subscribersCount) {
+        const ratio = calculateSubscriberRatio(usersCount, subscribersCount);
+        new Chart(document.getElementById('subscriberRatioChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Подписчики', 'Пользователи'],
+                datasets: [{
+                    data: [ratio, 100 - ratio],
+                    backgroundColor: ['#36A2C3', '#FF6384']
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
+
+    async function updateCharts() {
+        const usersPromise = fetch('/api/v1/statistics/getUsersCount/');
+        const subscribersPromise = fetch('/api/v1/statistics/getSubscribersCount/');
+
+        const [usersResponse, subscribersResponse] = await Promise.all([usersPromise, subscribersPromise]);
+
+        const usersData = await usersResponse.json();
+        const subscribersData = await subscribersResponse.json();
+
+        const usersCount = usersData.content.count;
+        const subscribersCount = subscribersData.content.count;
+
+        renderUserGrowthChart(usersCount);
+        renderMessageCountChart(subscribersCount);
+        renderSubscriberRatioChart(usersCount, subscribersCount);
+    }
+
+    updateCharts();
 });
