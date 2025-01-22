@@ -10,7 +10,8 @@ from src.utils.statistics import get_count, get_count_per_day
 
 
 statistics_router = APIRouter(
-    prefix="/api/v1/statistics"
+    prefix="/api/v1/statistics",
+    tags=["Statistics"]
 )
 
 
