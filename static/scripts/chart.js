@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadData(url, callback) {
         const response = await fetch(url);
         const data = await response.json();
-        callback(data.content.data);
+        callback(data.data);
     }
 
     function formatDates(data) {
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const usersData = await usersResponse.json();
         const subscribersData = await subscribersResponse.json();
 
-        const usersCount = usersData.content.count;
-        const subscribersCount = subscribersData.content.count;
+        const usersCount = usersData.count;
+        const subscribersCount = subscribersData.count;
 
         renderUserGrowthChart(usersCount);
         renderMessageCountChart(subscribersCount);
