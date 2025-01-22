@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 new index">
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 update in js script fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,14 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00001" summary="[tyuiu-rag-bot] 09.01.2025">
-      <option name="closed" value="true" />
-      <created>1736431872527</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1736431872527</updated>
     </task>
     <task id="LOCAL-00002" summary="[tyuiu-rag-bot] 09.01.2025 bot template">
       <option name="closed" value="true" />
@@ -570,13 +564,34 @@
       <option name="project" value="LOCAL" />
       <updated>1737554975214</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="[tyuiu-rag-bot] 22.01.2025 new index in admin">
+      <option name="closed" value="true" />
+      <created>1737555117523</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1737555117523</updated>
+    </task>
+    <task id="LOCAL-00049" summary="[tyuiu-rag-bot] 22.01.2025 update in js script">
+      <option name="closed" value="true" />
+      <created>1737555306639</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1737555306639</updated>
+    </task>
+    <task id="LOCAL-00050" summary="[tyuiu-rag-bot] 22.01.2025 update in js script fix">
+      <option name="closed" value="true" />
+      <created>1737555433431</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1737555433431</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 add notification service fix created_at" />
-    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 add notification router" />
-    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 fix NoneType bug" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 redirect fix" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add admin router" />
@@ -599,6 +614,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new page style" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 chats refactor" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new index" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 new index" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new index in admin" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 update in js script fix" />
   </component>
 </project>
