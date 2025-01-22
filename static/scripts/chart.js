@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Рост пользователей',
+                    label: 'Новые пользователи',
                     data: counts,
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Количество сообщений',
+                    label: 'Количество сообщений за каждый день',
                     data: counts,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -78,4 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadData('/api/v1/statistics/getUserCountPerDay/', renderUserGrowthChart);
     loadData('/api/v1/statistics/getMessagesCountPerDay/', renderMessageCountChart);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    async function fetchAndDisplayData(endpoint, elementId) {
+        try {
+            const response = await fetch(`/api/v1/statistics/${endpoint}`);
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                document.getElementById(elementId).innerText = data.count;
+            } else {
+                console.error(`Ошибка при получении данных: ${data.message}`);
+            }
+        } catch (error) {
+            console.error(`Ошибка при выполнении запроса: ${error}`);
+        }
+    }
+
+    fetchAndDisplayData('getUsersCount/', 'usersCount');
+    fetchAndDisplayData('getSubscribersCount/', 'subscribersCount');
 });

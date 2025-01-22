@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 add statistics router">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 loadData js refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/chart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -524,12 +523,26 @@
       <option name="project" value="LOCAL" />
       <updated>1737548295190</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="[tyuiu-rag-bot] 22.01.2025 update head">
+      <option name="closed" value="true" />
+      <created>1737548878269</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1737548878269</updated>
+    </task>
+    <task id="LOCAL-00043" summary="[tyuiu-rag-bot] 22.01.2025 loadData js refactor">
+      <option name="closed" value="true" />
+      <created>1737549177196</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737549177196</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 demo version" />
-    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 webhook" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 webhook set wh" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 refactor" />
@@ -553,6 +566,8 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add static to app" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 charts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add statistics router" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 add statistics router" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update head" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 loadData js refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 loadData js refactor" />
   </component>
 </project>
