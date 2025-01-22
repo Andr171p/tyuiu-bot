@@ -18,8 +18,8 @@ async function updateStatisticalData() {
     const subscribersResponse = await fetch('/api/v1/statistics/getSubscribersCount/')
     const subscribersData = await subscribersResponse.json();
 
-    document.getElementById('users-count').innerText = usersData.data.count;
-    document.getElementById('subscribers-count').innerText = subscribersData.data.count;
+    document.getElementById('users-count').innerText = usersData.count;
+    document.getElementById('subscribers-count').innerText = subscribersData.count;
 }
 
 window.onload = async function () {
