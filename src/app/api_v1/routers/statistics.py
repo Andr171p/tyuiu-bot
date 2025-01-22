@@ -1,7 +1,11 @@
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
 
-from src.repository import UserRepository, ContactRepository, MessageRepository
+from src.repository import (
+    UserRepository,
+    ContactRepository,
+    MessageRepository
+)
 from src.utils.statistics import get_count, get_count_per_day
 
 
