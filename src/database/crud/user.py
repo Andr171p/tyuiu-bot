@@ -1,3 +1,5 @@
+from typing import Sequence
+
 from sqlalchemy import select
 
 from src.database.models import User
@@ -17,6 +19,12 @@ class UserCRUD(DBContext):
             )
             user = await session.execute(stmt)
         return user.scalar_one_or_none()
+
+    async def read_all(self) -> Sequence[User] | None:
+        async with self.session() as session:
+            stmt = select(User)
+            users = await session.execute(stmt)
+        return users.scalars().all()
 
     async def create(self, user: User) -> User | None:
         async with self.session() as session:

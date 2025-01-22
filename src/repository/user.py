@@ -1,3 +1,5 @@
+from typing import List
+
 from src.repository.base import BaseRepository
 from src.database.crud import UserCRUD
 from src.database.models import User
@@ -12,6 +14,10 @@ class UserRepository(BaseRepository):
         if user is None:
             return
         return UserSchema(**user.__dict__)
+
+    async def get_all(self) -> List[UserSchema] | None:
+        users = await self.crud.read_all()
+        return [UserSchema(**user.__dict__) for user in users]
 
     async def add(self, user: UserSchema) -> UserSchema:
         added_user = await self.crud.create(User(**user.dict()))

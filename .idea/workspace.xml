@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 new static files">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 add static to app">
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api_v1/routers/statistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/misc/formaters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/statistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scripts/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/styles/charts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/charts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.analytics.executor": "Run",
     "Python.base.executor": "Run",
     "Python.bot.executor": "Run",
     "Python.client (1).executor": "Run",
@@ -41,6 +57,7 @@
     "Python.config.executor": "Run",
     "Python.container.executor": "Run",
     "Python.file_loaders.executor": "Run",
+    "Python.formaters.executor": "Run",
     "Python.main.executor": "Run",
     "Python.start.executor": "Run",
     "Python.user.executor": "Run",
@@ -50,11 +67,35 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\static\slyles" />
+      <recent name="C:\Users\andre\TyuiuRAGBot\static\scripts" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\app\bot" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.config">
+  <component name="RunManager" selected="Python.analytics">
+    <configuration name="analytics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/services" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/services/analytics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -77,29 +118,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="container" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/app/container.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="file_loaders" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="formaters" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +131,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/misc/file_loaders.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/misc/formaters.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.analytics" />
+        <item itemvalue="Python.formaters" />
         <item itemvalue="Python.config" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.user" />
-        <item itemvalue="Python.container" />
-        <item itemvalue="Python.file_loaders" />
       </list>
     </recent_temporary>
   </component>
@@ -479,13 +498,34 @@
       <option name="project" value="LOCAL" />
       <updated>1737492616282</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="[tyuiu-rag-bot] 22.01.2025 init templates">
+      <option name="closed" value="true" />
+      <created>1737493055630</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1737493055630</updated>
+    </task>
+    <task id="LOCAL-00038" summary="[tyuiu-rag-bot] 22.01.2025 statis dirs">
+      <option name="closed" value="true" />
+      <created>1737493347084</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1737493347084</updated>
+    </task>
+    <task id="LOCAL-00039" summary="[tyuiu-rag-bot] 22.01.2025 add static to app">
+      <option name="closed" value="true" />
+      <created>1737493685577</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1737493685577</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 rag api service" />
-    <MESSAGE value="[tyuiu-rag-bot] 10.01.2025 add chat with bot" />
-    <MESSAGE value="[tyuiu-rag-bot] 19.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 19.01.2025 add info" />
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 chat DIP" />
     <MESSAGE value="[tyuiu-rag-bot] 20.01.2025 demo version" />
@@ -508,6 +548,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static path" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static path +" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static files" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 new static files" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 init templates" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 statis dirs" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add static to app" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 add static to app" />
   </component>
 </project>

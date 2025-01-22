@@ -13,6 +13,6 @@ templates = Jinja2Templates(directory="static/templates")
 @admin_router.get(path="/")
 async def home(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(
-        name="index.html",
+        name="charts.html",
         context={"request": request}
     )

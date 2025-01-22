@@ -25,6 +25,6 @@ class ContactRepository(BaseRepository):
             return
         return ContactSchema(**contact.__dict__)
 
-    async def get_all(self) -> List[ContactSchema]:
+    async def get_all(self) -> List[ContactSchema] | None:
         contacts = await self.crud.read_all()
         return [ContactSchema(**contact.__dict__) for contact in contacts]

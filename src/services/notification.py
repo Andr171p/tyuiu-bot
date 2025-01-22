@@ -35,7 +35,7 @@ class NotificationService:
         )
 
     @classmethod
-    async def send_notification(
+    async def send_notification_by_phone_number(
             cls,
             phone_number: str,
             text: str,
