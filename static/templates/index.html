@@ -1,30 +1,50 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
     <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Административная панель</h1>
-    <div class="container">
-        <form id="send-to-user-form" method="post" action="/send-to-user/" onsubmit="return validateForm();">
-            <label for="user-id">ID пользователя:</label><br>
-            <input type="text" id="user-id" name="user_id"><br>
-            <label for="message">Сообщение:</label><br>
-            <textarea id="message" name="message"></textarea><br>
-            <button type="submit">Отправить</button>
-        </form>
 
-        <form id="send-to-all-form" method="post" action="/send-to-all/" onsubmit="return validateForm();">
-            <label for="all-message">Сообщение для всех:</label><br>
-            <textarea id="all-message" name="message"></textarea><br>
-            <button type="submit">Отправить всем</button>
-        </form>
+<div class="container">
+    <div class="left-panel">
+        <h2>Статистика telegram бота</h2>
 
-        <p>Количество пользователей: {{ count }}</p>
+        <div class="chart">Новые пользователи</div>
+        <div class="chart">Активность</div>
+
+        <div class="statistic">
+            <h3>Общая статистика</h3>
+            <p class="users-count">Количество пользователей: <span id="users-count"></span></p>
+            <p class="subscribers-count">Готовы получать уведомления: <span id="subscribers-count"></span></p>
+        </div>
     </div>
-    <script src="/static/scripts/script.js"></script>
+
+    <div class="right-panel">
+        <h2>Отправка сообщений</h2>
+
+        <form class="message-form">
+            <label for="recipient">Выберите способ отправки:</label>
+            <select id="recipient" onchange="toggleRecipientInput()">
+                <option value="all">Всем пользователям</option>
+                <option value="phone">По номеру телефона</option>
+            </select>
+
+            <div id="phone-input" style="display:none;">
+                <label for="phone">Введите номер телефона:</label>
+                <input type="text" id="phone" placeholder="+7 (XXX) XXX-XX-XX" />
+            </div>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" rows="4" placeholder="Введите ваше сообщение..."></textarea>
+
+            <button type="submit">Отправить сообщение</button>
+        </form>
+    </div>
+</div>
+ <script src="/static/scripts/script.js"></script>
 </body>
 </html>

@@ -1,34 +1,39 @@
 /* static/styles/style.css */
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;
+    width: 100%;
+}
+.left-panel {
+    width: 50%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+.right-panel {
+    width: 50%;
     padding: 20px;
 }
-form {
-    margin-bottom: 30px;
-}
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-input, textarea {
+.chart {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    height: 200px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-textarea {
-    height: 150px;
+.statistic {
+    margin-bottom: 20px;
 }
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.message-form {
+    display: flex;
+    flex-direction: column;
+}
+.message-form select, .message-form textarea, .message-form button, .message-form input {
+    margin-bottom: 10px;
 }

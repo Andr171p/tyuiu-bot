@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 new page style" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 chats refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/charts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -552,11 +560,18 @@
       <option name="project" value="LOCAL" />
       <updated>1737550301888</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="[tyuiu-rag-bot] 22.01.2025 chats refactor">
+      <option name="closed" value="true" />
+      <created>1737550608637</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1737550608637</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 refactor" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 add notification service" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 add notification service fix created_at" />
     <MESSAGE value="[tyuiu-rag-bot] 21.01.2025 add notification router" />
@@ -581,6 +596,7 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 loadData js refactor" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add counts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new page style" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 new page style" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 chats refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 chats refactor" />
   </component>
 </project>

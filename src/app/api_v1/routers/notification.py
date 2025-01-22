@@ -14,8 +14,8 @@ notification_router = APIRouter(
 
 @notification_router.post(path="/sendByPhoneNumber/")
 async def send_notification(
-        text: str,
         phone_number: str,
+        text: str,
         notification_service: FromDishka[NotificationService]
 ) -> JSONResponse:
     await notification_service.send_notification_by_phone_number(
