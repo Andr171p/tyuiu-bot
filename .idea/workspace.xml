@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 import charts" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 22.01.2025 import charts +">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/chart.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,24 +32,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.analytics.executor": "Run",
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.formaters.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\static\slyles" />
@@ -191,14 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00005" summary="[tyuiu-rag-bot] 09.01.2025 add crud">
-      <option name="closed" value="true" />
-      <created>1736438350827</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1736438350827</updated>
     </task>
     <task id="LOCAL-00006" summary="[tyuiu-rag-bot] 10.01.2025 add db services">
       <option name="closed" value="true" />
@@ -584,11 +579,18 @@
       <option name="project" value="LOCAL" />
       <updated>1737557422319</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="[tyuiu-rag-bot] 22.01.2025 import charts +">
+      <option name="closed" value="true" />
+      <created>1737557786409</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1737557786409</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 remove response class" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 register router" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 static" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 template" />
@@ -613,6 +615,7 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update charts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update charts scripts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 import charts" />
+    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts +" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 22.01.2025 import charts +" />
   </component>
 </project>
