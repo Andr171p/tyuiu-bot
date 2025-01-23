@@ -1,14 +1,15 @@
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
 
-from dishka.integrations.fastapi import FromDishka
+from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.app.bot import bot
 from src.services import NotificationService
 
 
 notification_router = APIRouter(
-    prefix="/api/v1/notifications"
+    prefix="/api/v1/notifications",
+    route_class=DishkaRoute
 )
 
 
