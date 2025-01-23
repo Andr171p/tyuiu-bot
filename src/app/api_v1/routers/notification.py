@@ -9,7 +9,8 @@ from src.services import NotificationService
 
 notification_router = APIRouter(
     prefix="/api/v1/notifications",
-    route_class=DishkaRoute
+    route_class=DishkaRoute,
+    tags=["Notification"]
 )
 
 
