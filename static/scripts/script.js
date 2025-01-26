@@ -142,14 +142,14 @@ document.querySelector('.message-form').addEventListener('submit', async (e) => 
     let payload;
 
     if (recipientType === 'all') {
-        url = '/api/v1/notification/sendAll/';
+        url = '/api/v1/notifications/sendAll/';
         payload = { message };
     } else if (recipientType === 'phone') {
         if (!phone) {
             alert('Пожалуйста, укажите номер телефона!');
             return;
         }
-        url = '/api/v1/notification/sendByPhoneNumber/';
+        url = '/api/v1/notifications/sendByPhoneNumber/';
         payload = { phone, message };
     } else {
         alert('Выбран неверный тип получателя!');
