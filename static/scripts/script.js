@@ -138,22 +138,22 @@ document.querySelector('.message-form').addEventListener('submit', async (e) => 
     e.preventDefault(); // Останавливает перезагрузку страницы
 
     const recipientType = document.getElementById('recipient').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+    const phone_number = document.getElementById('phone').value;
+    const text = document.getElementById('message').value;
 
     let url;
     let payload;
 
     if (recipientType === 'all') {
         url = '/api/v1/notifications/sendAll/';
-        payload = { message };
+        payload = { text };
     } else if (recipientType === 'phone') {
-        if (!phone) {
+        if (!phone_number) {
             alert('Пожалуйста, укажите номер телефона!');
             return;
         }
         url = '/api/v1/notifications/sendByPhoneNumber/';
-        payload = { phone, message };
+        payload = { phone_number, text };
     } else {
         alert('Выбран неверный тип получателя!');
         return;
