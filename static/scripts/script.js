@@ -120,11 +120,14 @@ async function updateCharts() {
         const usersData = await usersResponse.json();
         const messagesData = await messagesResponse.json();
 
-        const usersPerDayCount = formatDates(usersData);
-        const messagesPerDayCount = formatDates(messagesData);
+        // const usersPerDayCount = formatDates(usersData);
+        // const messagesPerDayCount = formatDates(messagesData);
 
-        renderUserGrowthChart(usersPerDayCount);
-        renderMessageCountChart(messagesPerDayCount);
+        // renderUserGrowthChart(usersPerDayCount);
+        // renderMessageCountChart(messagesPerDayCount);
+
+        renderUserGrowthChart(usersData)
+        renderMessageCountChart(messagesData)
     } catch (error) {
         console.error('Ошибка при обновлении графиков:', error);
     }
