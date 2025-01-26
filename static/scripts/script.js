@@ -172,6 +172,7 @@ document.querySelector('.message-form').addEventListener('submit', async (e) => 
             alert('Сообщение успешно отправлено!');
         } else {
             const errorData = await response.json();
+            console.error(errorData)
             alert(`Ошибка: ${errorData.error || 'Не удалось отправить сообщение'}`);
         }
     } catch (error) {
