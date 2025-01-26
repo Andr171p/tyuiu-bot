@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 27.01.2025 add fix json body">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,14 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00019" summary="[tyuiu-rag-bot] 21.01.2025 webhook">
-      <option name="closed" value="true" />
-      <created>1737459614338</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1737459614338</updated>
     </task>
     <task id="LOCAL-00020" summary="[tyuiu-rag-bot] 21.01.2025 webhook set wh">
       <option name="closed" value="true" />
@@ -587,11 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1737932066997</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;">
+      <option name="closed" value="true" />
+      <created>1737932948601</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1737932948601</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 loadData js refactor" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 add counts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new page style" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 chats refactor" />
@@ -616,6 +614,7 @@
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix json body" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add error log" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 27.01.2025 add fix json body" />
+    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;" />
   </component>
 </project>

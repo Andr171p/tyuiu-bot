@@ -138,8 +138,8 @@ document.querySelector('.message-form').addEventListener('submit', async (e) => 
     e.preventDefault(); // Останавливает перезагрузку страницы
 
     const recipientType = document.getElementById('recipient').value;
-    const phone_number = document.getElementById('phone').value;
-    const text = document.getElementById('message').value;
+    const phone_number = document.getElementById('phone');
+    const text = document.getElementById('message');
 
     let url;
     let payload;
