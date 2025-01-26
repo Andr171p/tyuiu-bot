@@ -146,14 +146,14 @@ document.querySelector('.message-form').addEventListener('submit', async (e) => 
 
     if (recipientType === 'all') {
         url = '/api/v1/notifications/sendAll/';
-        payload = { "text": text };
+        payload = { text: text };
     } else if (recipientType === 'phone') {
         if (!phone_number) {
             alert('Пожалуйста, укажите номер телефона!');
             return;
         }
         url = '/api/v1/notifications/sendByPhoneNumber/';
-        payload = { "phone_number": phone_number, "text": text };
+        payload = { phone_number: phone_number, text: text };
     } else {
         alert('Выбран неверный тип получателя!');
         return;
