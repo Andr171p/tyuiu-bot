@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 23.01.2025">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 23.01.2025 add notification api tag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,30 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00007" summary="[tyuiu-rag-bot] 10.01.2025 new db services">
-      <option name="closed" value="true" />
-      <created>1736454585404</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1736454585404</updated>
-    </task>
-    <task id="LOCAL-00008" summary="[tyuiu-rag-bot] 10.01.2025 add repository">
-      <option name="closed" value="true" />
-      <created>1736455737555</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1736455737555</updated>
-    </task>
-    <task id="LOCAL-00009" summary="[tyuiu-rag-bot] 10.01.2025">
-      <option name="closed" value="true" />
-      <created>1736456356513</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1736456356513</updated>
     </task>
     <task id="LOCAL-00010" summary="[tyuiu-rag-bot] 10.01.2025 create analytics service">
       <option name="closed" value="true" />
@@ -587,13 +563,34 @@
       <option name="project" value="LOCAL" />
       <updated>1737637463179</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="[tyuiu-rag-bot] 23.01.2025 DIP ser up">
+      <option name="closed" value="true" />
+      <created>1737638163032</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1737638163032</updated>
+    </task>
+    <task id="LOCAL-00057" summary="[tyuiu-rag-bot] 23.01.2025 DIP set up">
+      <option name="closed" value="true" />
+      <created>1737638334857</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1737638334857</updated>
+    </task>
+    <task id="LOCAL-00058" summary="[tyuiu-rag-bot] 23.01.2025 add notification api tag">
+      <option name="closed" value="true" />
+      <created>1737638432701</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1737638432701</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 static" />
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 template" />
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 templates" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static path" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static path +" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new static files" />
@@ -616,6 +613,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts +" />
     <MESSAGE value="[tyuiu-rag-bot] 23.01.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 23.01.2025" />
+    <MESSAGE value="[tyuiu-rag-bot] 23.01.2025 DIP ser up" />
+    <MESSAGE value="[tyuiu-rag-bot] 23.01.2025 DIP set up" />
+    <MESSAGE value="[tyuiu-rag-bot] 23.01.2025 add notification api tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 23.01.2025 add notification api tag" />
   </component>
 </project>
