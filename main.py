@@ -1,4 +1,5 @@
-'''import logging
+"""
+import logging
 import asyncio
 
 from src.app.bot.run import run_chat_bot
@@ -10,7 +11,8 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())'''
+    asyncio.run(main())
+"""
 
 '''import asyncio
 import aiohttp
