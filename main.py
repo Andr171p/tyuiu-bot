@@ -12,7 +12,7 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())'''
 
-import asyncio
+'''import asyncio
 import aiohttp
 
 
@@ -28,4 +28,4 @@ async def main() -> None:
             print(await response.json())
 
 
-asyncio.run(main())
+asyncio.run(main())'''
