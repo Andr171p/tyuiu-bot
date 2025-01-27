@@ -5,6 +5,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.app.bot import bot
 from src.services import NotificationService
+from src.app.api_v1.schemas import SendByPhoneNumberParams, SendAllParams
 
 
 notification_router = APIRouter(
@@ -16,13 +17,12 @@ notification_router = APIRouter(
 
 @notification_router.post(path="/sendByPhoneNumber/")
 async def send_notification(
-        phone_number: str,
-        text: str,
+        params: SendByPhoneNumberParams,
         notification_service: FromDishka[NotificationService]
 ) -> JSONResponse:
     await notification_service.send_notification_by_phone_number(
-        phone_number=phone_number,
-        text=text,
+        phone_number=params.phone_number,
+        text=params.text,
         bot=bot
     )
     return JSONResponse(
@@ -35,11 +35,11 @@ async def send_notification(
 
 @notification_router.post(path="/sendAll/")
 async def senf_notification_to_all_subscribers(
-        text: str,
+        params: SendAllParams,
         notification_service: FromDishka[NotificationService]
 ) -> JSONResponse:
     await notification_service.send_notification_to_all_subscribers(
-        text=text,
+        text=params.text,
         bot=bot
     )
     return JSONResponse(
