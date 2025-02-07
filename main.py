@@ -31,3 +31,19 @@ async def main() -> None:
 
 
 asyncio.run(main())'''
+
+'''import asyncio
+from src.apis import ChatAPI
+from src.schemas import QuestionSchema
+
+
+async def main() -> None:
+    chat_api = ChatAPI()
+    question = QuestionSchema(
+        question="Поступлю ли я на архитектуру с суммой баллов 278"
+        )
+    ans = await chat_api.answer_on_question(question)
+    print(ans)
+
+
+asyncio.run(main())'''

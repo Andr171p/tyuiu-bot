@@ -35,13 +35,14 @@ class StaticSettings(BaseSettings):
     texts_dir: Path = BASE_DIR / "static" / "texts"
 
 
-class APISettings(BaseSettings):
-    base_url: str = os.getenv("API_BASE_URL")
+class ChatSettings(BaseSettings):
+    base_url: str = os.getenv("CHAT_API_BASE_URL")
+    headers: dict = {"Content-Type": "application/json; charset=UTF-8"}
 
 
 class Settings(BaseSettings):
     app: AppSettings = AppSettings()
-    api: APISettings = APISettings()
+    chat: ChatSettings = ChatSettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
     static: StaticSettings = StaticSettings()

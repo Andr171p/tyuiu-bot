@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot; +">
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/schemas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api_v1/schemas/params.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="[tyuiu-rag-bot] 27.01.2025 work admin panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api_v1/routers/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api_v1/routers/notification.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,30 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00021" summary="[tyuiu-rag-bot] 21.01.2025 refactor">
-      <option name="closed" value="true" />
-      <created>1737459976926</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1737459976926</updated>
-    </task>
-    <task id="LOCAL-00022" summary="[tyuiu-rag-bot] 21.01.2025 add notification service">
-      <option name="closed" value="true" />
-      <created>1737485790918</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1737485790918</updated>
-    </task>
-    <task id="LOCAL-00023" summary="[tyuiu-rag-bot] 21.01.2025 add notification service fix created_at">
-      <option name="closed" value="true" />
-      <created>1737486070438</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1737486070438</updated>
     </task>
     <task id="LOCAL-00024" summary="[tyuiu-rag-bot] 21.01.2025 add notification router">
       <option name="closed" value="true" />
@@ -590,13 +562,34 @@
       <option name="project" value="LOCAL" />
       <updated>1737935781991</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="[tyuiu-rag-bot] 27.01.2025 add requests params">
+      <option name="closed" value="true" />
+      <created>1737937862058</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1737937862058</updated>
+    </task>
+    <task id="LOCAL-00071" summary="[tyuiu-rag-bot] 27.01.2025 add value extract in scripts">
+      <option name="closed" value="true" />
+      <created>1737938012166</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1737938012166</updated>
+    </task>
+    <task id="LOCAL-00072" summary="[tyuiu-rag-bot] 27.01.2025 work admin panel">
+      <option name="closed" value="true" />
+      <created>1737938208296</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1737938208296</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new page style" />
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 chats refactor" />
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new index" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 new index in admin" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script fix" />
@@ -619,6 +612,9 @@
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot; +" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot; +" />
+    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add requests params" />
+    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add value extract in scripts" />
+    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 work admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-rag-bot] 27.01.2025 work admin panel" />
   </component>
 </project>
