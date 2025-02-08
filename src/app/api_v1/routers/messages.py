@@ -1,11 +1,13 @@
-from typing import List
-
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.schemas import MessageSchema, PaginatedMessagesSchema
+from src.schemas import (
+    MessageSchema, 
+    MessagesHistorySchema,
+    PaginatedMessagesSchema
+)
 from src.repository import MessageRepository
 from src.services import ChatService
 from src.utils.metrics import get_count, get_count_per_day
@@ -18,15 +20,15 @@ messages_router = APIRouter(
 )
 
 
-@messages_router.get(path="/{user_id}/", response_model=List[MessageSchema])
-async def get_messages_by_user_id(
+@messages_router.get(path="/{user_id}/", response_model=MessagesHistorySchema)
+async def get_messages_history_by_user_id(
     user_id: int,
     chat_service: FromDishka[ChatService]
 ) -> JSONResponse:
-    messages = await chat_service.get_messages_history_by_user_id(user_id)
+    messages_history = await chat_service.get_messages_history_by_user_id(user_id)
     return JSONResponse( 
         status_code=status.HTTP_200_OK,
-        content=messages
+        content=messages_history.model_dump()
     )
     
     
@@ -45,7 +47,7 @@ async def get_paginated_messages_by_user_id(
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={paginated_messages}
+        content=paginated_messages.model_dump()
     )
 
 

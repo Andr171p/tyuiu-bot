@@ -6,6 +6,7 @@ from src.repository import MessageRepository
 from src.schemas import (
     QuestionSchema, 
     MessageSchema,
+    MessagesHistorySchema,
     PaginatedMessagesSchema
 )
 
@@ -30,14 +31,17 @@ class ChatService:
     async def get_messages_history_by_user_id(
         self, 
         user_id: int
-    ) -> List[MessageSchema] | None:
+    ) -> MessagesHistorySchema | None:
         messages = await self._message_repository.get_by_user_id(user_id)
         log.info(
             "Messages history %s for user %s retrieved successfully", 
             len(messages),
             user_id
         )
-        return messages
+        return MessagesHistorySchema(
+            user_id=user_id,
+            messages=messages
+        )
     
     async def get_paginated_messages_history_by_user_id(
         self,

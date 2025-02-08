@@ -11,6 +11,11 @@ class MessageSchema(BaseModel):
     created_at: datetime
     
     
+class MessagesHistorySchema(BaseModel):
+    user_id: int
+    messages: List[MessageSchema]
+    
+    
 class PaginatedMessagesSchema(BaseModel):
     user_id: int
     total: int
