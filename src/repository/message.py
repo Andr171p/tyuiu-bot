@@ -10,7 +10,7 @@ class MessageRepository(BaseRepository):
     crud = MessageCRUD()
 
     async def add(self, message: MessageSchema) -> MessageSchema:
-        added_message = await self.crud.create(Message(**message.dict()))
+        added_message = await self.crud.create(Message(**message.model_dump()))
         return MessageSchema(**added_message.__dict__)
 
     async def get_all(self) -> List[MessageSchema] | None:

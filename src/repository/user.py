@@ -20,5 +20,5 @@ class UserRepository(BaseRepository):
         return [UserSchema(**user.__dict__) for user in users]
 
     async def add(self, user: UserSchema) -> UserSchema:
-        added_user = await self.crud.create(User(**user.dict()))
+        added_user = await self.crud.create(User(**user.model_dump()))
         return UserSchema(**added_user.__dict__)

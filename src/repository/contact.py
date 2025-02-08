@@ -10,7 +10,7 @@ class ContactRepository(BaseRepository):
     crud = ContactCRUD()
 
     async def add(self, contact: ContactSchema) -> ContactSchema:
-        added_contact = await self.crud.create(Contact(**contact.dict()))
+        added_contact = await self.crud.create(Contact(**contact.model_dump()))
         return ContactSchema(**added_contact.__dict__)
 
     async def get_by_user_id(self, user_id: int) -> ContactSchema | None:

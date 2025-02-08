@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from src.repository import UserRepository
 from src.schemas import UserSchema

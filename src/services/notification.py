@@ -25,6 +25,12 @@ class NotificationService:
             subscribed_contact.user_id,
             subscribed_contact.phone_number
         )
+        
+    @classmethod
+    async def get_all_subscribers(self) -> List[ContactSchema] | None:
+        subscribers = await self.contact_repository.get_all()
+        log.info("Successfully received all subscribers")
+        return subscribers
 
     @classmethod
     async def notify_by_phone_number(
