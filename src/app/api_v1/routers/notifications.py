@@ -33,7 +33,7 @@ async def notify_by_phone_number(
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={contact.model_dump()}
+        content=contact
     )
 
 
@@ -48,5 +48,5 @@ async def notify_all_subscribers(
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={contacts}
+        content=contacts
     )

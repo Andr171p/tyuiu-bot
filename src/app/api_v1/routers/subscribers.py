@@ -25,7 +25,7 @@ async def get_all_subscribers(
     subscribers = await notification_service.get_all_subscribers()
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={subscribers}
+        content=subscribers
     )
 
 

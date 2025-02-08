@@ -26,7 +26,7 @@ async def get_messages_by_user_id(
     messages = await chat_service.get_messages_history_by_user_id(user_id)
     return JSONResponse( 
         status_code=status.HTTP_200_OK,
-        content={"messages": messages}
+        content=messages
     )
     
     
