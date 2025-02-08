@@ -51,12 +51,17 @@ asyncio.run(main())'''
 
 import asyncio
 from src.repository import MessageRepository
-from src.utils.metrics import get_count_per_day
+from src.database.crud import MessageCRUD
+from src.services import ChatService
 
 
 async def main() -> None:
-    result = await get_count_per_day(MessageRepository())
-    print(result)
+    crud = MessageCRUD()
+    repo = MessageRepository()
+    service = ChatService()
+    user_id = 1779915071
+    messages = await service.get_messages_history_by_user_id_with_limit(user_id)
+    print(messages)
     
     
 asyncio.run(main())

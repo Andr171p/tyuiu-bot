@@ -3,7 +3,11 @@ from typing import List
 
 from src.apis import ChatAPI
 from src.repository import MessageRepository
-from src.schemas import QuestionSchema, MessageSchema
+from src.schemas import (
+    QuestionSchema, 
+    MessageSchema,
+    PaginatedMessagesSchema
+)
 
 
 log = logging.getLogger(__name__)
@@ -26,6 +30,38 @@ class ChatService:
     async def get_messages_history_by_user_id(
         self, 
         user_id: int
-    ) -> List[MessageSchema]:
-        ...
-        
+    ) -> List[MessageSchema] | None:
+        messages = await self._message_repository.get_by_user_id(user_id)
+        log.info(
+            "Messages history %s for user %s retrieved successfully", 
+            len(messages),
+            user_id
+        )
+        return messages
+    
+    async def get_messages_history_by_user_id_with_limit(
+        self,
+        user_id: int,
+        page: int = 1,
+        limit: int = 5
+    ) -> PaginatedMessagesSchema | None:
+        messages = await self._message_repository.get_by_user_id_with_limit(
+            user_id=user_id,
+            page=page,
+            limit=limit
+        )
+        total_messages_count = await self._message_repository.get_count_by_user_id(
+            user_id=user_id
+        )
+        log.info(
+            "Successfully retrieved %s messages for user %s", 
+            total_messages_count, 
+            user_id
+        )
+        return PaginatedMessagesSchema(
+            user_id=user_id,
+            total=total_messages_count,
+            page=page,
+            limit=limit,
+            messages=messages
+        )
