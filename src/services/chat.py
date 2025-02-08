@@ -39,7 +39,7 @@ class ChatService:
         )
         return messages
     
-    async def get_messages_history_by_user_id_with_limit(
+    async def get_paginated_messages_history_by_user_id(
         self,
         user_id: int,
         page: int = 1,
