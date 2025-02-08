@@ -3,7 +3,7 @@ from dishka import Provider, Scope, provide
 from src.services.chat import ChatService
 
 
-class ChatProvider(Provider):
+class ChatServiceProvider(Provider):
     @provide(scope=Scope.APP)
-    def get_chat_api_service(self) -> ChatService:
+    def get_chat_service(self) -> ChatService:
         return ChatService()

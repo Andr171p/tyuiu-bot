@@ -1,14 +1,14 @@
 from dishka import make_async_container
 
 from src.app.providers import (
-    ChatProvider,
-    AnalyticsProvider,
-    NotificationProvider
+    UserServiseProvider,
+    ChatServiceProvider,
+    NotificationServiceProvider
 )
 
 
 container = make_async_container(
-    ChatProvider(),
-    AnalyticsProvider(),
-    NotificationProvider()
+    UserServiseProvider(),
+    ChatServiceProvider(),
+    NotificationServiceProvider()
 )
