@@ -5,6 +5,7 @@ from aiogram.filters import Command
 from dishka.integrations.aiogram import FromDishka
 
 from src.app.bot.keyboards.contact import share_contact_kb
+from src.schemas import ContactSchema
 from src.services import NotificationService
 from src.misc.file_loaders import load_txt_async
 from src.config import settings
@@ -28,5 +29,6 @@ async def subscribe_to_notification(
         message: Message,
         notification_service: FromDishka[NotificationService]
 ) -> None:
-    await notification_service.subscribe(message)
+    contact = ContactSchema.from_message(message)
+    await notification_service.subscribe(contact)
     await message.answer("Вы успешно отправили контакт")

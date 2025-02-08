@@ -47,3 +47,16 @@ async def main() -> None:
 
 
 asyncio.run(main())'''
+
+
+import asyncio
+from src.repository import MessageRepository
+from src.utils.metrics import get_count_per_day
+
+
+async def main() -> None:
+    result = await get_count_per_day(MessageRepository())
+    print(result)
+    
+    
+asyncio.run(main())

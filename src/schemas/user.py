@@ -14,3 +14,4 @@ class UserSchema(BaseModel):
         cls.user_id = message.from_user.id
         cls.username = message.from_user.username
         cls.created_at = datetime.now()
+        return cls()

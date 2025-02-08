@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
 
@@ -5,46 +7,46 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.app.bot import bot
 from src.services import NotificationService
-from src.app.api_v1.schemas import SendByPhoneNumberParams, SendAllParams
+from src.schemas import (
+    NotifyByPhoneNumberSchema, 
+    NotifyAllSchema, 
+    ContactSchema
+)
 
 
-notification_router = APIRouter(
+notifications_router = APIRouter(
     prefix="/api/v1/notifications",
     route_class=DishkaRoute,
     tags=["Notification"]
 )
 
 
-@notification_router.post(path="/sendByPhoneNumber/")
-async def send_notification(
-        params: SendByPhoneNumberParams,
+@notifications_router.post(path="/", response_model=ContactSchema)
+async def notify_by_phone_number(
+        params: NotifyByPhoneNumberSchema,
         notification_service: FromDishka[NotificationService]
 ) -> JSONResponse:
-    await notification_service.send_notification_by_phone_number(
+    contact = await notification_service.notify_by_phone_number(
         phone_number=params.phone_number,
         text=params.text,
         bot=bot
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={
-            "status": "ok",
-        }
+        content={contact.model_dump()}
     )
 
 
-@notification_router.post(path="/sendAll/")
-async def senf_notification_to_all_subscribers(
-        params: SendAllParams,
+@notifications_router.post(path="/", response_model=List[ContactSchema])
+async def notify_all_subscribers(
+        params: NotifyAllSchema,
         notification_service: FromDishka[NotificationService]
 ) -> JSONResponse:
-    await notification_service.send_notification_to_all_subscribers(
+    contacts = await notification_service.notify_all_subscribers(
         text=params.text,
         bot=bot
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={
-            "status": "ok",
-        }
+        content={contacts}
     )

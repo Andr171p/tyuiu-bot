@@ -1,8 +1,7 @@
 import logging
-from datetime import datetime
+from typing import List
 
 from aiogram import Bot
-from aiogram.types import Message
 
 from src.schemas import ContactSchema
 from src.repository import ContactRepository
@@ -33,7 +32,7 @@ class NotificationService:
             phone_number: str,
             text: str,
             bot: Bot
-    ) -> None:
+    ) -> ContactSchema | None:
         contact = await cls.contact_repository.get_by_phone_number(phone_number)
         user_id: int = contact.user_id
         sender_service = SenderService(bot)
@@ -42,13 +41,14 @@ class NotificationService:
             text=text
         )
         log.info("Successfully sent notification to user with %s", user_id)
+        return contact
 
     @classmethod
     async def notify_all_subscribers(
             cls,
             text: str,
             bot: Bot
-    ) -> None:
+    ) -> List[ContactSchema] | None:
         subscribers = await cls.contact_repository.get_all()
         user_ids = [subscriber.user_id for subscriber in subscribers]
         sender_service = SenderService(bot)
@@ -57,3 +57,4 @@ class NotificationService:
             text=text
         )
         log.info("Successfully sent notification to subscribers")
+        return subscribers
