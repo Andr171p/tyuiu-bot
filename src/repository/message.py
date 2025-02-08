@@ -18,3 +18,6 @@ class MessageRepository(BaseRepository):
         if messages is None:
             return
         return [MessageSchema(**message.__dict__) for message in messages]
+    
+    async def get_by_user_id(self, user_id: int) -> List[MessageSchema] | None:
+        ...

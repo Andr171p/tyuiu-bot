@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from src.apis import ChatAPI
 from src.repository import MessageRepository
@@ -21,4 +22,10 @@ class ChatService:
     async def save_dialog(self, message: MessageSchema) -> None:
         saved_message = await self._message_repository.add(message)
         log.info("Message %s message saved successfully", saved_message)
+        
+    async def get_messages_history_by_user_id(
+        self, 
+        user_id: int
+    ) -> List[MessageSchema]:
+        ...
         

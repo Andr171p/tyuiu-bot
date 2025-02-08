@@ -1,4 +1,4 @@
-from typing import AsyncIterator, Optional
+from typing import AsyncIterator, AsyncGenerator, Optional, Any
 from contextlib import asynccontextmanager
 
 from sqlalchemy.ext.asyncio import (
@@ -9,11 +9,10 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine
 )
 
-from src.database.abstarct.context import AbstractContext
 from src.database.base import get_db_url
 
 
-class DBContext(AbstractContext):
+class DatabaseManager:
     def __init__(self) -> None:
         self._engine: Optional[AsyncEngine] = None
         self._sessionmaker: Optional[async_sessionmaker[AsyncSession]] = None
@@ -36,7 +35,7 @@ class DBContext(AbstractContext):
         self._sessionmaker = None
 
     @asynccontextmanager
-    async def session(self) -> AsyncSession:
+    async def session(self) -> AsyncGenerator[Any, AsyncSession]:
         async with self._sessionmaker() as session:
             try:
                 yield session
@@ -47,7 +46,7 @@ class DBContext(AbstractContext):
     @asynccontextmanager
     async def connect(self) -> AsyncIterator[AsyncConnection]:
         if self._engine is None:
-            raise IOError("DBSession is not initialized")
+            raise IOError("DatabaseManager is not initialized")
         async with self._engine.begin() as connection:
             try:
                 yield connection

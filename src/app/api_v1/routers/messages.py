@@ -1,6 +1,9 @@
+from typing import List
+
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
 
+from src.schemas import MessageSchema
 from src.repository import MessageRepository
 from src.utils.metrics import get_count, get_count_per_day
 
@@ -9,6 +12,11 @@ messages_router = APIRouter(
     prefix="/api/v1/messages",
     tags=["Messages"]
 )
+
+
+@messages_router.get(path="/{user_id}/", response_model=List[MessageSchema])
+async def get_messages_by_user_id(user_id: int) -> JSONResponse:
+    ...
 
 
 @messages_router.get(path="/count/")
