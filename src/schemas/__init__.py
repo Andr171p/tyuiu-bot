@@ -4,6 +4,7 @@ __all__ = (
     "PaginatedMessagesSchema",
     "ResponseSchema",
     "ContactSchema",
+    "SubscribersSchema",
     "QuestionSchema",
     "AnswerSchema",
     "NotificationSchema",
@@ -13,7 +14,7 @@ __all__ = (
 
 from src.schemas.user import UserSchema
 from src.schemas.message import MessageSchema, PaginatedMessagesSchema
-from src.schemas.contact import ContactSchema
+from src.schemas.contact import ContactSchema, SubscribersSchema
 from src.schemas.chat import QuestionSchema, AnswerSchema
 from src.schemas.notification import (
     NotificationSchema,

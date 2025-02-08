@@ -3,7 +3,7 @@ from typing import List
 
 from aiogram import Bot
 
-from src.schemas import ContactSchema
+from src.schemas import ContactSchema, SubscribersSchema
 from src.repository import ContactRepository
 from src.services.sender import SenderService
 
@@ -27,10 +27,10 @@ class NotificationService:
         )
         
     @classmethod
-    async def get_all_subscribers(self) -> List[ContactSchema] | None:
-        subscribers = await self.contact_repository.get_all()
+    async def get_all_subscribers(self) -> SubscribersSchema | None:
+        contacts = await self.contact_repository.get_all()
         log.info("Successfully received all subscribers")
-        return subscribers
+        return SubscribersSchema(contacts=contacts)
 
     @classmethod
     async def notify_by_phone_number(
