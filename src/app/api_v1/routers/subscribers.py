@@ -1,5 +1,6 @@
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
@@ -23,7 +24,7 @@ async def get_all_subscribers(
     subscribers = await notification_service.get_all_subscribers()
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content=subscribers.model_dump()
+        content=jsonable_encoder(subscribers)
     )
 
 
