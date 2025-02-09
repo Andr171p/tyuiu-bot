@@ -14,7 +14,7 @@ class ContactSchema(BaseModel):
     def from_message(cls, message: Message) -> "ContactSchema":
         return cls(
             user_id=message.from_user.id,
-            phone_number=message.from_user.phone_number,
+            phone_number=message.contact.phone_number,
             created_at=datetime.now()
         )
         
