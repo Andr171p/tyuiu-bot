@@ -1,5 +1,6 @@
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
@@ -26,6 +27,7 @@ async def get_messages_history_by_user_id(
     chat_service: FromDishka[ChatService]
 ) -> JSONResponse:
     messages_history = await chat_service.get_messages_history_by_user_id(user_id)
+    message_history = jsonable_encoder(message_history)
     return JSONResponse( 
         status_code=status.HTTP_200_OK,
         content=messages_history.model_dump()
