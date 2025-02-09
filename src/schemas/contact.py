@@ -12,9 +12,11 @@ class ContactSchema(BaseModel):
     
     @classmethod
     def from_message(cls, message: Message) -> "ContactSchema":
-        cls.user_id = message.from_user.id
-        cls.phone_number = message.from_user.phone_number
-        cls.created_at = datetime.now()
+        return cls(
+            user_id=message.from_user.id,
+            phone_number=message.from_user.phone_number,
+            created_at=datetime.now()
+        )
         
         
 class SubscribersSchema(BaseModel):

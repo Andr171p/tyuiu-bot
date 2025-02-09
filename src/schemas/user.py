@@ -11,7 +11,8 @@ class UserSchema(BaseModel):
     
     @classmethod
     def from_message(cls, message: Message) -> "UserSchema":
-        cls.user_id = message.from_user.id
-        cls.username = message.from_user.username
-        cls.created_at = datetime.now()
-        return cls()
+        return cls(
+            user_id=message.from_user.id,
+            username=message.from_user.username,
+            created_at=datetime.now()
+        )
