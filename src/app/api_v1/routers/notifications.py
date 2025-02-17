@@ -2,6 +2,7 @@ from typing import List
 
 from fastapi import APIRouter, status
 from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
@@ -33,7 +34,7 @@ async def notify_by_phone_number(
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content=contact
+        content=jsonable_encoder(contact)
     )
 
 
@@ -48,5 +49,5 @@ async def notify_all_subscribers(
     )
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content=contacts
+        content=jsonable_encoder(contacts)
     )
