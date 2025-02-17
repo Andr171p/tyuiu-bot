@@ -2,6 +2,7 @@ import logging
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 from dishka.integrations.fastapi import setup_dishka
 
@@ -32,6 +33,14 @@ app.include_router(users_router)
 app.include_router(subscribers_router)
 app.include_router(messages_router)
 app.include_router(notifications_router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 setup_dishka(
     container=container,
