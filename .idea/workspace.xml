@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.02.2025" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.02.2025 fix notification response" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,14 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00025" summary="[tyuiu-rag-bot] 21.01.2025 fix NoneType bug">
-      <option name="closed" value="true" />
-      <created>1737486506964</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1737486506964</updated>
     </task>
     <task id="LOCAL-00026" summary="[tyuiu-rag-bot] 22.01.2025">
       <option name="closed" value="true" />
@@ -584,11 +576,18 @@
       <option name="project" value="LOCAL" />
       <updated>1739824559571</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="18.02.2025 fix notification response">
+      <option name="closed" value="true" />
+      <created>1739830833629</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1739830833629</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update in js script fix" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update charts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update charts scripts" />
@@ -613,6 +612,7 @@
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add value extract in scripts" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 work admin panel" />
     <MESSAGE value="18.02.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.02.2025" />
+    <MESSAGE value="18.02.2025 fix notification response" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.02.2025 fix notification response" />
   </component>
 </project>

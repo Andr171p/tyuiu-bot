@@ -38,7 +38,7 @@ async def notify_by_phone_number(
     )
 
 
-@notifications_router.post(path="/", response_model=List[ContactSchema])
+@notifications_router.post(path="/all/", response_model=List[ContactSchema])
 async def notify_all_subscribers(
         params: NotifyAllSchema,
         notification_service: FromDishka[NotificationService]
