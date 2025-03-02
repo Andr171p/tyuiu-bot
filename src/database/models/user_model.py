@@ -7,7 +7,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from src.database.models.base_model import BaseModel
 
 if TYPE_CHECKING:
-    from src.database.models.dialog_model import DialogModel
+    from src.database.models.chat_model import ChatModel
     from src.database.models.contact_model import ContactModel
 
 
@@ -18,7 +18,7 @@ class UserModel(BaseModel):
     username: Mapped[str | None] = mapped_column(nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
-    dialogs: Mapped[list["DialogModel"]] = relationship(back_populates="user")
+    chats: Mapped[list["ChatModel"]] = relationship(back_populates="user")
     contact: Mapped["ContactModel"] = relationship(back_populates="user")
 
     def __str__(self) -> str:

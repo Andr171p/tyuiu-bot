@@ -8,4 +8,4 @@ __all__ = (
 from src.app.bot.routers.start import start_router
 from src.app.bot.routers.info import info_router
 from src.app.bot.routers.notification import notification_router
-from src.app.bot.routers.chat import chat_router
+from src.app.bot.routers.chat_bot_router import chat_router

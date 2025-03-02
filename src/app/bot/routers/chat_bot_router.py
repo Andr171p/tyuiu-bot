@@ -6,14 +6,14 @@ from aiogram.types import Message
 from dishka.integrations.aiogram import FromDishka
 
 from src.schemas import MessageSchema
-from src.services import ChatService
+from src.core.use_cases import ChatBotUseCase
 
 
-chat_router = Router()
+chat_bot_router = Router()
 
 
-@chat_router.message(F.text)
-async def get_answer_on_question(
+@chat_bot_router.message(F.text)
+async def answer(
         message: Message,
         chat_service: FromDishka[ChatService],
 ) -> None:
