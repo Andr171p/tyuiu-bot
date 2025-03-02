@@ -24,3 +24,7 @@ class BaseCRUD(ABC):
         user_id: int
     ) -> Union["BaseModel", Sequence["BaseModel"]]:
         raise NotImplemented
+    
+    @abstractmethod
+    async def read_total_count(self) -> int:
+        raise NotImplemented

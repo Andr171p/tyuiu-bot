@@ -1,7 +1,7 @@
 from typing import Dict
 from collections import defaultdict
 
-from src.repository.base import BaseRepository
+from src.repository.base_repository import BaseRepository
 from src.misc.formaters import format_to_year_month_day
 
 

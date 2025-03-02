@@ -61,3 +61,12 @@ class DialogCRUD(BaseCRUD):
             )
             dialogs_count = await session.execute(stmt)
         return dialogs_count.scalar_one_or_none()
+    
+    async def read_total_count(self) -> int | None:
+        async with self._manager.session() as session:
+            stmt = (
+                select(func.count)
+                .select_from(DialogModel)
+            )
+            dialogs_count = await session.execute(stmt)
+        return dialogs_count.scalar_one_or_none()

@@ -8,3 +8,6 @@ class Dialog(BaseModel):
     user_message: str
     chat_bot_message: str
     created_at: datetime
+    
+    class Config:
+        from_attributes = True
