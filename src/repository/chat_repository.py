@@ -12,7 +12,7 @@ class ChatRepository(BaseRepository):
     def __init__(self, crud: "ChatCRUD") -> None:
         self._crud = crud
         
-    async def add(self, chat: Chat) -> int:
+    async def save(self, chat: Chat) -> int:
         id = await self._crud.create(ChatModel(**chat.model_dump()))
         return id
 

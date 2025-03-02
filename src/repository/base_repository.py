@@ -12,7 +12,7 @@ class BaseRepository(ABC):
     _crud: "BaseCRUD"
 
     @abstractmethod
-    async def add(self, entity: BaseModel) -> int:
+    async def save(self, entity: BaseModel) -> int:
         raise NotImplemented
     
     @abstractmethod

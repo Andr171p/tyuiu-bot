@@ -12,7 +12,7 @@ class ContactRepository(BaseRepository):
     def __init__(self, crud: "ContactCRUD") -> None:
         self._crud = crud
         
-    async def add(self, contact: Contact) -> int:
+    async def save(self, contact: Contact) -> int:
         id = await self._crud.create(ContactModel(**contact.model_dump()))
         return id
     

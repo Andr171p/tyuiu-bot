@@ -12,7 +12,7 @@ class UserRepository(BaseRepository):
     def __init__(self, crud: "UserCRUD") -> None:
         self._crud = crud
 
-    async def add(self, user: User) -> int:
+    async def save(self, user: User) -> int:
         id = await self._crud.create(UserModel(**user.model_dump()))
         return id
     
