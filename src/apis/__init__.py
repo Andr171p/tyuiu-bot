@@ -1,5 +1,5 @@
 __all__ = (
-    "ChatAPI"
+    "ChatBotAPI"
 )
 
-from src.apis.chat_api import ChatAPI
+from src.apis.chat_bot_api import ChatBotAPI

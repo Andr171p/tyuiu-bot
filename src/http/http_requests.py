@@ -1,6 +1,4 @@
-from typing import (
-    TYPE_CHECKING
-)
+from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
     from aiohttp import ClientSession, ClientResponse
@@ -16,7 +14,7 @@ class HTTPRequests:
     async def get(
             self,
             url: str,
-            headers: dict = None,
+            headers: Optional[dict] = None,
             timeout: int = 10
     ) -> dict | None:
         async with self._session.get(
@@ -30,12 +28,12 @@ class HTTPRequests:
     async def post(
             self,
             url: str,
-            data: dict,
-            headers: dict = None
+            json: dict,
+            headers: Optional[dict] = None
     ) -> dict | None:
         async with self._session.post(
             url=url,
-            json=data,
+            json=json,
             headers=headers
         ) as response:
             if self.is_ok(response):

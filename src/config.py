@@ -37,7 +37,6 @@ class StaticSettings(BaseSettings):
 
 class ChatSettings(BaseSettings):
     base_url: str = os.getenv("CHAT_API_BASE_URL")
-    headers: dict = {"Content-Type": "application/json; charset=UTF-8"}
 
 
 class Settings(BaseSettings):
