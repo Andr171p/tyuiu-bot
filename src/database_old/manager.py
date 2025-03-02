@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine
 )
 
-from src.database.base import get_db_url
+from src.database_old.base import get_db_url
 
 
 class DatabaseManager:

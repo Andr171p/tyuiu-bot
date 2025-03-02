@@ -1,9 +1,11 @@
 __all__ = (
-    "User",
-    "Message",
-    "Contact"
+    "BaseModel",
+    "UserModel",
+    "ContactModel",
+    "DialogModel"
 )
 
-from src.database.models.user import User
-from src.database.models.message import Message
-from src.database.models.contact import Contact
+from src.database.models.base_model import BaseModel
+from src.database.models.user_model import UserModel
+from src.database.models.contact_model import ContactModel
+from src.database.models.dialog_model import DialogModel

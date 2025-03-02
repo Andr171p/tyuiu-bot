@@ -1,8 +1,8 @@
 from typing import TYPE_CHECKING, Sequence, Union
 
 if TYPE_CHECKING:
-    from src.db.database_manager import DatabaseManager
-    from src.db.models import BaseModel
+    from src.database.database_manager import DatabaseManager
+    from src.database.models import BaseModel
 
 from abc import ABC, abstractmethod
 

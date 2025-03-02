@@ -1,12 +1,12 @@
 from typing import TYPE_CHECKING, Sequence
 
 if TYPE_CHECKING:
-    from src.db.database_manager import DatabaseManager
+    from src.database.database_manager import DatabaseManager
     
 from sqlalchemy import select, func
     
-from src.db.crud.base_crud import BaseCRUD
-from src.db.models import DialogModel
+from src.database.crud.base_crud import BaseCRUD
+from src.database.models import DialogModel
 
 
 class DialogCRUD(BaseCRUD):

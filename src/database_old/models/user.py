@@ -4,22 +4,20 @@ from datetime import datetime
 from sqlalchemy import BigInteger, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from src.db.models.base_model import BaseModel
+from src.database_old.base import Base
 
 if TYPE_CHECKING:
-    from src.db.models.dialog_model import DialogModel
-    from src.db.models.contact_model import ContactModel
+    from src.database_old.models.message import Message
+    from src.database_old.models.contact import Contact
 
 
-class UserModel(BaseModel):
-    __tablename__ = "users"
-    
+class User(Base):
     user_id: Mapped[int] = mapped_column(BigInteger, unique=True)
     username: Mapped[str | None] = mapped_column(nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
-    dialogs: Mapped[list["DialogModel"]] = relationship(back_populates="user")
-    contact: Mapped["ContactModel"] = relationship(back_populates="user")
+    messages: Mapped[list["Message"]] = relationship(back_populates="user")
+    contact: Mapped["Contact"] = relationship(back_populates="user")
 
     def __str__(self) -> str:
         return f"{self.__class__.__name__}(user_id={self.user_id}, username={self.username})"

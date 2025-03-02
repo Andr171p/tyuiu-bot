@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Sequence
 
-from src.database.base import ModelType
+from src.database_old.base import ModelType
 
 
 class BaseCRUD(ABC):

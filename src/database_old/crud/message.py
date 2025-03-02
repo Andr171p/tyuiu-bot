@@ -2,9 +2,9 @@ from typing import Sequence
 
 from sqlalchemy import select, func
 
-from src.database.models import Message
-from src.database.interfaces import BaseCRUD
-from src.database.manager_provider import get_database_manager
+from src.database_old.models import Message
+from src.database_old.interfaces import BaseCRUD
+from src.database_old.manager_provider import get_database_manager
 
 
 class MessageCRUD(BaseCRUD):

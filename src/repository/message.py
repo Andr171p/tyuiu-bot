@@ -1,8 +1,8 @@
 from typing import List
 
 from src.repository.base import BaseRepository
-from src.database.crud import MessageCRUD
-from src.database.models import Message
+from src.database_old.crud import MessageCRUD
+from src.database_old.models import Message
 from src.schemas import MessageSchema
 
 

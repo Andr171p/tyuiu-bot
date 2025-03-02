@@ -1,8 +1,8 @@
 from typing import List
 
 from src.repository.base import BaseRepository
-from src.database.crud import UserCRUD
-from src.database.models import User
+from src.database_old.crud import UserCRUD
+from src.database_old.models import User
 from src.schemas import UserSchema
 
 

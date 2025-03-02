@@ -1,8 +1,8 @@
 from typing import List
 
 from src.repository.base import BaseRepository
-from src.database.crud import ContactCRUD
-from src.database.models import Contact
+from src.database_old.crud import ContactCRUD
+from src.database_old.models import Contact
 from src.schemas import ContactSchema
 
 

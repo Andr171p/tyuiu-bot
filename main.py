@@ -51,7 +51,7 @@ asyncio.run(main())'''
 
 import asyncio
 from src.repository import MessageRepository
-from src.database.crud import MessageCRUD
+from src.database_old.crud import MessageCRUD
 from src.services import ChatService
 
 

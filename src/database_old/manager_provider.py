@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.database.manager import DatabaseManager
+from src.database_old.manager import DatabaseManager
 
 
 class DatabaseManagerSingleton:
