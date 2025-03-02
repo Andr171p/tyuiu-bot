@@ -1,9 +1,9 @@
 __all__ = (
-    "DialogsHistory",
-    "PaginatedDialogs",
-    "SharedContectUsers"
+    "ChatHistory",
+    "ChatHistoryPaginated",
+    "SharedContactUsers"
 )
 
-from src.dto.dialog_history import DialogsHistory
-from src.dto.paginated_dialogs import PaginatedDialogs
-from src.dto.shared_contacts_users import SharedContectUsers
+from src.dto.chat_history import ChatHistory
+from src.dto.chat_history_paginated import ChatHistoryPaginated
+from src.dto.shared_contacts_users import SharedContactUsers
