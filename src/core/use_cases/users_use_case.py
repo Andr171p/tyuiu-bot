@@ -1,5 +1,7 @@
-from src.repository import UserRepository, ContactRepository
+from typing import List
+
 from src.core.entities import User, Contact
+from src.repository import UserRepository, ContactRepository, ChatRepository
 
 
 class UsersUseCase:
@@ -17,4 +19,13 @@ class UsersUseCase:
         await self._user_repository.save(user)
         
     async def share_contact(self, contact: Contact) -> None:
-        ...
+        await self._contact_repository.save(contact)
+        
+    async def get_all_contacts(self) -> List[Contact]:
+        return await self._contact_repository.get_all()
+    
+    async def get_users_count(self) -> int:
+        return await self._user_repository.get_total_count()
+    
+    async def get_contacts_count(self) -> int:
+        return await self._contact_repository.get_total_count()
