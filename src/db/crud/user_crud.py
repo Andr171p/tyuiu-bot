@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Sequence
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 
 if TYPE_CHECKING:
     from src.db.database_manager import DatabaseManager
@@ -34,3 +34,12 @@ class UserCRUD(BaseCRUD):
             stmt = select(UserModel)
             users = await session.execute(stmt)
         return users.scalars().all()
+    
+    async def read_total_count(self) -> int | None:
+        async with self._manager.session() as session:
+            stmt = (
+                select(func.count)
+                .select_from(UserModel)
+            )
+            users_count = await session.execute(stmt)
+        return users_count.scalar_one_or_none()
