@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
+
+from src.misc.formaters import format_phone_number
 
 
 class Contact(BaseModel):
@@ -10,4 +12,8 @@ class Contact(BaseModel):
     
     class Config:
         from_attributes = True
+
+    @field_validator("phone_number", mode="before")
+    def validate_phone_number(cls, phone_number: str) -> str:
+        return format_phone_number(phone_number)
     
