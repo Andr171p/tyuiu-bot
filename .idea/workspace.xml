@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.02.2025 fix notification router" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.02.2025 fix notification router">
+      <change afterPath="$PROJECT_DIR$/src/services/sender/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/sender/sender_exception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/chat_saver_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_bot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_bot_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/contact_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/chat_bot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/notifications_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/chat_bot/chat_bot_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +33,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Andr171p&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Andr171p/tyuiu-rag-bot.git&quot;,
+    &quot;accountId&quot;: &quot;d4c0bf4a-8d1f-486e-85cb-8de12cdb4c11&quot;
+  }
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -44,11 +73,17 @@
     &quot;Python.start.executor&quot;: &quot;Run&quot;,
     &quot;Python.user.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/TyuiuRAGBot&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\src\services\sender" />
       <recent name="C:\Users\andre\TyuiuRAGBot\static\slyles" />
       <recent name="C:\Users\andre\TyuiuRAGBot\static\scripts" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\app\bot" />
