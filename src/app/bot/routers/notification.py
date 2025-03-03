@@ -7,7 +7,7 @@ from dishka.integrations.aiogram import FromDishka
 from src.app.bot.keyboards.contact import share_contact_kb
 from src.schemas import ContactSchema
 from src.services import NotificationService
-from src.misc.file_loaders import load_txt_async
+from src.misc.files_readers import load_txt_async
 from src.config import settings
 
 

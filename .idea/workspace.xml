@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="03.03.2025 add di providers">
-      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/bot_provider.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="03.03.2025 add telegram bot provider">
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/commands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/share_contact_keyboard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/presenters/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/presenters/base_presenter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/presenters/start_presenter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot/routers/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot/routers/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bot/routers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bot/routers/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/misc/file_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc/files_readers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/texts/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages/Info_message.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/texts/start.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages/Start_message.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/texts/subscribe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages/subscribe.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +87,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\messages" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\services\sender" />
       <recent name="C:\Users\andre\TyuiuRAGBot\static\slyles" />
       <recent name="C:\Users\andre\TyuiuRAGBot\static\scripts" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\app\bot" />
-      <recent name="C:\Users\andre\TyuiuRAGBot\src" />
     </key>
   </component>
   <component name="RunManager" selected="Python.container">
@@ -219,14 +230,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00030" summary="[tyuiu-rag-bot] 22.01.2025 register router">
-      <option name="closed" value="true" />
-      <created>1737489560631</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1737489560631</updated>
     </task>
     <task id="LOCAL-00031" summary="[tyuiu-rag-bot] 22.01.2025 static">
       <option name="closed" value="true" />
@@ -612,11 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741003082728</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="03.03.2025 add telegram bot provider">
+      <option name="closed" value="true" />
+      <created>1741004756966</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1741004756966</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts +" />
     <MESSAGE value="[tyuiu-rag-bot] 23.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 23.01.2025 DIP ser up" />
     <MESSAGE value="[tyuiu-rag-bot] 23.01.2025 DIP set up" />
@@ -641,6 +651,7 @@
     <MESSAGE value="03.03.2025 optimize contact crud read method" />
     <MESSAGE value="03.03.2025 developed notification use case" />
     <MESSAGE value="03.03.2025 add di providers" />
-    <option name="LAST_COMMIT_MESSAGE" value="03.03.2025 add di providers" />
+    <MESSAGE value="03.03.2025 add telegram bot provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="03.03.2025 add telegram bot provider" />
   </component>
 </project>

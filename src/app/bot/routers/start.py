@@ -8,7 +8,7 @@ from dishka.integrations.aiogram import FromDishka
 
 from src.schemas import UserSchema
 from src.services import UserService
-from src.misc.file_loaders import load_txt_async
+from src.misc.files_readers import load_txt_async
 from src.config import settings
 
 
@@ -22,6 +22,6 @@ async def start(
 ) -> None:
     user = UserSchema.from_message(message)
     await user_service.register(user)
-    file_path = settings.static.texts_dir / "start.txt"
+    file_path = settings.static.texts_dir / "Start_message.txt"
     text = await load_txt_async(file_path)
     await message.answer(text)

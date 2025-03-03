@@ -29,6 +29,10 @@ class DBSettings(BaseSettings):
     url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
 
 
+class MessagesSettings(BaseSettings):
+    messages_dir: Path = BASE_DIR / "messages"
+
+
 class StaticSettings(BaseSettings):
     static_dir: Path = BASE_DIR / "static"
     template_dir: Path = BASE_DIR / "static" / "templates"
@@ -44,6 +48,7 @@ class Settings(BaseSettings):
     chat_bot_api: ChatBotAPISettings = ChatBotAPISettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
+    messages: MessagesSettings = MessagesSettings()
     static: StaticSettings = StaticSettings()
 
 
