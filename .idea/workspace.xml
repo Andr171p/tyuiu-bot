@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="03.03.2025 optimize contact crud read method">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="03.03.2025 developed notification use case">
+      <change afterPath="$PROJECT_DIR$/src/presentation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/container.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/database_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/notification_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/repository_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/contact_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/notifications_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/notifications_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +91,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.container">
     <configuration name="analytics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -120,6 +128,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="container" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/presentation/di" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/presentation/di/container.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -172,35 +202,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/repository/user.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.container" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.analytics" />
         <item itemvalue="Python.formaters" />
         <item itemvalue="Python.config" />
-        <item itemvalue="Python.user" />
       </list>
     </recent_temporary>
   </component>
@@ -219,14 +227,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00028" summary="[tyuiu-rag-bot] 22.01.2025 add admin router">
-      <option name="closed" value="true" />
-      <created>1737488476126</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1737488476126</updated>
     </task>
     <task id="LOCAL-00029" summary="[tyuiu-rag-bot] 22.01.2025 remove response class">
       <option name="closed" value="true" />
@@ -612,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1740996061579</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="03.03.2025 developed notification use case">
+      <option name="closed" value="true" />
+      <created>1740997928512</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1740997928512</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 update charts scripts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts" />
     <MESSAGE value="[tyuiu-rag-bot] 22.01.2025 import charts +" />
     <MESSAGE value="[tyuiu-rag-bot] 23.01.2025" />
@@ -641,6 +648,7 @@
     <MESSAGE value="18.02.2025 fix notification response" />
     <MESSAGE value="18.02.2025 fix notification router" />
     <MESSAGE value="03.03.2025 optimize contact crud read method" />
-    <option name="LAST_COMMIT_MESSAGE" value="03.03.2025 optimize contact crud read method" />
+    <MESSAGE value="03.03.2025 developed notification use case" />
+    <option name="LAST_COMMIT_MESSAGE" value="03.03.2025 developed notification use case" />
   </component>
 </project>
