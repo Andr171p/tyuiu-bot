@@ -3,6 +3,10 @@ from typing import Any
 from src.core.entities import Notification
 
 
+class NotificationWithPhoto(Notification):
+    photo: Any
+
+
 class NotificationByUserId(Notification):
     user_id: int
 

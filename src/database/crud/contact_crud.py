@@ -44,6 +44,15 @@ class ContactCRUD(BaseCRUD):
             contacts = await session.execute(stmt)
         return contacts.scalars().all()
 
+    async def read_user_id_by_phone_number(self, phone_number: str) -> int | None:
+        async with self._manager.session() as session:
+            stmt = (
+                select(ContactModel.user_id)
+                .where(ContactModel.phone_number == phone_number)
+            )
+            user_id = await session.execute(stmt)
+        return user_id.scalar_one_or_none()
+
     async def read_phone_number_by_user_id(self, user_id: int) -> str | None:
         async with self._manager.session() as session:
             stmt = (
@@ -52,6 +61,12 @@ class ContactCRUD(BaseCRUD):
             )
             phone_number = await session.execute(stmt)
         return phone_number.scalar_one_or_none()
+
+    async def read_all_user_ids(self) -> Sequence[int] | None:
+        async with self._manager.session() as session:
+            stmt = select(ContactModel.user_id)
+            user_ids = await session.execute(stmt)
+        return user_ids.scalars().all()
     
     async def read_total_count(self) -> int | None:
         async with self._manager.session() as session:

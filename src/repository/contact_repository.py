@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, List, Union
+from typing import TYPE_CHECKING, List, Union, Sequence
 
 if TYPE_CHECKING:
     from src.database.crud import ContactCRUD
@@ -23,6 +23,16 @@ class ContactRepository(BaseRepository):
     async def get_all(self) -> List[Union[Contact, None]]:
         contacts = await self._crud.read_all()
         return [Contact.model_validate(contact) for contact in contacts] if contacts else []
+
+    async def get_user_id_by_phone_number(self, phone_number: str) -> Union[int, None]:
+        return await self._crud.read_user_id_by_phone_number(phone_number)
+
+    async def get_phone_number_by_user_id(self, user_id: int) -> Union[str, None]:
+        return await self._crud.read_phone_number_by_user_id(user_id)
+
+    async def get_all_user_ids(self) -> Sequence[Union[int, None]]:
+        user_ids = await self._crud.read_all_user_ids()
+        return user_ids if user_ids else []
     
     async def get_total_count(self) -> int:
         count = await self._crud.read_total_count()
