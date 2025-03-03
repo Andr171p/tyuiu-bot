@@ -5,9 +5,9 @@ from src.misc.files_readers import read_txt
 from src.config import settings
 
 
-class StartPresenter(BasePresenter):
+class InfoPresenter(BasePresenter):
     @classmethod
     async def present(cls, message: Message, **kwargs) -> None:
-        file_path = settings.messages.messages_dir / "Start_message.txt"
+        file_path = settings.messages.messages_dir / "Info_message.txt"
         text = await read_txt(file_path)
         await message.answer(text)

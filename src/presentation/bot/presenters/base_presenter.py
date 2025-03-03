@@ -1,14 +1,10 @@
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from aiogram.types import Message
-
 from abc import ABC, abstractmethod
+
+from aiogram.types import Message
 
 
 class BasePresenter(ABC):
-    _message: "Message"
-
+    @classmethod
     @abstractmethod
-    async def present(self) -> None:
+    async def present(cls, message: Message, **kwargs) -> None:
         raise NotImplemented
