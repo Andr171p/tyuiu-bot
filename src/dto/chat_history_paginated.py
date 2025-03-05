@@ -2,13 +2,13 @@ from typing import List
 
 from pydantic import BaseModel
 
-from src.core.entities import Chat
+from src.core.entities import Dialog
 
 
-class ChatHistoryPaginated(BaseModel):
+class ChatPaginated(BaseModel):
     user_id: int
     total: int
     page: int
     limit: int
-    chats: List[Chat]
+    dialogs: List[Dialog]
     

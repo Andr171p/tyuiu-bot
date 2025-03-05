@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="04.03.2025 create chat use case">
-      <change afterPath="$PROJECT_DIR$/src/core/entities/dialog.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="05.03.2025">
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/chats_provider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_bot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_bot_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_history_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_history_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/chat_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/chat_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/dialog_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/database_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/database_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/repository_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/repository_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/chat_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/dialog_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/chat_saver_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/dialog_saver_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_history_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chats_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/chat_history.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/chat_history_paginated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/chat_history_paginated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,14 +226,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00035" summary="[tyuiu-rag-bot] 22.01.2025 new static path +">
-      <option name="closed" value="true" />
-      <created>1737491962721</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1737491962721</updated>
     </task>
     <task id="LOCAL-00036" summary="[tyuiu-rag-bot] 22.01.2025 new static files">
       <option name="closed" value="true" />
@@ -625,11 +611,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741100895631</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="05.03.2025">
+      <option name="closed" value="true" />
+      <created>1741183454013</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1741183454014</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notification" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notifications" />
@@ -654,6 +647,7 @@
     <MESSAGE value="03.03.2025 add presentation routers" />
     <MESSAGE value="03.03.2025 add phone number formaters" />
     <MESSAGE value="04.03.2025 create chat use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="04.03.2025 create chat use case" />
+    <MESSAGE value="05.03.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="05.03.2025" />
   </component>
 </project>
