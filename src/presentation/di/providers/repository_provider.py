@@ -1,7 +1,7 @@
 from dishka import Provider, provide, Scope
 
-from src.database.crud import UserCRUD, ChatCRUD, ContactCRUD
-from src.repository import UserRepository, ContactRepository, ChatRepository
+from src.database.crud import UserCRUD, DialogCRUD, ContactCRUD
+from src.repository import UserRepository, ContactRepository, DialogRepository
 
 
 class RepositoryProvider(Provider):
@@ -14,5 +14,5 @@ class RepositoryProvider(Provider):
         return ContactRepository(crud)
 
     @provide(scope=Scope.APP)
-    def get_chat_repository(self, crud: ChatCRUD) -> ChatRepository:
-        return ChatRepository(crud)
+    def get_chat_repository(self, crud: DialogCRUD) -> DialogRepository:
+        return DialogRepository(crud)

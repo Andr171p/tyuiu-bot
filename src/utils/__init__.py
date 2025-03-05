@@ -1,5 +1,5 @@
 __all__ = (
-    "chat_saver"
+    "dialog_saver"
 )
 
-from src.utils.chat_saver_decorator import chat_saver
+from src.utils.dialog_saver_decorator import dialog_saver

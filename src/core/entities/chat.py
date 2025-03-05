@@ -1,13 +1,10 @@
-from datetime import datetime 
+from typing import List
 
 from pydantic import BaseModel
+
+from src.core.entities.dialog import Dialog
 
 
 class Chat(BaseModel):
     user_id: int
-    user_message: str
-    chat_bot_message: str
-    created_at: datetime
-    
-    class Config:
-        from_attributes = True
+    dialogs: List[Dialog]

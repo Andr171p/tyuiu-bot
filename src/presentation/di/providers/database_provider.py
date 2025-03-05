@@ -1,7 +1,7 @@
 from dishka import Provider, provide, Scope
 
 from src.database.database_manager import DatabaseManager
-from src.database.crud import UserCRUD, ContactCRUD, ChatCRUD
+from src.database.crud import UserCRUD, ContactCRUD, DialogCRUD
 from src.config import settings
 
 
@@ -19,5 +19,5 @@ class DatabaseProvider(Provider):
         return ContactCRUD(manager)
 
     @provide(scope=Scope.APP)
-    def get_chat_crud(self, manager: DatabaseManager) -> ChatCRUD:
-        return ChatCRUD(manager)
+    def get_dialog_crud(self, manager: DatabaseManager) -> DialogCRUD:
+        return DialogCRUD(manager)

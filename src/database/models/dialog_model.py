@@ -7,10 +7,10 @@ from src.database.models.base_model import BaseModel
 from src.database.models.user_relation_mixin import UserRelationMixin
 
 
-class ChatModel(UserRelationMixin, BaseModel):
-    __tablename__ = "chats"
+class DialogModel(UserRelationMixin, BaseModel):
+    __tablename__ = "dialogs"
     
-    _user_back_populates = "chats"
+    _user_back_populates = "dialogs"
 
     user_message: Mapped[str] = mapped_column(Text)
     chat_bot_message: Mapped[str] = mapped_column(Text)
