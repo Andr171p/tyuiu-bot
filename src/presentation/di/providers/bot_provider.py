@@ -13,7 +13,7 @@ class BotProvider(Provider):
     def get_bot(self) -> Bot:
         return Bot(
             token=settings.bot.token,
-            parse_mode=DefaultBotProperties(parse_mode=ParseMode.HTML)
+            default=DefaultBotProperties(parse_mode=ParseMode.HTML)
         )
 
     '''
