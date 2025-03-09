@@ -14,7 +14,10 @@ class ChatBotProvider(Provider):
     @provide(scope=Scope.APP)
     def get_chat_bot_use_case(
             self,
-            chat_bot_api: ChatBotAPI,
+            chatbot_api: ChatBotAPI,
             dialog_repository: DialogRepository
     ) -> ChatBotUseCase:
-        return ChatBotUseCase(chat_bot_api, dialog_repository=dialog_repository)
+        return ChatBotUseCase(
+            chatbot_api=chatbot_api,
+            dialog_repository=dialog_repository
+        )

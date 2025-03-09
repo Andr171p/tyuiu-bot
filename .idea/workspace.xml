@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 add contacts response schemas">
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas/chats_schemas.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 fix: chatbot use case">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,22 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00049" summary="[tyuiu-rag-bot] 22.01.2025 update in js script">
-      <option name="closed" value="true" />
-      <created>1737555306639</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1737555306639</updated>
-    </task>
-    <task id="LOCAL-00050" summary="[tyuiu-rag-bot] 22.01.2025 update in js script fix">
-      <option name="closed" value="true" />
-      <created>1737555433431</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1737555433431</updated>
     </task>
     <task id="LOCAL-00051" summary="[tyuiu-rag-bot] 22.01.2025 update charts">
       <option name="closed" value="true" />
@@ -611,12 +595,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741527356984</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="09.03.2025 add chats schemas">
+      <option name="closed" value="true" />
+      <created>1741528401796</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1741528401796</updated>
+    </task>
+    <task id="LOCAL-00099" summary="09.03.2025 fix: chatbot use case">
+      <option name="closed" value="true" />
+      <created>1741528683461</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1741528683461</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="18.02.2025" />
-    <MESSAGE value="18.02.2025 fix notification response" />
     <MESSAGE value="18.02.2025 fix notification router" />
     <MESSAGE value="03.03.2025 optimize contact crud read method" />
     <MESSAGE value="03.03.2025 developed notification use case" />
@@ -640,6 +638,8 @@
     <MESSAGE value="09.03.2025 add users response schemas" />
     <MESSAGE value="09.03.2025 refactor chatbot api" />
     <MESSAGE value="09.03.2025 add contacts response schemas" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 add contacts response schemas" />
+    <MESSAGE value="09.03.2025 add chats schemas" />
+    <MESSAGE value="09.03.2025 fix: chatbot use case" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 fix: chatbot use case" />
   </component>
 </project>

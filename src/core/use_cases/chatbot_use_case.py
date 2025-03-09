@@ -6,14 +6,14 @@ from src.utils import chat_history_saver
 
 
 class ChatBotUseCase:
-    def __init__(self, chat_bot_api: ChatBotAPI, **kwargs) -> None:
-        self._chat_bot_api = chat_bot_api
-        self._dialog_repository: Optional[DialogRepository] = kwargs.get("dialog_repository")
+    def __init__(
+            self,
+            chatbot_api: ChatBotAPI,
+            dialog_repository: Optional[DialogRepository]
+    ) -> None:
+        self._chatbot_api = chatbot_api
+        self._dialog_repository = dialog_repository
 
-    def __post_init__(self) -> None:
-        self.answer = chat_history_saver(self._dialog_repository)(self.answer)
-
-    @chat_history_saver(dialog_repository=None)
+    @chat_history_saver
     async def answer(self, question: str, **kwargs) -> str:
-        answer = await self._chat_bot_api.answer(question)
-        return answer
+        return await self._chatbot_api.answer(question)
