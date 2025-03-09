@@ -16,9 +16,9 @@ class DialogRepository(BaseRepository):
         id = await self._crud.create(DialogModel(**dialog.model_dump()))
         return id
 
-    async def get_by_user_id(self, user_id: int) -> Union[Dialog, None]:
-        dialog = await self._crud.read_by_user_id(user_id)
-        return Dialog.model_validate(dialog) if dialog else None
+    async def get_by_user_id(self, user_id: int) -> List[Union[Dialog, None]]:
+        dialogs = await self._crud.read_by_user_id(user_id)
+        return [Dialog.model_validate(dialog) for dialog in dialogs] if dialogs else []
     
     async def get_by_user_id_with_limit(
         self,

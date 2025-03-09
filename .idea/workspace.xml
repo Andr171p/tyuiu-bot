@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 fix dialog entity">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 debug dialogs repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/chat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/contact.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/message.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/notification.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/dialog_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/dialog_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,14 +216,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00054" summary="[tyuiu-rag-bot] 22.01.2025 import charts +">
-      <option name="closed" value="true" />
-      <created>1737557786409</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1737557786409</updated>
     </task>
     <task id="LOCAL-00055" summary="[tyuiu-rag-bot] 23.01.2025">
       <option name="closed" value="true" />
@@ -614,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741530149255</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="09.03.2025 debug dialogs repo">
+      <option name="closed" value="true" />
+      <created>1741531193707</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1741531193707</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="03.03.2025 add di providers" />
     <MESSAGE value="03.03.2025 add telegram bot provider" />
     <MESSAGE value="03.03.2025 create start presenter" />
     <MESSAGE value="03.03.2025 add presentation routers" />
@@ -643,6 +637,7 @@
     <MESSAGE value="09.03.2025 fix: chatbot chat saver" />
     <MESSAGE value="09.03.2025 rename message file" />
     <MESSAGE value="09.03.2025 fix dialog entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 fix dialog entity" />
+    <MESSAGE value="09.03.2025 debug dialogs repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 debug dialogs repo" />
   </component>
 </project>
