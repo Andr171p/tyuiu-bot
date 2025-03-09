@@ -1,10 +1,9 @@
 from fastapi import APIRouter, status
-from fastapi.responses import JSONResponse
-
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import UserRepository
 from src.core.entities import User
+from src.presentation.api.v1.schemas import UsersResponse, UsersCountResponse
 
 
 users_router = APIRouter(
@@ -14,10 +13,24 @@ users_router = APIRouter(
 )
 
 
-@users_router.get(path="/", status_code=status.HTTP_200_OK)
-async def get_users(user_repository: FromDishka[UserRepository]) -> JSONResponse:
+@users_router.get(
+    path="/",
+    response_model=UsersResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_users(user_repository: FromDishka[UserRepository]) -> UsersResponse:
     users = await user_repository.get_all()
-    return JSONResponse(content={"users": users})
+    return UsersResponse(users=users)
+
+
+@users_router.get(
+    path="/count/",
+    response_model=UsersCountResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_users_count(user_repository: FromDishka[UserRepository]) -> UsersCountResponse:
+    users_count = await user_repository.get_total_count()
+    return UsersCountResponse(count=users_count)
 
 
 @users_router.get(
@@ -31,12 +44,3 @@ async def get_user_by_user_id(
 ) -> User:
     user = await user_repository.get_by_user_id(user_id)
     return user
-
-
-@users_router.get(
-    path="/count/",
-    status_code=status.HTTP_200_OK
-)
-async def get_users_count(user_repository: FromDishka[UserRepository]) -> JSONResponse:
-    users_count = await user_repository.get_total_count()
-    return JSONResponse(content={"count": users_count})
