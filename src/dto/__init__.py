@@ -1,5 +1,4 @@
 __all__ = (
-    "ChatPaginated",
     "SharedContactUsers",
     "NotificationWithPhoto",
     "NotificationByUserId",
@@ -8,9 +7,8 @@ __all__ = (
     "NotificationWithPhotoByPhoneNumber"
 )
 
-from src.dto.chat_history_paginated import ChatPaginated
 from src.dto.shared_contacts_users import SharedContactUsers
-from src.dto.notifications_dto import (
+from src.dto.notifications import (
     NotificationWithPhoto,
     NotificationByUserId,
     NotificationByPhoneNumber,

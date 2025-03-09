@@ -5,6 +5,6 @@ from pydantic import BaseModel
 from src.core.entities.dialog import Dialog
 
 
-class Chat(BaseModel):
+class ChatHistory(BaseModel):
     user_id: int
     dialogs: List[Dialog]

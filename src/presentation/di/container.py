@@ -6,8 +6,7 @@ from src.presentation.di.providers import (
     RepositoryProvider,
     UsersProvider,
     ChatBotProvider,
-    NotificationProvider,
-    ChatsProvider
+    NotificationProvider
 )
 
 
@@ -18,5 +17,4 @@ container = make_async_container(
     UsersProvider(),
     ChatBotProvider(),
     NotificationProvider(),
-    ChatsProvider()
 )

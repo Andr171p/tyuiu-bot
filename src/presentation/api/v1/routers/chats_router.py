@@ -1,75 +1,74 @@
-from fastapi import APIRouter, status
+from fastapi import APIRouter, Query, status
 from fastapi.responses import JSONResponse
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.core.use_cases import ChatsUseCase
-from src.core.entities import Chat
-from src.dto import ChatPaginated
+from src.repository import DialogRepository
+from src.core.use_cases import UsersUseCase
+from src.core.entities import ChatHistory, ChatHistoryPage
 
 
 chats_router = APIRouter(
     prefix="/api/v1/chats",
-    tags=["Chats"],
+    tags=["Chats history"],
     route_class=DishkaRoute
 )
 
 
-@chats_router.get(path="/{user_id}/", response_model=Chat)
+@chats_router.get(path="/", status_code=status.HTTP_200_OK)
+async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> JSONResponse:
+    dialogs = await dialog_repository.get_all()
+    return JSONResponse(content={"dialogs": dialogs})
+
+
+@chats_router.get(
+    path="/{user_id}/",
+    response_model=ChatHistory,
+    status_code=status.HTTP_200_OK
+)
 async def get_chat_history_by_user_id(
         user_id: int,
-        chats: FromDishka[ChatsUseCase]
-) -> JSONResponse:
-    chat = await chats.get_history_by_user_id(user_id)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content=chat.model_dump()
-    )
+        users_use_case: FromDishka[UsersUseCase]
+) -> ChatHistory:
+    chat_history = await users_use_case.get_chat_history(user_id)
+    return chat_history
 
 
-@chats_router.get(path="/{user_id}/page={page}/limit={limit}", response_model=ChatPaginated)
-async def get_chat_history_paginated_by_user_id(
+@chats_router.get(
+    path="/{user_id}/",
+    response_model=ChatHistoryPage,
+    status_code=status.HTTP_200_OK
+)
+async def get_chat_history_page_by_user_id(
         user_id: int,
-        page: int,
-        limit: int,
-        chats: FromDishka[ChatsUseCase]
-) -> JSONResponse:
-    chat_page = await chats.get_paginated_history_by_user_id(
+        users_use_case: FromDishka[UsersUseCase],
+        page: int = Query(ge=1, default=1),
+        limit: int = Query(ge=1, le=100, default=10),
+) -> ChatHistoryPage:
+    chat_history_page = await users_use_case.get_page_of_chat_history(
         user_id=user_id,
         page=page,
         limit=limit
     )
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content=chat_page.model_dump()
-    )
+    return chat_history_page
 
 
-@chats_router.get(path="/count/")
-async def get_dialogs_count(chats: FromDishka[ChatsUseCase]) -> JSONResponse:
-    dialogs_count = await chats.get_total_dialogs_count()
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content={"count": dialogs_count}
-    )
+@chats_router.get(
+    path="/count",
+    status_code=status.HTTP_200_OK
+)
+async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> JSONResponse:
+    dialogs_count = await dialog_repository.get_total_count()
+    return JSONResponse(content={"count": dialogs_count})
 
 
-@chats_router.get(path="/{user_id}/count/")
+@chats_router.get(
+    path="/{user_id}/count/",
+    status_code=status.HTTP_200_OK
+)
 async def get_dialogs_count_by_user_id(
         user_id: int,
-        chats: FromDishka[ChatsUseCase]
+        dialog_repository: FromDishka[DialogRepository]
 ) -> JSONResponse:
-    dialogs_count = await chats.get_dialogs_count_by_user_id(user_id)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content={"count": dialogs_count}
-    )
-
-
-@chats_router.get(path="/")
-async def get_chats(chats: FromDishka[ChatsUseCase]) -> JSONResponse:
-    dialogs = await chats.get_dialogs_history()
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content={"dialogs": [dialog.model_dump() for dialog in dialogs]}
-    )
+    dialogs_count = await dialog_repository.get_count_by_user_id(user_id)
+    return JSONResponse(content={"count": dialogs_count})

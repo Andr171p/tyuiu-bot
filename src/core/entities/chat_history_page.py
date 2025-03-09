@@ -5,10 +5,9 @@ from pydantic import BaseModel
 from src.core.entities import Dialog
 
 
-class ChatPaginated(BaseModel):
+class ChatHistoryPage(BaseModel):
     user_id: int
     total: int
     page: int
     limit: int
     dialogs: List[Dialog]
-    

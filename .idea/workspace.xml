@@ -4,19 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="05.03.2025">
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/di/providers/chats_provider.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="05.03.2025 add api/v1 routers">
+      <change afterPath="$PROJECT_DIR$/src/core/entities/chat_history_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/chat_bot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/chat_history.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_history_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chats_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_bot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chats_use_case.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/chat_history.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/chat_history_paginated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/chat_history_paginated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/chat_history_paginated.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/notifications_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/di/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/container.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chat_bot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chats_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,14 +236,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00036" summary="[tyuiu-rag-bot] 22.01.2025 new static files">
-      <option name="closed" value="true" />
-      <created>1737492616282</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1737492616282</updated>
     </task>
     <task id="LOCAL-00037" summary="[tyuiu-rag-bot] 22.01.2025 init templates">
       <option name="closed" value="true" />
@@ -619,11 +621,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741183454014</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="05.03.2025 add api/v1 routers">
+      <option name="closed" value="true" />
+      <created>1741189638932</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1741189638932</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notification" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notifications" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 new chart lib" />
@@ -648,6 +657,7 @@
     <MESSAGE value="03.03.2025 add phone number formaters" />
     <MESSAGE value="04.03.2025 create chat use case" />
     <MESSAGE value="05.03.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="05.03.2025" />
+    <MESSAGE value="05.03.2025 add api/v1 routers" />
+    <option name="LAST_COMMIT_MESSAGE" value="05.03.2025 add api/v1 routers" />
   </component>
 </project>

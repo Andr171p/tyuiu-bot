@@ -1,7 +1,6 @@
 from dishka import Provider, provide, Scope
 
-from src.repository import UserRepository
-from src.repository import ContactRepository
+from src.repository import UserRepository, ContactRepository, DialogRepository
 from src.core.use_cases import UsersUseCase
 
 
@@ -10,6 +9,7 @@ class UsersProvider(Provider):
     def get_users_use_case(
             self,
             users_repository: UserRepository,
-            contact_repository: ContactRepository
+            contact_repository: ContactRepository,
+            dialog_repository: DialogRepository
     ) -> UsersUseCase:
-        return UsersUseCase(users_repository, contact_repository)
+        return UsersUseCase(users_repository, contact_repository, dialog_repository)
