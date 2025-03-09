@@ -31,6 +31,7 @@ class DialogRepository(BaseRepository):
             page=page, 
             limit=limit
         )
+        print(dialogs)
         return [Dialog.model_validate(dialog) for dialog in dialogs] if dialogs else []
     
     async def get_all(self) -> List[Union[Dialog, None]]:
