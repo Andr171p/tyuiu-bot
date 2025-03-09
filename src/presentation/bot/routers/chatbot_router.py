@@ -14,5 +14,6 @@ chatbot_router = Router()
 async def answer(message: Message, chatbot: FromDishka[ChatBotUseCase]) -> None:
     await message.bot.send_chat_action(message.chat.id, "typing")
     user_question: str = message.text
-    chatbot_answer = await chatbot.answer(user_question)
+    user_id: int = message.from_user.id
+    chatbot_answer = await chatbot.answer(user_question, user_id=user_id)
     await ChatPresenter.present(message, answer=chatbot_answer)

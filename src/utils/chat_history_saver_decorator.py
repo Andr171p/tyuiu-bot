@@ -6,7 +6,7 @@ from src.core.entities import Dialog
 from src.repository import DialogRepository
 
 
-def dialog_saver(dialog_repository: Optional[DialogRepository]):
+def chat_history_saver(dialog_repository: Optional[DialogRepository]):
     def decorator(func: Callable[..., Coroutine[Any, Any, str]]):
         @wraps(func)
         async def wrapper(self, question: str, *args, **kwargs) -> str:

@@ -2,7 +2,7 @@ from typing import Optional
 
 from src.apis import ChatBotAPI
 from src.repository import DialogRepository
-from src.utils import dialog_saver
+from src.utils import chat_history_saver
 
 
 class ChatBotUseCase:
@@ -11,9 +11,9 @@ class ChatBotUseCase:
         self._dialog_repository: Optional[DialogRepository] = kwargs.get("dialog_repository")
 
     def __post_init__(self) -> None:
-        self.answer = dialog_saver(self._dialog_repository)(self.answer)
+        self.answer = chat_history_saver(self._dialog_repository)(self.answer)
 
-    @dialog_saver(dialog_repository=None)
+    @chat_history_saver(dialog_repository=None)
     async def answer(self, question: str, **kwargs) -> str:
         answer = await self._chat_bot_api.answer(question)
         return answer
