@@ -55,7 +55,7 @@ class DialogCRUD(BaseCRUD):
     async def read_count_by_user_id(self, user_id: int) -> int | None:
         async with self._manager.session() as session:
             stmt = (
-                select(func.count)
+                select(func.count())
                 .select_from(DialogModel)
                 .where(DialogModel.user_id == user_id)
             )
@@ -65,7 +65,7 @@ class DialogCRUD(BaseCRUD):
     async def read_total_count(self) -> int | None:
         async with self._manager.session() as session:
             stmt = (
-                select(func.count)
+                select(func.count())
                 .select_from(DialogModel)
             )
             dialogs_count = await session.execute(stmt)

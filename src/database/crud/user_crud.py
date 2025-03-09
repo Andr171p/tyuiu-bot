@@ -38,7 +38,7 @@ class UserCRUD(BaseCRUD):
     async def read_total_count(self) -> int | None:
         async with self._manager.session() as session:
             stmt = (
-                select(func.count)
+                select(func.count())
                 .select_from(UserModel)
             )
             users_count = await session.execute(stmt)
