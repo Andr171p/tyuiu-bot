@@ -1,4 +1,5 @@
 from aiogram import Dispatcher
+from aiogram.fsm.storage.memory import MemoryStorage
 from dishka.integrations.aiogram import setup_dishka
 
 from src.presentation.bot.routers import (
@@ -9,8 +10,8 @@ from src.presentation.bot.routers import (
 from src.presentation.di import container
 
 
-async def create_dp() -> Dispatcher:
-    dp = await container.get(Dispatcher)
+def create_dp() -> Dispatcher:
+    dp = Dispatcher(storage=MemoryStorage())
     dp.include_routers(
         start_router,
         info_router,

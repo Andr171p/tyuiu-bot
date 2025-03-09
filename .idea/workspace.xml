@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 add webhook router">
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/dp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/bot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/bot_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 add presentation api v1 webhook" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,14 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00041" summary="[tyuiu-rag-bot] 22.01.2025 add statistics router">
-      <option name="closed" value="true" />
-      <created>1737548295190</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1737548295190</updated>
     </task>
     <task id="LOCAL-00042" summary="[tyuiu-rag-bot] 22.01.2025 update head">
       <option name="closed" value="true" />
@@ -614,11 +598,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741520731192</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="09.03.2025 add presentation api v1 webhook">
+      <option name="closed" value="true" />
+      <created>1741522156362</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1741522156362</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 fix json body" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add error log" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;" />
@@ -643,6 +634,7 @@
     <MESSAGE value="09.03.2025 optimize metric features" />
     <MESSAGE value="09.03.2025 refactor bot routers" />
     <MESSAGE value="09.03.2025 add webhook router" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 add webhook router" />
+    <MESSAGE value="09.03.2025 add presentation api v1 webhook" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 add presentation api v1 webhook" />
   </component>
 </project>
