@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AbstractAsyncContextManager[None]:
     bot = await container.get(Bot)
-    webhook_url: str = f"{settings.app.url}/webhook"
+    webhook_url: str = f"{settings.api.url}/webhook"
     await bot.set_webhook(
         url=webhook_url,
         allowed_updates=dp.resolve_used_update_types(),

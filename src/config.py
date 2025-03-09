@@ -12,7 +12,7 @@ load_dotenv(ENV_PATH)
 
 
 class APISettings(BaseSettings):
-    url: str = os.getenv("APP_BASE_URL")
+    url: str = os.getenv("API_BASE_URL")
 
 
 class BotSettings(BaseSettings):
@@ -39,13 +39,13 @@ class StaticSettings(BaseSettings):
     texts_dir: Path = BASE_DIR / "static" / "texts"
 
 
-class ChatBotAPISettings(BaseSettings):
-    base_url: str = os.getenv("CHAT_API_BASE_URL")
+class ChatBotSettings(BaseSettings):
+    base_url: str = os.getenv("CHATBOT_API_BASE_URL")
 
 
 class Settings(BaseSettings):
     api: APISettings = APISettings()
-    chat_bot_api: ChatBotAPISettings = ChatBotAPISettings()
+    chatbot: ChatBotSettings = ChatBotSettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
     messages: MessagesSettings = MessagesSettings()
