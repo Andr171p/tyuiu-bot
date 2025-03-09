@@ -9,7 +9,7 @@ from src.config import settings
 class ChatBotProvider(Provider):
     @provide(scope=Scope.APP)
     def get_chat_bot_api(self) -> ChatBotAPI:
-        return ChatBotAPI(settings.chat_bot_api.base_url)
+        return ChatBotAPI(settings.chatbot.base_url)
 
     @provide(scope=Scope.APP)
     def get_chat_bot_use_case(

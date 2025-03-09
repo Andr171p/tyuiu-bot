@@ -1,11 +1,10 @@
 from fastapi import APIRouter, Query, status
-from fastapi.responses import JSONResponse
-
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import DialogRepository
 from src.core.use_cases import UsersUseCase
 from src.core.entities import ChatHistory, ChatHistoryPage
+from src.presentation.api.v1.schemas import DialogsResponse, DialogsCountResponse
 
 
 chats_router = APIRouter(
@@ -15,10 +14,14 @@ chats_router = APIRouter(
 )
 
 
-@chats_router.get(path="/", status_code=status.HTTP_200_OK)
-async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> JSONResponse:
+@chats_router.get(
+    path="/",
+    response_model=DialogsResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> DialogsResponse:
     dialogs = await dialog_repository.get_all()
-    return JSONResponse(content={"dialogs": dialogs})
+    return DialogsResponse(dialogs=dialogs)
 
 
 @chats_router.get(
@@ -55,20 +58,22 @@ async def get_chat_history_page_by_user_id(
 
 @chats_router.get(
     path="/count",
+    response_model=DialogsCountResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> JSONResponse:
+async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> DialogsCountResponse:
     dialogs_count = await dialog_repository.get_total_count()
-    return JSONResponse(content={"count": dialogs_count})
+    return DialogsCountResponse(count=dialogs_count)
 
 
 @chats_router.get(
     path="/{user_id}/count/",
+    response_model=DialogsCountResponse,
     status_code=status.HTTP_200_OK
 )
 async def get_dialogs_count_by_user_id(
         user_id: int,
         dialog_repository: FromDishka[DialogRepository]
-) -> JSONResponse:
+) -> DialogsCountResponse:
     dialogs_count = await dialog_repository.get_count_by_user_id(user_id)
-    return JSONResponse(content={"count": dialogs_count})
+    return DialogsCountResponse(count=dialogs_count)
