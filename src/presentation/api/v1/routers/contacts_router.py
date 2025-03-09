@@ -1,10 +1,9 @@
 from fastapi import APIRouter, status
-from fastapi.responses import JSONResponse
-
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import ContactRepository
 from src.core.entities import Contact
+from src.presentation.api.v1.schemas import ContactsResponse, ContactsCountResponse
 
 
 contacts_router = APIRouter(
@@ -16,11 +15,22 @@ contacts_router = APIRouter(
 
 @contacts_router.get(
     path="/",
+    response_model=ContactsResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_contacts(contact_repository: FromDishka[ContactRepository]) -> JSONResponse:
+async def get_contacts(contact_repository: FromDishka[ContactRepository]) -> ContactsResponse:
     contacts = await contact_repository.get_all()
-    return JSONResponse(content={"contacts": contacts})
+    return ContactsResponse(contacts=contacts)
+
+
+@contacts_router.get(
+    path="/count/",
+    response_model=ContactsCountResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_contacts_count(contact_repository: FromDishka[ContactRepository]) -> ContactsCountResponse:
+    contacts_count = await contact_repository.get_total_count()
+    return ContactsCountResponse(count=contacts_count)
 
 
 @contacts_router.get(
@@ -34,12 +44,3 @@ async def get_contact_by_user_id(
 ) -> Contact:
     contact = await contact_repository.get_by_user_id(user_id)
     return contact
-
-
-@contacts_router.get(
-    path="/count/",
-    status_code=status.HTTP_200_OK
-)
-async def get_contacts_count(contact_repository: FromDishka[ContactRepository]) -> JSONResponse:
-    contacts_count = await contact_repository.get_total_count()
-    return JSONResponse(content={"count": contacts_count})
