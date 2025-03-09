@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 fix: chatbot use case">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 rename message file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,22 +216,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00051" summary="[tyuiu-rag-bot] 22.01.2025 update charts">
-      <option name="closed" value="true" />
-      <created>1737556834819</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1737556834819</updated>
-    </task>
-    <task id="LOCAL-00052" summary="[tyuiu-rag-bot] 22.01.2025 update charts scripts">
-      <option name="closed" value="true" />
-      <created>1737557145940</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1737557145940</updated>
     </task>
     <task id="LOCAL-00053" summary="[tyuiu-rag-bot] 22.01.2025 import charts">
       <option name="closed" value="true" />
@@ -611,12 +593,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741528683461</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="09.03.2025 fix: chatbot chat saver">
+      <option name="closed" value="true" />
+      <created>1741529587463</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1741529587463</updated>
+    </task>
+    <task id="LOCAL-00101" summary="09.03.2025 rename message file">
+      <option name="closed" value="true" />
+      <created>1741529762164</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1741529762164</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="18.02.2025 fix notification router" />
-    <MESSAGE value="03.03.2025 optimize contact crud read method" />
     <MESSAGE value="03.03.2025 developed notification use case" />
     <MESSAGE value="03.03.2025 add di providers" />
     <MESSAGE value="03.03.2025 add telegram bot provider" />
@@ -640,6 +636,8 @@
     <MESSAGE value="09.03.2025 add contacts response schemas" />
     <MESSAGE value="09.03.2025 add chats schemas" />
     <MESSAGE value="09.03.2025 fix: chatbot use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 fix: chatbot use case" />
+    <MESSAGE value="09.03.2025 fix: chatbot chat saver" />
+    <MESSAGE value="09.03.2025 rename message file" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 rename message file" />
   </component>
 </project>

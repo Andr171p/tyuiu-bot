@@ -22,7 +22,7 @@ def chat_history_saver(func: Callable[[T, str, Any], Coroutine[Any, Any, str]]) 
             dialog = Dialog(
                 user_id=user_id,
                 user_message=question,
-                chat_bot_message=answer,
+                chatbot_message=answer,
                 created_at=datetime.now()
             )
             await self._dialog_repository.save(dialog)
