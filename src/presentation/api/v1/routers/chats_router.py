@@ -26,19 +26,6 @@ async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> Dialog
 
 @chats_router.get(
     path="/{user_id}/",
-    response_model=ChatHistory,
-    status_code=status.HTTP_200_OK
-)
-async def get_chat_history_by_user_id(
-        user_id: int,
-        users_use_case: FromDishka[UsersUseCase]
-) -> ChatHistory:
-    chat_history = await users_use_case.get_chat_history(user_id)
-    return chat_history
-
-
-@chats_router.get(
-    path="/{user_id}/",
     response_model=ChatHistoryPage,
     status_code=status.HTTP_200_OK
 )
@@ -54,6 +41,19 @@ async def get_chat_history_page_by_user_id(
         limit=limit
     )
     return chat_history_page
+
+
+@chats_router.get(
+    path="/{user_id}/",
+    response_model=ChatHistory,
+    status_code=status.HTTP_200_OK
+)
+async def get_chat_history_by_user_id(
+        user_id: int,
+        users_use_case: FromDishka[UsersUseCase]
+) -> ChatHistory:
+    chat_history = await users_use_case.get_chat_history(user_id)
+    return chat_history
 
 
 @chats_router.get(
