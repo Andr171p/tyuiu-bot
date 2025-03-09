@@ -16,7 +16,7 @@ notification_router = Router()
 
 @notification_router.message(Command("subscribe"))
 async def share_contact_for_subscribe(message: Message) -> None:
-    file_path = settings.static.texts_dir / "subscribe.txt"
+    file_path = settings.static.texts_dir / "Share_contact_message.txt"
     text = await load_txt_async(file_path)
     await message.answer(
         text=text,
