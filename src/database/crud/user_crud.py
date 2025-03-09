@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Sequence
+from typing import TYPE_CHECKING, Sequence, Dict
 
 from sqlalchemy import select, func
 
@@ -43,3 +43,16 @@ class UserCRUD(BaseCRUD):
             )
             users_count = await session.execute(stmt)
         return users_count.scalar_one_or_none()
+
+    async def read_count_per_day(self) -> ...:
+        async with self._manager.session() as session:
+            stmt = (
+                select(
+                    func.date(UserModel.created_at).label("date"),
+                    func.count().label("count")
+                )
+                .group_by(func.date(UserModel.created_at))
+                .order_by(func.date(UserModel.created_at))
+            )
+            counts_per_days = await session.execute(stmt)
+        return counts_per_days.all()

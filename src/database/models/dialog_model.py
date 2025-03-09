@@ -13,7 +13,7 @@ class DialogModel(UserRelationMixin, BaseModel):
     _user_back_populates = "dialogs"
 
     user_message: Mapped[str] = mapped_column(Text)
-    chat_bot_message: Mapped[str] = mapped_column(Text)
+    chatbot_message: Mapped[str] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
     def __str__(self) -> str:
