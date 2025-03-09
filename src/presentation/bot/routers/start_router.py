@@ -13,7 +13,7 @@ start_router = Router()
 
 
 @start_router.message(Command("start"))
-async def start(message: Message, users: FromDishka[UsersUseCase]) -> None:
+async def start(message: Message, users_use_case: FromDishka[UsersUseCase]) -> None:
     user = UserMapper.from_message(message)
-    await users.register(user)
+    await users_use_case.register(user)
     await StartPresenter.present(message)
