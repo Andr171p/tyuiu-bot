@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 fix api url">
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas/users_schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 add users response schemas">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,14 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00046" summary="[tyuiu-rag-bot] 22.01.2025 chats refactor">
-      <option name="closed" value="true" />
-      <created>1737550608637</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1737550608637</updated>
     </task>
     <task id="LOCAL-00047" summary="[tyuiu-rag-bot] 22.01.2025 new index">
       <option name="closed" value="true" />
@@ -611,11 +600,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741523026453</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="09.03.2025 add users response schemas">
+      <option name="closed" value="true" />
+      <created>1741526705589</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1741526705590</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add requests params" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 add value extract in scripts" />
     <MESSAGE value="[tyuiu-rag-bot] 27.01.2025 work admin panel" />
     <MESSAGE value="18.02.2025" />
@@ -640,6 +636,7 @@
     <MESSAGE value="09.03.2025 add route class to wh" />
     <MESSAGE value="09.03.2025 refactor bot properties" />
     <MESSAGE value="09.03.2025 fix api url" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 fix api url" />
+    <MESSAGE value="09.03.2025 add users response schemas" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 add users response schemas" />
   </component>
 </project>

@@ -6,7 +6,7 @@ class ChatBotAPI:
         self._base_url = base_url
     
     async def answer(self, question: str) -> str:
-        url = f"{self._base_url}/chat/"
+        url = f"{self._base_url}/chatbot/"
         headers = {"Content-Type": "application/json; charset=UTF-8"}
         json = {"question": question}
         async with HTTPClient() as http_client:
