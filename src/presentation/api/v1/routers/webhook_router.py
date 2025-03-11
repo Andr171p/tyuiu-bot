@@ -7,7 +7,10 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 from src.presentation.bot.dp import dp
 
 
-webhook_router = APIRouter(route_class=DishkaRoute)
+webhook_router = APIRouter(
+    tags=["Telegram webhooks"],
+    route_class=DishkaRoute
+)
 
 
 @webhook_router.post(path="/webhook")
