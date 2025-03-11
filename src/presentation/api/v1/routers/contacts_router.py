@@ -3,7 +3,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import ContactRepository
 from src.core.entities import Contact
-from src.presentation.api.v1.schemas import ContactsResponse, ContactsCountResponse
+from src.schemas import ContactsResponse, ContactsCountResponse
 
 
 contacts_router = APIRouter(

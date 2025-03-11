@@ -3,7 +3,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import UserRepository
 from src.core.entities import User
-from src.presentation.api.v1.schemas import UsersResponse, UsersCountResponse
+from src.schemas import UsersResponse, UsersCountResponse
 
 
 users_router = APIRouter(

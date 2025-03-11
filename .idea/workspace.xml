@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="09.03.2025 fix count func in crud">
-      <change afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/notification_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas/chats_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/chats_schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas/contacts_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/contacts_schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas/users_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/users_schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/notification_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/notification_provider.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 fix field detail in notification schema">
+      <change beforePath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,22 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00058" summary="[tyuiu-rag-bot] 23.01.2025 add notification api tag">
-      <option name="closed" value="true" />
-      <created>1737638432701</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1737638432701</updated>
-    </task>
-    <task id="LOCAL-00059" summary="[tyuiu-rag-bot] 27.01.2025">
-      <option name="closed" value="true" />
-      <created>1737924545865</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1737924545865</updated>
     </task>
     <task id="LOCAL-00060" summary="[tyuiu-rag-bot] 27.01.2025 fix endpoint route">
       <option name="closed" value="true" />
@@ -618,12 +592,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741532736435</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="11.03.2025 add notification controller">
+      <option name="closed" value="true" />
+      <created>1741686246061</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1741686246062</updated>
+    </task>
+    <task id="LOCAL-00108" summary="11.03.2025 fix field detail in notification schema">
+      <option name="closed" value="true" />
+      <created>1741686425118</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1741686425118</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="03.03.2025 add phone number formaters" />
-    <MESSAGE value="04.03.2025 create chat use case" />
     <MESSAGE value="05.03.2025" />
     <MESSAGE value="05.03.2025 add api/v1 routers" />
     <MESSAGE value="09.03.2025 api v1 routing" />
@@ -647,6 +635,8 @@
     <MESSAGE value="09.03.2025 fix dialog repository" />
     <MESSAGE value="09.03.2025 switch endpoints" />
     <MESSAGE value="09.03.2025 fix count func in crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.03.2025 fix count func in crud" />
+    <MESSAGE value="11.03.2025 add notification controller" />
+    <MESSAGE value="11.03.2025 fix field detail in notification schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 fix field detail in notification schema" />
   </component>
 </project>

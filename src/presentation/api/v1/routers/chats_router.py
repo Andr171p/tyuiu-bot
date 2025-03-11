@@ -4,7 +4,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 from src.repository import DialogRepository
 from src.core.use_cases import UsersUseCase
 from src.core.entities import ChatHistory, ChatHistoryPage
-from src.presentation.api.v1.schemas import DialogsResponse, DialogsCountResponse
+from src.schemas import DialogsResponse, DialogsCountResponse
 
 
 chats_router = APIRouter(
