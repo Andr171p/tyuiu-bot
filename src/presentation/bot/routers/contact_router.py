@@ -10,7 +10,7 @@ from src.presenters import GetShareContactDetailsPresenter
 contact_router = Router()
 
 
-@contact_router.message(Command("share_contact"))
+@contact_router.message(Command("subscribe"))
 async def get_share_contact_details(message: Message) -> None:
     await GetShareContactDetailsPresenter(message=message).present()
 
