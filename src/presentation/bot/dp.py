@@ -16,8 +16,8 @@ def create_dp() -> Dispatcher:
     dp.include_routers(
         start_router,
         info_router,
-        chatbot_router,
-        contact_router
+        contact_router,
+        chatbot_router
     )
     setup_dishka(
         container=container,

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 fic share contact method in users use case">
-      <change afterPath="$PROJECT_DIR$/src/controllers/chatbot_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenters/chatbot_presenter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/contact_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/contact_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/info_presenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/info_presenter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/message_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/start_presenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/start_presenter.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 rename command" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,30 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00070" summary="[tyuiu-rag-bot] 27.01.2025 add requests params">
-      <option name="closed" value="true" />
-      <created>1737937862058</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1737937862058</updated>
-    </task>
-    <task id="LOCAL-00071" summary="[tyuiu-rag-bot] 27.01.2025 add value extract in scripts">
-      <option name="closed" value="true" />
-      <created>1737938012166</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1737938012166</updated>
-    </task>
-    <task id="LOCAL-00072" summary="[tyuiu-rag-bot] 27.01.2025 work admin panel">
-      <option name="closed" value="true" />
-      <created>1737938208296</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1737938208296</updated>
     </task>
     <task id="LOCAL-00073" summary="18.02.2025">
       <option name="closed" value="true" />
@@ -620,13 +582,34 @@
       <option name="project" value="LOCAL" />
       <updated>1741693408007</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="11.03.2025 add chatbot controller">
+      <option name="closed" value="true" />
+      <created>1741694441095</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1741694441095</updated>
+    </task>
+    <task id="LOCAL-00120" summary="11.03.2025 add contact router to dp">
+      <option name="closed" value="true" />
+      <created>1741694498612</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1741694498612</updated>
+    </task>
+    <task id="LOCAL-00121" summary="11.03.2025 rename command">
+      <option name="closed" value="true" />
+      <created>1741694702362</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1741694702362</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 fix api url" />
-    <MESSAGE value="09.03.2025 add users response schemas" />
-    <MESSAGE value="09.03.2025 refactor chatbot api" />
     <MESSAGE value="09.03.2025 add contacts response schemas" />
     <MESSAGE value="09.03.2025 add chats schemas" />
     <MESSAGE value="09.03.2025 fix: chatbot use case" />
@@ -649,6 +632,9 @@
     <MESSAGE value="11.03.2025 add users controller" />
     <MESSAGE value="11.03.2025 add contact router" />
     <MESSAGE value="11.03.2025 fic share contact method in users use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 fic share contact method in users use case" />
+    <MESSAGE value="11.03.2025 add chatbot controller" />
+    <MESSAGE value="11.03.2025 add contact router to dp" />
+    <MESSAGE value="11.03.2025 rename command" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 rename command" />
   </component>
 </project>
