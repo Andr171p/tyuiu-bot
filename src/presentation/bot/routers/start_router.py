@@ -1,19 +1,17 @@
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters import Command
-
 from dishka.integrations.aiogram import FromDishka
 
-from src.core.use_cases import UsersUseCase
-from src.mappers import UserMapper
-from src.presentation.bot.presenters import StartPresenter
+from src.controllers import UsersController
 
 
 start_router = Router()
 
 
 @start_router.message(Command("start"))
-async def start(message: Message, users_use_case: FromDishka[UsersUseCase]) -> None:
-    user = UserMapper.from_message(message)
-    await users_use_case.register(user)
-    await StartPresenter.present(message)
+async def start(
+        message: Message,
+        users_controller: FromDishka[UsersController]
+) -> None:
+    await users_controller.register_after_start(message)

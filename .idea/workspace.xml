@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 add chats controller" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 changed total count endpoint in chats router">
+      <change afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenters/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenters/message_presenter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenters/start_presenter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,22 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00065" summary="[tyuiu-rag-bot] 27.01.2025 fix json body">
-      <option name="closed" value="true" />
-      <created>1737930495945</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1737930495945</updated>
-    </task>
-    <task id="LOCAL-00066" summary="[tyuiu-rag-bot] 27.01.2025 add error log">
-      <option name="closed" value="true" />
-      <created>1737931858417</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1737931858417</updated>
     </task>
     <task id="LOCAL-00067" summary="[tyuiu-rag-bot] 27.01.2025 add fix json body">
       <option name="closed" value="true" />
@@ -606,12 +599,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741689698099</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="11.03.2025 changed endpoints in chats router">
+      <option name="closed" value="true" />
+      <created>1741690025383</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1741690025383</updated>
+    </task>
+    <task id="LOCAL-00115" summary="11.03.2025 changed total count endpoint in chats router">
+      <option name="closed" value="true" />
+      <created>1741690271414</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1741690271414</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 add webhook router" />
-    <MESSAGE value="09.03.2025 add presentation api v1 webhook" />
     <MESSAGE value="09.03.2025 make sync creation of dp" />
     <MESSAGE value="09.03.2025 add route class to wh" />
     <MESSAGE value="09.03.2025 refactor bot properties" />
@@ -635,6 +642,8 @@
     <MESSAGE value="11.03.2025 add tags in wh router" />
     <MESSAGE value="11.03.2025 fix notifications" />
     <MESSAGE value="11.03.2025 add chats controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 add chats controller" />
+    <MESSAGE value="11.03.2025 changed endpoints in chats router" />
+    <MESSAGE value="11.03.2025 changed total count endpoint in chats router" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 changed total count endpoint in chats router" />
   </component>
 </project>
