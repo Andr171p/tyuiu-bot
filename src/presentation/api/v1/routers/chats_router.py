@@ -37,6 +37,18 @@ async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> 
 
 
 @chats_router.get(
+    path="/per-day-count/",
+    response_model=PerDayDistributionResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_per_day_count_distribution(
+        dialog_repository: FromDishka[DialogRepository]
+) -> PerDayDistributionResponse:
+    distribution = await dialog_repository.get_count_per_day()
+    return PerDayDistributionResponse(distribution=distribution)
+
+
+@chats_router.get(
     path="/{user_id}/",
     response_model=Union[ChatHistory, ChatHistoryPage],
     status_code=status.HTTP_200_OK
@@ -68,15 +80,3 @@ async def get_dialogs_count_by_user_id(
 ) -> DialogsCountResponse:
     dialogs_count = await dialog_repository.get_count_by_user_id(user_id)
     return DialogsCountResponse(count=dialogs_count)
-
-
-@chats_router.get(
-    path="/per-day-count/",
-    response_model=PerDayDistributionResponse,
-    status_code=status.HTTP_200_OK
-)
-async def get_per_day_count_distribution(
-        dialog_repository: FromDishka[DialogRepository]
-) -> PerDayDistributionResponse:
-    distribution = await dialog_repository.get_count_per_day()
-    return PerDayDistributionResponse(distribution=distribution)

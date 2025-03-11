@@ -34,6 +34,18 @@ async def get_users_count(user_repository: FromDishka[UserRepository]) -> UsersC
 
 
 @users_router.get(
+    path="/per-day-count/",
+    response_model=PerDayDistributionResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_per_day_count_distribution(
+        user_repository: FromDishka[UserRepository]
+) -> PerDayDistributionResponse:
+    distribution = await user_repository.get_count_per_day()
+    return PerDayDistributionResponse(distribution=distribution)
+
+
+@users_router.get(
     path="/{user_id}/",
     response_model=User,
     status_code=status.HTTP_200_OK
@@ -44,15 +56,3 @@ async def get_user_by_user_id(
 ) -> User:
     user = await user_repository.get_by_user_id(user_id)
     return user
-
-
-@users_router.get(
-    path="/per-day-count/",
-    response_model=PerDayDistributionResponse,
-    status_code=status.HTTP_200_OK
-)
-async def get_per_day_count_distribution(
-        user_repository: FromDishka[UserRepository]
-) -> PerDayDistributionResponse:
-    distribution = await user_repository.get_count_per_day()
-    return PerDayDistributionResponse(distribution=distribution)

@@ -34,6 +34,18 @@ async def get_contacts_count(contact_repository: FromDishka[ContactRepository]) 
 
 
 @contacts_router.get(
+    path="/per-day-count/",
+    response_model=PerDayDistributionResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_per_day_count_distribution(
+        contact_repository: FromDishka[ContactRepository]
+) -> PerDayDistributionResponse:
+    distribution = await contact_repository.get_count_per_day()
+    return PerDayDistributionResponse(distribution=distribution)
+
+
+@contacts_router.get(
     path="/{user_id}/",
     response_model=Contact,
     status_code=status.HTTP_200_OK
@@ -44,15 +56,3 @@ async def get_contact_by_user_id(
 ) -> Contact:
     contact = await contact_repository.get_by_user_id(user_id)
     return contact
-
-
-@contacts_router.get(
-    path="/per-day-count/",
-    response_model=PerDayDistributionResponse,
-    status_code=status.HTTP_200_OK
-)
-async def get_per_day_count_distribution(
-        contact_repository: FromDishka[ContactRepository]
-) -> PerDayDistributionResponse:
-    distribution = await contact_repository.get_count_per_day()
-    return PerDayDistributionResponse(distribution=distribution)
