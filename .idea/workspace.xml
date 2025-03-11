@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 refactoring">
-      <change afterPath="$PROJECT_DIR$/src/dto/per_day_distribution.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/per_day_distribution_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/base_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/base_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/contact_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/user_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/base_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/base_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/dialog_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/dialog_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/__init__.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 change endpoints" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,22 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00075" summary="18.02.2025 fix notification router">
-      <option name="closed" value="true" />
-      <created>1739831325491</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1739831325492</updated>
-    </task>
-    <task id="LOCAL-00076" summary="03.03.2025 optimize contact crud read method">
-      <option name="closed" value="true" />
-      <created>1740996061579</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1740996061579</updated>
     </task>
     <task id="LOCAL-00077" summary="03.03.2025 developed notification use case">
       <option name="closed" value="true" />
@@ -625,12 +592,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741695240217</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="11.03.2025 add per day count methods">
+      <option name="closed" value="true" />
+      <created>1741704944858</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1741704944859</updated>
+    </task>
+    <task id="LOCAL-00125" summary="11.03.2025 change endpoints">
+      <option name="closed" value="true" />
+      <created>1741705191649</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1741705191649</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 fix: chatbot use case" />
-    <MESSAGE value="09.03.2025 fix: chatbot chat saver" />
     <MESSAGE value="09.03.2025 rename message file" />
     <MESSAGE value="09.03.2025 fix dialog entity" />
     <MESSAGE value="09.03.2025 debug dialogs repo" />
@@ -654,6 +635,8 @@
     <MESSAGE value="11.03.2025 rename command" />
     <MESSAGE value="11.03.2025 change routers in dp" />
     <MESSAGE value="11.03.2025 refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 refactoring" />
+    <MESSAGE value="11.03.2025 add per day count methods" />
+    <MESSAGE value="11.03.2025 change endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 change endpoints" />
   </component>
 </project>
