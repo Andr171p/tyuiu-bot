@@ -2,11 +2,7 @@ from aiogram.types import Message
 
 from src.core.use_cases import UsersUseCase
 from src.mappers import UserMapper, ContactMapper
-from src.presenters import (
-    StartPresenter,
-    ShareContactPresenter,
-    GetShareContactDetailsPresenter
-)
+from src.presenters import StartPresenter, ShareContactPresenter
 
 
 class UsersController:

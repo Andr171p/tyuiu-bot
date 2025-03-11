@@ -19,6 +19,8 @@ class UsersUseCase:
         await self._user_repository.save(user)
         
     async def share_contact(self, contact: Contact) -> None:
+        if await self._contact_repository.get_by_user_id(contact.user_id):
+            return
         await self._contact_repository.save(contact)
 
     async def get_chat_history(self, user_id: int) -> ChatHistory:
