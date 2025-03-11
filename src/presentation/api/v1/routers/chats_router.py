@@ -27,6 +27,16 @@ async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> Dialog
 
 
 @chats_router.get(
+    path="/count/",
+    response_model=DialogsCountResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> DialogsCountResponse:
+    dialogs_count = await dialog_repository.get_total_count()
+    return DialogsCountResponse(count=dialogs_count)
+
+
+@chats_router.get(
     path="/{user_id}/",
     response_model=Union[ChatHistory, ChatHistoryPage],
     status_code=status.HTTP_200_OK
@@ -57,14 +67,4 @@ async def get_dialogs_count_by_user_id(
         dialog_repository: FromDishka[DialogRepository]
 ) -> DialogsCountResponse:
     dialogs_count = await dialog_repository.get_count_by_user_id(user_id)
-    return DialogsCountResponse(count=dialogs_count)
-
-
-@chats_router.get(
-    path="/count/",
-    response_model=DialogsCountResponse,
-    status_code=status.HTTP_200_OK
-)
-async def get_dialogs_count(dialog_repository: FromDishka[DialogRepository]) -> DialogsCountResponse:
-    dialogs_count = await dialog_repository.get_total_count()
     return DialogsCountResponse(count=dialogs_count)
