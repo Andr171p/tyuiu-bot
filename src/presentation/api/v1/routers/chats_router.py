@@ -1,8 +1,10 @@
+from typing import Union
+
 from fastapi import APIRouter, Query, status
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import DialogRepository
-from src.core.use_cases import UsersUseCase
+from src.controllers import ChatsController
 from src.core.entities import ChatHistory, ChatHistoryPage
 from src.schemas import DialogsResponse, DialogsCountResponse
 
@@ -25,34 +27,23 @@ async def get_dialogs(dialog_repository: FromDishka[DialogRepository]) -> Dialog
 
 
 @chats_router.get(
-    path="/{user_id}/paginated/",
-    response_model=ChatHistoryPage,
-    status_code=status.HTTP_200_OK
-)
-async def get_chat_history_page_by_user_id(
-        user_id: int,
-        users_use_case: FromDishka[UsersUseCase],
-        page: int = Query(ge=1, default=1),
-        limit: int = Query(ge=1, default=10),
-) -> ChatHistoryPage:
-    chat_history_page = await users_use_case.get_page_of_chat_history(
-        user_id=user_id,
-        page=page,
-        limit=limit
-    )
-    return chat_history_page
-
-
-@chats_router.get(
     path="/{user_id}/",
-    response_model=ChatHistory,
+    response_model=Union[ChatHistory, ChatHistoryPage],
     status_code=status.HTTP_200_OK
 )
 async def get_chat_history_by_user_id(
         user_id: int,
-        users_use_case: FromDishka[UsersUseCase]
-) -> ChatHistory:
-    chat_history = await users_use_case.get_chat_history(user_id)
+        chats_controller: FromDishka[ChatsController],
+        is_paginated: bool = Query(default=False),
+        page: int = Query(ge=1, default=1),
+        limit: int = Query(ge=1, default=10),
+) -> Union[ChatHistory, ChatHistoryPage]:
+    chat_history = await chats_controller.get_chat_history(
+        user_id=user_id,
+        is_paginated=is_paginated,
+        page=page,
+        limit=limit
+    )
     return chat_history
 
 
