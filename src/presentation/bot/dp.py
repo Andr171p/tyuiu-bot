@@ -5,7 +5,8 @@ from dishka.integrations.aiogram import setup_dishka
 from src.presentation.bot.routers import (
     start_router,
     info_router,
-    chatbot_router
+    chatbot_router,
+    contact_router
 )
 from src.presentation.di import container
 
@@ -15,7 +16,8 @@ def create_dp() -> Dispatcher:
     dp.include_routers(
         start_router,
         info_router,
-        chatbot_router
+        chatbot_router,
+        contact_router
     )
     setup_dishka(
         container=container,
