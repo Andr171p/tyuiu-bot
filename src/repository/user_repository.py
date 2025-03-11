@@ -6,6 +6,7 @@ if TYPE_CHECKING:
 from src.repository.base_repository import BaseRepository
 from src.database.models import UserModel
 from src.core.entities import User
+from src.dto import PerDayDistribution
 
 
 class UserRepository(BaseRepository):
@@ -27,3 +28,7 @@ class UserRepository(BaseRepository):
     async def get_total_count(self) -> int:
         count = await self._crud.read_total_count()
         return count if count else 0
+
+    async def get_count_per_day(self) -> List[PerDayDistribution]:
+        per_days_counts = await self._crud.read_count_per_day()
+        return [PerDayDistribution(date=date, count=count) for date, count in per_days_counts]

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Sequence
+from typing import TYPE_CHECKING, Sequence, List, Tuple
+from datetime import datetime
 
 if TYPE_CHECKING:
     from src.database.database_manager import DatabaseManager
@@ -76,3 +77,16 @@ class ContactCRUD(BaseCRUD):
             )
             contacts_count = await session.execute(stmt)
         return contacts_count.scalar_one_or_none()
+
+    async def read_count_per_day(self) -> List[Tuple[datetime, int]]:
+        async with self._manager.session() as session:
+            stmt = (
+                select(
+                    func.date(ContactModel.created_at).label("date"),
+                    func.count().label("count")
+                )
+                .group_by(func.date(ContactModel.created_at))
+                .order_by(func.date(ContactModel.created_at))
+            )
+            counts_per_days = await session.execute(stmt)
+        return counts_per_days.all()

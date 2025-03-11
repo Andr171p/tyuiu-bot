@@ -2,6 +2,7 @@ from typing import TYPE_CHECKING, List
 
 if TYPE_CHECKING:
     from src.database.crud import BaseCRUD
+    from src.dto import PerDayDistribution
 
 from abc import ABC, abstractmethod
 
@@ -25,4 +26,8 @@ class BaseRepository(ABC):
     
     @abstractmethod
     async def get_total_count(self) -> int:
+        raise NotImplemented
+
+    @abstractmethod
+    async def get_count_per_day(self) -> List["PerDayDistribution"]:
         raise NotImplemented

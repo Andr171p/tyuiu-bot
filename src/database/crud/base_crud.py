@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Sequence, Union
+from typing import TYPE_CHECKING, Sequence, Union, List, Tuple
+from datetime import datetime
 
 if TYPE_CHECKING:
     from src.database.database_manager import DatabaseManager
@@ -27,4 +28,8 @@ class BaseCRUD(ABC):
     
     @abstractmethod
     async def read_total_count(self) -> int:
+        raise NotImplemented
+
+    @abstractmethod
+    async def read_count_per_day(self) -> List[Tuple[datetime, int]]:
         raise NotImplemented

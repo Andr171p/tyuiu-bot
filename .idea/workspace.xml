@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 rename command" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 refactoring">
+      <change afterPath="$PROJECT_DIR$/src/dto/per_day_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/per_day_distribution_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/base_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/base_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/contact_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/crud/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/crud/user_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/base_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/base_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/dialog_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/dialog_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,30 +61,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
-    &quot;Python.base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
-    &quot;Python.container.executor&quot;: &quot;Run&quot;,
-    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.start.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/TyuiuRAGBot&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.analytics.executor": "Run",
+    "Python.base.executor": "Run",
+    "Python.bot.executor": "Run",
+    "Python.client (1).executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.contact.executor": "Run",
+    "Python.container.executor": "Run",
+    "Python.file_loaders.executor": "Run",
+    "Python.formaters.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.start.executor": "Run",
+    "Python.user.executor": "Run",
+    "Python.user_crud.executor": "Run",
+    "Python.user_repository.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/andre/TyuiuRAGBot",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
@@ -77,29 +96,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\messages" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.contact">
-    <configuration name="analytics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/services" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/services/analytics.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.user_repository">
     <configuration name="contact" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -144,28 +141,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="formaters" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/misc" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/misc/formaters.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -188,13 +163,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="user_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/database/crud" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/database/crud/user_crud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="user_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/repository/user_repository.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.user_repository" />
+        <item itemvalue="Python.user_crud" />
         <item itemvalue="Python.contact" />
         <item itemvalue="Python.container" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.analytics" />
-        <item itemvalue="Python.formaters" />
       </list>
     </recent_temporary>
   </component>
@@ -213,22 +232,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00073" summary="18.02.2025">
-      <option name="closed" value="true" />
-      <created>1739824559569</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1739824559571</updated>
-    </task>
-    <task id="LOCAL-00074" summary="18.02.2025 fix notification response">
-      <option name="closed" value="true" />
-      <created>1739830833629</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1739830833629</updated>
     </task>
     <task id="LOCAL-00075" summary="18.02.2025 fix notification router">
       <option name="closed" value="true" />
@@ -606,12 +609,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741694702362</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="11.03.2025 change routers in dp">
+      <option name="closed" value="true" />
+      <created>1741694937436</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1741694937436</updated>
+    </task>
+    <task id="LOCAL-00123" summary="11.03.2025 refactoring">
+      <option name="closed" value="true" />
+      <created>1741695240217</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1741695240217</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 add contacts response schemas" />
-    <MESSAGE value="09.03.2025 add chats schemas" />
     <MESSAGE value="09.03.2025 fix: chatbot use case" />
     <MESSAGE value="09.03.2025 fix: chatbot chat saver" />
     <MESSAGE value="09.03.2025 rename message file" />
@@ -635,6 +652,8 @@
     <MESSAGE value="11.03.2025 add chatbot controller" />
     <MESSAGE value="11.03.2025 add contact router to dp" />
     <MESSAGE value="11.03.2025 rename command" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 rename command" />
+    <MESSAGE value="11.03.2025 change routers in dp" />
+    <MESSAGE value="11.03.2025 refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 refactoring" />
   </component>
 </project>

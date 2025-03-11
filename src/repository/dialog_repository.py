@@ -6,6 +6,7 @@ if TYPE_CHECKING:
 from src.repository.base_repository import BaseRepository
 from src.database.models import DialogModel
 from src.core.entities import Dialog
+from src.dto import PerDayDistribution
 
 
 class DialogRepository(BaseRepository):
@@ -45,4 +46,8 @@ class DialogRepository(BaseRepository):
     async def get_total_count(self) -> Union[int, None]:
         count = await self._crud.read_total_count()
         return count if count else 0
+
+    async def get_count_per_day(self) -> List[PerDayDistribution]:
+        per_days_count = await self._crud.read_count_per_day()
+        return [PerDayDistribution(date=date, count=count) for date, count in per_days_count]
     

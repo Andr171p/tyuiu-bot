@@ -3,7 +3,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.repository import ContactRepository
 from src.core.entities import Contact
-from src.schemas import ContactsResponse, ContactsCountResponse
+from src.schemas import ContactsResponse, ContactsCountResponse, PerDayDistributionResponse
 
 
 contacts_router = APIRouter(
@@ -44,3 +44,15 @@ async def get_contact_by_user_id(
 ) -> Contact:
     contact = await contact_repository.get_by_user_id(user_id)
     return contact
+
+
+@contacts_router.get(
+    path="/per-day-count/",
+    response_model=PerDayDistributionResponse,
+    status_code=status.HTTP_200_OK
+)
+async def get_per_day_count_distribution(
+        contact_repository: FromDishka[ContactRepository]
+) -> PerDayDistributionResponse:
+    distribution = await contact_repository.get_count_per_day()
+    return PerDayDistributionResponse(distribution=distribution)
