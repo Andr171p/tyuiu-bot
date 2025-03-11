@@ -12,7 +12,7 @@ contact_router = Router()
 
 @contact_router.message(Command("subscribe"))
 async def get_share_contact_details(message: Message) -> None:
-    await GetShareContactDetailsPresenter(message=message).present()
+    await GetShareContactDetailsPresenter(message).present()
 
 
 @contact_router.message(F.contact)
