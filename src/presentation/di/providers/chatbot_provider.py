@@ -3,6 +3,7 @@ from dishka import Provider, provide, Scope
 from src.apis import ChatBotAPI
 from src.repository import DialogRepository
 from src.core.use_cases import ChatBotUseCase
+from src.controllers import ChatBotController
 from src.config import settings
 
 
@@ -21,3 +22,7 @@ class ChatBotProvider(Provider):
             chatbot_api=chatbot_api,
             dialog_repository=dialog_repository
         )
+
+    @provide(scope=Scope.APP)
+    def get_chatbot_controller(self, chatbot_use_case: ChatBotUseCase) -> ChatBotController:
+        return ChatBotController(chatbot_use_case)
