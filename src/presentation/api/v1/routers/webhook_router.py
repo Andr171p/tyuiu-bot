@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Request
 from aiogram import Bot
 from aiogram.types import Update
-
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.presentation.bot.dp import dp

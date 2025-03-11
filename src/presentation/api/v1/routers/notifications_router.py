@@ -4,9 +4,9 @@ from fastapi import APIRouter, status
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.controllers import NotificationController
-from src.core.entities import Notification
-from src.dto import (
-    NotificationWithPhoto,
+from src.core.entities import (
+    NotificationAll,
+    NotificationAllWithPhoto,
     NotificationByPhoneNumber,
     NotificationWithPhotoByPhoneNumber
 )
@@ -27,8 +27,8 @@ notifications_router = APIRouter(
 )
 async def notify(
         notification: Union[
-            Notification,
-            NotificationWithPhoto,
+            NotificationAll,
+            NotificationAllWithPhoto,
             NotificationByPhoneNumber,
             NotificationWithPhotoByPhoneNumber
         ],

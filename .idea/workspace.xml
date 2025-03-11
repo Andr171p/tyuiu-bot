@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 fix field detail in notification schema">
-      <change beforePath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 add tags in wh router">
+      <change afterPath="$PROJECT_DIR$/src/controllers/chats_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/notification_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/notification_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/chat_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/chat_histories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/chat_history_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,30 +225,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00060" summary="[tyuiu-rag-bot] 27.01.2025 fix endpoint route">
-      <option name="closed" value="true" />
-      <created>1737925089040</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1737925089041</updated>
-    </task>
-    <task id="LOCAL-00061" summary="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notification">
-      <option name="closed" value="true" />
-      <created>1737925736606</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1737925736606</updated>
-    </task>
-    <task id="LOCAL-00062" summary="[tyuiu-rag-bot] 27.01.2025 fix endpoint route notifications">
-      <option name="closed" value="true" />
-      <created>1737925927873</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1737925927873</updated>
     </task>
     <task id="LOCAL-00063" summary="[tyuiu-rag-bot] 27.01.2025 new chart lib">
       <option name="closed" value="true" />
@@ -608,13 +594,34 @@
       <option name="project" value="LOCAL" />
       <updated>1741686425118</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="11.03.2025 fix add annotation in notification schema">
+      <option name="closed" value="true" />
+      <created>1741686619619</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1741686619619</updated>
+    </task>
+    <task id="LOCAL-00110" summary="11.03.2025 fix schemas imports in routers">
+      <option name="closed" value="true" />
+      <created>1741686740311</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1741686740311</updated>
+    </task>
+    <task id="LOCAL-00111" summary="11.03.2025 add tags in wh router">
+      <option name="closed" value="true" />
+      <created>1741687120420</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1741687120420</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="05.03.2025" />
-    <MESSAGE value="05.03.2025 add api/v1 routers" />
-    <MESSAGE value="09.03.2025 api v1 routing" />
     <MESSAGE value="09.03.2025 optimize metric features" />
     <MESSAGE value="09.03.2025 refactor bot routers" />
     <MESSAGE value="09.03.2025 add webhook router" />
@@ -637,6 +644,9 @@
     <MESSAGE value="09.03.2025 fix count func in crud" />
     <MESSAGE value="11.03.2025 add notification controller" />
     <MESSAGE value="11.03.2025 fix field detail in notification schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 fix field detail in notification schema" />
+    <MESSAGE value="11.03.2025 fix add annotation in notification schema" />
+    <MESSAGE value="11.03.2025 fix schemas imports in routers" />
+    <MESSAGE value="11.03.2025 add tags in wh router" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 add tags in wh router" />
   </component>
 </project>

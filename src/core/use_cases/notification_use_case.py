@@ -1,6 +1,6 @@
-from src.core.entities import Notification
-from src.dto import (
-    NotificationWithPhoto,
+from src.core.entities import (
+    NotificationAll,
+    NotificationAllWithPhoto,
     NotificationByPhoneNumber,
     NotificationWithPhotoByPhoneNumber
 )
@@ -32,7 +32,7 @@ class NotificationUseCase:
             text=notification.text
         )
 
-    async def notify_all(self, notification: Notification) -> ...:
+    async def notify_all(self, notification: NotificationAll) -> ...:
         user_ids = await self._contact_repository.get_all_user_ids()
         for user_id in user_ids:
             await self._sender_service.send_message(
@@ -40,7 +40,7 @@ class NotificationUseCase:
                 text=notification.text
             )
 
-    async def notify_all_with_photo(self, notification: NotificationWithPhoto) -> ...:
+    async def notify_all_with_photo(self, notification: NotificationAllWithPhoto) -> ...:
         user_ids = await self._contact_repository.get_all_user_ids()
         for user_id in user_ids:
             await self._sender_service.send_message_with_photo(
