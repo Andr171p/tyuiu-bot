@@ -1,8 +1,12 @@
 from aiogram.types import Message
 
 from src.core.use_cases import UsersUseCase
-from src.mappers import UserMapper
-from src.presenters import StartPresenter
+from src.mappers import UserMapper, ContactMapper
+from src.presenters import (
+    StartPresenter,
+    ShareContactPresenter,
+    GetShareContactDetailsPresenter
+)
 
 
 class UsersController:
@@ -13,3 +17,8 @@ class UsersController:
         user = UserMapper.from_message(message)
         await self._users_use_case.register(user)
         await StartPresenter(message=message).present()
+
+    async def share_contact(self, message: Message) -> None:
+        contact = ContactMapper.from_message(message)
+        await self._users_use_case.share_contact(contact)
+        await ShareContactPresenter(message=message).present()

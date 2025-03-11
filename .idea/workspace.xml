@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 changed total count endpoint in chats router">
-      <change afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenters/message_presenter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenters/start_presenter.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 add users controller">
+      <change afterPath="$PROJECT_DIR$/src/mappers/contact_mapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/contact_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenters/info_presenter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mappers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mappers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/info_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/info_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,14 +224,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00067" summary="[tyuiu-rag-bot] 27.01.2025 add fix json body">
-      <option name="closed" value="true" />
-      <created>1737932066997</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1737932066997</updated>
     </task>
     <task id="LOCAL-00068" summary="[tyuiu-rag-bot] 27.01.2025 add fix json body &quot;&quot;">
       <option name="closed" value="true" />
@@ -615,11 +609,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741690271414</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="11.03.2025 add users controller">
+      <option name="closed" value="true" />
+      <created>1741691499921</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1741691499921</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 make sync creation of dp" />
     <MESSAGE value="09.03.2025 add route class to wh" />
     <MESSAGE value="09.03.2025 refactor bot properties" />
     <MESSAGE value="09.03.2025 fix api url" />
@@ -644,6 +645,7 @@
     <MESSAGE value="11.03.2025 add chats controller" />
     <MESSAGE value="11.03.2025 changed endpoints in chats router" />
     <MESSAGE value="11.03.2025 changed total count endpoint in chats router" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 changed total count endpoint in chats router" />
+    <MESSAGE value="11.03.2025 add users controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 add users controller" />
   </component>
 </project>
