@@ -4,18 +4,18 @@ from pydantic import BaseModel
 
 
 class DeliveredResponse(BaseModel):
-    detail: Literal[
+    info: Literal[
         "notification delivered",
         "notification is not delivered"
     ]
 
 
 class SuccessfullyDeliveredResponse(DeliveredResponse):
-    detail = "notification delivered"
+    info = "notification delivered"
 
 
 class UnsuccessfullyDeliveredResponse(DeliveredResponse):
-    detail = "notification is not delivered"
+    info = "notification is not delivered"
 
 
 class DeliveredResponsePresenter:
