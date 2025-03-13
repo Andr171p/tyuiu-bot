@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 fix per day schema">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 delete app directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,14 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00078" summary="03.03.2025 add di providers">
-      <option name="closed" value="true" />
-      <created>1741003082728</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1741003082728</updated>
     </task>
     <task id="LOCAL-00079" summary="03.03.2025 add telegram bot provider">
       <option name="closed" value="true" />
@@ -610,11 +603,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741705452012</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="11.03.2025 delete app directory">
+      <option name="closed" value="true" />
+      <created>1741878115449</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1741878115449</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 fix dialog entity" />
     <MESSAGE value="09.03.2025 debug dialogs repo" />
     <MESSAGE value="09.03.2025 fix dialog repository" />
     <MESSAGE value="09.03.2025 switch endpoints" />
@@ -639,6 +639,7 @@
     <MESSAGE value="11.03.2025 add per day count methods" />
     <MESSAGE value="11.03.2025 change endpoints" />
     <MESSAGE value="11.03.2025 fix per day schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 fix per day schema" />
+    <MESSAGE value="11.03.2025 delete app directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 delete app directory" />
   </component>
 </project>
