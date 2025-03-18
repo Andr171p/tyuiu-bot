@@ -1,3 +1,4 @@
+from io import BytesIO
 from typing import Any
 
 from pydantic import BaseModel, field_validator
@@ -11,7 +12,7 @@ class NotificationAll(BaseModel):
 
 class NotificationAllWithPhoto(BaseModel):
     text: str
-    photo: Any
+    photo: BytesIO
 
 
 class NotificationByUserId(BaseModel):
@@ -30,7 +31,7 @@ class NotificationByPhoneNumber(BaseModel):
 
 class NotificationWithPhotoByPhoneNumber(BaseModel):
     text: str
-    photo: Any
+    photo: BytesIO
     phone_number: str
 
     @field_validator("phone_number")
