@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="11.03.2025 delete app directory">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="13.03.2025 change Readme">
+      <change afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,32 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
-    &quot;Python.base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
-    &quot;Python.container.executor&quot;: &quot;Run&quot;,
-    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.start.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/TyuiuRAGBot&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.analytics.executor": "Run",
+    "Python.base.executor": "Run",
+    "Python.bot.executor": "Run",
+    "Python.client (1).executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.contact.executor": "Run",
+    "Python.container.executor": "Run",
+    "Python.file_loaders.executor": "Run",
+    "Python.formaters.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.notifications.executor": "Run",
+    "Python.start.executor": "Run",
+    "Python.user.executor": "Run",
+    "Python.user_crud.executor": "Run",
+    "Python.user_repository.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/andre/TyuiuRAGBot",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
@@ -82,7 +84,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\messages" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.user_repository">
+  <component name="RunManager" selected="Python.notifications">
     <configuration name="contact" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -127,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="notifications" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,11 +138,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/entities" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/entities/notifications.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.notifications" />
         <item itemvalue="Python.user_repository" />
         <item itemvalue="Python.user_crud" />
         <item itemvalue="Python.contact" />
         <item itemvalue="Python.container" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -218,14 +220,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00079" summary="03.03.2025 add telegram bot provider">
-      <option name="closed" value="true" />
-      <created>1741004756966</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1741004756966</updated>
     </task>
     <task id="LOCAL-00080" summary="03.03.2025 create start presenter">
       <option name="closed" value="true" />
@@ -611,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1741878115449</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="13.03.2025 change Readme">
+      <option name="closed" value="true" />
+      <created>1741879412183</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1741879412183</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 debug dialogs repo" />
     <MESSAGE value="09.03.2025 fix dialog repository" />
     <MESSAGE value="09.03.2025 switch endpoints" />
     <MESSAGE value="09.03.2025 fix count func in crud" />
@@ -640,6 +641,7 @@
     <MESSAGE value="11.03.2025 change endpoints" />
     <MESSAGE value="11.03.2025 fix per day schema" />
     <MESSAGE value="11.03.2025 delete app directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.03.2025 delete app directory" />
+    <MESSAGE value="13.03.2025 change Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.03.2025 change Readme" />
   </component>
 </project>
