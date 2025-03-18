@@ -4,9 +4,9 @@ from abc import ABC, abstractmethod
 
 class BaseSenderService(ABC):
     @abstractmethod
-    async def send_message(self, user_id: int, text: str) -> bool:
+    async def send_message(self, *args) -> bool:
         raise NotImplemented
 
     @abstractmethod
-    async def send_message_with_photo(self, user_id: int, photo: Any, text: str) -> bool:
+    async def send_message_with_photo(self, *args) -> bool:
         raise NotImplemented

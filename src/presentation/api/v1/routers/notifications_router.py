@@ -25,7 +25,7 @@ notifications_router = APIRouter(
     status_code=status.HTTP_200_OK,
     response_model=DeliveredResponse
 )
-async def notify(
+async def notify_all(
         notification: Union[
             NotificationAll,
             NotificationAllWithPhoto,

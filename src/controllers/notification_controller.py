@@ -3,8 +3,8 @@ from typing import Union
 from src.core.use_cases import NotificationUseCase
 from src.core.entities import (
     NotificationAll,
-    NotificationAllWithPhoto,
     NotificationByPhoneNumber,
+    NotificationAllWithPhoto,
     NotificationWithPhotoByPhoneNumber
 )
 from src.schemas import DeliveredResponse, DeliveredResponsePresenter

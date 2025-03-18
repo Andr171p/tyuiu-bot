@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 add file saver in utils">
-      <change afterPath="$PROJECT_DIR$/src/apis/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 add logging in api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/notification_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/notification_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/notifications_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/telegram_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/file_saver/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mappers/notification_mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/file_saver/base_file_saver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/file_converters.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,14 +229,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00082" summary="03.03.2025 add phone number formaters">
-      <option name="closed" value="true" />
-      <created>1741010254684</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1741010254684</updated>
     </task>
     <task id="LOCAL-00083" summary="04.03.2025 create chat use case">
       <option name="closed" value="true" />
@@ -620,11 +614,18 @@
       <option name="project" value="LOCAL" />
       <updated>1742300688872</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="18.03.2025 add logging in api">
+      <option name="closed" value="true" />
+      <created>1742304242605</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1742304242605</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 fix count func in crud" />
     <MESSAGE value="11.03.2025 add notification controller" />
     <MESSAGE value="11.03.2025 fix field detail in notification schema" />
     <MESSAGE value="11.03.2025 fix add annotation in notification schema" />
@@ -649,6 +650,7 @@
     <MESSAGE value="13.03.2025 change Readme" />
     <MESSAGE value="18.03.2025 add phone_number validation" />
     <MESSAGE value="18.03.2025 add file saver in utils" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 add file saver in utils" />
+    <MESSAGE value="18.03.2025 add logging in api" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 add logging in api" />
   </component>
 </project>
