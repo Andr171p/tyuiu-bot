@@ -43,9 +43,14 @@ class ChatBotSettings(BaseSettings):
     base_url: str = os.getenv("CHATBOT_API_BASE_URL")
 
 
+class AuthSettings(BaseSettings):
+    base_url: str = os.getenv("AUTH_API_BASE_URL")
+
+
 class Settings(BaseSettings):
     api: APISettings = APISettings()
     chatbot: ChatBotSettings = ChatBotSettings()
+    auth: AuthSettings = AuthSettings()
     bot: BotSettings = BotSettings()
     db: DBSettings = DBSettings()
     messages: MessagesSettings = MessagesSettings()

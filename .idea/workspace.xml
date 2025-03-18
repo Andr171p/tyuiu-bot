@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 add phone_number validation">
-      <change afterPath="$PROJECT_DIR$/src/dto/notifications_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/misc/file_writers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/delivered_schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/file_saver/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/file_saver/base_file_saver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/file_converters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/file_saver.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 add file saver in utils">
+      <change afterPath="$PROJECT_DIR$/src/apis/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/chatbot_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/chatbot_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +56,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.analytics.executor": "Run",
+    "Python.auth_api.executor": "Run",
     "Python.base.executor": "Run",
     "Python.bot.executor": "Run",
     "Python.client (1).executor": "Run",
@@ -94,8 +91,8 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\messages" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.file_saver">
-    <configuration name="contact" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.auth_api">
+    <configuration name="auth_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,11 +101,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/entities" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/apis" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/entities/contact.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/apis/auth_api.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.auth_api" />
         <item itemvalue="Python.file_saver" />
         <item itemvalue="Python.notifications" />
         <item itemvalue="Python.user_repository" />
         <item itemvalue="Python.user_crud" />
-        <item itemvalue="Python.contact" />
       </list>
     </recent_temporary>
   </component>
@@ -230,14 +227,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00081" summary="03.03.2025 add presentation routers">
-      <option name="closed" value="true" />
-      <created>1741009414315</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1741009414315</updated>
     </task>
     <task id="LOCAL-00082" summary="03.03.2025 add phone number formaters">
       <option name="closed" value="true" />
@@ -623,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1742295964111</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="18.03.2025 add file saver in utils">
+      <option name="closed" value="true" />
+      <created>1742300688872</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1742300688872</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.03.2025 switch endpoints" />
     <MESSAGE value="09.03.2025 fix count func in crud" />
     <MESSAGE value="11.03.2025 add notification controller" />
     <MESSAGE value="11.03.2025 fix field detail in notification schema" />
@@ -652,6 +648,7 @@
     <MESSAGE value="11.03.2025 delete app directory" />
     <MESSAGE value="13.03.2025 change Readme" />
     <MESSAGE value="18.03.2025 add phone_number validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 add phone_number validation" />
+    <MESSAGE value="18.03.2025 add file saver in utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 add file saver in utils" />
   </component>
 </project>
