@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="20.03.2025 refactor" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="20.03.2025 fix dto tg message" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,22 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00086" summary="09.03.2025 api v1 routing">
-      <option name="closed" value="true" />
-      <created>1741519456125</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1741519456126</updated>
-    </task>
-    <task id="LOCAL-00087" summary="09.03.2025 optimize metric features">
-      <option name="closed" value="true" />
-      <created>1741520219776</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1741520219776</updated>
     </task>
     <task id="LOCAL-00088" summary="09.03.2025 refactor bot routers">
       <option name="closed" value="true" />
@@ -611,12 +595,26 @@
       <option name="project" value="LOCAL" />
       <updated>1742480925458</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="20.03.2025 fix dto">
+      <option name="closed" value="true" />
+      <created>1742481098529</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1742481098529</updated>
+    </task>
+    <task id="LOCAL-00136" summary="20.03.2025 fix dto tg message">
+      <option name="closed" value="true" />
+      <created>1742481243668</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1742481243668</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 fix schemas imports in routers" />
-    <MESSAGE value="11.03.2025 add tags in wh router" />
     <MESSAGE value="11.03.2025 fix notifications" />
     <MESSAGE value="11.03.2025 add chats controller" />
     <MESSAGE value="11.03.2025 changed endpoints in chats router" />
@@ -640,6 +638,8 @@
     <MESSAGE value="18.03.2025 add telegram message dto" />
     <MESSAGE value="18.03.2025 refactor" />
     <MESSAGE value="20.03.2025 refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="20.03.2025 refactor" />
+    <MESSAGE value="20.03.2025 fix dto" />
+    <MESSAGE value="20.03.2025 fix dto tg message" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.03.2025 fix dto tg message" />
   </component>
 </project>
