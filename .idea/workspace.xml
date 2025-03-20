@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 add logging in api">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="18.03.2025 refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/notification_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/notification_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/notifications_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/telegram_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/file_saver/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mappers/notification_mapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/file_saver/base_file_saver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/file_converters.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,35 +46,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.analytics.executor": "Run",
-    "Python.auth_api.executor": "Run",
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.contact.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.file_saver.executor": "Run",
-    "Python.formaters.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.notifications.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "Python.user_crud.executor": "Run",
-    "Python.user_repository.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/andre/TyuiuRAGBot",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_saver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.notifications.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
@@ -229,22 +220,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00083" summary="04.03.2025 create chat use case">
-      <option name="closed" value="true" />
-      <created>1741100895631</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1741100895631</updated>
-    </task>
-    <task id="LOCAL-00084" summary="05.03.2025">
-      <option name="closed" value="true" />
-      <created>1741183454013</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1741183454014</updated>
     </task>
     <task id="LOCAL-00085" summary="05.03.2025 add api/v1 routers">
       <option name="closed" value="true" />
@@ -622,12 +597,26 @@
       <option name="project" value="LOCAL" />
       <updated>1742304242605</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="18.03.2025 add telegram message dto">
+      <option name="closed" value="true" />
+      <created>1742306672855</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1742306672855</updated>
+    </task>
+    <task id="LOCAL-00133" summary="18.03.2025 refactor">
+      <option name="closed" value="true" />
+      <created>1742307652652</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1742307652652</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 add notification controller" />
-    <MESSAGE value="11.03.2025 fix field detail in notification schema" />
     <MESSAGE value="11.03.2025 fix add annotation in notification schema" />
     <MESSAGE value="11.03.2025 fix schemas imports in routers" />
     <MESSAGE value="11.03.2025 add tags in wh router" />
@@ -651,6 +640,8 @@
     <MESSAGE value="18.03.2025 add phone_number validation" />
     <MESSAGE value="18.03.2025 add file saver in utils" />
     <MESSAGE value="18.03.2025 add logging in api" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 add logging in api" />
+    <MESSAGE value="18.03.2025 add telegram message dto" />
+    <MESSAGE value="18.03.2025 refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.03.2025 refactor" />
   </component>
 </project>
