@@ -1,4 +1,3 @@
-from aiogram.types import InputFile
 from pydantic import BaseModel
 
 
@@ -9,5 +8,5 @@ class TelegramMessage(BaseModel):
 
 class TelegramWithPhotoMessage(BaseModel):
     user_id: int
-    photo: InputFile
+    photo: str
     text: str
