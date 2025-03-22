@@ -1,35 +1,16 @@
-from typing import Union
-
 from src.core.use_cases import NotificationUseCase
-from src.core.entities import (
-    NotificationAll,
-    NotificationByPhoneNumber,
-    NotificationAllWithPhoto,
-    NotificationWithPhotoByPhoneNumber
-)
 from src.schemas import DeliveredResponse, DeliveredResponsePresenter
+from src.core.entities import NotificationAll, NotificationByPhoneNumber
 
 
 class NotificationController:
     def __init__(self, notification_use_case: NotificationUseCase) -> None:
         self._notification_use_case = notification_use_case
 
-    async def notify(
-            self,
-            notification: Union[
-                NotificationAll,
-                NotificationByPhoneNumber,
-                NotificationAllWithPhoto,
-                NotificationWithPhotoByPhoneNumber
-            ]
-    ) -> DeliveredResponse:
-        is_delivered: bool = False
-        if isinstance(notification, NotificationAll):
-            is_delivered = await self._notification_use_case.notify_all(notification)
-        elif isinstance(notification, NotificationByPhoneNumber):
-            is_delivered = await self._notification_use_case.notify(notification)
-        elif isinstance(notification, NotificationAllWithPhoto):
-            is_delivered = await self._notification_use_case.notify_all_with_photo(notification)
-        elif isinstance(notification, NotificationWithPhotoByPhoneNumber):
-            is_delivered = await self._notification_use_case.notify_with_photo(notification)
+    async def notify_all(self, notification: NotificationAll) -> DeliveredResponse:
+        is_delivered = await self._notification_use_case.notify_all(notification)
+        return DeliveredResponsePresenter(is_delivered).present()
+
+    async def notify_by_phone_number(self, notification: NotificationByPhoneNumber) -> DeliveredResponse:
+        is_delivered = await self._notification_use_case.notify(notification)
         return DeliveredResponsePresenter(is_delivered).present()

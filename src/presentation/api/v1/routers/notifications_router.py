@@ -1,16 +1,9 @@
-from typing import Union
-
 from fastapi import APIRouter, status
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.controllers import NotificationController
-from src.core.entities import (
-    NotificationAll,
-    NotificationAllWithPhoto,
-    NotificationByPhoneNumber,
-    NotificationWithPhotoByPhoneNumber
-)
 from src.schemas import DeliveredResponse
+from src.controllers import NotificationController
+from src.core.entities import NotificationAll, NotificationByPhoneNumber
 
 
 notifications_router = APIRouter(
@@ -21,18 +14,26 @@ notifications_router = APIRouter(
 
 
 @notifications_router.post(
-    path="/",
+    path="/notify-all/",
     status_code=status.HTTP_200_OK,
     response_model=DeliveredResponse
 )
 async def notify_all(
-        notification: Union[
-            NotificationAll,
-            NotificationAllWithPhoto,
-            NotificationByPhoneNumber,
-            NotificationWithPhotoByPhoneNumber
-        ],
+        notification: NotificationAll,
         notification_controller: FromDishka[NotificationController]
 ) -> DeliveredResponse:
-    response = await notification_controller.notify(notification)
+    response = await notification_controller.notify_all(notification)
+    return response
+
+
+@notifications_router.post(
+    path="/notify-by-phone-number",
+    status_code=status.HTTP_200_OK,
+    response_model=DeliveredResponse
+)
+async def notify_by_phone_number(
+        notification: NotificationByPhoneNumber,
+        notification_controller: FromDishka[NotificationController]
+) -> DeliveredResponse:
+    response = await notification_controller.notify_by_phone_number(notification)
     return response
