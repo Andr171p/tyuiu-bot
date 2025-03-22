@@ -13,7 +13,7 @@ class GetShareContactDetailsPresenter:
         self._message = message
 
     async def present(self) -> None:
-        file_path = settings.messages.messages_dir / "Share_contact_message.txt"
+        file_path = settings.messages.messages_dir / "share_contact.txt"
         text = await read_txt(file_path)
         await self._message.answer(
             text=text,

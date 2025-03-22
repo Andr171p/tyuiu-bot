@@ -9,4 +9,6 @@ class ChatBotPresenter:
         self._message = message
 
     async def present(self, chatbot_message: str) -> None:
+        if chatbot_message is None:
+            await self._message.answer("В настоящий момент север не отвечает...")
         await self._message.answer(chatbot_message)

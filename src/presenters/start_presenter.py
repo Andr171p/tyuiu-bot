@@ -12,6 +12,6 @@ class StartPresenter:
         self._message = message
 
     async def present(self) -> None:
-        file_path = settings.messages.messages_dir / "Start_message.txt"
+        file_path = settings.messages.messages_dir / "start.txt"
         text = await read_txt(file_path)
         await self._message.answer(text)

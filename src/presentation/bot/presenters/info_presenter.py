@@ -8,6 +8,6 @@ from src.config import settings
 class InfoPresenter(BasePresenter):
     @classmethod
     async def present(cls, message: Message, **kwargs) -> None:
-        file_path = settings.messages.messages_dir / "Info_message.txt"
+        file_path = settings.messages.messages_dir / "info.txt"
         text = await read_txt(file_path)
         await message.answer(text)

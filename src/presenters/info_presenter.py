@@ -12,6 +12,6 @@ class InfoPresenter:
         self._message = message
 
     async def present(self) -> None:
-        file_path = settings.messages.messages_dir / "Info_message.txt"
+        file_path = settings.messages.messages_dir / "info.txt"
         text = await read_txt(file_path)
         await self._message.answer(text)
