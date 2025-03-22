@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="22.03.2025 cancel phone number validation in notifications" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="22.03.2025 add error message when chatbot is not allowed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,14 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00094" summary="09.03.2025 fix api url">
-      <option name="closed" value="true" />
-      <created>1741523026453</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1741523026453</updated>
     </task>
     <task id="LOCAL-00095" summary="09.03.2025 add users response schemas">
       <option name="closed" value="true" />
@@ -611,11 +606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1742642550410</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="22.03.2025 add error message when chatbot is not allowed">
+      <option name="closed" value="true" />
+      <created>1742654525804</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1742654525804</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 fic share contact method in users use case" />
     <MESSAGE value="11.03.2025 add chatbot controller" />
     <MESSAGE value="11.03.2025 add contact router to dp" />
     <MESSAGE value="11.03.2025 rename command" />
@@ -640,6 +642,7 @@
     <MESSAGE value="22.03.2025 fix sender service" />
     <MESSAGE value="22.03.2025 cancel phone number validation" />
     <MESSAGE value="22.03.2025 cancel phone number validation in notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="22.03.2025 cancel phone number validation in notifications" />
+    <MESSAGE value="22.03.2025 add error message when chatbot is not allowed" />
+    <option name="LAST_COMMIT_MESSAGE" value="22.03.2025 add error message when chatbot is not allowed" />
   </component>
 </project>
