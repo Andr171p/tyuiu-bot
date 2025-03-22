@@ -27,7 +27,7 @@ async def notify_all(
 
 
 @notifications_router.post(
-    path="/notify-by-phone-number",
+    path="/notify-by-phone-number/",
     status_code=status.HTTP_200_OK,
     response_model=DeliveredResponse
 )
