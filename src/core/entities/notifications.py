@@ -23,9 +23,9 @@ class NotificationByPhoneNumber(BaseModel):
     text: str
     phone_number: str
 
-    @field_validator("phone_number")
+    '''@field_validator("phone_number")
     def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)
+        return format_phone_number(phone_number)'''
 
 
 class NotificationWithPhotoByPhoneNumber(BaseModel):
@@ -33,9 +33,9 @@ class NotificationWithPhotoByPhoneNumber(BaseModel):
     photo: Any
     phone_number: str
 
-    @field_validator("phone_number")
+    '''@field_validator("phone_number")
     def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)
+        return format_phone_number(phone_number)'''
 
 
 class NotificationWithPhotoByUserId(BaseModel):

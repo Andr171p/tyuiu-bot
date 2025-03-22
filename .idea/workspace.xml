@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="22.03.2025 fix sender service" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="22.03.2025 cancel phone number validation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,14 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00092" summary="09.03.2025 add route class to wh">
-      <option name="closed" value="true" />
-      <created>1741522569096</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1741522569096</updated>
     </task>
     <task id="LOCAL-00093" summary="09.03.2025 refactor bot properties">
       <option name="closed" value="true" />
@@ -611,11 +603,18 @@
       <option name="project" value="LOCAL" />
       <updated>1742642112124</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="22.03.2025 cancel phone number validation">
+      <option name="closed" value="true" />
+      <created>1742642441475</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1742642441475</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 add users controller" />
     <MESSAGE value="11.03.2025 add contact router" />
     <MESSAGE value="11.03.2025 fic share contact method in users use case" />
     <MESSAGE value="11.03.2025 add chatbot controller" />
@@ -640,6 +639,7 @@
     <MESSAGE value="22.03.2025 decomposition notification endpoint" />
     <MESSAGE value="22.03.2025 refactor notify by phone number endpoint path" />
     <MESSAGE value="22.03.2025 fix sender service" />
-    <option name="LAST_COMMIT_MESSAGE" value="22.03.2025 fix sender service" />
+    <MESSAGE value="22.03.2025 cancel phone number validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="22.03.2025 cancel phone number validation" />
   </component>
 </project>
