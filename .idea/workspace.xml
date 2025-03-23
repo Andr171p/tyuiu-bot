@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="22.03.2025 write Readme docs" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.03.2025 refactor info message">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages/info.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,14 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00096" summary="09.03.2025 refactor chatbot api">
-      <option name="closed" value="true" />
-      <created>1741527067708</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1741527067708</updated>
     </task>
     <task id="LOCAL-00097" summary="09.03.2025 add contacts response schemas">
       <option name="closed" value="true" />
@@ -611,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1742657004970</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="23.03.2025 refactor info message">
+      <option name="closed" value="true" />
+      <created>1742734534127</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1742734534127</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 add contact router to dp" />
     <MESSAGE value="11.03.2025 rename command" />
     <MESSAGE value="11.03.2025 change routers in dp" />
     <MESSAGE value="11.03.2025 refactoring" />
@@ -640,6 +643,7 @@
     <MESSAGE value="22.03.2025 cancel phone number validation in notifications" />
     <MESSAGE value="22.03.2025 add error message when chatbot is not allowed" />
     <MESSAGE value="22.03.2025 write Readme docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="22.03.2025 write Readme docs" />
+    <MESSAGE value="23.03.2025 refactor info message" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.03.2025 refactor info message" />
   </component>
 </project>
