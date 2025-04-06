@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="02.04.2025 add docker-compose and nginx config">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="05.04.2025">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,14 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00100" summary="09.03.2025 fix: chatbot chat saver">
-      <option name="closed" value="true" />
-      <created>1741529587463</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1741529587463</updated>
     </task>
     <task id="LOCAL-00101" summary="09.03.2025 rename message file">
       <option name="closed" value="true" />
@@ -616,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1743604035232</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="05.04.2025">
+      <option name="closed" value="true" />
+      <created>1743854114337</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1743854114337</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 add per day count methods" />
     <MESSAGE value="11.03.2025 change endpoints" />
     <MESSAGE value="11.03.2025 fix per day schema" />
     <MESSAGE value="11.03.2025 delete app directory" />
@@ -645,6 +643,7 @@
     <MESSAGE value="23.03.2025 change telegram bot" />
     <MESSAGE value="23.03.2025 add service link to info message" />
     <MESSAGE value="02.04.2025 add docker-compose and nginx config" />
-    <option name="LAST_COMMIT_MESSAGE" value="02.04.2025 add docker-compose and nginx config" />
+    <MESSAGE value="05.04.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="05.04.2025" />
   </component>
 </project>
