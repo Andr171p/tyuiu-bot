@@ -1,15 +1,12 @@
-from typing import TYPE_CHECKING
+from aiogram.types import Message
 
-if TYPE_CHECKING:
-    from aiogram.types import Message
-
-from src.presentation.bot.keyboards import share_contact_keyboard
+from src.presentation.bot.keyboards import share_contact_keyboard, user_exists_keyboard
 from src.misc.files_readers import read_txt
 from src.config import settings
 
 
 class GetShareContactDetailsPresenter:
-    def __init__(self, message: "Message") -> None:
+    def __init__(self, message: Message) -> None:
         self._message = message
 
     async def present(self) -> None:
@@ -22,8 +19,13 @@ class GetShareContactDetailsPresenter:
 
 
 class ShareContactPresenter:
-    def __init__(self, message: "Message") -> None:
+    def __init__(self, message: Message) -> None:
         self._message = message
 
-    async def present(self) -> None:
+    async def present(self, is_user_exist: bool) -> None:
         await self._message.answer("Вы успешно отправили контакт")
+        if not is_user_exist:
+            await self._message.answer(
+                text="Вы также можете воспользоваться нашим сервисом",
+                reply_markup=user_exists_keyboard()
+            )

@@ -1,5 +1,6 @@
 from src.core.entities import User, Contact, ChatHistory, ChatHistoryPage
 from src.repository import UserRepository, ContactRepository, DialogRepository
+from src.apis import AuthAPI
 
 
 class UsersUseCase:
@@ -7,11 +8,13 @@ class UsersUseCase:
         self, 
         user_repository: UserRepository,
         contact_repository: ContactRepository,
-        dialog_repository: DialogRepository
+        dialog_repository: DialogRepository,
+        auth_api: AuthAPI
     ) -> None:
         self._user_repository = user_repository
         self._contact_repository = contact_repository
         self._dialog_repository = dialog_repository
+        self._auth_api = auth_api
         
     async def register(self, user: User) -> None:
         if await self._user_repository.get_by_user_id(user.user_id):
@@ -29,6 +32,10 @@ class UsersUseCase:
             user_id=user_id,
             dialogs=dialogs
         )
+
+    async def check_exist(self, user_id: int) -> bool:
+        contact = await self._contact_repository.get_by_user_id(user_id)
+        return await self._auth_api.check_user_exists_by_phone_number(contact.phone_number)
 
     async def get_page_of_chat_history(
             self,

@@ -13,7 +13,7 @@ class Contact(BaseModel):
     class Config:
         from_attributes = True
 
-    '''@field_validator("phone_number")
+    @field_validator("phone_number")
     def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)'''
+        return format_phone_number(phone_number)
     

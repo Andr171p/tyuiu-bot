@@ -12,9 +12,10 @@ class UsersController:
     async def register_after_start(self, message: Message) -> None:
         user = UserMapper.from_message(message)
         await self._users_use_case.register(user)
-        await StartPresenter(message=message).present()
+        await StartPresenter(message).present()
 
     async def share_contact(self, message: Message) -> None:
         contact = ContactMapper.from_message(message)
         await self._users_use_case.share_contact(contact)
-        await ShareContactPresenter(message=message).present()
+        is_user_exist = await self._users_use_case.check_exist(message.from_user.id)
+        await ShareContactPresenter(message).present(is_user_exist)

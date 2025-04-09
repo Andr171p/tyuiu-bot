@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="06.04.2025">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="06.04.2025 update bot token">
+      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/user_exists_keyboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,14 +230,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00102" summary="09.03.2025 fix dialog entity">
-      <option name="closed" value="true" />
-      <created>1741530149255</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1741530149255</updated>
     </task>
     <task id="LOCAL-00103" summary="09.03.2025 debug dialogs repo">
       <option name="closed" value="true" />
@@ -615,11 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1743941335613</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="06.04.2025 update bot token">
+      <option name="closed" value="true" />
+      <created>1743941670679</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1743941670679</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 fix per day schema" />
     <MESSAGE value="11.03.2025 delete app directory" />
     <MESSAGE value="13.03.2025 change Readme" />
     <MESSAGE value="18.03.2025 add phone_number validation" />
@@ -644,6 +651,7 @@
     <MESSAGE value="02.04.2025 add docker-compose and nginx config" />
     <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.04.2025" />
+    <MESSAGE value="06.04.2025 update bot token" />
+    <option name="LAST_COMMIT_MESSAGE" value="06.04.2025 update bot token" />
   </component>
 </project>
