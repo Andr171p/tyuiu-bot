@@ -1,6 +1,6 @@
 from src.core.entities import User, Contact, ChatHistory, ChatHistoryPage
 from src.repository import UserRepository, ContactRepository, DialogRepository
-from src.apis import AuthAPI
+from src.infrastructure.apis import AuthAPI
 
 
 class UsersUseCase:

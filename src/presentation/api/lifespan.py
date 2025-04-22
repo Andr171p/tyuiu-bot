@@ -7,8 +7,8 @@ from contextlib import (
 from fastapi import FastAPI
 from aiogram import Bot
 
-from src.presentation.di import container
-from src.presentation.bot.dp import dp
+from src.di import container
+from src.presentation.bot.app import dp
 from src.config import settings
 
 

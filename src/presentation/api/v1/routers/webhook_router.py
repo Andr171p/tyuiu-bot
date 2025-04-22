@@ -3,7 +3,7 @@ from aiogram import Bot
 from aiogram.types import Update
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.presentation.bot.dp import dp
+from src.presentation.bot.app import dp
 
 
 webhook_router = APIRouter(

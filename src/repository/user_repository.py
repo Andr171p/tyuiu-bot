@@ -1,34 +1,25 @@
-from typing import TYPE_CHECKING, List, Union
+from typing import List, Optional
 
-if TYPE_CHECKING:
-    from src.database.crud import UserCRUD
-
-from src.repository.base_repository import BaseRepository
-from src.database.models import UserModel
+from src.infrastructure.database.models import UserModel
+from src.infrastructure.database.crud import UserCRUD
+from src.core.interfaces import AbstractRepository
 from src.core.entities import User
-from src.dto import PerDayDistribution
 
 
-class UserRepository(BaseRepository):
-    def __init__(self, crud: "UserCRUD") -> None:
+class UserRepository(AbstractRepository):
+    def __init__(self, crud: UserCRUD) -> None:
         self._crud = crud
 
     async def save(self, user: User) -> int:
-        id = await self._crud.create(UserModel(**user.model_dump()))
-        return id
+        return await self._crud.create(UserModel(**user.model_dump()))
     
-    async def get_by_user_id(self, user_id: int) -> Union[User, None]:
+    async def get(self, user_id: int) -> Optional[User]:
         user = await self._crud.read_by_user_id(user_id)
         return User.model_validate(user) if user else None
     
-    async def get_all(self) -> List[Union[User, None]]:
+    async def list(self) -> List[Optional[User]]:
         users = await self._crud.read_all()
         return [User.model_validate(user) for user in users] if users else []
     
-    async def get_total_count(self) -> int:
-        count = await self._crud.read_total_count()
-        return count if count else 0
-
-    async def get_count_per_day(self) -> List[PerDayDistribution]:
-        per_days_counts = await self._crud.read_count_per_day()
-        return [PerDayDistribution(date=date, count=count) for date, count in per_days_counts]
+    async def total_count(self) -> int:
+        return await self._crud.read_total_count()

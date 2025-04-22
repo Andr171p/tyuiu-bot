@@ -8,6 +8,7 @@ from src.misc.formaters import format_phone_number
 class Contact(BaseModel):
     user_id: int
     phone_number: str
+    is_exists: bool
     created_at: datetime
     
     class Config:
