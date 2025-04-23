@@ -3,9 +3,11 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.core.entities import User
 from src.repository import UserRepository
-from src.schemas import PerDayDistributionResponse
-
-from src.presentation.api.v1.schemas import UsersResponse, CountResponse
+from src.presentation.api.v1.schemas import (
+    UsersResponse,
+    CountResponse,
+    DateToCountResponse
+)
 
 
 users_router = APIRouter(
@@ -37,14 +39,14 @@ async def get_count(user_repository: FromDishka[UserRepository]) -> CountRespons
 
 @users_router.get(
     path="/date-to-count",
-    response_model=PerDayDistributionResponse,
+    response_model=DateToCountResponse,
     status_code=status.HTTP_200_OK
 )
 async def get_date_to_count(
         user_repository: FromDishka[UserRepository]
-) -> PerDayDistributionResponse:
-    distribution = await user_repository.get_count_per_day()
-    return PerDayDistributionResponse(distribution=distribution)
+) -> DateToCountResponse:
+    date_to_count = await user_repository.date_to_count()
+    return DateToCountResponse(distribution=date_to_count)
 
 
 @users_router.get(

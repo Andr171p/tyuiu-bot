@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.04.2025 refactor">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.04.2025 add change exists status method">
+      <change afterPath="$PROJECT_DIR$/src/dto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/gateway.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,37 +54,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.analytics.executor": "Run",
-    "Python.auth_api.executor": "Run",
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.contact.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.file_saver.executor": "Run",
-    "Python.formaters.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.notifications.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "Python.user_crud.executor": "Run",
-    "Python.user_repository.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_saver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.notifications.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
@@ -231,14 +230,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00108" summary="11.03.2025 fix field detail in notification schema">
-      <option name="closed" value="true" />
-      <created>1741686425118</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686425118</updated>
     </task>
     <task id="LOCAL-00109" summary="11.03.2025 fix add annotation in notification schema">
       <option name="closed" value="true" />
@@ -624,11 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745409698587</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="23.04.2025 add change exists status method">
+      <option name="closed" value="true" />
+      <created>1745411727203</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1745411727203</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="18.03.2025 add telegram message dto" />
     <MESSAGE value="18.03.2025 refactor" />
     <MESSAGE value="20.03.2025 refactor" />
     <MESSAGE value="20.03.2025 fix dto" />
@@ -653,6 +651,7 @@
     <MESSAGE value="22.04.2025 initial refactoring" />
     <MESSAGE value="23.04.2025 refactor infrastructure layer" />
     <MESSAGE value="23.04.2025 refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.04.2025 refactor" />
+    <MESSAGE value="23.04.2025 add change exists status method" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.04.2025 add change exists status method" />
   </component>
 </project>

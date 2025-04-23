@@ -1,11 +1,15 @@
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, HTTPException
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.repository import ContactRepository
 from src.core.entities import Contact
-from src.schemas import PerDayDistributionResponse
-
-from src.presentation.api.v1.schemas import ContactsResponse, CountResponse
+from src.repository import ContactRepository
+from src.presentation.api.v1.schemas import (
+    ContactsResponse,
+    CountResponse,
+    ContactUpdate,
+    PhoneNumberQuery,
+    DateToCountResponse
+)
 
 
 contacts_router = APIRouter(
@@ -26,6 +30,21 @@ async def get_contacts(contact_repository: FromDishka[ContactRepository]) -> Con
 
 
 @contacts_router.get(
+    path="/search",
+    response_model=Contact,
+    status_code=status.HTTP_200_OK
+)
+async def search_by_phone_number(
+        phone_number: PhoneNumberQuery,
+        contact_repository: FromDishka[ContactRepository]
+) -> Contact:
+    contact = await contact_repository.get_by_phone_number(phone_number)
+    if not contact:
+        raise HTTPException(status_code=404, detail="Contact not found")
+    return contact
+
+
+@contacts_router.get(
     path="/count",
     response_model=CountResponse,
     status_code=status.HTTP_200_OK
@@ -37,14 +56,14 @@ async def get_count(contact_repository: FromDishka[ContactRepository]) -> CountR
 
 @contacts_router.get(
     path="/date-to-count/",
-    response_model=PerDayDistributionResponse,
+    response_model=DateToCountResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_per_day_count_distribution(
+async def get_date_to_count(
         contact_repository: FromDishka[ContactRepository]
-) -> PerDayDistributionResponse:
-    distribution = await contact_repository.get_count_per_day()
-    return PerDayDistributionResponse(distribution=distribution)
+) -> DateToCountResponse:
+    date_to_count = await contact_repository.date_to_count()
+    return DateToCountResponse(distribution=date_to_count)
 
 
 @contacts_router.get(
@@ -57,3 +76,17 @@ async def get_contact(
         contact_repository: FromDishka[ContactRepository]
 ) -> Contact:
     return await contact_repository.get(user_id)
+
+
+@contacts_router.patch(
+    path="/{user_id}",
+    response_model=Contact,
+    status_code=status.HTTP_200_OK
+)
+async def update_contact(
+        user_id: int,
+        contact_update: ContactUpdate,
+        contact_repository: FromDishka[ContactRepository]
+) -> Contact:
+    contact = await contact_repository.update(user_id, is_exists=contact_update.is_exists)
+    return contact

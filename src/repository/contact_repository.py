@@ -1,5 +1,6 @@
 from typing import Any, List, Optional, Sequence
 
+from src.dto import DateToCountDTO
 from src.core.entities import Contact
 from src.core.interfaces import AbstractRepository
 from src.infrastructure.database.crud import ContactCRUD
@@ -25,6 +26,10 @@ class ContactRepository(AbstractRepository):
         contact = await self._crud.update(user_id, **kwargs)
         return Contact.model_validate(contact)
 
+    async def get_by_phone_number(self, phone_number: str) -> Optional[Contact]:
+        contact = await self._crud.read_by_phone_number(phone_number)
+        return Contact.model_validate(contact) if contact else None
+
     async def get_user_id_by_phone_number(self, phone_number: str) -> Optional[int]:
         return await self._crud.read_user_id_by_phone_number(phone_number)
 
@@ -37,3 +42,10 @@ class ContactRepository(AbstractRepository):
     
     async def count(self) -> int:
         return await self._crud.read_total_count()
+
+    async def date_to_count(self) -> List[DateToCountDTO]:
+        date_to_count = await self._crud.read_date_to_count()
+        return [
+            DateToCountDTO(date=date, count=count)
+            for date, count in date_to_count
+        ]

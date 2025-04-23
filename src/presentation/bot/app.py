@@ -25,3 +25,6 @@ def create_aiogram_app() -> Dispatcher:
         auto_inject=True
     )
     return dp
+
+
+dp = create_aiogram_app()
