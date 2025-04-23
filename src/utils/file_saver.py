@@ -2,7 +2,7 @@ import uuid
 from pathlib import Path
 from fastapi import UploadFile
 
-from src.config import BASE_DIR
+from src.settings import BASE_DIR
 from src.misc.file_writers import write_file
 
 

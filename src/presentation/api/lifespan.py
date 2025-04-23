@@ -9,7 +9,7 @@ from aiogram import Bot
 
 from src.di import container
 from src.presentation.bot.app import dp
-from src.config import settings
+from src.settings import settings
 
 
 log = logging.getLogger(__name__)

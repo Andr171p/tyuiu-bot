@@ -4,7 +4,7 @@ if TYPE_CHECKING:
     from aiogram.types import Message
 
 from src.misc.files_readers import read_txt
-from src.config import settings
+from src.settings import settings
 
 
 class InfoPresenter:

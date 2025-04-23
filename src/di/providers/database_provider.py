@@ -1,8 +1,8 @@
 from dishka import Provider, provide, Scope
 
-from src.infrastructure.database.database_manager import DatabaseManager
+from src.infrastructure.database.session import DatabaseManager
 from src.infrastructure.database.crud import UserCRUD, ContactCRUD, DialogCRUD
-from src.config import settings
+from src.settings import settings
 
 
 class DatabaseProvider(Provider):

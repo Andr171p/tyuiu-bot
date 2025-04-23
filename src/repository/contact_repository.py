@@ -1,4 +1,4 @@
-from typing import List, Optional, Union, Sequence
+from typing import List, Optional, Sequence
 
 from src.infrastructure.database.models import ContactModel
 from src.infrastructure.database.crud import ContactCRUD

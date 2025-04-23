@@ -19,12 +19,12 @@ class BotSettings(BaseSettings):
     token: str = os.getenv("BOT_TOKEN")
 
 
-class DBSettings(BaseSettings):
-    user: str = os.getenv("DB_USER")
-    password: str = os.getenv("DB_PASSWORD")
-    host: str = os.getenv("DB_HOST")
-    port: int = os.getenv("DB_PORT")
-    name: str = os.getenv("DB_NAME")
+class PostgresSettings(BaseSettings):
+    user: str = os.getenv("PG_USER")
+    password: str = os.getenv("PG_PASSWORD")
+    host: str = os.getenv("PG_HOST")
+    port: int = os.getenv("PG_PORT")
+    name: str = os.getenv("PG_NAME")
 
     url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
 
@@ -52,9 +52,6 @@ class Settings(BaseSettings):
     chatbot: ChatBotSettings = ChatBotSettings()
     auth: AuthSettings = AuthSettings()
     bot: BotSettings = BotSettings()
-    db: DBSettings = DBSettings()
+    postgres: PostgresSettings = PostgresSettings()
     messages: MessagesSettings = MessagesSettings()
     static: StaticSettings = StaticSettings()
-
-
-settings = Settings()

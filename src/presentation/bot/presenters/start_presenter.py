@@ -2,7 +2,7 @@ from aiogram.types import Message
 
 from src.presentation.bot.presenters.base_presenter import BasePresenter
 from src.misc.files_readers import read_txt
-from src.config import settings
+from src.settings import settings
 
 
 class StartPresenter(BasePresenter):

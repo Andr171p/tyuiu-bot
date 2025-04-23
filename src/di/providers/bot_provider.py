@@ -5,7 +5,7 @@ from aiogram.enums.parse_mode import ParseMode
 from aiogram.client.default import DefaultBotProperties
 # from aiogram.fsm.storage.memory import MemoryStorage
 
-from src.config import settings
+from src.settings import settings
 
 
 class BotProvider(Provider):

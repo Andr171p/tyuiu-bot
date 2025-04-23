@@ -14,6 +14,7 @@ class ContactModel(UserRelationMixin, BaseModel):
     _user_id_unique = True
 
     phone_number: Mapped[str]
+    is_exists: Mapped[bool]
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
     def __str__(self) -> str:

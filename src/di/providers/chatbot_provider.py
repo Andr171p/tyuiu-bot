@@ -4,7 +4,7 @@ from src.infrastructure.apis import ChatBotAPI
 from src.repository import DialogRepository
 from src.core.use_cases import ChatBotUseCase
 from src.controllers import ChatBotController
-from src.config import settings
+from src.settings import settings
 
 
 class ChatBotProvider(Provider):

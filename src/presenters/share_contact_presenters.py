@@ -2,7 +2,7 @@ from aiogram.types import Message
 
 from src.presentation.bot.keyboards import share_contact_keyboard, user_exists_keyboard
 from src.misc.files_readers import read_txt
-from src.config import settings
+from src.settings import settings
 
 
 class GetShareContactDetailsPresenter:

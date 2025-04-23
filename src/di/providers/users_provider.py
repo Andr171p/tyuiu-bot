@@ -4,7 +4,7 @@ from src.repository import UserRepository, ContactRepository, DialogRepository
 from src.core.use_cases import UsersUseCase
 from src.controllers import UsersController
 from src.infrastructure.apis import AuthAPI
-from src.config import settings
+from src.settings import settings
 
 
 class UsersProvider(Provider):
