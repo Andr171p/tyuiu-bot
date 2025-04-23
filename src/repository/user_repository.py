@@ -14,12 +14,12 @@ class UserRepository(AbstractRepository):
         return await self._crud.create(UserModel(**user.model_dump()))
     
     async def get(self, user_id: int) -> Optional[User]:
-        user = await self._crud.read_by_user_id(user_id)
+        user = await self._crud.read(user_id)
         return User.model_validate(user) if user else None
     
     async def list(self) -> List[Optional[User]]:
         users = await self._crud.read_all()
         return [User.model_validate(user) for user in users] if users else []
     
-    async def total_count(self) -> int:
+    async def count(self) -> int:
         return await self._crud.read_total_count()

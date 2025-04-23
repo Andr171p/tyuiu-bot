@@ -3,10 +3,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
 
+from src.utils import read_txt
+from src.constants import BASE_DIR, ENV_PATH
 
-BASE_DIR: Path = Path(__file__).resolve().parent.parent
-
-ENV_PATH: Path = BASE_DIR / ".env"
 
 load_dotenv(ENV_PATH)
 
@@ -30,7 +29,8 @@ class PostgresSettings(BaseSettings):
 
 
 class MessagesSettings(BaseSettings):
-    messages_dir: Path = BASE_DIR / "messages"
+    start: str = read_txt(BASE_DIR / "messages" / "start.txt")
+    info: str = read_txt(BASE_DIR / "messages" / "info.txt")
 
 
 class StaticSettings(BaseSettings):
@@ -39,8 +39,8 @@ class StaticSettings(BaseSettings):
     texts_dir: Path = BASE_DIR / "static" / "texts"
 
 
-class ChatBotSettings(BaseSettings):
-    base_url: str = os.getenv("CHATBOT_API_BASE_URL")
+class TyuiuGPTSettings(BaseSettings):
+    base_url: str = os.getenv("TYUIU_GPT_API_BASE_URL")
 
 
 class AuthSettings(BaseSettings):
@@ -49,7 +49,7 @@ class AuthSettings(BaseSettings):
 
 class Settings(BaseSettings):
     api: APISettings = APISettings()
-    chatbot: ChatBotSettings = ChatBotSettings()
+    tyuiu_gpt: TyuiuGPTSettings = TyuiuGPTSettings()
     auth: AuthSettings = AuthSettings()
     bot: BotSettings = BotSettings()
     postgres: PostgresSettings = PostgresSettings()

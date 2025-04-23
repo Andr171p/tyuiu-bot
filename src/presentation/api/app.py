@@ -9,7 +9,6 @@ from src.presentation.api.v1.routers import (
     webhook_router,
     users_router,
     contacts_router,
-    chats_router,
     notifications_router
 )
 
@@ -19,7 +18,6 @@ def create_app() -> FastAPI:
     app.include_router(webhook_router)
     app.include_router(users_router)
     app.include_router(contacts_router)
-    app.include_router(chats_router)
     app.include_router(notifications_router)
     app.add_middleware(
         CORSMiddleware,

@@ -1,9 +1,8 @@
 from fastapi import APIRouter, Request
-from aiogram import Bot
-from aiogram.types import Update
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.presentation.bot.app import dp
+from aiogram import Bot, Dispatcher
+from aiogram.types import Update
 
 
 webhook_router = APIRouter(
@@ -16,6 +15,7 @@ webhook_router = APIRouter(
 async def webhook(
         request: Request,
         bot: FromDishka[Bot],
+        dp: FromDishka[Dispatcher]
 ) -> None:
     data = await request.json()
     update = Update.model_validate(data, context={"bot": bot})
