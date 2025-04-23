@@ -4,62 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.04.2025 refactor infrastructure layer">
-      <change afterPath="$PROJECT_DIR$/src/core/interfaces/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.04.2025 refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/chatbot_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/chats_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/notification_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/gateway.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/contact_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/notification_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/user_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/file_writers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/files_readers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/formaters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/chatbot_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/info_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/start_presenter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/chats_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/contacts_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/delivered_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/per_day_distribution_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/users_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/sender_exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/file_saver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/metrics.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00107" summary="11.03.2025 add notification controller">
-      <option name="closed" value="true" />
-      <created>1741686246061</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686246062</updated>
     </task>
     <task id="LOCAL-00108" summary="11.03.2025 fix field detail in notification schema">
       <option name="closed" value="true" />
@@ -669,11 +616,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745406301596</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="23.04.2025 refactor">
+      <option name="closed" value="true" />
+      <created>1745409698587</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1745409698587</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="18.03.2025 add logging in api" />
     <MESSAGE value="18.03.2025 add telegram message dto" />
     <MESSAGE value="18.03.2025 refactor" />
     <MESSAGE value="20.03.2025 refactor" />
@@ -698,6 +652,7 @@
     <MESSAGE value="09.04.2025 add auth api to users provider" />
     <MESSAGE value="22.04.2025 initial refactoring" />
     <MESSAGE value="23.04.2025 refactor infrastructure layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.04.2025 refactor infrastructure layer" />
+    <MESSAGE value="23.04.2025 refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.04.2025 refactor" />
   </component>
 </project>

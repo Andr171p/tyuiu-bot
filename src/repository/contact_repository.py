@@ -1,9 +1,9 @@
-from typing import List, Optional, Sequence
+from typing import Any, List, Optional, Sequence
 
-from src.infrastructure.database.models import ContactModel
-from src.infrastructure.database.crud import ContactCRUD
-from src.core.interfaces import AbstractRepository
 from src.core.entities import Contact
+from src.core.interfaces import AbstractRepository
+from src.infrastructure.database.crud import ContactCRUD
+from src.infrastructure.database.models import ContactModel
 
 
 class ContactRepository(AbstractRepository):
@@ -20,6 +20,10 @@ class ContactRepository(AbstractRepository):
     async def list(self) -> List[Optional[Contact]]:
         contacts = await self._crud.read_all()
         return [Contact.model_validate(contact) for contact in contacts] if contacts else []
+
+    async def update(self, user_id: int, **kwargs: Any) -> Contact:
+        contact = await self._crud.update(user_id, **kwargs)
+        return Contact.model_validate(contact)
 
     async def get_user_id_by_phone_number(self, phone_number: str) -> Optional[int]:
         return await self._crud.read_user_id_by_phone_number(phone_number)

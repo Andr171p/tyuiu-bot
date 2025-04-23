@@ -18,7 +18,12 @@ class ContactModel(UserRelationMixin, BaseModel):
     created_at: Mapped[datetime] = mapped_column(DateTime)
 
     def __str__(self) -> str:
-        return f"{self.__class__.__name__}(phone_number={self.phone_number}, user_id={self.user_id})"
+        return (
+            f"{self.__class__.__name__}"
+            f"(phone_number={self.phone_number}, "
+            f"is_exists={self.is_exists}, "
+            f"user_id={self.user_id})"
+        )
 
     def __repr__(self) -> str:
         return str(self)

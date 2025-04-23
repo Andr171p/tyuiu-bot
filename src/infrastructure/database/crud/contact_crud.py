@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from typing import Sequence, Tuple, Optional
+from typing import Any, Sequence, Tuple, Optional
     
-from sqlalchemy import select, func
+from sqlalchemy import select, update, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.infrastructure.database.models import ContactModel
@@ -81,3 +81,20 @@ class ContactCRUD(AbstractCRUD):
         )
         date_to_count = await self._session.execute(stmt)
         return date_to_count.scalars().all()
+
+    async def read_exists(self, is_exists: bool = True) -> Sequence[ContactModel]:
+        stmt = (
+            select(ContactModel)
+            .where(ContactModel.is_exists == is_exists)
+        )
+        contacts = await self._session.execute(stmt)
+        return contacts.scalars().all()
+
+    async def update(self, user_id: int, **kwargs: Any) -> ContactModel:
+        stmt = (
+            update(ContactModel)
+            .where(ContactModel.user_id == user_id)
+            .values(**kwargs)
+        )
+        contact = await self._session.execute(stmt)
+        return contact.scalar_one_or_none()
