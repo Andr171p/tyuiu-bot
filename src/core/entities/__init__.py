@@ -4,11 +4,13 @@ __all__ = (
     "BaseMessage",
     "UserMessage",
     "AssistantMessage",
-    "Notification",
-    "SubscriberNotification"
+    "Recipient",
+    "NotificationContent",
+    "DirectedNotification",
+    "PublicNotification"
 )
 
 from src.core.entities.user import User
 from src.core.entities.contact import Contact
 from src.core.entities.messages import BaseMessage, UserMessage, AssistantMessage
-from src.core.entities.notifications import Notification, SubscriberNotification
+from src.core.entities.notifications import Recipient, NotificationContent, DirectedNotification, PublicNotification

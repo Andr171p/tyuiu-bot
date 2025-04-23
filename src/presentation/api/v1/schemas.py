@@ -31,3 +31,7 @@ class ContactUpdate(BaseModel):
 
 class DateToCountResponse(BaseModel):
     distribution: List[DateToCountDTO]
+
+
+class SentNotificationResponse(BaseModel):
+    detail: str = "Notification sent successfully"

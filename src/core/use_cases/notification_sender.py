@@ -1,6 +1,6 @@
-from src.repository import ContactRepository
+from src.core.entities import DirectedNotification, PublicNotification
 from src.core.interfaces import AbstractSenderService
-from src.core.entities import Notification, SubscriberNotification
+from src.repository import ContactRepository
 
 
 class NotificationSender:
@@ -12,14 +12,25 @@ class NotificationSender:
         self._sender_service = sender_service
         self._contact_repository = contact_repository
 
-    async def notify_subscriber(self, subscriber_notification: SubscriberNotification) -> bool:
-        phone_number = subscriber_notification.phone_number
-        user_id = await self._contact_repository.get_user_id_by_phone_number(phone_number)
-        return await self._sender_service.send(
-            user_id=user_id,
-            text=subscriber_notification.text,
-            photo=subscriber_notification.photo
-        )
+    async def notify_direct(self, notification: DirectedNotification) -> None:
+        recipients = notification.recipients
+        content = notification.content
+        for recipient in recipients:
+            user_id = await self._contact_repository.get_user_id_by_phone_number(recipient.phone_number)
+            await self._sender_service.send(
+                user_id=user_id,
+                text=content.text,
+                photo_url=content.photo_url,
+                photo_base64=content.photo_base64
+            )
 
-    async def notify_users(self, notification: Notification) -> ...:
-        ...
+    async def notify_public(self, notification: PublicNotification) -> None:
+        content = notification.content
+        user_ids = await self._contact_repository.list_user_ids()
+        for user_id in user_ids:
+            await self._sender_service.send(
+                user_id=user_id,
+                text=content.text,
+                photo_url=content.photo_url,
+                photo_base64=content.photo_base64
+            )

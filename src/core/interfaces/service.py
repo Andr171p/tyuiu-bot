@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Optional
 from abc import ABC, abstractmethod
 
 
@@ -8,6 +8,7 @@ class AbstractSenderService(ABC):
             self,
             user_id: int,
             text: str,
-            photo: Optional[Any] = None,
+            photo_url: Optional[str] = None,
+            photo_base64: Optional[str] = None
     ) -> bool:
         raise NotImplemented
