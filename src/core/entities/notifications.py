@@ -1,44 +1,28 @@
-from typing import Any
+from typing import Optional, List
 
 from pydantic import BaseModel, field_validator
 
-from src.misc.formaters import format_phone_number
+from src.utils import format_phone_number
 
 
-class NotificationAll(BaseModel):
-    text: str
-
-
-class NotificationAllWithPhoto(BaseModel):
-    text: str
-    photo: Any
-
-
-class NotificationByUserId(BaseModel):
-    text: str
-    user_id: int
-
-
-class NotificationByPhoneNumber(BaseModel):
-    text: str
+class Recipient(BaseModel):
     phone_number: str
 
-    '''@field_validator("phone_number")
-    def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)'''
+    @field_validator("phone_number")
+    def validate_phone_number(self, phone_number: str) -> str:
+        return format_phone_number(phone_number)
 
 
-class NotificationWithPhotoByPhoneNumber(BaseModel):
+class NotificationContent(BaseModel):
     text: str
-    photo: Any
-    phone_number: str
-
-    '''@field_validator("phone_number")
-    def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)'''
+    photo_url: Optional[str] = None
+    photo_base64: Optional[str] = None
 
 
-class NotificationWithPhotoByUserId(BaseModel):
-    text: str
-    photo: Any
-    user_id: int
+class PublicNotification(BaseModel):
+    content: NotificationContent
+
+
+class DirectedNotification(BaseModel):
+    recipients: List[Recipient]
+    content: NotificationContent

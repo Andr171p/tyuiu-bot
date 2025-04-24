@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="06.04.2025 update bot token">
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/user_exists_keyboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="24.04.2025 ." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,9 +64,10 @@
     &quot;Python.user.executor&quot;: &quot;Run&quot;,
     &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
     &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
@@ -87,14 +77,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
+      <recent name="C:\Users\andre\TyuiuRAGBot\src\infrastructure" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\api" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
-      <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation" />
-      <recent name="C:\Users\andre\TyuiuRAGBot\messages" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.auth_api">
+  <component name="RunManager" selected="Python.utils">
     <configuration name="auth_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -161,28 +151,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/database/crud" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/database/crud/user_crud.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="user_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -205,13 +173,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.auth_api" />
         <item itemvalue="Python.file_saver" />
         <item itemvalue="Python.notifications" />
         <item itemvalue="Python.user_repository" />
-        <item itemvalue="Python.user_crud" />
       </list>
     </recent_temporary>
   </component>
@@ -230,118 +220,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00103" summary="09.03.2025 debug dialogs repo">
-      <option name="closed" value="true" />
-      <created>1741531193707</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1741531193707</updated>
-    </task>
-    <task id="LOCAL-00104" summary="09.03.2025 fix dialog repository">
-      <option name="closed" value="true" />
-      <created>1741532150894</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1741532150894</updated>
-    </task>
-    <task id="LOCAL-00105" summary="09.03.2025 switch endpoints">
-      <option name="closed" value="true" />
-      <created>1741532330363</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1741532330363</updated>
-    </task>
-    <task id="LOCAL-00106" summary="09.03.2025 fix count func in crud">
-      <option name="closed" value="true" />
-      <created>1741532736435</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1741532736435</updated>
-    </task>
-    <task id="LOCAL-00107" summary="11.03.2025 add notification controller">
-      <option name="closed" value="true" />
-      <created>1741686246061</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686246062</updated>
-    </task>
-    <task id="LOCAL-00108" summary="11.03.2025 fix field detail in notification schema">
-      <option name="closed" value="true" />
-      <created>1741686425118</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686425118</updated>
-    </task>
-    <task id="LOCAL-00109" summary="11.03.2025 fix add annotation in notification schema">
-      <option name="closed" value="true" />
-      <created>1741686619619</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686619619</updated>
-    </task>
-    <task id="LOCAL-00110" summary="11.03.2025 fix schemas imports in routers">
-      <option name="closed" value="true" />
-      <created>1741686740311</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1741686740311</updated>
-    </task>
-    <task id="LOCAL-00111" summary="11.03.2025 add tags in wh router">
-      <option name="closed" value="true" />
-      <created>1741687120420</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1741687120420</updated>
-    </task>
-    <task id="LOCAL-00112" summary="11.03.2025 fix notifications">
-      <option name="closed" value="true" />
-      <created>1741688032848</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1741688032848</updated>
-    </task>
-    <task id="LOCAL-00113" summary="11.03.2025 add chats controller">
-      <option name="closed" value="true" />
-      <created>1741689698099</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1741689698099</updated>
-    </task>
-    <task id="LOCAL-00114" summary="11.03.2025 changed endpoints in chats router">
-      <option name="closed" value="true" />
-      <created>1741690025383</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1741690025383</updated>
-    </task>
-    <task id="LOCAL-00115" summary="11.03.2025 changed total count endpoint in chats router">
-      <option name="closed" value="true" />
-      <created>1741690271414</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1741690271414</updated>
-    </task>
-    <task id="LOCAL-00116" summary="11.03.2025 add users controller">
-      <option name="closed" value="true" />
-      <created>1741691499921</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1741691499921</updated>
     </task>
     <task id="LOCAL-00117" summary="11.03.2025 add contact router">
       <option name="closed" value="true" />
@@ -623,24 +501,122 @@
       <option name="project" value="LOCAL" />
       <updated>1743941670679</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="09.04.2025 add check user exists on service">
+      <option name="closed" value="true" />
+      <created>1744184177144</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1744184177144</updated>
+    </task>
+    <task id="LOCAL-00153" summary="09.04.2025 add auth api to users provider">
+      <option name="closed" value="true" />
+      <created>1744184574850</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1744184574850</updated>
+    </task>
+    <task id="LOCAL-00154" summary="22.04.2025 initial refactoring">
+      <option name="closed" value="true" />
+      <created>1745336980533</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1745336980533</updated>
+    </task>
+    <task id="LOCAL-00155" summary="23.04.2025 refactor infrastructure layer">
+      <option name="closed" value="true" />
+      <created>1745406301596</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1745406301596</updated>
+    </task>
+    <task id="LOCAL-00156" summary="23.04.2025 refactor">
+      <option name="closed" value="true" />
+      <created>1745409698587</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1745409698587</updated>
+    </task>
+    <task id="LOCAL-00157" summary="23.04.2025 add change exists status method">
+      <option name="closed" value="true" />
+      <created>1745411727203</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1745411727203</updated>
+    </task>
+    <task id="LOCAL-00158" summary="23.04.2025 add update method for contact">
+      <option name="closed" value="true" />
+      <created>1745422783557</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1745422783557</updated>
+    </task>
+    <task id="LOCAL-00159" summary="23.04.2025 create notification sender">
+      <option name="closed" value="true" />
+      <created>1745424493306</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1745424493306</updated>
+    </task>
+    <task id="LOCAL-00160" summary="24.04.2025 create background task for notifications">
+      <option name="closed" value="true" />
+      <created>1745436286038</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1745436286038</updated>
+    </task>
+    <task id="LOCAL-00161" summary="24.04.2025 update IOC container">
+      <option name="closed" value="true" />
+      <created>1745506080571</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1745506080573</updated>
+    </task>
+    <task id="LOCAL-00162" summary="24.04.2025 refactor bot routers">
+      <option name="closed" value="true" />
+      <created>1745508024878</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1745508024878</updated>
+    </task>
+    <task id="LOCAL-00163" summary="24.04.2025 add error message to chat">
+      <option name="closed" value="true" />
+      <created>1745508539333</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1745508539333</updated>
+    </task>
+    <task id="LOCAL-00164" summary="24.04.2025 update telegram sender service">
+      <option name="closed" value="true" />
+      <created>1745509722215</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1745509722215</updated>
+    </task>
+    <task id="LOCAL-00165" summary="24.04.2025 .">
+      <option name="closed" value="true" />
+      <created>1745509832336</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1745509832336</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 delete app directory" />
-    <MESSAGE value="13.03.2025 change Readme" />
-    <MESSAGE value="18.03.2025 add phone_number validation" />
-    <MESSAGE value="18.03.2025 add file saver in utils" />
-    <MESSAGE value="18.03.2025 add logging in api" />
-    <MESSAGE value="18.03.2025 add telegram message dto" />
-    <MESSAGE value="18.03.2025 refactor" />
-    <MESSAGE value="20.03.2025 refactor" />
-    <MESSAGE value="20.03.2025 fix dto" />
-    <MESSAGE value="20.03.2025 fix dto tg message" />
-    <MESSAGE value="20.03.2025 fix schemas init" />
-    <MESSAGE value="22.03.2025 decomposition notification endpoint" />
-    <MESSAGE value="22.03.2025 refactor notify by phone number endpoint path" />
-    <MESSAGE value="22.03.2025 fix sender service" />
     <MESSAGE value="22.03.2025 cancel phone number validation" />
     <MESSAGE value="22.03.2025 cancel phone number validation in notifications" />
     <MESSAGE value="22.03.2025 add error message when chatbot is not allowed" />
@@ -652,6 +628,20 @@
     <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
     <MESSAGE value="06.04.2025 update bot token" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.04.2025 update bot token" />
+    <MESSAGE value="09.04.2025 add check user exists on service" />
+    <MESSAGE value="09.04.2025 add auth api to users provider" />
+    <MESSAGE value="22.04.2025 initial refactoring" />
+    <MESSAGE value="23.04.2025 refactor infrastructure layer" />
+    <MESSAGE value="23.04.2025 refactor" />
+    <MESSAGE value="23.04.2025 add change exists status method" />
+    <MESSAGE value="23.04.2025 add update method for contact" />
+    <MESSAGE value="23.04.2025 create notification sender" />
+    <MESSAGE value="24.04.2025 create background task for notifications" />
+    <MESSAGE value="24.04.2025 update IOC container" />
+    <MESSAGE value="24.04.2025 refactor bot routers" />
+    <MESSAGE value="24.04.2025 add error message to chat" />
+    <MESSAGE value="24.04.2025 update telegram sender service" />
+    <MESSAGE value="24.04.2025 ." />
+    <option name="LAST_COMMIT_MESSAGE" value="24.04.2025 ." />
   </component>
 </project>

@@ -1,9 +1,9 @@
 __all__ = (
-    "UsersUseCase",
-    "ChatBotUseCase",
-    "NotificationUseCase"
+    "ChatAssistant",
+    "UserManager",
+    "NotificationSender"
 )
 
-from src.core.use_cases.users_use_case import UsersUseCase
-from src.core.use_cases.chatbot_use_case import ChatBotUseCase
-from src.core.use_cases.notification_use_case import NotificationUseCase
+from src.core.use_cases.user_manager import UserManager
+from src.core.use_cases.chat_assistant import ChatAssistant
+from src.core.use_cases.notification_sender import NotificationSender
