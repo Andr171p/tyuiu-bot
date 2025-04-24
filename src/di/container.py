@@ -1,22 +1,18 @@
 from dishka import make_async_container
 
 from src.di.providers import (
+    AppProvider,
     DatabaseProvider,
-    BotProvider,
-    RepositoryProvider,
-    UsersProvider,
-    ChatBotProvider,
-    NotificationProvider,
-    ChatsProvider
+    InfrastructureProvider
 )
+from src.settings import Settings
 
+
+settings = Settings()
 
 container = make_async_container(
+    InfrastructureProvider(),
     DatabaseProvider(),
-    BotProvider(),
-    RepositoryProvider(),
-    UsersProvider(),
-    ChatBotProvider(),
-    NotificationProvider(),
-    ChatsProvider()
+    AppProvider(),
+    context={Settings: settings}
 )

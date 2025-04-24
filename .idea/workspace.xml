@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="23.04.2025 create notification sender">
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/tasks.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="24.04.2025 create background task for notifications">
+      <change afterPath="$PROJECT_DIR$/src/di/providers/app_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/di/providers/infrastructure_provider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/di/container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/di/providers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/bot_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/chatbot_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/chats_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/database_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/di/providers/database_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/notification_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/repository_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/users_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +235,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00111" summary="11.03.2025 add tags in wh router">
-      <option name="closed" value="true" />
-      <created>1741687120420</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1741687120420</updated>
     </task>
     <task id="LOCAL-00112" summary="11.03.2025 fix notifications">
       <option name="closed" value="true" />
@@ -624,11 +620,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745424493306</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="24.04.2025 create background task for notifications">
+      <option name="closed" value="true" />
+      <created>1745436286038</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1745436286038</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20.03.2025 fix dto" />
     <MESSAGE value="20.03.2025 fix dto tg message" />
     <MESSAGE value="20.03.2025 fix schemas init" />
     <MESSAGE value="22.03.2025 decomposition notification endpoint" />
@@ -653,6 +656,7 @@
     <MESSAGE value="23.04.2025 add change exists status method" />
     <MESSAGE value="23.04.2025 add update method for contact" />
     <MESSAGE value="23.04.2025 create notification sender" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.04.2025 create notification sender" />
+    <MESSAGE value="24.04.2025 create background task for notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.04.2025 create background task for notifications" />
   </component>
 </project>
