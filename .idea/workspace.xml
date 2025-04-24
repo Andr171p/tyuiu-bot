@@ -4,17 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="06.04.2025 update bot token">
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/user_exists_keyboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="24.04.2025">
+      <change afterPath="$PROJECT_DIR$/src/core/entities/messages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/chatbot_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/users_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/chat_histories.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/entities/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/dialog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chatbot_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/users_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/chat_history_saver_decorator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/file_saver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/metrics.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -230,14 +242,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00103" summary="09.03.2025 debug dialogs repo">
-      <option name="closed" value="true" />
-      <created>1741531193707</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1741531193707</updated>
     </task>
     <task id="LOCAL-00104" summary="09.03.2025 fix dialog repository">
       <option name="closed" value="true" />
@@ -623,11 +627,18 @@
       <option name="project" value="LOCAL" />
       <updated>1743941670679</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="24.04.2025">
+      <option name="closed" value="true" />
+      <created>1745511526846</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1745511526847</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11.03.2025 delete app directory" />
     <MESSAGE value="13.03.2025 change Readme" />
     <MESSAGE value="18.03.2025 add phone_number validation" />
     <MESSAGE value="18.03.2025 add file saver in utils" />
@@ -652,6 +663,7 @@
     <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
     <MESSAGE value="06.04.2025 update bot token" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.04.2025 update bot token" />
+    <MESSAGE value="24.04.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.04.2025" />
   </component>
 </project>
