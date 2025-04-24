@@ -14,6 +14,6 @@ class ChatAssistantRabbitGateway(AbstractChatAssistantGateway):
         assistant_message = await self._broker.publish(
             user_message,
             queue="chat.user-message",
-            rpc=True
+            reply_to="chat.assistant-message"
         )
-        return assistant_message if user_message.chat_id == assistant_message.chat_id else None
+        return assistant_message
