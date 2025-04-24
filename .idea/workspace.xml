@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.auth_api" />
-        <item itemvalue="Python.file_saver" />
-        <item itemvalue="Python.notifications" />
         <item itemvalue="Python.user_repository" />
         <item itemvalue="Python.user_crud" />
+        <item itemvalue="Python.notifications" />
+        <item itemvalue="Python.file_saver" />
+        <item itemvalue="Python.auth_api" />
       </list>
     </recent_temporary>
   </component>
