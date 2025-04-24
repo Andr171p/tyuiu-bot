@@ -3,10 +3,9 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from dishka.integrations.aiogram import setup_dishka
 
 from src.presentation.bot.routers import (
-    start_router,
-    info_router,
-    chatbot_router,
-    contact_router
+    chat_router,
+    handler_router,
+    subscription_router
 )
 from src.di import container
 
@@ -14,10 +13,9 @@ from src.di import container
 def create_aiogram_app() -> Dispatcher:
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_routers(
-        start_router,
-        info_router,
-        contact_router,
-        chatbot_router
+        chat_router,
+        handler_router,
+        subscription_router
     )
     setup_dishka(
         container=container,

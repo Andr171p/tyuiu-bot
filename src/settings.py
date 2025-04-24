@@ -31,6 +31,7 @@ class PostgresSettings(BaseSettings):
 class MessagesSettings(BaseSettings):
     start: str = read_txt(BASE_DIR / "messages" / "start.txt")
     info: str = read_txt(BASE_DIR / "messages" / "info.txt")
+    subscription: str = read_txt(BASE_DIR / "messages" / "subscription.txt")
 
 
 class StaticSettings(BaseSettings):
