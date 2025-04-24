@@ -13,7 +13,7 @@ from src.presentation.api.v1.routers import (
 )
 
 
-def create_app() -> FastAPI:
+def create_fastapi_app() -> FastAPI:
     app = FastAPI(lifespan=lifespan)
     app.include_router(webhook_router)
     app.include_router(users_router)
