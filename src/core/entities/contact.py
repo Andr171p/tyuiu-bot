@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, field_validator
 
-from src.misc.formaters import format_phone_number
+from src.utils import format_phone_number
 
 
 class Contact(BaseModel):

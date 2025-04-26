@@ -1,6 +1,6 @@
 FROM python:3.11
 
-WORKDIR /tyuiu_chat_bot
+WORKDIR /tyuiu_bot
 
 COPY requirements.txt .
 
