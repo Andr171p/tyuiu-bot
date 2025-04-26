@@ -4,143 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="24.04.2025 .">
-      <change afterPath="$PROJECT_DIR$/src/di/container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/di/providers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/di/providers/app_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/di/providers/database_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/di/providers/insrastructure_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/chat_assistant/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/chat_assistant/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/chat_assistant/rabbit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/apis/chat_assistant_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models/base_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models/user_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models/user_relation_mixin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/session.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/keyboards.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/bot/routers/subscription.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/auth_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/chatbot_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/chatbot_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/chats_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/notification_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/users_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/base_crud.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/contact_crud.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/dialog_crud.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/crud/user_crud.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/database_manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/base_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/contact_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/dialog_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/user_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models/user_relation_mixin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/per_day_distribution.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/shared_contacts_users.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/telegram_messages.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/base_http.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/http_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/http_requests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/contact_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/notification_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mappers/user_mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/di/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/file_writers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/files_readers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/formaters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/chats_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/webhook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/dp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/share_contact_keyboard.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/keyboards/user_exists_keyboard.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/presenters/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/presenters/base_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/presenters/chat_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/presenters/info_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/presenters/start_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chatbot_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/contact_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/info_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/start_router.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/container.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/bot_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chatbot_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/chats_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/database_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/notification_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/repository_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/di/providers/users_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/chatbot_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/info_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/share_contact_presenters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenters/start_presenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/base_repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/dialog_repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/chats_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/contacts_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/delivered_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/notifications_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/per_day_distribution_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/users_schemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/base_sender_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/sender_exception.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,37 +49,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.analytics.executor": "Run",
-    "Python.auth_api.executor": "Run",
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.contact.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.file_saver.executor": "Run",
-    "Python.formaters.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.notifications.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "Python.user_crud.executor": "Run",
-    "Python.user_repository.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_saver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.notifications.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
@@ -361,14 +225,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00117" summary="11.03.2025 add contact router">
-      <option name="closed" value="true" />
-      <created>1741693224498</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1741693224498</updated>
     </task>
     <task id="LOCAL-00118" summary="11.03.2025 fic share contact method in users use case">
       <option name="closed" value="true" />
@@ -754,11 +610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745509832336</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks">
+      <option name="closed" value="true" />
+      <created>1745661567600</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1745661567600</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="22.03.2025 cancel phone number validation" />
     <MESSAGE value="22.03.2025 cancel phone number validation in notifications" />
     <MESSAGE value="22.03.2025 add error message when chatbot is not allowed" />
     <MESSAGE value="22.03.2025 write Readme docs" />
@@ -783,6 +646,7 @@
     <MESSAGE value="24.04.2025 add error message to chat" />
     <MESSAGE value="24.04.2025 update telegram sender service" />
     <MESSAGE value="24.04.2025 ." />
-    <option name="LAST_COMMIT_MESSAGE" value="24.04.2025 ." />
+    <MESSAGE value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
   </component>
 </project>
