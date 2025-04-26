@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 fix reqs">
-      <change afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/container.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/providers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/providers/app_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/providers/database_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/providers/insrastructure_provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/rabbit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/chat_assistant_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/routers/tasks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add INFO logging" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,30 +226,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00122" summary="11.03.2025 change routers in dp">
-      <option name="closed" value="true" />
-      <created>1741694937436</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1741694937436</updated>
-    </task>
-    <task id="LOCAL-00123" summary="11.03.2025 refactoring">
-      <option name="closed" value="true" />
-      <created>1741695240217</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1741695240217</updated>
-    </task>
-    <task id="LOCAL-00124" summary="11.03.2025 add per day count methods">
-      <option name="closed" value="true" />
-      <created>1741704944858</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1741704944859</updated>
     </task>
     <task id="LOCAL-00125" summary="11.03.2025 change endpoints">
       <option name="closed" value="true" />
@@ -652,12 +595,34 @@
       <option name="project" value="LOCAL" />
       <updated>1745665573109</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="27.04.2025 refactoring">
+      <option name="closed" value="true" />
+      <created>1745697747010</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1745697747010</updated>
+    </task>
+    <task id="LOCAL-00172" summary="27.04.2025 add INFO logging">
+      <option name="closed" value="true" />
+      <created>1745697801569</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1745697801569</updated>
+    </task>
+    <task id="LOCAL-00173" summary="27.04.2025 add INFO logging">
+      <option name="closed" value="true" />
+      <created>1745698006952</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1745698006952</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="23.03.2025 change telegram bot" />
-    <MESSAGE value="23.03.2025 add service link to info message" />
     <MESSAGE value="02.04.2025 add docker-compose and nginx config" />
     <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
@@ -681,6 +646,8 @@
     <MESSAGE value="26.04.2025 fix format phone number in contact" />
     <MESSAGE value="26.04.2025 fix phone number validation in notifications" />
     <MESSAGE value="26.04.2025 fix reqs" />
-    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 fix reqs" />
+    <MESSAGE value="27.04.2025 refactoring" />
+    <MESSAGE value="27.04.2025 add INFO logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add INFO logging" />
   </component>
 </project>
