@@ -7,7 +7,7 @@ from src.presentation.bot.routers import (
     handler_router,
     subscription_router
 )
-from src.di import container
+from src.ioc import container
 
 
 def create_aiogram_app() -> Dispatcher:

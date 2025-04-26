@@ -6,10 +6,10 @@ from contextlib import asynccontextmanager
 from aiogram import Bot
 from fastapi import FastAPI
 
-from src.di import container
+from src.ioc import container
 from src.settings import Settings
 from src.presentation.bot.app import create_aiogram_app
-from src.infrastructure.broker.app import create_faststream_app
+from src.infrastructure.tasks import create_faststream_app
 
 
 logger = logging.getLogger(__name__)
@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     bot = await container.get(Bot)
     settings = await container.get(Settings)
     dp = create_aiogram_app()
-    webhook_url = f"{settings.api.url}/webhook"
+    webhook_url = f"{settings.app.url}/webhook"
     await bot.set_webhook(
         url=webhook_url,
         allowed_updates=dp.resolve_used_update_types(),

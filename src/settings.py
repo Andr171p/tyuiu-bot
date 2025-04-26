@@ -4,14 +4,17 @@ from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
 
 from src.utils import read_txt
-from src.constants import BASE_DIR, ENV_PATH
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+ENV_PATH = BASE_DIR / ".env"
 
 load_dotenv(ENV_PATH)
 
 
-class APISettings(BaseSettings):
-    url: str = os.getenv("API_BASE_URL")
+class AppSettings(BaseSettings):
+    domain: str = os.getenv("HTTPS_DOMAIN")
 
 
 class BotSettings(BaseSettings):
@@ -35,25 +38,18 @@ class MessagesSettings(BaseSettings):
     error: str = read_txt(BASE_DIR / "messages" / "error.txt")
 
 
-class StaticSettings(BaseSettings):
-    static_dir: Path = BASE_DIR / "static"
-    template_dir: Path = BASE_DIR / "static" / "templates"
-    texts_dir: Path = BASE_DIR / "static" / "texts"
-
-
 class TyuiuGPTSettings(BaseSettings):
-    base_url: str = os.getenv("TYUIU_GPT_API_BASE_URL")
+    url: str = os.getenv("TYUIU_GPT_API")
 
 
-class AuthSettings(BaseSettings):
-    base_url: str = os.getenv("AUTH_API_BASE_URL")
+class UserAuthSettings(BaseSettings):
+    url: str = os.getenv("USER_AUTH_API")
 
 
 class Settings(BaseSettings):
-    api: APISettings = APISettings()
+    app: AppSettings = AppSettings()
     tyuiu_gpt: TyuiuGPTSettings = TyuiuGPTSettings()
-    auth: AuthSettings = AuthSettings()
+    user_auth: UserAuthSettings = UserAuthSettings()
     bot: BotSettings = BotSettings()
     postgres: PostgresSettings = PostgresSettings()
     messages: MessagesSettings = MessagesSettings()
-    static: StaticSettings = StaticSettings()

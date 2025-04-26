@@ -26,12 +26,12 @@ class TelegramSenderService(AbstractSenderService):
     ) -> bool:
         if photo_base64 is not None:
             photo = BufferedInputFile(base64.b64decode(photo_base64), filename=str(uuid.uuid4()))
-            return await self._send_photo(user_id, photo, text)
+            return await self.__send_photo(user_id, photo, text)
         elif photo_url is not None:
-            return await self._send_photo(user_id, photo_url, text)
-        return await self._send_message(user_id, text)
+            return await self.__send_photo(user_id, photo_url, text)
+        return await self.__send_message(user_id, text)
 
-    async def _send_message(self, chat_id: int, text: str) -> bool:
+    async def __send_message(self, chat_id: int, text: str) -> bool:
         is_delivered: bool = False
         try:
             message = await self._bot.send_message(
@@ -47,7 +47,7 @@ class TelegramSenderService(AbstractSenderService):
         finally:
             return is_delivered
 
-    async def _send_photo(self, chat_id: int, photo: Union[InputFile, str], caption: str) -> bool:
+    async def __send_photo(self, chat_id: int, photo: Union[InputFile, str], caption: str) -> bool:
         is_delivered: bool = False
         try:
             message = await self._bot.send_photo(

@@ -4,9 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 fix format phone number in contact">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 fix reqs">
+      <change afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/container.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/app_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/database_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/providers/insrastructure_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/chat_assistant/rabbit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/chat_assistant_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis/user_auth_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/routers/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sender/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sender/telegram_sender_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,37 +82,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
-    &quot;Python.auth_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
-    &quot;Python.container.executor&quot;: &quot;Run&quot;,
-    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
-    &quot;Python.file_saver.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.notifications.executor&quot;: &quot;Run&quot;,
-    &quot;Python.start.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.analytics.executor": "Run",
+    "Python.apis.executor": "Run",
+    "Python.auth_api.executor": "Run",
+    "Python.base.executor": "Run",
+    "Python.bot.executor": "Run",
+    "Python.client (1).executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.contact.executor": "Run",
+    "Python.container.executor": "Run",
+    "Python.file_loaders.executor": "Run",
+    "Python.file_saver.executor": "Run",
+    "Python.formaters.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.notifications.executor": "Run",
+    "Python.start.executor": "Run",
+    "Python.user.executor": "Run",
+    "Python.user_crud.executor": "Run",
+    "Python.user_repository.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
@@ -92,8 +123,8 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.auth_api">
-    <configuration name="auth_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.apis">
+    <configuration name="apis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,11 +133,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/apis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/infrastructure" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/apis/auth_api.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/infrastructure/apis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,6 +190,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="user" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\andre\TyuiuRAGBot\src\repository\user.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="user_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -181,35 +234,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/repository/user_repository.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.apis" />
         <item itemvalue="Python.user_repository" />
         <item itemvalue="Python.user_crud" />
         <item itemvalue="Python.notifications" />
         <item itemvalue="Python.file_saver" />
-        <item itemvalue="Python.auth_api" />
       </list>
     </recent_temporary>
   </component>
@@ -228,22 +259,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00120" summary="11.03.2025 add contact router to dp">
-      <option name="closed" value="true" />
-      <created>1741694498612</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1741694498612</updated>
-    </task>
-    <task id="LOCAL-00121" summary="11.03.2025 rename command">
-      <option name="closed" value="true" />
-      <created>1741694702362</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1741694702362</updated>
     </task>
     <task id="LOCAL-00122" summary="11.03.2025 change routers in dp">
       <option name="closed" value="true" />
@@ -621,12 +636,26 @@
       <option name="project" value="LOCAL" />
       <updated>1745662882759</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="26.04.2025 fix phone number validation in notifications">
+      <option name="closed" value="true" />
+      <created>1745663889455</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1745663889455</updated>
+    </task>
+    <task id="LOCAL-00170" summary="26.04.2025 fix reqs">
+      <option name="closed" value="true" />
+      <created>1745665573109</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1745665573109</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="22.03.2025 write Readme docs" />
-    <MESSAGE value="23.03.2025 refactor info message" />
     <MESSAGE value="23.03.2025 change telegram bot" />
     <MESSAGE value="23.03.2025 add service link to info message" />
     <MESSAGE value="02.04.2025 add docker-compose and nginx config" />
@@ -650,6 +679,8 @@
     <MESSAGE value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
     <MESSAGE value="26.04.2025 replace file name to subscription.txt" />
     <MESSAGE value="26.04.2025 fix format phone number in contact" />
-    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 fix format phone number in contact" />
+    <MESSAGE value="26.04.2025 fix phone number validation in notifications" />
+    <MESSAGE value="26.04.2025 fix reqs" />
+    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 fix reqs" />
   </component>
 </project>
