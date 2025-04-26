@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="26.04.2025 fix format phone number in contact">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,22 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00118" summary="11.03.2025 fic share contact method in users use case">
-      <option name="closed" value="true" />
-      <created>1741693408005</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1741693408007</updated>
-    </task>
-    <task id="LOCAL-00119" summary="11.03.2025 add chatbot controller">
-      <option name="closed" value="true" />
-      <created>1741694441095</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1741694441095</updated>
     </task>
     <task id="LOCAL-00120" summary="11.03.2025 add contact router to dp">
       <option name="closed" value="true" />
@@ -618,12 +605,26 @@
       <option name="project" value="LOCAL" />
       <updated>1745661567600</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="26.04.2025 replace file name to subscription.txt">
+      <option name="closed" value="true" />
+      <created>1745662566974</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1745662566974</updated>
+    </task>
+    <task id="LOCAL-00168" summary="26.04.2025 fix format phone number in contact">
+      <option name="closed" value="true" />
+      <created>1745662882759</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1745662882759</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="22.03.2025 cancel phone number validation in notifications" />
-    <MESSAGE value="22.03.2025 add error message when chatbot is not allowed" />
     <MESSAGE value="22.03.2025 write Readme docs" />
     <MESSAGE value="23.03.2025 refactor info message" />
     <MESSAGE value="23.03.2025 change telegram bot" />
@@ -647,6 +648,8 @@
     <MESSAGE value="24.04.2025 update telegram sender service" />
     <MESSAGE value="24.04.2025 ." />
     <MESSAGE value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
+    <MESSAGE value="26.04.2025 replace file name to subscription.txt" />
+    <MESSAGE value="26.04.2025 fix format phone number in contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="26.04.2025 fix format phone number in contact" />
   </component>
 </project>

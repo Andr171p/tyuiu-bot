@@ -9,7 +9,7 @@ class Recipient(BaseModel):
     phone_number: str
 
     @field_validator("phone_number")
-    def validate_phone_number(self, phone_number: str) -> str:
+    def validate_phone_number(cls, phone_number: str) -> str:
         return format_phone_number(phone_number)
 
 
