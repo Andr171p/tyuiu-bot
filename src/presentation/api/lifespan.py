@@ -1,30 +1,39 @@
 import logging
-from contextlib import (
-    asynccontextmanager,
-    AbstractAsyncContextManager
-)
 
-from fastapi import FastAPI
+from typing import Any, AsyncGenerator
+from contextlib import asynccontextmanager
+
 from aiogram import Bot
+from fastapi import FastAPI
 
-from src.presentation.di import container
-from src.presentation.bot.dp import dp
-from src.config import settings
+from src.di import container
+from src.settings import Settings
+from src.presentation.bot.app import create_aiogram_app
+from src.infrastructure.broker.app import create_faststream_app
 
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> AbstractAsyncContextManager[None]:
+async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     bot = await container.get(Bot)
-    webhook_url: str = f"{settings.api.url}/webhook"
+    settings = await container.get(Settings)
+    dp = create_aiogram_app()
+    webhook_url = f"{settings.api.url}/webhook"
     await bot.set_webhook(
         url=webhook_url,
         allowed_updates=dp.resolve_used_update_types(),
         drop_pending_updates=True
     )
-    log.info("Webhook set to: %s", webhook_url)
+    logger.info("Webhook set to: %s", webhook_url)
+
+    faststream_app = await create_faststream_app()
+    await faststream_app.broker.start()
+    logger.info("Broker started")
     yield
+    await faststream_app.broker.close()
+    logger.info("Broker closed")
+
     await bot.delete_webhook()
-    log.info("Webhook removed")
+    logger.info("Webhook removed")

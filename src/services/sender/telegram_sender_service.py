@@ -1,52 +1,65 @@
+import uuid
+import base64
 import logging
-from typing import TYPE_CHECKING, Any
 
-if TYPE_CHECKING:
-    from aiogram import Bot
+from typing import Optional, Union
 
-from src.services.sender.base_sender_service import BaseSenderService
-from src.services.sender.sender_exception import SenderException
+from aiogram import Bot
+from aiogram.types import InputFile, BufferedInputFile
 
-
-log = logging.getLogger(__name__)
+from src.core.interfaces import AbstractSenderService
 
 
-class TelegramSenderService(BaseSenderService):
-    def __init__(self, bot: "Bot") -> None:
+logger = logging.getLogger(__name__)
+
+
+class TelegramSenderService(AbstractSenderService):
+    def __init__(self, bot: Bot) -> None:
         self._bot = bot
 
-    async def send_message(self, user_id: int, text: str) -> bool:
+    async def send(
+            self,
+            user_id: int,
+            text: str,
+            photo_url: Optional[str] = None,
+            photo_base64: Optional[str] = None
+    ) -> bool:
+        if photo_base64 is not None:
+            photo = BufferedInputFile(base64.b64decode(photo_base64), filename=str(uuid.uuid4()))
+            return await self._send_photo(user_id, photo, text)
+        elif photo_url is not None:
+            return await self._send_photo(user_id, photo_url, text)
+        return await self._send_message(user_id, text)
+
+    async def _send_message(self, chat_id: int, text: str) -> bool:
         is_delivered: bool = False
         try:
             message = await self._bot.send_message(
-                chat_id=user_id,
+                chat_id=chat_id,
                 text=text
             )
             if message:
                 is_delivered = True
-            log.info("Message delivered successfully to %s", user_id)
-        except SenderException as ex:
-            log.warning("Message is not delivered with exception %s", ex)
+            logger.info("Message delivered successfully to %s", chat_id)
+        except Exception as ex:
+            logger.warning("Message is not delivered with error %s", ex)
             is_delivered = False
         finally:
             return is_delivered
 
-    async def send_message_with_photo(self, user_id: int, photo: Any, text: str) -> bool:
+    async def _send_photo(self, chat_id: int, photo: Union[InputFile, str], caption: str) -> bool:
         is_delivered: bool = False
         try:
             message = await self._bot.send_photo(
-                chat_id=user_id,
+                chat_id=chat_id,
                 photo=photo,
-                caption=text
+                caption=caption
             )
             if message:
                 is_delivered = True
-            log.info(
-                "Message with photo delivered successfully to %s",
-                user_id
-            )
-        except SenderException as ex:
-            log.warning("Message with photo is not delivered with exception %s", ex)
+            logger.info("Photo delivered successfully to %s", chat_id)
+        except Exception as ex:
+            logger.warning("Photo is not delivered with error %s", ex)
             is_delivered = False
         finally:
             return is_delivered
