@@ -4,9 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 refactor rabbit queue name">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 refactor rabbit queue name .">
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/chat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/notifications.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/rabbit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/rabbit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateways.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/rest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/repositories.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/rabbit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/rest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/contact.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/mixins.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/contact_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/user_repository.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,28 +127,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.contact_repository">
-    <configuration name="apis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/infrastructure" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/infrastructure/apis.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="contact_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -184,6 +193,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="rest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/infrastructure" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\andre\TyuiuRAGBot\src\infrastructure\rest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="user_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -210,7 +241,7 @@
       <list>
         <item itemvalue="Python.contact_repository" />
         <item itemvalue="Python.repositories" />
-        <item itemvalue="Python.apis" />
+        <item itemvalue="Python.rest" />
         <item itemvalue="Python.user_crud" />
         <item itemvalue="Python.notifications" />
       </list>
@@ -231,14 +262,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00134" summary="20.03.2025 refactor">
-      <option name="closed" value="true" />
-      <created>1742480925458</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1742480925458</updated>
     </task>
     <task id="LOCAL-00135" summary="20.03.2025 fix dto">
       <option name="closed" value="true" />
@@ -624,11 +647,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745758110021</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="27.04.2025 refactor rabbit queue name .">
+      <option name="closed" value="true" />
+      <created>1745758427168</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1745758427168</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="23.04.2025 add change exists status method" />
     <MESSAGE value="23.04.2025 add update method for contact" />
     <MESSAGE value="23.04.2025 create notification sender" />
     <MESSAGE value="24.04.2025 create background task for notifications" />
@@ -653,6 +683,7 @@
     <MESSAGE value="27.04.2025 fix bot routers" />
     <MESSAGE value="27.04.2025" />
     <MESSAGE value="27.04.2025 refactor rabbit queue name" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 refactor rabbit queue name" />
+    <MESSAGE value="27.04.2025 refactor rabbit queue name ." />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 refactor rabbit queue name ." />
   </component>
 </project>

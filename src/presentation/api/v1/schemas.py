@@ -1,9 +1,10 @@
+from datetime import datetime
+
 from typing import Annotated, List
 
 from fastapi import Query
 from pydantic import BaseModel
 
-from src.dto import DailyCount
 from src.core.entities import User, Contact
 
 
@@ -27,6 +28,11 @@ class ContactsResponse(BaseModel):
 
 class ContactUpdate(BaseModel):
     is_exists: bool
+
+
+class DailyCount(BaseModel):
+    date: datetime
+    count: int
 
 
 class DailyCountResponse(BaseModel):

@@ -1,5 +1,5 @@
 from src.core.entities import User, Contact
-from src.core.interfaces import UserAuthGateway, UserRepository, ContactRepository
+from src.core.interfaces import UserRepository, ContactRepository, UserRegistration
 
 
 class UserManager:
@@ -7,11 +7,11 @@ class UserManager:
             self,
             user_repository: UserRepository,
             contact_repository: ContactRepository,
-            user_auth_gateway: UserAuthGateway
+            user_registration: UserRegistration
     ) -> None:
         self._user_repository = user_repository
         self._contact_repository = contact_repository
-        self._user_auth_gateway = user_auth_gateway
+        self._user_registration = user_registration
 
     async def register(self, user: User) -> bool:
         if await self._user_repository.get(user.user_id):

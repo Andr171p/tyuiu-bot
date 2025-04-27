@@ -2,22 +2,20 @@ from aiogram import F, Router
 from aiogram.types import Message
 from dishka.integrations.aiogram import FromDishka
 
-from src.settings import Settings
-from src.core.use_cases import ChatAssistant
+from faststream.rabbit import RabbitBroker
+
+from src.core.entities import UserMessage
 
 
 chat_router = Router()
 
 
 @chat_router.message(F.text)
-async def answer(
-        message: Message,
-        chat_assistant: FromDishka[ChatAssistant],
-        settings: FromDishka[Settings]
-) -> None:
+async def answer(message: Message, broker: FromDishka[RabbitBroker]) -> None:
     await message.bot.send_chat_action(message.chat.id, "typing")
-    text = await chat_assistant.answer(str(message.from_user.id), message.text)
-    if text is None:
-        await message.answer(settings.messages.error)
-    else:
-        await message.answer(text)
+    user_message = UserMessage(chat_id=str(message.from_user.id), text=message.text)
+    await broker.publish(
+        user_message,
+        queue="chat.user-messages",
+        reply_to="chat.assistant-messages"
+    )
