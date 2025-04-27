@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add rabbit settings" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 fix bot routers">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_09_2040-6eed0d93ce35_initial_revision.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_10_1220-1d0102e6c94f_update_message_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_10_1225-82bb06766c12_bot_message_column.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_20_0027-b133c0c7acf4_update_key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_21_2324-9ef88b0c18d4_contact_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_03_09_1919-3a9143ea683a_rename_fields.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/rabbit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/rabbit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/subscription.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/subscription.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,22 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00130" summary="18.03.2025 add file saver in utils">
-      <option name="closed" value="true" />
-      <created>1742300688872</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1742300688872</updated>
-    </task>
-    <task id="LOCAL-00131" summary="18.03.2025 add logging in api">
-      <option name="closed" value="true" />
-      <created>1742304242605</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1742304242605</updated>
     </task>
     <task id="LOCAL-00132" summary="18.03.2025 add telegram message dto">
       <option name="closed" value="true" />
@@ -621,12 +618,26 @@
       <option name="project" value="LOCAL" />
       <updated>1745756427436</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="27.04.2025 change port">
+      <option name="closed" value="true" />
+      <created>1745756649522</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1745756649522</updated>
+    </task>
+    <task id="LOCAL-00180" summary="27.04.2025 fix bot routers">
+      <option name="closed" value="true" />
+      <created>1745756830239</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1745756830239</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09.04.2025 add auth api to users provider" />
-    <MESSAGE value="22.04.2025 initial refactoring" />
     <MESSAGE value="23.04.2025 refactor infrastructure layer" />
     <MESSAGE value="23.04.2025 refactor" />
     <MESSAGE value="23.04.2025 add change exists status method" />
@@ -650,6 +661,8 @@
     <MESSAGE value="27.04.2025 change domain url" />
     <MESSAGE value="27.04.2025 fix daily count" />
     <MESSAGE value="27.04.2025 add rabbit settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add rabbit settings" />
+    <MESSAGE value="27.04.2025 change port" />
+    <MESSAGE value="27.04.2025 fix bot routers" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 fix bot routers" />
   </component>
 </project>

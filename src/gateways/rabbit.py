@@ -11,9 +11,9 @@ class ChatAssistantRabbitGateway(ChatAssistantGateway):
         self._broker = broker
 
     async def answer(self, user_message: UserMessage) -> Optional[AssistantMessage]:
-        assistant_message = await self._broker.publish(
+        message = await self._broker.publish(
             user_message,
             queue="chat.user-message",
             reply_to="chat.assistant-message"
         )
-        return assistant_message
+        return AssistantMessage.model_validate_json(message.body)
