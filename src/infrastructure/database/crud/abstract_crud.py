@@ -25,5 +25,5 @@ class AbstractCRUD(ABC):
         raise NotImplemented
 
     @abstractmethod
-    async def read_date_to_count(self) -> Sequence[Tuple[datetime, int]]:
+    async def read_count_by_creation_date(self) -> Sequence[Tuple[datetime, int]]:
         raise NotImplemented

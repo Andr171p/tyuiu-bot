@@ -70,7 +70,7 @@ class ContactCRUD(AbstractCRUD):
         total_count = await self._session.execute(stmt)
         return total_count.scalar_one_or_none()
 
-    async def read_date_to_count(self) -> Sequence[Tuple[datetime, int]]:
+    async def read_count_by_creation_date(self) -> Sequence[Tuple[datetime, int]]:
         stmt = (
             select(
                 func.date(ContactModel.created_at).label("date"),

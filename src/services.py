@@ -7,13 +7,13 @@ from typing import Optional, Union
 from aiogram import Bot
 from aiogram.types import InputFile, BufferedInputFile
 
-from src.core.interfaces import AbstractSenderService
+from src.core.interfaces import SenderService
 
 
 logger = logging.getLogger(__name__)
 
 
-class TelegramSenderService(AbstractSenderService):
+class TelegramSenderService(SenderService):
     def __init__(self, bot: Bot) -> None:
         self._bot = bot
 

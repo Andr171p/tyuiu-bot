@@ -1,11 +1,11 @@
 from typing import Optional
 
 from src.core.entities import UserMessage
-from src.core.interfaces import AbstractChatAssistantGateway
+from src.core.interfaces import ChatAssistantGateway
 
 
 class ChatAssistant:
-    def __init__(self, chat_assistant_gateway: AbstractChatAssistantGateway) -> None:
+    def __init__(self, chat_assistant_gateway: ChatAssistantGateway) -> None:
         self._chat_assistant_gateway = chat_assistant_gateway
 
     async def answer(self, chat_id: str, text: str) -> Optional[str]:

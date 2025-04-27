@@ -1,12 +1,11 @@
 from src.core.entities import DirectedNotification, PublicNotification
-from src.core.interfaces import AbstractSenderService
-from src.repository import ContactRepository
+from src.core.interfaces import SenderService, ContactRepository
 
 
 class NotificationSender:
     def __init__(
             self,
-            sender_service: AbstractSenderService,
+            sender_service: SenderService,
             contact_repository: ContactRepository
     ) -> None:
         self._sender_service = sender_service

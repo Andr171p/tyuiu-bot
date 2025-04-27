@@ -2,7 +2,7 @@ from fastapi import APIRouter, status, HTTPException
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.core.entities import Contact
-from src.repository import ContactRepository
+from src.core.interfaces import ContactRepository
 from src.presentation.api.v1.schemas import (
     ContactsResponse,
     CountResponse,
@@ -62,7 +62,7 @@ async def get_count(contact_repository: FromDishka[ContactRepository]) -> CountR
 async def get_date_to_count(
         contact_repository: FromDishka[ContactRepository]
 ) -> DateToCountResponse:
-    date_to_count = await contact_repository.date_to_count()
+    date_to_count = await contact_repository.count_by_creation_date()
     return DateToCountResponse(distribution=date_to_count)
 
 
@@ -75,7 +75,10 @@ async def get_contact(
         user_id: int,
         contact_repository: FromDishka[ContactRepository]
 ) -> Contact:
-    return await contact_repository.get(user_id)
+    contact = await contact_repository.get(user_id)
+    if not contact:
+        raise HTTPException(status_code=404, detail="Contact not found")
+    return contact
 
 
 @contacts_router.patch(

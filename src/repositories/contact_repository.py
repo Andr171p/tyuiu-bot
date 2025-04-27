@@ -1,13 +1,13 @@
 from typing import Any, List, Optional, Sequence
 
-from src.dto import DateToCountDTO
+from src.dto import CreationDateCountDTO
 from src.core.entities import Contact
-from src.core.interfaces import AbstractRepository
+from src.core.interfaces import ContactRepository
 from src.infrastructure.database.crud import ContactCRUD
 from src.infrastructure.database.models import ContactModel
 
 
-class ContactRepository(AbstractRepository):
+class ContactRepositoryImpl(ContactRepository):
     def __init__(self, crud: ContactCRUD) -> None:
         self._crud = crud
 
@@ -43,9 +43,9 @@ class ContactRepository(AbstractRepository):
     async def count(self) -> int:
         return await self._crud.read_total_count()
 
-    async def date_to_count(self) -> List[DateToCountDTO]:
-        date_to_count = await self._crud.read_date_to_count()
+    async def date_to_count(self) -> List[CreationDateCountDTO]:
+        counts = await self._crud.read_count_by_creation_date()
         return [
-            DateToCountDTO(date=date, count=count)
-            for date, count in date_to_count
+            CreationDateCountDTO(date=date, count=count)
+            for date, count in counts
         ]

@@ -1,10 +1,11 @@
 __all__ = (
-    "AbstractRepository",
-    "AbstractSenderService",
-    "AbstractUserAuthGateway",
-    "AbstractChatAssistantGateway"
+    "SenderService",
+    "UserAuthGateway",
+    "ChatAssistantGateway",
+    "UserRepository",
+    "ContactRepository"
 )
 
-from src.core.interfaces.repository import AbstractRepository
-from src.core.interfaces.service import AbstractSenderService
-from src.core.interfaces.gateway import AbstractChatAssistantGateway, AbstractUserAuthGateway
+from src.core.interfaces.services import SenderService
+from src.core.interfaces.repositories import UserRepository, ContactRepository
+from src.core.interfaces.gateways import ChatAssistantGateway, UserAuthGateway

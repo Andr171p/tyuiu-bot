@@ -2,7 +2,7 @@ from fastapi import APIRouter, status
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.core.entities import User
-from src.repository import UserRepository
+from src.core.interfaces import UserRepository
 from src.presentation.api.v1.schemas import (
     UsersResponse,
     CountResponse,
@@ -45,7 +45,7 @@ async def get_count(user_repository: FromDishka[UserRepository]) -> CountRespons
 async def get_date_to_count(
         user_repository: FromDishka[UserRepository]
 ) -> DateToCountResponse:
-    date_to_count = await user_repository.date_to_count()
+    date_to_count = await user_repository.count_by_creation_date()
     return DateToCountResponse(distribution=date_to_count)
 
 

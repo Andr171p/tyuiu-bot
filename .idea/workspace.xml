@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add INFO logging" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add INFO logging">
+      <change afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gateways/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gateways/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gateways/rabbit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/gateways.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,38 +76,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.analytics.executor": "Run",
-    "Python.apis.executor": "Run",
-    "Python.auth_api.executor": "Run",
-    "Python.base.executor": "Run",
-    "Python.bot.executor": "Run",
-    "Python.client (1).executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.contact.executor": "Run",
-    "Python.container.executor": "Run",
-    "Python.file_loaders.executor": "Run",
-    "Python.file_saver.executor": "Run",
-    "Python.formaters.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.notifications.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.user.executor": "Run",
-    "Python.user_crud.executor": "Run",
-    "Python.user_repository.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.analytics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.apis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.contact.executor&quot;: &quot;Run&quot;,
+    &quot;Python.contact_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.container.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_loaders.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_saver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formaters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.notifications.executor&quot;: &quot;Run&quot;,
+    &quot;Python.repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_crud.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/TyuiuDirectionsRecSys&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
@@ -90,7 +119,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.apis">
+  <component name="RunManager" selected="Python.contact_repository">
     <configuration name="apis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -113,7 +142,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="file_saver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="contact_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,11 +151,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/utils/file_saver.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/repository/contact_repository.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +186,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="repositories" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,11 +195,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/repository" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/interfaces" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\andre\TyuiuRAGBot\src\repository\user.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\andre\TyuiuRAGBot\src\core\interfaces\repositories.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.contact_repository" />
+        <item itemvalue="Python.repositories" />
         <item itemvalue="Python.apis" />
-        <item itemvalue="Python.user_repository" />
         <item itemvalue="Python.user_crud" />
         <item itemvalue="Python.notifications" />
-        <item itemvalue="Python.file_saver" />
       </list>
     </recent_temporary>
   </component>

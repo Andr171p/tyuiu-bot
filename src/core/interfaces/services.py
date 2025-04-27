@@ -2,7 +2,7 @@ from typing import Optional
 from abc import ABC, abstractmethod
 
 
-class AbstractSenderService(ABC):
+class SenderService(ABC):
     @abstractmethod
     async def send(
             self,

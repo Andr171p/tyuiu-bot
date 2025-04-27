@@ -1,6 +1,5 @@
 from src.core.entities import User, Contact
-from src.core.interfaces import AbstractUserAuthGateway
-from src.repository import UserRepository, ContactRepository
+from src.core.interfaces import UserAuthGateway, UserRepository, ContactRepository
 
 
 class UserManager:
@@ -8,7 +7,7 @@ class UserManager:
             self,
             user_repository: UserRepository,
             contact_repository: ContactRepository,
-            user_auth_gateway: AbstractUserAuthGateway
+            user_auth_gateway: UserAuthGateway
     ) -> None:
         self._user_repository = user_repository
         self._contact_repository = contact_repository
@@ -28,7 +27,7 @@ class UserManager:
 
     async def is_exists(self, user_id: int) -> bool:
         phone_number = await self._contact_repository.get_phone_number_by_user_id(user_id)
-        return await self._user_auth_gateway.is_exists(phone_number)
+        return await self._user_auth_gateway.check_exists(phone_number)
 
     async def change_exists_status(self, user_id: int, is_exists: bool) -> bool:
         contact = await self._contact_repository.update(user_id, is_exists=is_exists)
