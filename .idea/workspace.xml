@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 change domain url">
-      <change beforePath="$PROJECT_DIR$/src/core/entities/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add rabbit settings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,22 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00128" summary="13.03.2025 change Readme">
-      <option name="closed" value="true" />
-      <created>1741879412183</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1741879412183</updated>
-    </task>
-    <task id="LOCAL-00129" summary="18.03.2025 add phone_number validation">
-      <option name="closed" value="true" />
-      <created>1742295964110</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1742295964111</updated>
     </task>
     <task id="LOCAL-00130" summary="18.03.2025 add file saver in utils">
       <option name="closed" value="true" />
@@ -626,12 +605,26 @@
       <option name="project" value="LOCAL" />
       <updated>1745755760396</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="27.04.2025 fix daily count">
+      <option name="closed" value="true" />
+      <created>1745756201907</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1745756201907</updated>
+    </task>
+    <task id="LOCAL-00178" summary="27.04.2025 add rabbit settings">
+      <option name="closed" value="true" />
+      <created>1745756427436</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1745756427436</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="06.04.2025 update bot token" />
-    <MESSAGE value="09.04.2025 add check user exists on service" />
     <MESSAGE value="09.04.2025 add auth api to users provider" />
     <MESSAGE value="22.04.2025 initial refactoring" />
     <MESSAGE value="23.04.2025 refactor infrastructure layer" />
@@ -655,6 +648,8 @@
     <MESSAGE value="27.04.2025 add generic repositories" />
     <MESSAGE value="27.04.2025 fix aiogram routing" />
     <MESSAGE value="27.04.2025 change domain url" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 change domain url" />
+    <MESSAGE value="27.04.2025 fix daily count" />
+    <MESSAGE value="27.04.2025 add rabbit settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add rabbit settings" />
   </component>
 </project>
