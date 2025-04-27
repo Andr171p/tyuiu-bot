@@ -4,6 +4,6 @@ __all__ = (
     "ContactModel"
 )
 
-from src.infrastructure.database.models.base_model import BaseModel
-from src.infrastructure.database.models.user_model import UserModel
-from src.infrastructure.database.models.contact_model import ContactModel
+from src.infrastructure.database.models.base import BaseModel
+from src.infrastructure.database.models.user import UserModel
+from src.infrastructure.database.models.contact import ContactModel

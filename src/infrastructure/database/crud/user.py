@@ -5,11 +5,11 @@ from typing import Sequence, Tuple, Optional
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from src.infrastructure.database.crud.base import CRUD
 from src.infrastructure.database.models import UserModel
-from src.infrastructure.database.crud.abstract_crud import AbstractCRUD
 
 
-class UserCRUD(AbstractCRUD):
+class UserCRUD(CRUD):
     def __init__(self, session: AsyncSession) -> None:
         self._session = session
 
@@ -33,7 +33,7 @@ class UserCRUD(AbstractCRUD):
         users = await self._session.execute(stmt)
         return users.scalars().all()
 
-    async def read_total_count(self) -> int:
+    async def count(self) -> int:
         stmt = (
             select(func.count())
             .select_from(UserModel)

@@ -6,7 +6,7 @@ from typing import Sequence, Tuple, Optional
 from src.infrastructure.database.models import BaseModel
 
 
-class AbstractCRUD(ABC):
+class CRUD(ABC):
 
     @abstractmethod
     async def create(self, model: BaseModel) -> int:
@@ -21,7 +21,7 @@ class AbstractCRUD(ABC):
         raise NotImplemented
 
     @abstractmethod
-    async def read_total_count(self) -> int:
+    async def count(self) -> int:
         raise NotImplemented
 
     @abstractmethod

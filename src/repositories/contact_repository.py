@@ -1,6 +1,6 @@
 from typing import Any, List, Optional, Sequence
 
-from src.dto import CreationDateCountDTO
+from src.dto import DailyCount
 from src.core.entities import Contact
 from src.core.interfaces import ContactRepository
 from src.infrastructure.database.crud import ContactCRUD
@@ -43,9 +43,6 @@ class ContactRepositoryImpl(ContactRepository):
     async def count(self) -> int:
         return await self._crud.read_total_count()
 
-    async def date_to_count(self) -> List[CreationDateCountDTO]:
+    async def daily_count(self) -> List[DailyCount]:
         counts = await self._crud.read_count_by_creation_date()
-        return [
-            CreationDateCountDTO(date=date, count=count)
-            for date, count in counts
-        ]
+        return [DailyCount(date=date, count=count) for date, count in counts]

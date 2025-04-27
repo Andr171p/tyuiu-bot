@@ -8,8 +8,8 @@ from typing import (
     Any
 )
 
+from src.dto import DailyCount
 from src.core.entities import User, Contact
-from src.dto import CreationDateCountDTO
 
 
 T = TypeVar("T")
@@ -30,7 +30,7 @@ class AnalyticsRepository(Protocol):
     async def count(self) -> int:
         raise NotImplemented
 
-    async def count_by_creation_date(self) -> List[CreationDateCountDTO]:
+    async def daily_count(self) -> List[DailyCount]:
         raise NotImplemented
 
 

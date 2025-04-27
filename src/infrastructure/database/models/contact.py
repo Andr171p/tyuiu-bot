@@ -3,8 +3,8 @@ from datetime import datetime
 from sqlalchemy import DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
-from src.infrastructure.database.models.base_model import BaseModel
-from src.infrastructure.database.models.user_relation_mixin import UserRelationMixin
+from src.infrastructure.database.models.base import BaseModel
+from src.infrastructure.database.models.mixins import UserRelationMixin
 
 
 class ContactModel(UserRelationMixin, BaseModel):

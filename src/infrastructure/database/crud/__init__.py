@@ -3,5 +3,5 @@ __all__ = (
     "ContactCRUD"
 )
 
-from src.infrastructure.database.crud.user_crud import UserCRUD
-from src.infrastructure.database.crud.contact_crud import ContactCRUD
+from src.infrastructure.database.crud.user import UserCRUD
+from src.infrastructure.database.crud.contact import ContactCRUD

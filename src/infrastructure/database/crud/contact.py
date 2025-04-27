@@ -5,11 +5,11 @@ from typing import Any, Sequence, Tuple, Optional
 from sqlalchemy import select, update, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from src.infrastructure.database.crud.base import CRUD
 from src.infrastructure.database.models import ContactModel
-from src.infrastructure.database.crud.abstract_crud import AbstractCRUD
 
 
-class ContactCRUD(AbstractCRUD):
+class ContactCRUD(CRUD):
     def __init__(self, session: AsyncSession) -> None:
         self._session = session
 
@@ -62,7 +62,7 @@ class ContactCRUD(AbstractCRUD):
         user_ids = await self._session.execute(stmt)
         return user_ids.scalars().all()
 
-    async def read_total_count(self) -> int:
+    async def count(self) -> int:
         stmt = (
             select(func.count())
             .select_from(ContactModel)
@@ -97,4 +97,5 @@ class ContactCRUD(AbstractCRUD):
             .values(**kwargs)
         )
         contact = await self._session.execute(stmt)
+        await self._session.commit()
         return contact.scalar_one_or_none()

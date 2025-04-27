@@ -1,7 +1,7 @@
 from typing import List, Optional
 
+from src.dto import DailyCount
 from src.core.entities import User
-from src.dto import CreationDateCountDTO
 from src.core.interfaces import UserRepository
 from src.infrastructure.database.crud import UserCRUD
 from src.infrastructure.database.models import UserModel
@@ -25,9 +25,6 @@ class UserRepositoryImpl(UserRepository):
     async def count(self) -> int:
         return await self._crud.read_total_count()
 
-    async def count_by_creation_date(self) -> List[CreationDateCountDTO]:
+    async def count_by_creation_date(self) -> List[DailyCount]:
         counts = await self._crud.read_count_by_creation_date()
-        return [
-            CreationDateCountDTO(date=date, count=count)
-            for date, count in counts
-        ]
+        return [DailyCount(date=date, count=count) for date, count in counts]

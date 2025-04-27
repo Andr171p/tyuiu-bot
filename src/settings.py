@@ -14,7 +14,7 @@ load_dotenv(ENV_PATH)
 
 
 class AppSettings(BaseSettings):
-    domain: str = os.getenv("HTTPS_DOMAIN")
+    url: str = os.getenv("HTTPS_DOMAIN")
 
 
 class BotSettings(BaseSettings):
