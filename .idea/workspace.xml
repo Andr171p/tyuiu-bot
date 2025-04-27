@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 fix bot routers">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 refactor rabbit queue name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_09_2040-6eed0d93ce35_initial_revision.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_10_1220-1d0102e6c94f_update_message_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_10_1225-82bb06766c12_bot_message_column.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_20_0027-b133c0c7acf4_update_key.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_01_21_2324-9ef88b0c18d4_contact_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/2025_03_09_1919-3a9143ea683a_rename_fields.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gateways/rabbit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/rabbit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/subscription.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/subscription.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,22 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00132" summary="18.03.2025 add telegram message dto">
-      <option name="closed" value="true" />
-      <created>1742306672855</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1742306672855</updated>
-    </task>
-    <task id="LOCAL-00133" summary="18.03.2025 refactor">
-      <option name="closed" value="true" />
-      <created>1742307652652</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1742307652652</updated>
     </task>
     <task id="LOCAL-00134" summary="20.03.2025 refactor">
       <option name="closed" value="true" />
@@ -634,12 +608,26 @@
       <option name="project" value="LOCAL" />
       <updated>1745756830239</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="27.04.2025">
+      <option name="closed" value="true" />
+      <created>1745757730531</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1745757730531</updated>
+    </task>
+    <task id="LOCAL-00182" summary="27.04.2025 refactor rabbit queue name">
+      <option name="closed" value="true" />
+      <created>1745758110021</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1745758110021</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="23.04.2025 refactor infrastructure layer" />
-    <MESSAGE value="23.04.2025 refactor" />
     <MESSAGE value="23.04.2025 add change exists status method" />
     <MESSAGE value="23.04.2025 add update method for contact" />
     <MESSAGE value="23.04.2025 create notification sender" />
@@ -663,6 +651,8 @@
     <MESSAGE value="27.04.2025 add rabbit settings" />
     <MESSAGE value="27.04.2025 change port" />
     <MESSAGE value="27.04.2025 fix bot routers" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 fix bot routers" />
+    <MESSAGE value="27.04.2025" />
+    <MESSAGE value="27.04.2025 refactor rabbit queue name" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 refactor rabbit queue name" />
   </component>
 </project>

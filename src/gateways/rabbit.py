@@ -14,6 +14,7 @@ class ChatAssistantRabbitGateway(ChatAssistantGateway):
         message = await self._broker.publish(
             user_message,
             queue="chat.user-messages",
-            reply_to="chat.assistant-messages"
+            reply_to="chat.assistant-messages",
+            rpc=True
         )
         return AssistantMessage.model_validate_json(message.body)
