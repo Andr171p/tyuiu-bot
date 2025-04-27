@@ -8,7 +8,7 @@ from src.presentation.api.v1.schemas import (
     CountResponse,
     ContactUpdate,
     PhoneNumberQuery,
-    DateToCountResponse
+    DailyCountResponse
 )
 
 
@@ -55,15 +55,15 @@ async def get_count(contact_repository: FromDishka[ContactRepository]) -> CountR
 
 
 @contacts_router.get(
-    path="/date-to-count/",
-    response_model=DateToCountResponse,
+    path="/daily-count/",
+    response_model=DailyCountResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_date_to_count(
+async def get_daily_count(
         contact_repository: FromDishka[ContactRepository]
-) -> DateToCountResponse:
-    date_to_count = await contact_repository.count_by_creation_date()
-    return DateToCountResponse(distribution=date_to_count)
+) -> DailyCountResponse:
+    date_to_count = await contact_repository.daily_count()
+    return DailyCountResponse(distribution=date_to_count)
 
 
 @contacts_router.get(

@@ -6,7 +6,7 @@ from src.core.interfaces import UserRepository
 from src.presentation.api.v1.schemas import (
     UsersResponse,
     CountResponse,
-    DateToCountResponse
+    DailyCountResponse
 )
 
 
@@ -38,15 +38,15 @@ async def get_count(user_repository: FromDishka[UserRepository]) -> CountRespons
 
 
 @users_router.get(
-    path="/date-to-count",
-    response_model=DateToCountResponse,
+    path="/daily-count",
+    response_model=DailyCountResponse,
     status_code=status.HTTP_200_OK
 )
 async def get_date_to_count(
         user_repository: FromDishka[UserRepository]
-) -> DateToCountResponse:
-    date_to_count = await user_repository.count_by_creation_date()
-    return DateToCountResponse(distribution=date_to_count)
+) -> DailyCountResponse:
+    daily_count = await user_repository.daily_count()
+    return DailyCountResponse(distribution=daily_count)
 
 
 @users_router.get(

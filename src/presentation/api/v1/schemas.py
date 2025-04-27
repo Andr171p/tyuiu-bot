@@ -3,7 +3,7 @@ from typing import Annotated, List
 from fastapi import Query
 from pydantic import BaseModel
 
-from src.dto import CreationDateCountDTO
+from src.dto import DailyCount
 from src.core.entities import User, Contact
 
 
@@ -29,8 +29,8 @@ class ContactUpdate(BaseModel):
     is_exists: bool
 
 
-class DateToCountResponse(BaseModel):
-    distribution: List[CreationDateCountDTO]
+class DailyCountResponse(BaseModel):
+    distribution: List[DailyCount]
 
 
 class SentNotificationResponse(BaseModel):

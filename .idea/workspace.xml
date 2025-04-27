@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 fix aiogram routing">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/repositories.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/contact_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/user_relation_mixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/models/mixins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user_repository.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 change domain url">
+      <change beforePath="$PROJECT_DIR$/src/core/entities/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,14 +233,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00127" summary="11.03.2025 delete app directory">
-      <option name="closed" value="true" />
-      <created>1741878115449</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1741878115449</updated>
     </task>
     <task id="LOCAL-00128" summary="13.03.2025 change Readme">
       <option name="closed" value="true" />
@@ -638,11 +618,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745744762459</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="27.04.2025 change domain url">
+      <option name="closed" value="true" />
+      <created>1745755760395</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1745755760396</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="06.04.2025" />
     <MESSAGE value="06.04.2025 update bot token" />
     <MESSAGE value="09.04.2025 add check user exists on service" />
     <MESSAGE value="09.04.2025 add auth api to users provider" />
@@ -667,6 +654,7 @@
     <MESSAGE value="27.04.2025 add INFO logging" />
     <MESSAGE value="27.04.2025 add generic repositories" />
     <MESSAGE value="27.04.2025 fix aiogram routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 fix aiogram routing" />
+    <MESSAGE value="27.04.2025 change domain url" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 change domain url" />
   </component>
 </project>
