@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add generic repositories">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 fix aiogram routing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,14 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00126" summary="11.03.2025 fix per day schema">
-      <option name="closed" value="true" />
-      <created>1741705452012</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1741705452012</updated>
     </task>
     <task id="LOCAL-00127" summary="11.03.2025 delete app directory">
       <option name="closed" value="true" />
@@ -627,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745743126421</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="27.04.2025 fix aiogram routing">
+      <option name="closed" value="true" />
+      <created>1745744762459</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1745744762459</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
     <MESSAGE value="06.04.2025 update bot token" />
     <MESSAGE value="09.04.2025 add check user exists on service" />
@@ -656,6 +649,7 @@
     <MESSAGE value="27.04.2025 refactoring" />
     <MESSAGE value="27.04.2025 add INFO logging" />
     <MESSAGE value="27.04.2025 add generic repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add generic repositories" />
+    <MESSAGE value="27.04.2025 fix aiogram routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 fix aiogram routing" />
   </component>
 </project>

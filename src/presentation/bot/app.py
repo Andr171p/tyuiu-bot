@@ -19,7 +19,7 @@ def create_aiogram_app() -> Dispatcher:
     )
     setup_dishka(
         container=container,
-        router=dp,
+        router=dispatcher,
         auto_inject=True
     )
     return dp
