@@ -22,7 +22,7 @@ def create_aiogram_app() -> Dispatcher:
         router=dispatcher,
         auto_inject=True
     )
-    return dp
+    return dispatcher
 
 
 dp = create_aiogram_app()
