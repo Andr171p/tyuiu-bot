@@ -35,7 +35,7 @@ class UserAuthAPI:
     def __init__(self, base_url: str) -> None:
         self._base_url = base_url
 
-    async def is_exists(self, phone_number: str) -> Optional[Any]:
+    async def check_exists(self, phone_number: str) -> Optional[Any]:
         try:
             url = f"{self._base_url}/api/v1/getnumber/{phone_number}"
             headers = {"Content-Type": "application/json; charset=UTF-8"}

@@ -4,33 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add INFO logging">
-      <change afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gateways/rabbit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/__init__.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 add generic repositories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/gateways.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/abstract_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/contact_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/crud/user_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateways/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateways/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/apis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/bot/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +234,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00125" summary="11.03.2025 change endpoints">
-      <option name="closed" value="true" />
-      <created>1741705191649</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1741705191649</updated>
     </task>
     <task id="LOCAL-00126" summary="11.03.2025 fix per day schema">
       <option name="closed" value="true" />
@@ -648,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745698006952</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="27.04.2025 add generic repositories">
+      <option name="closed" value="true" />
+      <created>1745743126421</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1745743126421</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="02.04.2025 add docker-compose and nginx config" />
     <MESSAGE value="05.04.2025" />
     <MESSAGE value="06.04.2025" />
     <MESSAGE value="06.04.2025 update bot token" />
@@ -677,6 +655,7 @@
     <MESSAGE value="26.04.2025 fix reqs" />
     <MESSAGE value="27.04.2025 refactoring" />
     <MESSAGE value="27.04.2025 add INFO logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add INFO logging" />
+    <MESSAGE value="27.04.2025 add generic repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 add generic repositories" />
   </component>
 </project>

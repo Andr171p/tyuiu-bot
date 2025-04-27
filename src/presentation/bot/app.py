@@ -11,8 +11,8 @@ from src.ioc import container
 
 
 def create_aiogram_app() -> Dispatcher:
-    dp = Dispatcher(storage=MemoryStorage())
-    dp.include_routers(
+    dispatcher = Dispatcher(storage=MemoryStorage())
+    dispatcher.include_routers(
         chat_router,
         handler_router,
         subscription_router

@@ -17,4 +17,4 @@ class UserAuthAPIGateway(UserAuthGateway):
         self._user_auth_api = user_auth_api
 
     async def check_exists(self, phone_number: str) -> bool:
-        return await self._user_auth_api.is_exists(phone_number)
+        return await self._user_auth_api.check_exists(phone_number)
