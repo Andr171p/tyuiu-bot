@@ -13,9 +13,9 @@ from src.ioc import container
 def create_aiogram_app() -> Dispatcher:
     dispatcher = Dispatcher(storage=MemoryStorage())
     dispatcher.include_routers(
-        chat_router,
         handler_router,
-        subscription_router
+        subscription_router,
+        chat_router
     )
     setup_dishka(
         container=container,
