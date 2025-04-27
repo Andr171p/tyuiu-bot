@@ -31,6 +31,15 @@ class PostgresSettings(BaseSettings):
     url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
 
 
+class RabbitSettings(BaseSettings):
+    host: str = os.getenv("RABBIT_HOST")
+    port: int = os.getenv("RABBIT_PORT")
+    user: str = os.getenv("RABBIT_USER")
+    password: str = os.getenv("RABBIT_PASSWORD")
+
+    url: str = f"amqp://{user}:{password}@{host}:{port}"
+
+
 class MessagesSettings(BaseSettings):
     start: str = read_txt(BASE_DIR / "messages" / "start.txt")
     info: str = read_txt(BASE_DIR / "messages" / "info.txt")
@@ -52,4 +61,5 @@ class Settings(BaseSettings):
     user_auth: UserAuthSettings = UserAuthSettings()
     bot: BotSettings = BotSettings()
     postgres: PostgresSettings = PostgresSettings()
+    rabbit: RabbitSettings = RabbitSettings()
     messages: MessagesSettings = MessagesSettings()
