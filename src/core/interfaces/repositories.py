@@ -6,8 +6,7 @@ from typing import (
     TypeVar,
     List,
     Optional,
-    Tuple,
-    Any
+    Tuple
 )
 
 from src.core.entities import User, Contact

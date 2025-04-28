@@ -17,13 +17,13 @@ from faststream.rabbit import RabbitBroker
 from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
 
 from src.settings import Settings
-from src.services import TelegramSenderService
+from src.infrastructure.senders import TelegramSender
 from src.infrastructure.rest import UserRegistrationApi
 from src.infrastructure.database.session import create_session_maker
 from src.infrastructure.database.repositories import SQLUserRepository, SQLContactRepository
 
 from src.core.use_cases import UserManager, NotificationSender
-from src.core.interfaces import SenderService, UserRegistration, UserRepository, ContactRepository
+from src.core.interfaces import Sender, UserRegistration, UserRepository, ContactRepository
 
 
 class AppProvider(Provider):
@@ -58,8 +58,8 @@ class AppProvider(Provider):
         return SQLContactRepository(session)
 
     @provide(scope=Scope.APP)
-    def get_sender_service(self, bot: Bot) -> SenderService:
-        return TelegramSenderService(bot)
+    def get_sender_service(self, bot: Bot) -> Sender:
+        return TelegramSender(bot)
 
     @provide(scope=Scope.APP)
     def get_user_registration(self, config: Settings) -> UserRegistration:
@@ -81,10 +81,10 @@ class AppProvider(Provider):
     @provide(scope=Scope.REQUEST)
     def get_notification_sender(
             self,
-            sender_service: SenderService,
+            sender: Sender,
             contact_repository: ContactRepository
     ) -> NotificationSender:
-        return NotificationSender(sender_service, contact_repository)
+        return NotificationSender(sender, contact_repository)
 
 
 settings = Settings()

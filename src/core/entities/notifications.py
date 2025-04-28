@@ -13,16 +13,21 @@ class Recipient(BaseModel):
         return format_phone_number(phone_number)
 
 
-class NotificationContent(BaseModel):
+class Message(BaseModel):
     text: str
-    photo_url: Optional[str] = None
-    photo_base64: Optional[str] = None
+    image_url: Optional[str] = None
+    image_base64: Optional[str] = None
 
 
-class PublicNotification(BaseModel):
-    content: NotificationContent
+class GlobalNotification(BaseModel):
+    message: Message
 
 
-class DirectedNotification(BaseModel):
+class BroadcastNotification(BaseModel):
+    message: Message
     recipients: List[Recipient]
-    content: NotificationContent
+
+
+class DirectNotification(BaseModel):
+    message: Message
+    recipient: Recipient

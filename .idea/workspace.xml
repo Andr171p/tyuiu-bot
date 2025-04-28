@@ -4,40 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 refactor rabbit queue name .">
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/notifications.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/models.py" afterDir="false" />
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="27.04.2025 refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/interfaces/gateways.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/rest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/interfaces/repositories.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/chat_assistant.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/user_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gateways/rabbit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/apis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/rest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/contact_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/contact.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/mixins.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/models/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/use_cases/notification_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/use_cases/notification_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/bot/routers/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/contact_repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/user_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/sender.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,8 +96,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\infrastructure" />
+      <recent name="C:\Users\andre\TyuiuRAGBot\src\gateways\chat_assistant" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\api" />
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
@@ -262,14 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00135" summary="20.03.2025 fix dto">
-      <option name="closed" value="true" />
-      <created>1742481098529</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1742481098529</updated>
     </task>
     <task id="LOCAL-00136" summary="20.03.2025 fix dto tg message">
       <option name="closed" value="true" />
@@ -655,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745758427168</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="27.04.2025 refactoring">
+      <option name="closed" value="true" />
+      <created>1745769650240</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1745769650242</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -672,7 +649,6 @@
     <MESSAGE value="26.04.2025 fix format phone number in contact" />
     <MESSAGE value="26.04.2025 fix phone number validation in notifications" />
     <MESSAGE value="26.04.2025 fix reqs" />
-    <MESSAGE value="27.04.2025 refactoring" />
     <MESSAGE value="27.04.2025 add INFO logging" />
     <MESSAGE value="27.04.2025 add generic repositories" />
     <MESSAGE value="27.04.2025 fix aiogram routing" />
@@ -684,6 +660,7 @@
     <MESSAGE value="27.04.2025" />
     <MESSAGE value="27.04.2025 refactor rabbit queue name" />
     <MESSAGE value="27.04.2025 refactor rabbit queue name ." />
-    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 refactor rabbit queue name ." />
+    <MESSAGE value="27.04.2025 refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.04.2025 refactoring" />
   </component>
 </project>
