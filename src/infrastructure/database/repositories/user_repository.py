@@ -6,7 +6,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import select, update, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..models import UserModel
+from ..models import UserModel, ContactModel
 from src.core.interfaces import UserRepository
 from src.core.entities import User, CreatedUser
 
@@ -92,6 +92,19 @@ class SQLUserRepository(UserRepository):
         except SQLAlchemyError as ex:
             await self.session.rollback()
             raise RuntimeError(f"Error while reading user: {ex}")
+
+    async def get_telegram_id_by_phone_number(self, phone_number: str) -> int:
+        try:
+            stmt = (
+                select(UserModel.telegram_id)
+                .join(ContactModel)
+                .where(ContactModel.phone_number == phone_number)
+            )
+            telegram_id = await self.session.execute(stmt)
+            return telegram_id.scalar_one_or_none()
+        except SQLAlchemyError as ex:
+            await self.session.rollback()
+            raise RuntimeError(f"Error while reading telegram id by phone_number: {ex}")
 
     async def count(self) -> int:
         try:

@@ -1,10 +1,13 @@
-from fastapi import APIRouter, status, HTTPException
+from typing import Union
+
+from fastapi import APIRouter, status, Query, HTTPException
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from src.core.entities import Contact
 from src.core.interfaces import ContactRepository
 from src.presentation.api.v1.schemas import (
     ContactsResponse,
+    ContactsPageResponse,
     CountResponse,
     ContactUpdate,
     PhoneNumberQuery,
@@ -24,7 +27,9 @@ contacts_router = APIRouter(
     response_model=ContactsResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_contacts(contact_repository: FromDishka[ContactRepository]) -> ContactsResponse:
+async def get_contacts(
+        contact_repository: FromDishka[ContactRepository]
+) -> ContactsResponse:
     contacts = await contact_repository.list()
     return ContactsResponse(contacts=contacts)
 

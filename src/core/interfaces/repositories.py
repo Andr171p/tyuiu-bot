@@ -25,6 +25,8 @@ class ReadableRepository(Protocol, Generic[T]):
 
     async def count_daily(self) -> Sequence[Tuple[datetime, int]]: pass
 
+    async def get_telegram_id_by_phone_number(self, phone_number: str) -> int: pass
+
 
 class CrudRepository(ReadableRepository, Generic[T], Protocol):
     async def create(self, entity: T) -> T: pass
@@ -40,8 +42,6 @@ class UserRepository(CrudRepository[User], Protocol):
 
 class ContactRepository(CrudRepository[Contact], Protocol):
     async def get_by_phone_number(self, phone_number: str) -> Optional[CreatedContact]: pass
-    
-    async def get_telegram_id_by_phone_number(self, phone_number: str) -> int: pass
     
     async def get_phone_number_by_telegram_id(self, telegram_id: int) -> str: pass
     
