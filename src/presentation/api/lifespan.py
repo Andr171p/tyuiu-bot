@@ -9,7 +9,8 @@ from fastapi import FastAPI
 from src.ioc import container
 from src.settings import Settings
 from src.presentation.bot.app import dp
-from src.infrastructure.tasks import create_faststream_app
+from src.presentation.bot.commands import set_commands
+from src.infrastructure.broker.app import create_faststream_app
 
 
 logger = logging.getLogger(__name__)
@@ -18,6 +19,8 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     bot = await container.get(Bot)
+    await set_commands(bot)
+    logger.info("Bot set commands")
     settings = await container.get(Settings)
     webhook_url = f"{settings.app.url}/webhook"
     await bot.set_webhook(

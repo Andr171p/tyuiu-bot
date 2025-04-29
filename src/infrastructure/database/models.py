@@ -1,40 +1,47 @@
-from datetime import datetime
-
-from typing import TypeVar
-
-from sqlalchemy import BigInteger, DateTime, ForeignKey
-from sqlalchemy.ext.asyncio import AsyncAttrs
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import (
     Mapped,
     mapped_column,
     relationship,
-    DeclarativeBase
+    validates
 )
 
-
-class Base(AsyncAttrs, DeclarativeBase):
-    __abstract__ = True
-
-    id: Mapped[int] = mapped_column(
-        autoincrement=True,
-        primary_key=True
-    )
-
-
-ModelType = TypeVar("ModelType", bound=Base)
+from src.core.entities import User, Contact
+from .base import (
+    Base,
+    uuid_nullable,
+    tg_id,
+    str_nullable,
+    created_at
+)
 
 
 class UserModel(Base):
     __tablename__ = "users"
 
-    user_id: Mapped[int] = mapped_column(BigInteger, unique=True)
-    username: Mapped[str | None] = mapped_column(nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime)
+    telegram_id: Mapped[tg_id]
+    user_id: Mapped[uuid_nullable]
+    username: Mapped[str_nullable]
+    created_at: Mapped[created_at]
 
     contact: Mapped["ContactModel"] = relationship(back_populates="user")
 
+    @validates("user_id")
+    def set_registered(self, user_id: str) -> str:
+        if user_id is not None and self.contact:
+            self.contact.is_registered = True
+        return user_id
+
+    @classmethod
+    def from_user(cls, user: User) -> "UserModel":
+        return cls(
+            telegram_id=user.telegram_id,
+            user_id=user.user_id,
+            username=user.username
+        )
+
     def __str__(self) -> str:
-        return f"{self.__class__.__name__}(user_id={self.user_id}, username={self.username})"
+        return f"{self.__class__.__name__}(telegram_id={self.user_id}, username={self.username})"
 
     def __repr__(self) -> str:
         return str(self)
@@ -44,11 +51,11 @@ class ContactModel(Base):
     __tablename__ = "contacts"
 
     phone_number: Mapped[str]
-    is_exists: Mapped[bool]
-    created_at: Mapped[datetime] = mapped_column(DateTime)
+    is_registered: Mapped[bool]
+    created_at: Mapped[created_at]
 
-    user_id: Mapped[int] = mapped_column(
-        ForeignKey("users.user_id"),
+    telegram_id: Mapped[int] = mapped_column(
+        ForeignKey("users.telegram_id"),
         unique=True,
         nullable=False
     )
@@ -57,13 +64,15 @@ class ContactModel(Base):
         back_populates="contact"
     )
 
-    def __str__(self) -> str:
-        return (
-            f"{self.__class__.__name__}"
-            f"(phone_number={self.phone_number}, "
-            f"is_exists={self.is_exists}, "
-            f"user_id={self.user_id})"
+    @classmethod
+    def from_contact(cls, contact: Contact) -> "ContactModel":
+        return cls(
+            phone_number=contact.phone_number,
+            is_registered=contact.is_registered
         )
+
+    def __str__(self) -> str:
+        return f"{self.__class__.__name__}(telegram_id={self.telegram_id}, phone_number={self.phone_number})"
 
     def __repr__(self) -> str:
         return str(self)

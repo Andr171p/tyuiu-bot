@@ -1,14 +1,11 @@
-from datetime import datetime
-
 from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command
 from dishka.integrations.aiogram import FromDishka
 
 from src.settings import Settings
-from src.core.entities import Contact
-from src.core.use_cases import UserManager
-from src.presentation.bot.keyboards import share_contact_keyboard
+from src.core.services import UserService
+from ..keyboards import share_contact_keyboard, follow_to_register_keyboard
 
 
 subscription_router = Router()
@@ -20,15 +17,22 @@ async def subscription_details(message: Message, settings: FromDishka[Settings])
 
 
 @subscription_router.message(F.contact)
-async def share_contact(message: Message, user_manager: FromDishka[UserManager]) -> None:
-    user_id = message.from_user.id
-    phone_number = message.contact.phone_number
-    is_exists = await user_manager.is_exists(user_id)
-    contact = Contact(
-        user_id=user_id,
-        phone_number=phone_number,
-        is_exists=is_exists,
-        created_at=datetime.now()
-    )
-    await user_manager.share_contact(contact)
-    await message.answer("Вы успешно поделились контактом")
+async def share_contact(
+        message: Message,
+        user_service: FromDishka[UserService],
+        settings: FromDishka[Settings]
+) -> None:
+    status = await user_service.share_contact(message.from_user.id, message.contact.phone_number)
+    if status.SUCCESS:
+        await message.answer("Вы успешно поделились контактом")
+    elif status.ALREADY_SHARED:
+        await message.answer("Вы уже поделились контактом")
+    elif status.NOT_REGISTERED:
+        await message.answer(
+            """<b>Контакт успешно отправлен.</b>
+            Осталось зарегистрироваться на нашем сайте...
+            """,
+            reply_markup=follow_to_register_keyboard(settings.main_site.url)
+        )
+    elif status.ERROR:
+        await message.answer("Произошла ошибка, попробуйте позже...")

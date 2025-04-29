@@ -16,14 +16,13 @@ from faststream.rabbit import RabbitBroker
 
 from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
 
-from src.settings import Settings
-from src.infrastructure.senders import TelegramSender
-from src.infrastructure.rest import UserRegistrationApi
-from src.infrastructure.database.session import create_session_maker
-from src.infrastructure.database.repositories import SQLUserRepository, SQLContactRepository
+from .settings import Settings
+from .infrastructure.rest import UserRegistrationApi
+from .infrastructure.database.session import create_session_maker
+from .infrastructure.database.repositories import SQLUserRepository, SQLContactRepository
 
-from src.core.use_cases import UserManager, NotificationSender
-from src.core.interfaces import Sender, UserRegistration, UserRepository, ContactRepository
+from .core.services import UserService
+from .core.interfaces import UserRegistration, UserRepository, ContactRepository
 
 
 class AppProvider(Provider):
@@ -58,33 +57,21 @@ class AppProvider(Provider):
         return SQLContactRepository(session)
 
     @provide(scope=Scope.APP)
-    def get_sender_service(self, bot: Bot) -> Sender:
-        return TelegramSender(bot)
-
-    @provide(scope=Scope.APP)
     def get_user_registration(self, config: Settings) -> UserRegistration:
-        return UserRegistrationApi(config.user_auth.url)
+        return UserRegistrationApi(config.registration.url)
 
     @provide(scope=Scope.REQUEST)
-    def get_user_manager(
+    def get_user_service(
             self,
             user_registration: UserRegistration,
             user_repository: UserRepository,
             contact_repository: ContactRepository
-    ) -> UserManager:
-        return UserManager(
+    ) -> UserService:
+        return UserService(
             user_registration=user_registration,
             user_repository=user_repository,
             contact_repository=contact_repository
         )
-
-    @provide(scope=Scope.REQUEST)
-    def get_notification_sender(
-            self,
-            sender: Sender,
-            contact_repository: ContactRepository
-    ) -> NotificationSender:
-        return NotificationSender(sender, contact_repository)
 
 
 settings = Settings()

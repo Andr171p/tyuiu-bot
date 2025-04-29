@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from dishka.integrations.fastapi import setup_dishka
 
 from src.ioc import container
-from src.presentation.api.lifespan import lifespan
-from src.presentation.api.v1.routers import (
+from .lifespan import lifespan
+from v1.routers import (
     webhook_router,
     users_router,
     contacts_router,
@@ -26,8 +26,5 @@ def create_fastapi_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    setup_dishka(
-        container=container,
-        app=app
-    )
+    setup_dishka(container=container, app=app)
     return app

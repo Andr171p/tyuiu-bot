@@ -14,7 +14,7 @@ load_dotenv(ENV_PATH)
 
 
 class AppSettings(BaseSettings):
-    url: str = os.getenv("HTTPS_DOMAIN")
+    url: str = os.getenv("URL")
 
 
 class BotSettings(BaseSettings):
@@ -48,18 +48,23 @@ class MessagesSettings(BaseSettings):
 
 
 class TyuiuGPTSettings(BaseSettings):
-    url: str = os.getenv("TYUIU_GPT_API")
+    url: str = os.getenv("TYUIU_GPT_URL")
 
 
-class UserAuthSettings(BaseSettings):
-    url: str = os.getenv("USER_AUTH_API")
+class RegistrationSettings(BaseSettings):
+    url: str = os.getenv("REGISTRATION_URL")
+
+
+class MainSiteSettings(BaseSettings):
+    url: str = "https://online-service-for-applicants.onrender.com/"
 
 
 class Settings(BaseSettings):
     app: AppSettings = AppSettings()
     tyuiu_gpt: TyuiuGPTSettings = TyuiuGPTSettings()
-    user_auth: UserAuthSettings = UserAuthSettings()
+    registration: RegistrationSettings = RegistrationSettings()
     bot: BotSettings = BotSettings()
     postgres: PostgresSettings = PostgresSettings()
     rabbit: RabbitSettings = RabbitSettings()
     messages: MessagesSettings = MessagesSettings()
+    main_site: MainSiteSettings = MainSiteSettings()

@@ -5,7 +5,7 @@ from typing import Union
 from faststream.rabbit import RabbitRouter
 from dishka.integrations.base import FromDishka
 
-from src.core.use_cases import NotificationSender
+from src.core.services import NotificationSender
 from src.core.entities import DirectedNotification, PublicNotification
 
 

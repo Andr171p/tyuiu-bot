@@ -38,13 +38,13 @@ class UserRegistrationApi(UserRegistration):
     def __init__(self, base_url: str) -> None:
         self._base_url = base_url
 
-    async def check_registration(self, phone_number: str) -> Optional[bool]:
+    async def get_user_id(self, phone_number: str) -> Optional[str]:
         try:
             url = f"{self._base_url}/api/v1/getnumber/{phone_number}"
             headers = {"Content-Type": "application/json; charset=UTF-8"}
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=headers) as response:
-                    is_exists = await response.json()
-            return is_exists
+                    user_id = await response.json()
+            return user_id
         except aiohttp.ClientError as ex:
             logger.error(ex)

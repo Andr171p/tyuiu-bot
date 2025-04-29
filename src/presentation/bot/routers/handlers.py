@@ -1,13 +1,10 @@
-from datetime import datetime
-
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters import Command
 from dishka.integrations.aiogram import FromDishka
 
 from src.settings import Settings
-from src.core.entities import User
-from src.core.use_cases import UserManager
+from src.core.services import UserService
 
 
 handler_router = Router()
@@ -16,15 +13,10 @@ handler_router = Router()
 @handler_router.message(Command("start"))
 async def start(
         message: Message,
-        user_manager: FromDishka[UserManager],
+        user_service: FromDishka[UserService],
         settings: FromDishka[Settings]
 ) -> None:
-    user = User(
-        user_id=message.from_user.id,
-        username=message.from_user.username,
-        created_at=datetime.now()
-    )
-    await user_manager.register(user)
+    await user_service.save(message.from_user.id, message.from_user.username)
     await message.answer(settings.messages.start)
 
 

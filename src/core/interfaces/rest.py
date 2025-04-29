@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.core.entities import UserMessage, AssistantMessage
+from ..entities import UserMessage, AssistantMessage
 
 
 class ChatAssistant(ABC):
@@ -10,4 +10,4 @@ class ChatAssistant(ABC):
 
 class UserRegistration(ABC):
     @abstractmethod
-    async def check_registration(self, phone_number: str) -> bool: pass
+    async def get_user_id(self, phone_number: str) -> str: pass
