@@ -83,7 +83,7 @@ class AppProvider(Provider):
     def get_telegram_sender(self, bot: Bot) -> TelegramSender:
         return TelegramSenderImpl(bot)
 
-    @provide(scope=Scope.APP)
+    @provide(scope=Scope.REQUEST)
     def get_notification_service(
             self,
             telegram_sender: TelegramSender,
