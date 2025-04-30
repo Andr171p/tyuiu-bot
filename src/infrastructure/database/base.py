@@ -32,7 +32,8 @@ tg_id = Annotated[
         BigInteger,
         unique=True,
         nullable=False,
-        index=True
+        index=True,
+        primary_key=True
     )
 ]
 str_nullable = Annotated[str, mapped_column(nullable=True)]

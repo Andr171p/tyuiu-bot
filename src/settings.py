@@ -24,7 +24,9 @@ class PostgresSettings(BaseSettings):
     port: int = os.getenv("PG_PORT")
     name: str = os.getenv("PG_NAME")
 
-    url: str = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{name}"
+    @property
+    def sqlalchemy_url(self) -> str:
+        return f"postgresql+asyncpg://{self.user}:{self.password}@{self.host}:{self.port}/{self.name}"
 
 
 class RabbitSettings(BaseSettings):
@@ -33,7 +35,9 @@ class RabbitSettings(BaseSettings):
     user: str = os.getenv("RABBIT_USER")
     password: str = os.getenv("RABBIT_PASSWORD")
 
-    url: str = f"amqp://{user}:{password}@{host}:{port}"
+    @property
+    def rabbit_url(self) -> str:
+        return f"amqp://{self.user}:{self.password}@{self.host}:{self.port}"
 
 
 class MessagesSettings(BaseSettings):
@@ -64,3 +68,4 @@ class Settings(BaseSettings):
     rabbit: RabbitSettings = RabbitSettings()
     messages: MessagesSettings = MessagesSettings()
     main_site: MainSiteSettings = MainSiteSettings()
+

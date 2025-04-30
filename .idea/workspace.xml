@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="30.04.2025 refactoring">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="01.05.2025 fix import in fastapi app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/session.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +98,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.notifications">
+  <component name="RunManager" selected="Python.main">
     <configuration name="contact_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -110,6 +113,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/repository/contact_repository.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TyuiuRAGBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,35 +209,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TyuiuRAGBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/database/crud" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/database/crud/user_crud.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.notifications" />
         <item itemvalue="Python.contact_repository" />
         <item itemvalue="Python.repositories" />
         <item itemvalue="Python.rest" />
-        <item itemvalue="Python.user_crud" />
       </list>
     </recent_temporary>
   </component>
@@ -231,22 +234,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00140" summary="22.03.2025 fix sender service">
-      <option name="closed" value="true" />
-      <created>1742642112124</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1742642112124</updated>
-    </task>
-    <task id="LOCAL-00141" summary="22.03.2025 cancel phone number validation">
-      <option name="closed" value="true" />
-      <created>1742642441475</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1742642441475</updated>
     </task>
     <task id="LOCAL-00142" summary="22.03.2025 cancel phone number validation in notifications">
       <option name="closed" value="true" />
@@ -624,12 +611,26 @@
       <option name="project" value="LOCAL" />
       <updated>1746021831414</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="01.05.2025 change Scope to request in IOC for notification service">
+      <option name="closed" value="true" />
+      <created>1746040785150</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1746040785151</updated>
+    </task>
+    <task id="LOCAL-00190" summary="01.05.2025 fix import in fastapi app">
+      <option name="closed" value="true" />
+      <created>1746040904459</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1746040904459</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="24.04.2025 refactor bot routers" />
-    <MESSAGE value="24.04.2025 add error message to chat" />
     <MESSAGE value="24.04.2025 update telegram sender service" />
     <MESSAGE value="24.04.2025 ." />
     <MESSAGE value="26.04.2025 Improve performance; Code refactoring; Send notifications in background tasks" />
@@ -653,6 +654,8 @@
     <MESSAGE value="29.04.2025 refactor telegram bot logic" />
     <MESSAGE value="29.04.2025 refactor users API router" />
     <MESSAGE value="30.04.2025 refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="30.04.2025 refactoring" />
+    <MESSAGE value="01.05.2025 change Scope to request in IOC for notification service" />
+    <MESSAGE value="01.05.2025 fix import in fastapi app" />
+    <option name="LAST_COMMIT_MESSAGE" value="01.05.2025 fix import in fastapi app" />
   </component>
 </project>

@@ -43,7 +43,7 @@ class AppProvider(Provider):
 
     @provide(scope=Scope.APP)
     def get_rabbit_broker(self, config: Settings) -> RabbitBroker:
-        return RabbitBroker(url=config.rabbit.url)
+        return RabbitBroker(url=config.rabbit.rabbit_url)
 
     @provide(scope=Scope.APP)
     def get_session_maker(self, config: Settings) -> async_sessionmaker[AsyncSession]:
