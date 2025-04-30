@@ -18,11 +18,17 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
 
 from .settings import Settings
 from .infrastructure.rest import UserRegistrationApi
+from .infrastructure.telegram import TelegramSenderImpl
 from .infrastructure.database.session import create_session_maker
 from .infrastructure.database.repositories import SQLUserRepository, SQLContactRepository
 
-from .core.services import UserService
-from .core.interfaces import UserRegistration, UserRepository, ContactRepository
+from .core.services import UserService, NotificationService
+from .core.interfaces import (
+    UserRegistration,
+    UserRepository,
+    ContactRepository,
+    TelegramSender
+)
 
 
 class AppProvider(Provider):
@@ -70,6 +76,21 @@ class AppProvider(Provider):
         return UserService(
             user_registration=user_registration,
             user_repository=user_repository,
+            contact_repository=contact_repository
+        )
+
+    @provide(scope=Scope.APP)
+    def get_telegram_sender(self, bot: Bot) -> TelegramSender:
+        return TelegramSenderImpl(bot)
+
+    @provide(scope=Scope.APP)
+    def get_notification_service(
+            self,
+            telegram_sender: TelegramSender,
+            contact_repository: ContactRepository
+    ) -> NotificationService:
+        return NotificationService(
+            telegram_sender=telegram_sender,
             contact_repository=contact_repository
         )
 

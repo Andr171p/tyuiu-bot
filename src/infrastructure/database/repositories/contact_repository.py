@@ -7,7 +7,7 @@ from sqlalchemy import select, func
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..models import ContactModel
+from ..models import ContactModel, UserModel
 from src.core.interfaces import ContactRepository
 from src.core.entities import Contact, CreatedContact
 
@@ -53,6 +53,20 @@ class SQLContactRepository(ContactRepository):
             await self.session.rollback()
             raise RuntimeError(f"Error while reading by phone_number: {ex}")
 
+    async def get_by_user_id(self, user_id: str) -> Optional[CreatedContact]:
+        try:
+            stmt = (
+                select(ContactModel)
+                .join(UserModel)
+                .where(UserModel.user_id == user_id)
+            )
+            result = await self.session.execute(stmt)
+            contact = result.scalar_one_or_none()
+            return CreatedContact.model_validate(contact) if contact else None
+        except SQLAlchemyError as ex:
+            await self.session.rollback()
+            raise RuntimeError(f"Error while reading by user_id: {ex}")
+
     async def get_telegram_id_by_phone_number(self, phone_number: str) -> int:
         try:
             stmt = (
@@ -65,6 +79,37 @@ class SQLContactRepository(ContactRepository):
             await self.session.rollback()
             raise RuntimeError(f"Error while reading telegram_id by phone_number: {ex}")
 
+    async def list_of_telegram_ids_by_phone_numbers(self, phone_numbers: List[str]) -> List[int]:
+        try:
+            telegram_ids: List[int] = []
+            for phone_number in phone_numbers:
+                stmt = (
+                    select(ContactModel.telegram_id)
+                    .where(ContactModel.phone_number == phone_number)
+                )
+                telegram_id = await self.session.execute(stmt)
+                telegram_ids.append(telegram_id.scalar())
+            return telegram_ids
+        except SQLAlchemyError as ex:
+            await self.session.rollback()
+            raise RuntimeError(f"Error while reading telegram_ids by phone_numbers: {ex}")
+
+    async def list_of_telegram_ids_by_user_ids(self, user_ids: List[str]) -> List[int]:
+        try:
+            telegram_ids: List[int] = []
+            for user_id in user_ids:
+                stmt = (
+                    select(ContactModel.telegram_id)
+                    .join(UserModel)
+                    .where(UserModel.user_id == user_id)
+                )
+                telegram_id = await self.session.execute(stmt)
+                telegram_ids.append(telegram_id.scalar())
+            return telegram_ids
+        except SQLAlchemyError as ex:
+            await self.session.rollback()
+            raise RuntimeError(f"Error while reading telegram_ids by user_ids: {ex}")
+
     async def get_phone_number_by_telegram_id(self, telegram_id: int) -> str:
         try:
             stmt = (
@@ -76,6 +121,19 @@ class SQLContactRepository(ContactRepository):
         except SQLAlchemyError as ex:
             await self.session.rollback()
             raise RuntimeError(f"Error while reading phone_number by telegram_id: {ex}")
+
+    async def get_telegram_id_by_user_id(self, user_id: str) -> int:
+        try:
+            stmt = (
+                select(ContactModel.telegram_id)
+                .join(UserModel)
+                .where(UserModel.user_id == user_id)
+            )
+            telegram_id = await self.session.execute(stmt)
+            return telegram_id.scalar()
+        except SQLAlchemyError as ex:
+            await self.session.rollback()
+            raise RuntimeError(f"Error while reading user_id by telegram_id: {ex}")
 
     async def get_registered(self, is_registered: bool = True) -> List[Optional[CreatedContact]]:
         try:

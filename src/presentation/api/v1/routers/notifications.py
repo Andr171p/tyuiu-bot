@@ -1,12 +1,11 @@
 from typing import Union
 
-from fastapi import APIRouter, status, BackgroundTasks
+from fastapi import APIRouter, status, BackgroundTasks, Response
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
 from faststream.rabbit import RabbitBroker
 
-from src.core.entities import DirectedNotification, PublicNotification
-from src.presentation.api.v1.schemas import SentNotificationResponse
+from src.core.entities import NotificationOne, NotificationAll, NotificationBatch
 
 
 notifications_router = APIRouter(
@@ -16,19 +15,15 @@ notifications_router = APIRouter(
 )
 
 
-@notifications_router.post(
-    path="/",
-    response_model=SentNotificationResponse,
-    status_code=status.HTTP_201_CREATED
-)
+@notifications_router.post("/")
 async def notify(
-        notification: Union[DirectedNotification, PublicNotification],
+        notification: Union[NotificationOne, NotificationAll, NotificationBatch],
         background_tasks: BackgroundTasks,
         broker: FromDishka[RabbitBroker]
-) -> SentNotificationResponse:
+) -> Response:
     background_tasks.add_task(
         broker.publish,
         notification,
         queue="chat.tasks.messages",
     )
-    return SentNotificationResponse()
+    return Response(status_code=status.HTTP_202_ACCEPTED)

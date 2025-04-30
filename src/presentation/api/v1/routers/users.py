@@ -14,6 +14,12 @@ from ..schemas import (
     DailyCount,
     DailyCountResponse
 )
+from src.constants import (
+    GE_PAGINATED,
+    DEFAULT_PAGE,
+    DEFAULT_LIMIT,
+    DEFAULT_IS_PAGINATED
+)
 
 
 users_router = APIRouter(
@@ -30,9 +36,9 @@ users_router = APIRouter(
 )
 async def get_users(
         user_repository: FromDishka[UserRepository],
-        is_paginated: bool = Query(default=True),
-        page: int = Query(ge=1, default=1),
-        limit: int = Query(ge=1, default=10)
+        is_paginated: bool = Query(default=DEFAULT_IS_PAGINATED),
+        page: int = Query(ge=GE_PAGINATED, default=DEFAULT_PAGE),
+        limit: int = Query(ge=GE_PAGINATED, default=DEFAULT_LIMIT)
 ) -> Union[UsersResponse, UsersPageResponse]:
     if is_paginated:
         total = await user_repository.count()

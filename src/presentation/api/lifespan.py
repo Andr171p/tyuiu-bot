@@ -6,10 +6,11 @@ from contextlib import asynccontextmanager
 from aiogram import Bot
 from fastapi import FastAPI
 
+from ..bot.app import dp
+from ..bot.commands import set_commands
+
 from src.ioc import container
 from src.settings import Settings
-from src.presentation.bot.app import dp
-from src.presentation.bot.commands import set_commands
 from src.infrastructure.broker.app import create_faststream_app
 
 

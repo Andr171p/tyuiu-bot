@@ -3,7 +3,7 @@ from faststream.rabbit import RabbitBroker
 from dishka.integrations.faststream import setup_dishka
 
 from src.ioc import container
-from src.infrastructure.broker.routers import chat_router, notifications_router
+from .routers import chat_router, notifications_router
 
 
 async def create_faststream_app() -> FastStream:

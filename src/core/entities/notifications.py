@@ -1,33 +1,47 @@
-from typing import Optional, List
+from typing import Optional, List, Self
 
-from pydantic import BaseModel, field_validator
-
-from src.utils import format_phone_number
+from pydantic import BaseModel, model_validator
 
 
-class Recipient(BaseModel):
-    phone_number: str
-
-    @field_validator("phone_number")
-    def validate_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)
-
-
-class Message(BaseModel):
+class Content(BaseModel):
     text: str
     image_url: Optional[str] = None
     image_base64: Optional[str] = None
 
-
-class GlobalNotification(BaseModel):
-    message: Message
-
-
-class BroadcastNotification(BaseModel):
-    message: Message
-    recipients: List[Recipient]
+    @model_validator(mode="after")
+    def check_images(self) -> Self:
+        if self.image_url and self.image_base64:
+            raise ValueError("Only one image must be set")
+        return self
 
 
-class DirectNotification(BaseModel):
-    message: Message
-    recipient: Recipient
+class NotificationOne(BaseModel):
+    phone_number: Optional[str] = None
+    user_id: Optional[str] = None
+    content: Content
+
+    @model_validator(mode="after")
+    def check_contacts(self) -> Self:
+        if not self.phone_number and not self.user_id:
+            raise ValueError(f"Either phone_number or user_id must be provided")
+        elif self.phone_number and self.user_id:
+            raise ValueError(f"Only one value must be set")
+        return self
+
+
+class NotificationAll(BaseModel):
+    content: Content
+
+
+class NotificationBatch(BaseModel):
+    phone_numbers: Optional[List[str]] = None
+    user_ids: Optional[List[str]] = None
+    content: Content
+
+    @model_validator(mode="after")
+    def check_contacts(self) -> Self:
+        if not self.phone_numbers and not self.user_ids:
+            raise ValueError(f"Either phone_number or user_id must be provided")
+        elif self.phone_numbers and self.user_ids:
+            raise ValueError(f"Only one value must be set")
+        return self

@@ -37,13 +37,23 @@ class CrudRepository(ReadableRepository, Generic[T], Protocol):
 class UserRepository(CrudRepository[User], Protocol):
     async def get_by_user_id(self, user_id: str) -> Optional[CreatedUser]: pass
 
+    async def get_user_id_by_phone_number(self, phone_number: str) -> str: pass
+
     async def update(self, telegram_id: int, user_id: str) -> CreatedUser: pass
 
 
 class ContactRepository(CrudRepository[Contact], Protocol):
     async def get_by_phone_number(self, phone_number: str) -> Optional[CreatedContact]: pass
+
+    async def get_by_user_id(self, user_id: str) -> Optional[CreatedContact]: pass
     
     async def get_phone_number_by_telegram_id(self, telegram_id: int) -> str: pass
+
+    async def get_telegram_id_by_user_id(self, user_id: str) -> int: pass
+
+    async def list_of_telegram_ids_by_phone_number(self, phone_numbers: List[str]) -> List[int]: pass
+
+    async def list_of_telegram_ids_by_user_ids(self, user_ids: List[str]) -> List[int]: pass
     
     async def list_of_telegram_ids(self) -> Sequence[int]: pass
     

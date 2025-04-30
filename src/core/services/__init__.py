@@ -1,5 +1,7 @@
 __all__ = (
     "UserService",
+    "NotificationService"
 )
 
-from src.core.services.user import UserService
+from .user import UserService
+from .notification import NotificationService

@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from dishka.integrations.fastapi import setup_dishka
 
 from src.ioc import container

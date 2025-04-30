@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="29.04.2025 refactor telegram bot logic">
+    <list default="true" id="336c2767-f3db-4960-adb5-1f93dbb2eb3e" name="Changes" comment="29.04.2025 refactor users API router">
+      <change afterPath="$PROJECT_DIR$/src/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/interfaces/repositories.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/repositories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/interfaces/senders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/interfaces/senders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/services/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/services/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/services/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/broker/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/broker/routers/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/broker/routers/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repositories/contact_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repositories/contact_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/senders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/telegram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ioc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ioc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/lifespan.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/lifespan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/notifications.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/routers/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/api/v1/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +114,7 @@
       <recent name="C:\Users\andre\TyuiuRAGBot\src\presentation\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.contact_repository">
+  <component name="RunManager" selected="Python.notifications">
     <configuration name="contact_repository" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TyuiuRAGBot" />
       <option name="ENV_FILES" value="" />
@@ -212,11 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.notifications" />
         <item itemvalue="Python.contact_repository" />
         <item itemvalue="Python.repositories" />
         <item itemvalue="Python.rest" />
         <item itemvalue="Python.user_crud" />
-        <item itemvalue="Python.notifications" />
       </list>
     </recent_temporary>
   </component>
@@ -235,14 +250,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736366009185</updated>
-    </task>
-    <task id="LOCAL-00138" summary="22.03.2025 decomposition notification endpoint">
-      <option name="closed" value="true" />
-      <created>1742626016622</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1742626016623</updated>
     </task>
     <task id="LOCAL-00139" summary="22.03.2025 refactor notify by phone number endpoint path">
       <option name="closed" value="true" />
@@ -628,11 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1745938914139</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="29.04.2025 refactor users API router">
+      <option name="closed" value="true" />
+      <created>1745941444543</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1745941444543</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="24.04.2025 create background task for notifications" />
     <MESSAGE value="24.04.2025 update IOC container" />
     <MESSAGE value="24.04.2025 refactor bot routers" />
     <MESSAGE value="24.04.2025 add error message to chat" />
@@ -657,6 +671,7 @@
     <MESSAGE value="27.04.2025 refactoring" />
     <MESSAGE value="29.04.2025" />
     <MESSAGE value="29.04.2025 refactor telegram bot logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="29.04.2025 refactor telegram bot logic" />
+    <MESSAGE value="29.04.2025 refactor users API router" />
+    <option name="LAST_COMMIT_MESSAGE" value="29.04.2025 refactor users API router" />
   </component>
 </project>

@@ -3,15 +3,21 @@ from typing import Union
 from fastapi import APIRouter, status, Query, HTTPException
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.core.entities import Contact
+from src.core.entities import CreatedContact
 from src.core.interfaces import ContactRepository
 from src.presentation.api.v1.schemas import (
     ContactsResponse,
     ContactsPageResponse,
     CountResponse,
-    ContactUpdate,
     PhoneNumberQuery,
+    DailyCount,
     DailyCountResponse
+)
+from src.constants import (
+    GE_PAGINATED,
+    DEFAULT_PAGE,
+    DEFAULT_LIMIT,
+    DEFAULT_IS_PAGINATED
 )
 
 
@@ -24,25 +30,37 @@ contacts_router = APIRouter(
 
 @contacts_router.get(
     path="/",
-    response_model=ContactsResponse,
+    response_model=Union[ContactsResponse, ContactsPageResponse],
     status_code=status.HTTP_200_OK
 )
 async def get_contacts(
-        contact_repository: FromDishka[ContactRepository]
-) -> ContactsResponse:
+        contact_repository: FromDishka[ContactRepository],
+        is_paginated: bool = Query(default=DEFAULT_IS_PAGINATED),
+        page: int = Query(ge=GE_PAGINATED, default=DEFAULT_PAGE),
+        limit: int = Query(ge=GE_PAGINATED, default=DEFAULT_LIMIT)
+) -> Union[ContactsResponse, ContactsPageResponse]:
+    if is_paginated:
+        total = await contact_repository.count()
+        contacts = await contact_repository.paginate(page, limit)
+        return ContactsPageResponse(
+            total=total,
+            page=page,
+            limit=limit,
+            contacts=contacts
+        )
     contacts = await contact_repository.list()
     return ContactsResponse(contacts=contacts)
 
 
 @contacts_router.get(
     path="/search",
-    response_model=Contact,
+    response_model=CreatedContact,
     status_code=status.HTTP_200_OK
 )
 async def search_by_phone_number(
         phone_number: PhoneNumberQuery,
         contact_repository: FromDishka[ContactRepository]
-) -> Contact:
+) -> CreatedContact:
     contact = await contact_repository.get_by_phone_number(phone_number)
     if not contact:
         raise HTTPException(status_code=404, detail="Contact not found")
@@ -55,46 +73,34 @@ async def search_by_phone_number(
     status_code=status.HTTP_200_OK
 )
 async def get_count(contact_repository: FromDishka[ContactRepository]) -> CountResponse:
-    total_count = await contact_repository.count()
-    return CountResponse(count=total_count)
+    count = await contact_repository.count()
+    return CountResponse(count=count)
 
 
 @contacts_router.get(
-    path="/daily-count/",
+    path="/count-daily",
     response_model=DailyCountResponse,
     status_code=status.HTTP_200_OK
 )
-async def get_daily_count(
+async def get_count_daily(
         contact_repository: FromDishka[ContactRepository]
 ) -> DailyCountResponse:
-    date_to_count = await contact_repository.daily_count()
-    return DailyCountResponse(distribution=date_to_count)
+    counts = await contact_repository.count_daily()
+    return DailyCountResponse(
+        daily=[DailyCount(date=date, count=count) for date, count in counts]
+    )
 
 
 @contacts_router.get(
     path="/{user_id}",
-    response_model=Contact,
+    response_model=CreatedContact,
     status_code=status.HTTP_200_OK
 )
 async def get_contact(
-        user_id: int,
+        user_id: str,
         contact_repository: FromDishka[ContactRepository]
-) -> Contact:
-    contact = await contact_repository.get(user_id)
+) -> CreatedContact:
+    contact = await contact_repository.get_by_user_id(user_id)
     if not contact:
         raise HTTPException(status_code=404, detail="Contact not found")
-    return contact
-
-
-@contacts_router.patch(
-    path="/{user_id}",
-    response_model=Contact,
-    status_code=status.HTTP_200_OK
-)
-async def update_contact(
-        user_id: int,
-        contact_update: ContactUpdate,
-        contact_repository: FromDishka[ContactRepository]
-) -> Contact:
-    contact = await contact_repository.update(user_id, is_exists=contact_update.is_exists)
     return contact
