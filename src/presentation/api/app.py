@@ -4,7 +4,7 @@ from dishka.integrations.fastapi import setup_dishka
 
 from src.ioc import container
 from .lifespan import lifespan
-from v1.routers import (
+from .v1.routers import (
     webhook_router,
     users_router,
     contacts_router,
