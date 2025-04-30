@@ -43,6 +43,7 @@ class AppProvider(Provider):
 
     @provide(scope=Scope.APP)
     def get_rabbit_broker(self, config: Settings) -> RabbitBroker:
+        print(config.rabbit.rabbit_url)
         return RabbitBroker(url=config.rabbit.rabbit_url)
 
     @provide(scope=Scope.APP)
