@@ -68,4 +68,3 @@ class Settings(BaseSettings):
     rabbit: RabbitSettings = RabbitSettings()
     messages: MessagesSettings = MessagesSettings()
     main_site: MainSiteSettings = MainSiteSettings()
-

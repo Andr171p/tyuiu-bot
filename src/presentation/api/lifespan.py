@@ -22,6 +22,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     bot = await container.get(Bot)
     await set_commands(bot)
     logger.info("Bot set commands")
+
+    faststream_app = await create_faststream_app()
+    await faststream_app.broker.start()
+    logger.info("Broker started")
+
     settings = await container.get(Settings)
     webhook_url = f"{settings.app.url}/webhook"
     await bot.set_webhook(
@@ -31,10 +36,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     )
     logger.info("Webhook set to: %s", webhook_url)
 
-    faststream_app = await create_faststream_app()
-    await faststream_app.broker.start()
-    logger.info("Broker started")
     yield
+
     await faststream_app.broker.close()
     logger.info("Broker closed")
 
