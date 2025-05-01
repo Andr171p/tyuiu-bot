@@ -20,13 +20,12 @@ from .settings import Settings
 from .infrastructure.rest import UserRegistrationApi
 from .infrastructure.telegram import TelegramSenderImpl
 from .infrastructure.database.session import create_session_maker
-from .infrastructure.database.repositories import SQLUserRepository, SQLContactRepository
+from .infrastructure.database.repositories import SQLUserRepository
 
 from .core.services import UserService, NotificationService
 from .core.interfaces import (
     UserRegistration,
     UserRepository,
-    ContactRepository,
     TelegramSender
 )
 
@@ -43,7 +42,6 @@ class AppProvider(Provider):
 
     @provide(scope=Scope.APP)
     def get_rabbit_broker(self, config: Settings) -> RabbitBroker:
-        print(config.rabbit.rabbit_url)
         return RabbitBroker(url=config.rabbit.rabbit_url)
 
     @provide(scope=Scope.APP)
@@ -59,10 +57,6 @@ class AppProvider(Provider):
     def get_user_repository(self, session: AsyncSession) -> UserRepository:
         return SQLUserRepository(session)
 
-    @provide(scope=Scope.REQUEST)
-    def get_contact_repository(self, session: AsyncSession) -> ContactRepository:
-        return SQLContactRepository(session)
-
     @provide(scope=Scope.APP)
     def get_user_registration(self, config: Settings) -> UserRegistration:
         return UserRegistrationApi(config.registration.url)
@@ -72,12 +66,10 @@ class AppProvider(Provider):
             self,
             user_registration: UserRegistration,
             user_repository: UserRepository,
-            contact_repository: ContactRepository
     ) -> UserService:
         return UserService(
             user_registration=user_registration,
             user_repository=user_repository,
-            contact_repository=contact_repository
         )
 
     @provide(scope=Scope.APP)
@@ -88,11 +80,11 @@ class AppProvider(Provider):
     def get_notification_service(
             self,
             telegram_sender: TelegramSender,
-            contact_repository: ContactRepository
+            user_repository: UserRepository
     ) -> NotificationService:
         return NotificationService(
             telegram_sender=telegram_sender,
-            contact_repository=contact_repository
+            user_repository=user_repository
         )
 
 

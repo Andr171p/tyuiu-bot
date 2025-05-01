@@ -9,7 +9,7 @@ from alembic import context
 
 from src.settings import PostgresSettings
 from src.infrastructure.database.base import Base
-from src.infrastructure.database.models import UserModel, ContactModel
+from src.infrastructure.database.models import UserModel
 
 sqlalchemy_url = PostgresSettings().sqlalchemy_url
 

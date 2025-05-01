@@ -5,7 +5,7 @@ from typing import Annotated, List
 from fastapi import Query
 from pydantic import BaseModel
 
-from src.core.entities import CreatedUser, CreatedContact
+from src.core.entities import User
 
 
 PhoneNumberQuery = Annotated[
@@ -15,33 +15,22 @@ PhoneNumberQuery = Annotated[
 
 
 class UsersResponse(BaseModel):
-    users: List[CreatedUser]
+    users: List[User]
 
 
 class UsersPageResponse(BaseModel):
     total: int
     page: int
     limit: int
-    users: List[CreatedUser]
+    users: List[User]
 
 
-class UserUpdate(BaseModel):
+class UserIdUpdate(BaseModel):
     user_id: str
 
 
 class CountResponse(BaseModel):
     count: int
-
-
-class ContactsResponse(BaseModel):
-    contacts: List[CreatedContact]
-
-
-class ContactsPageResponse(BaseModel):
-    total: int
-    page: int
-    limit: int
-    contacts: List[CreatedContact]
 
 
 class DailyCount(BaseModel):

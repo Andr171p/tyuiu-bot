@@ -9,13 +9,9 @@ from .constants import BASE_DIR, ENV_PATH
 load_dotenv(ENV_PATH)
 
 
-class AppSettings(BaseSettings):
-    # url: str = os.getenv("URL")
-    url: str = "https://6x1jt274-8000.euw.devtunnels.ms/"
-
-
 class BotSettings(BaseSettings):
     token: str = os.getenv("BOT_TOKEN")
+    webhook_url: str = os.getenv("WEBHOOK_URL")
 
 
 class PostgresSettings(BaseSettings):
@@ -61,7 +57,6 @@ class MainSiteSettings(BaseSettings):
 
 
 class Settings(BaseSettings):
-    app: AppSettings = AppSettings()
     tyuiu_gpt: TyuiuGPTSettings = TyuiuGPTSettings()
     registration: RegistrationSettings = RegistrationSettings()
     bot: BotSettings = BotSettings()

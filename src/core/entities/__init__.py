@@ -1,17 +1,15 @@
 __all__ = (
-   "User",
-   "CreatedUser",
-   "Contact",
-   "SharingContactStatus",
-   "CreatedContact",
    "UserMessage",
    "AssistantMessage",
-   "Content",
    "NotificationOne",
    "NotificationAll",
-   "NotificationBatch"
+   "NotificationBatch",
+   "Content",
+   "User",
+   "UserShareContact",
+   "SharingContactStatus"
 )
 
 from .messages import UserMessage, AssistantMessage
-from .user import User, CreatedUser, Contact, SharingContactStatus, CreatedContact
-from .notifications import Content, NotificationOne, NotificationAll, NotificationBatch
+from .user import User, UserShareContact, SharingContactStatus
+from .notifications import NotificationOne, NotificationAll, NotificationBatch, Content

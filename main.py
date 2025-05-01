@@ -7,6 +7,3 @@ logging.basicConfig(level=logging.INFO)
 
 app = create_fastapi_app()
 
-from src.settings import AppSettings
-
-print(AppSettings().url)

@@ -28,7 +28,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
     logger.info("Broker started")
 
     settings = await container.get(Settings)
-    webhook_url = f"{settings.app.url}/webhook"
+    webhook_url = f"{settings.bot.webhook_url}/webhook"
     await bot.set_webhook(
         url=webhook_url,
         allowed_updates=dp.resolve_used_update_types(),

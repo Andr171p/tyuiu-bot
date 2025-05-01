@@ -3,9 +3,8 @@ __all__ = (
     "UserRegistration",
     "ChatAssistant",
     "UserRepository",
-    "ContactRepository"
 )
 
 from .senders import TelegramSender
+from .repositories import UserRepository
 from .rest import ChatAssistant, UserRegistration
-from .repositories import UserRepository, ContactRepository
