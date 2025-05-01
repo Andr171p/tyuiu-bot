@@ -126,7 +126,7 @@ async def get_shared_contact_users(
 
 @users_router.get(
     path="/shared-contacts/{user_id}",
-    response_model=Union,
+    response_model=User,
     status_code=status.HTTP_200_OK
 )
 async def get_shared_contact_user(user_id: str, user_repository: FromDishka[UserRepository]) -> User:

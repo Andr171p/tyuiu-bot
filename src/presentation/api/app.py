@@ -7,7 +7,6 @@ from .lifespan import lifespan
 from .v1.routers import (
     webhook_router,
     users_router,
-    contacts_router,
     notifications_router
 )
 
@@ -16,7 +15,6 @@ def create_fastapi_app() -> FastAPI:
     app = FastAPI(lifespan=lifespan)
     app.include_router(webhook_router)
     app.include_router(users_router)
-    app.include_router(contacts_router)
     app.include_router(notifications_router)
     app.add_middleware(
         CORSMiddleware,
