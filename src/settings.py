@@ -15,26 +15,26 @@ class BotSettings(BaseSettings):
 
 
 class PostgresSettings(BaseSettings):
-    user: str = os.getenv("PG_USER")
-    password: str = os.getenv("PG_PASSWORD")
-    host: str = os.getenv("PG_HOST")
-    port: int = os.getenv("PG_PORT")
-    name: str = os.getenv("PG_NAME")
+    pg_user: str = os.getenv("PG_USER")
+    pg_password: str = os.getenv("PG_PASSWORD")
+    pg_host: str = os.getenv("PG_HOST")
+    pg_port: int = os.getenv("PG_PORT")
+    pg_name: str = os.getenv("PG_NAME")
 
     @property
     def sqlalchemy_url(self) -> str:
-        return f"postgresql+asyncpg://{self.user}:{self.password}@{self.host}:{self.port}/{self.name}"
+        return f"postgresql+asyncpg://{self.pg_user}:{self.pg_password}@{self.pg_host}:{self.pg_port}/{self.pg_name}"
 
 
 class RabbitSettings(BaseSettings):
-    host: str = os.getenv("RABBIT_HOST")
-    port: int = os.getenv("RABBIT_PORT")
-    user: str = os.getenv("RABBIT_USER")
-    password: str = os.getenv("RABBIT_PASSWORD")
+    rabbit_host: str = os.getenv("RABBIT_HOST")
+    rabbit_port: int = os.getenv("RABBIT_PORT")
+    rabbit_user: str = os.getenv("RABBIT_USER")
+    rabbit_password: str = os.getenv("RABBIT_PASSWORD")
 
     @property
     def rabbit_url(self) -> str:
-        return f"amqp://{self.user}:{self.password}@{self.host}:{self.port}"
+        return f"amqp://{self.rabbit_user}:{self.rabbit_password}@{self.rabbit_host}:{self.rabbit_port}"
 
 
 class MessagesSettings(BaseSettings):
