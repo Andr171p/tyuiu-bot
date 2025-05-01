@@ -10,7 +10,8 @@ load_dotenv(ENV_PATH)
 
 
 class AppSettings(BaseSettings):
-    url: str = os.getenv("URL")
+    # url: str = os.getenv("URL")
+    url: str = "https://6x1jt274-8000.euw.devtunnels.ms/"
 
 
 class BotSettings(BaseSettings):
