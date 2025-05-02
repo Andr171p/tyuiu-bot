@@ -17,5 +17,4 @@ async def answer(message: Message, broker: FromDishka[RabbitBroker]) -> None:
     await broker.publish(
         user_message,
         queue="chat.user-messages",
-        # reply_to="chat.assistant-messages"
     )

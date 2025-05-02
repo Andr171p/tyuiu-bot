@@ -23,14 +23,14 @@ async def subscribe(
         user_service: FromDishka[UserService],
         settings: FromDishka[Settings]
 ) -> None:
-    user = ShareContactUser(
+    user_contact = ShareContactUser(
         telegram_id=message.from_user.id,
         first_name=message.from_user.first_name,
         last_name=message.from_user.last_name,
         username=message.from_user.username,
         phone_number=message.contact.phone_number
     )
-    status = await user_service.save(user)
+    status = await user_service.share_contact(user_contact)
     if status.SUCCESS:
         await message.answer("Вы успешно поделились контактом")
     elif status.ALREADY_SHARED:
