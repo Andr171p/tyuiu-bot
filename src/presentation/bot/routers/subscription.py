@@ -5,6 +5,7 @@ from dishka.integrations.aiogram import FromDishka
 
 from src.settings import Settings
 from src.core.services import UserService
+from src.core.entities import ShareContactUser
 from ..keyboards import share_contact_keyboard, follow_to_register_keyboard
 
 
@@ -17,12 +18,19 @@ async def subscription_details(message: Message, settings: FromDishka[Settings])
 
 
 @subscription_router.message(F.contact)
-async def share_contact(
+async def subscribe(
         message: Message,
         user_service: FromDishka[UserService],
         settings: FromDishka[Settings]
 ) -> None:
-    status = await user_service.share_contact(message.from_user.id, message.contact.phone_number)
+    user = ShareContactUser(
+        telegram_id=message.from_user.id,
+        first_name=message.from_user.first_name,
+        last_name=message.from_user.last_name,
+        username=message.from_user.username,
+        phone_number=message.contact.phone_number
+    )
+    status = await user_service.save(user)
     if status.SUCCESS:
         await message.answer("Вы успешно поделились контактом")
     elif status.ALREADY_SHARED:

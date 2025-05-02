@@ -1,7 +1,5 @@
-from typing import Optional
-
-from ..entities import User, UserShareContact, SharingContactStatus
 from ..interfaces import UserRepository, UserRegistration
+from ..entities import User, ShareContactUser, SharingContactStatus
 
 
 class UserService:
@@ -13,28 +11,23 @@ class UserService:
         self._user_repository = user_repository
         self._user_registration = user_registration
 
-    async def save(self, telegram_id: int, username: Optional[str]) -> None:
-        if await self._user_repository.read(telegram_id):
-            return
-        user = User(telegram_id=telegram_id, username=username)
-        await self._user_repository.create(user)
-
-    async def share_contact(self, telegram_id: int, phone_number: str) -> SharingContactStatus:
-        user = await self._user_repository.read(telegram_id)
+    async def save(self, user: ShareContactUser) -> SharingContactStatus:
+        created_user = await self._user_repository.read(user.telegram_id)
         status = SharingContactStatus.SUCCESS
-        if user.user_id and user.phone_number:
+        if created_user.user_id and created_user.phone_number:
             return SharingContactStatus.ALREADY_SHARED
-        elif not user.user_id and user.phone_number:
+        elif not created_user.user_id and created_user.phone_number:
             return SharingContactStatus.NOT_REGISTERED
-        user_id = await self._user_registration.get_user_id(phone_number)
+        user_id = await self._user_registration.get_user_id(user.phone_number)
         is_registered = True if user_id else False
         if not is_registered:
             status = SharingContactStatus.NOT_REGISTERED
-        updated_user = await self._user_repository.update(
-            telegram_id,
+        await self._user_repository.create(User(
+            telegram_id=user.telegram_id,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            username=user.username,
             user_id=user_id,
-            phone_number=phone_number
-        )
-        if not updated_user:
-            return SharingContactStatus.ERROR
+            phone_number=user.phone_number
+        ))
         return status

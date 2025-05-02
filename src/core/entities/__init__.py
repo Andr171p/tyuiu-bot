@@ -6,10 +6,11 @@ __all__ = (
    "NotificationBatch",
    "Content",
    "User",
-   "UserShareContact",
+   "ShareContactUser",
    "SharingContactStatus"
 )
 
+from .enums import SharingContactStatus
+from .user import User, ShareContactUser
 from .messages import UserMessage, AssistantMessage
-from .user import User, UserShareContact, SharingContactStatus
 from .notifications import NotificationOne, NotificationAll, NotificationBatch, Content

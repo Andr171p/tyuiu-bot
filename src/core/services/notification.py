@@ -28,10 +28,10 @@ class NotificationService:
 
     async def notify_all(self, notification: NotificationAll) -> None:
         content = notification.content
-        telegram_ids = await self._user_repository.get_telegram_ids()
-        for telegram_id in telegram_ids:
+        users = await self._user_repository.list()
+        for user in users:
             await self._telegram_sender.send(
-                telegram_id=telegram_id,
+                telegram_id=user.telegram_id,
                 text=content.text,
                 image_url=content.image_url,
                 image_base64=content.image_base64
@@ -42,12 +42,12 @@ class NotificationService:
         user_ids = notification.user_ids
         content = notification.content
         if phone_numbers:
-            telegram_ids = await self._user_repository.get_telegram_ids_by_phone_numbers(phone_numbers)
+            users = await self._user_repository.get_by_phone_numbers(phone_numbers)
         else:
-            telegram_ids = await self._user_repository.get_telegram_ids_by_user_ids(user_ids)
-        for telegram_id in telegram_ids:
+            users = await self._user_repository.get_by_user_ids(user_ids)
+        for user in users:
             await self._telegram_sender.send(
-                telegram_id=telegram_id,
+                telegram_id=user.telegram_id,
                 text=content.text,
                 image_url=content.image_url,
                 image_base64=content.image_base64

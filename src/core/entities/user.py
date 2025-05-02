@@ -1,4 +1,3 @@
-from enum import Enum, auto
 from datetime import datetime
 
 from typing import Optional
@@ -15,9 +14,11 @@ from src.utils import format_phone_number
 
 class User(BaseModel):
     telegram_id: int
-    user_id: Optional[str] = None
+    first_name: Optional[str]
+    last_name: Optional[str]
     username: Optional[str]
-    phone_number: Optional[str] = None
+    user_id: Optional[str] = None
+    phone_number: str
     created_at: datetime = Field(default_factory=datetime.now)
 
     model_config = ConfigDict(from_attributes=True)
@@ -28,19 +29,9 @@ class User(BaseModel):
         return format_phone_number(phone_number)
 
 
-class UserShareContact(BaseModel):
+class ShareContactUser(BaseModel):
     telegram_id: int
-    user_id: Optional[str] = None
+    first_name: Optional[str]
+    last_name: Optional[str]
+    username: Optional[str]
     phone_number: str
-
-    @field_validator("phone_number")
-    @classmethod
-    def format_phone_number(cls, phone_number: str) -> str:
-        return format_phone_number(phone_number)
-
-
-class SharingContactStatus(Enum):
-    SUCCESS = auto()  # contact created and user registered
-    ALREADY_SHARED = auto()  # contact already created and user registered
-    NOT_REGISTERED = auto()  # contact created and user not registered
-    ERROR = auto()  # error while create contact

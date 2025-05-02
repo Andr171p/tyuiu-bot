@@ -14,6 +14,9 @@ class UserModel(Base):
     __tablename__ = "users"
 
     telegram_id: Mapped[tg_id]
+    first_name: Mapped[str_nullable]
+    last_name: Mapped[str_nullable]
+    username: Mapped[str_nullable]
     user_id: Mapped[uuid_nullable]
     username: Mapped[str_nullable]
     phone_number: Mapped[str_nullable]
@@ -23,15 +26,20 @@ class UserModel(Base):
     def from_user(cls, user: User) -> "UserModel":
         return cls(
             telegram_id=user.telegram_id,
-            user_id=user.user_id,
+            first_name=user.first_name,
+            last_name=user.last_name,
             username=user.username,
-            phone_number=user.phone_number
+            user_id=user.user_id,
+            phone_number=user.phone_number,
+            created_at=user.created_at
         )
 
     def __str__(self) -> str:
         return (
             f"{self.__class__.__name__}(\n"
-            f"telegram_id={self.user_id}, \n"
+            f"telegram_id={self.user_id},\n"
+            f"first_name={self.first_name},\n"
+            f"last_name={self.last_name},\n"
             f"username={self.username},\n"
             f"user_id={self.user_id}\n"
             f"phone_number={self.phone_number},\n"
