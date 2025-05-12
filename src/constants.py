@@ -18,13 +18,13 @@ USER_STATUSES = Literal[
     "REGISTRATION_REQUIRE"
 ]
 
-# Notifications topics:
+# Notifications:
 NOTIFICATION_TOPICS = Literal[
     "INFO",
     "POSITIVE",
     "WARNING",
     "CRITICAL"
-]
+]  # Notification topics level
 NOTIFICATION_STATUSES = Literal[
     "DELIVERED",
     "ERROR"

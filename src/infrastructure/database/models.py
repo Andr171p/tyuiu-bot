@@ -1,7 +1,6 @@
-from datetime import datetime
 from uuid import UUID
 
-from sqlalchemy import BigInteger, DateTime, ForeignKey, Text, func
+from sqlalchemy import BigInteger, ForeignKey, Text, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID as POSTGRES_UUID
 
@@ -21,9 +20,13 @@ class UserModel(Base):
     last_name: Mapped[str | None] = mapped_column(nullable=True)
     username: Mapped[str | None] = mapped_column(nullable=True)
     phone_number: Mapped[str] = mapped_column(unique=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=func.now)
+    status: Mapped[int]
 
     notifications: Mapped[list["NotificationModel"]] = relationship(back_populates="user")
+
+    __table_args__ = (
+        Index("id_index", "telegram_id", "user_id"),
+    )
 
     def __str__(self) -> str:
         return (
@@ -45,8 +48,12 @@ class UserModel(Base):
 class NotificationModel(Base):
     __tablename__ = "notifications"
 
-    user_id: Mapped[UUID] = mapped_column(POSTGRES_UUID(as_uuid=True), unique=False, nullable=False)
+    user_id: Mapped[UUID] = mapped_column(ForeignKey("users.user_id"), unique=False, nullable=False)
     notification_id: Mapped[UUID] = mapped_column(POSTGRES_UUID(as_uuid=True), unique=True, nullable=False)
     topic: Mapped[str] = mapped_column(nullable=False)
     photo: Mapped[str | None] = mapped_column(nullable=True)
     text: Mapped[str] = mapped_column(Text)
+    status: Mapped[str]
+    message_id: Mapped[int] = mapped_column(BigInteger, unique=True)
+
+    user: Mapped["UserModel"] = relationship(back_populates="notifications")

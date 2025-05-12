@@ -6,6 +6,7 @@ from ..constants import NOTIFICATION_STATUSES
 
 class UserReadDTO(User):
     created_at: datetime
+    updated_at: datetime
 
 
 class NotificationCreateDTO(Notification):

@@ -36,7 +36,7 @@ class Notification(BaseModel):
     notification_id: uuid.UUID
     topic: NOTIFICATION_TOPICS
     user_id: uuid.UUID
-    phot: Optional[str] = None
+    photo: Optional[str] = None
     text: str
 
     model_config = ConfigDict(from_attributes=True)

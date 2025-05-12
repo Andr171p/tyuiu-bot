@@ -5,7 +5,7 @@ from src.settings import PostgresSettings
 
 
 def create_session_maker(pg_settings: PostgresSettings) -> async_sessionmaker[AsyncSession]:
-    engine = create_async_engine(url=pg_settings.sqlalchemy_url)
+    engine = create_async_engine(url=pg_settings.sqlalchemy_url, echo=True)
     return async_sessionmaker(
         engine,
         class_=AsyncSession,

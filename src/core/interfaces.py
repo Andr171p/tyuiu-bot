@@ -5,6 +5,7 @@ from uuid import UUID
 
 from .dto import UserReadDTO, NotificationCreateDTO, NotificationReadDTO
 from .entities import User, UserMessage, AssistantMessage
+from ..constants import USER_STATUSES
 
 
 class TelegramSender(ABC):
@@ -23,7 +24,10 @@ class UserRepository(ABC):
     async def read(self, telegram_id: int) -> Optional[UserReadDTO]: pass
 
     @abstractmethod
-    async def update(self, telegram_id: int, **kwargs) -> None: pass
+    async def update(self, telegram_id: int, **kwargs) -> UserReadDTO: pass
+
+    @abstractmethod
+    async def get_by_status(self, status: USER_STATUSES = "READY") -> list[UserReadDTO]: pass
 
     @abstractmethod
     async def get_by_user_id(self, user_id: UUID) -> Optional[UserReadDTO]: pass
