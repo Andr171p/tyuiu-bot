@@ -24,7 +24,7 @@ class UserRepository(ABC):
     async def read(self, telegram_id: int) -> Optional[UserReadDTO]: pass
 
     @abstractmethod
-    async def update(self, telegram_id: int, **kwargs) -> UserReadDTO: pass
+    async def update(self, phone_number: str, **kwargs) -> Optional[UserReadDTO]: pass
 
     @abstractmethod
     async def get_by_status(self, status: USER_STATUSES = "READY") -> list[UserReadDTO]: pass
@@ -35,7 +35,7 @@ class UserRepository(ABC):
 
 class NotificationRepository(ABC):
     @abstractmethod
-    async def create(self, notification: NotificationCreateDTO) -> None: pass
+    async def create(self, notification: NotificationCreateDTO) -> UUID: pass
 
     @abstractmethod
     async def read(self, notification_id: UUID) -> Optional[NotificationReadDTO]: pass

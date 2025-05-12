@@ -37,18 +37,18 @@ class SQLUserRepository(UserRepository):
             await self.session.rollback()
             raise RuntimeError(f"Error while reading user: {e}")
 
-    async def update(self, telegram_id: int, **kwargs) -> UserReadDTO:
+    async def update(self, phone_number: str, **kwargs) -> Optional[UserReadDTO]:
         try:
             stmt = (
                 update(UserModel)
-                .where(UserModel.telegram_id == telegram_id)
+                .where(UserModel.phone_number == phone_number)
                 .values(**kwargs)
                 .returning(UserModel)
             )
             result = await self.session.execute(stmt)
-            user = result.scalar_one()
+            user = result.scalar_one_or_none()
             await self.session.commit()
-            return UserReadDTO.model_validate(user)
+            return UserReadDTO.model_validate(user) if user else None
         except SQLAlchemyError as ex:
             await self.session.rollback()
             raise RuntimeError(f"Error while updating user: {ex}")

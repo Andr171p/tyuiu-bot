@@ -3,5 +3,5 @@ __all__ = (
     "notifications_router"
 )
 
-from src.infrastructure.broker.routers.chat import chat_router
-from src.infrastructure.broker.routers.notifications import notifications_router
+from .chat import chat_router
+from .notifications import notifications_router

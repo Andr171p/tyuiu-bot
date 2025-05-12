@@ -1,11 +1,12 @@
-from datetime import datetime
+from typing import Annotated
 
-from typing import Annotated, List
+from uuid import UUID
 
-from fastapi import Query
 from pydantic import BaseModel
 
-from src.core.entities import User
+from fastapi import Query, Form
+
+from src.core.dto import NotificationReadDTO
 
 
 PhoneNumberQuery = Annotated[
@@ -13,30 +14,16 @@ PhoneNumberQuery = Annotated[
     Query(..., description="Номер телефона для поиска в формате +7(xxx)xxx-xx-xx")
 ]
 
-
-class UsersResponse(BaseModel):
-    users: List[User]
-
-
-class UsersPageResponse(BaseModel):
-    total: int
-    page: int
-    limit: int
-    users: List[User]
+UserIdUpdate = Annotated[
+    UUID,
+    Form(..., description="Id пользователя в сервисе регистрации")
+]
 
 
-class UserIdUpdate(BaseModel):
-    user_id: str
+class CreatedNotificationResponse(BaseModel):
+    notification_id: UUID
 
 
-class CountResponse(BaseModel):
-    count: int
-
-
-class DailyCount(BaseModel):
-    date: datetime
-    count: int
-
-
-class DailyCountResponse(BaseModel):
-    daily: List[DailyCount]
+class UserNotificationsResponse(BaseModel):
+    user_id: UUID
+    notifications: list[NotificationReadDTO]

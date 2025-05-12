@@ -19,7 +19,7 @@ USER_STATUSES = Literal[
 ]
 
 # Notifications:
-NOTIFICATION_TOPICS = Literal[
+NOTIFICATION_LEVELS = Literal[
     "INFO",
     "POSITIVE",
     "WARNING",
@@ -27,5 +27,6 @@ NOTIFICATION_TOPICS = Literal[
 ]  # Notification topics level
 NOTIFICATION_STATUSES = Literal[
     "DELIVERED",
+    "NOT_DELIVERED",
     "ERROR"
 ]

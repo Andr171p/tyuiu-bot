@@ -1,3 +1,4 @@
+import uuid
 from uuid import UUID
 
 from sqlalchemy import BigInteger, ForeignKey, Text, Index
@@ -49,11 +50,15 @@ class NotificationModel(Base):
     __tablename__ = "notifications"
 
     user_id: Mapped[UUID] = mapped_column(ForeignKey("users.user_id"), unique=False, nullable=False)
-    notification_id: Mapped[UUID] = mapped_column(POSTGRES_UUID(as_uuid=True), unique=True, nullable=False)
-    topic: Mapped[str] = mapped_column(nullable=False)
+    notification_id: Mapped[UUID] = mapped_column(
+        POSTGRES_UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4
+    )
+    level: Mapped[str] = mapped_column(nullable=False)
     photo: Mapped[str | None] = mapped_column(nullable=True)
     text: Mapped[str] = mapped_column(Text)
     status: Mapped[str]
-    message_id: Mapped[int] = mapped_column(BigInteger, unique=True)
+    message_id: Mapped[int] = mapped_column(BigInteger, unique=True, nullable=True)
 
     user: Mapped["UserModel"] = relationship(back_populates="notifications")

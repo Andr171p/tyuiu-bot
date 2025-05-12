@@ -5,7 +5,7 @@ import uuid
 from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
 from ..utils import format_phone_number
-from ..constants import USER_STATUSES, NOTIFICATION_TOPICS
+from ..constants import USER_STATUSES, NOTIFICATION_LEVELS
 
 
 class User(BaseModel):
@@ -33,8 +33,7 @@ class User(BaseModel):
 
 
 class Notification(BaseModel):
-    notification_id: uuid.UUID
-    topic: NOTIFICATION_TOPICS
+    level: NOTIFICATION_LEVELS
     user_id: uuid.UUID
     photo: Optional[str] = None
     text: str

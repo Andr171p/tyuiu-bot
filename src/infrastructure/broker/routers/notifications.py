@@ -1,28 +1,20 @@
-import logging
-
-from typing import Union
-
+from faststream import Logger
 from faststream.rabbit import RabbitRouter
+
 from dishka.integrations.base import FromDishka
 
+from src.core.entities import Notification
 from src.core.services import NotificationService
-from src.core.entities import NotificationOne, NotificationAll, NotificationBatch
 
-
-logger = logging.getLogger(__name__)
 
 notifications_router = RabbitRouter()
 
 
-@notifications_router.subscriber("bot.tasks.notifications")
+@notifications_router.subscriber("telegram.notifications")
 async def notify(
-        notification: Union[NotificationOne, NotificationAll, NotificationBatch],
-        notification_service: FromDishka[NotificationService]
+        notification: Notification,
+        notification_service: FromDishka[NotificationService],
+        logger: Logger
 ) -> None:
-    if isinstance(notification, NotificationOne):
-        await notification_service.notify_one(notification)
-    elif isinstance(notification, NotificationAll):
-        await notification_service.notify_all(notification)
-    elif isinstance(notification, NotificationBatch):
-        await notification_service.notify_batch(notification)
-    logger.info("Notification sent successfully")
+    logger.info("Receiving notification: %s", notification)
+    await notification_service.notify(notification)
