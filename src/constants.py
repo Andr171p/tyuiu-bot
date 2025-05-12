@@ -6,6 +6,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_PATH = BASE_DIR / ".env"
 
+# Main web site:
+SITE_URL = "https://online-service-for-applicants.onrender.com/"
+
 # Endpoints constants
 MIN_PAGE = 1
 DEFAULT_PAGE = 1

@@ -1,8 +1,10 @@
 from aiogram import Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
+
 from dishka.integrations.aiogram import setup_dishka
 
 from src.ioc import container
+
 from .routers import (
     chat_router,
     handler_router,

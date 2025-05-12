@@ -2,10 +2,15 @@ from typing import Optional
 
 from uuid import UUID
 
-from .entities import Notification
-from .dto import NotificationCreateDTO
-from .interfaces import TelegramSender, UserRepository, NotificationRepository
-from ..constants import NOTIFICATION_STATUSES
+from .entities import Notification, User
+from .dto import NotificationCreateDTO, UserContactDTO
+from .interfaces import (
+    TelegramSender,
+    UserRepository,
+    NotificationRepository,
+    UserRegistration
+)
+from ..constants import NOTIFICATION_STATUSES, USER_STATUSES
 
 
 class NotificationService:
@@ -58,3 +63,31 @@ class NotificationService:
             message_id=message_id
         )
         return await self._notification_repository.create(notification_dto)
+
+
+class UserService:
+    def __init__(
+            self,
+            user_repository: UserRepository,
+            user_registration: UserRegistration
+    ) -> None:
+        self._user_repository = user_repository
+        self._user_registration = user_registration
+
+    async def subscribe(self, contact: UserContactDTO) -> USER_STATUSES:
+        user = await self._user_repository.read(contact.telegram_id)
+        if user:
+            return "READY"
+        user_id = await self._user_registration.get_user_id(contact.phone_number)
+        status: USER_STATUSES = "READY" if user_id else "REGISTRATION_REQUIRE"
+        user = User(
+            telegram_id=contact.telegram_id,
+            user_id=user_id,
+            first_name=contact.first_name,
+            last_name=contact.last_name,
+            username=contact.username,
+            phone_number=contact.phone_number,
+            status=status
+        )
+        await self._user_repository.create(user)
+        return status

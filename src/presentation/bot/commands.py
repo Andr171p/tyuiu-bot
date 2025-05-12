@@ -8,7 +8,4 @@ async def set_commands(bot: Bot) -> None:
         BotCommand(command="info", description="Что умеет этот бот?"),
         BotCommand(command="subscribe", description="Оповестить об изменениях в рейтинге")
     ]
-    await bot.set_my_commands(
-        commands=commands,
-        scope=BotCommandScopeDefault()
-    )
+    await bot.set_my_commands(commands=commands, scope=BotCommandScopeDefault())

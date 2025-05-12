@@ -1,11 +1,15 @@
 from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command
+
 from dishka.integrations.aiogram import FromDishka
 
-from src.settings import Settings
 from src.core.services import UserService
-from src.core.entities import ShareContactUser
+from src.core.dto import UserContactDTO
+
+from src.settings import Settings
+from src.constants import SITE_URL
+
 from ..keyboards import share_contact_keyboard, follow_to_register_keyboard
 
 
@@ -18,29 +22,21 @@ async def subscription_details(message: Message, settings: FromDishka[Settings])
 
 
 @subscription_router.message(F.contact)
-async def subscribe(
-        message: Message,
-        user_service: FromDishka[UserService],
-        settings: FromDishka[Settings]
-) -> None:
-    user_contact = ShareContactUser(
+async def subscribe(message: Message, user_service: FromDishka[UserService]) -> None:
+    contact = UserContactDTO(
         telegram_id=message.from_user.id,
         first_name=message.from_user.first_name,
         last_name=message.from_user.last_name,
         username=message.from_user.username,
         phone_number=message.contact.phone_number
     )
-    status = await user_service.share_contact(user_contact)
-    if status.SUCCESS:
+    status = await user_service.subscribe(contact)
+    if status == "READY":
         await message.answer("Вы успешно поделились контактом")
-    elif status.ALREADY_SHARED:
-        await message.answer("Вы уже поделились контактом")
-    elif status.NOT_REGISTERED:
+    elif status == "REGISTRATION_REQUIRE":
         await message.answer(
             """<b>Контакт успешно отправлен.</b>
             Осталось зарегистрироваться на нашем сайте...
             """,
-            reply_markup=follow_to_register_keyboard(settings.main_site.url)
+            reply_markup=follow_to_register_keyboard(SITE_URL)
         )
-    elif status.ERROR:
-        await message.answer("Произошла ошибка, попробуйте позже...")
