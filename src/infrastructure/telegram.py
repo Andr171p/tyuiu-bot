@@ -1,56 +1,43 @@
+from typing import Optional
+
 import uuid
 import base64
 import logging
 
-from typing import Optional
-
 from aiogram import Bot
-from aiogram.types import (
-    InputFile,
-    BufferedInputFile,
-    URLInputFile
-)
+from aiogram.types import BufferedInputFile
 
-from src.core.interfaces import TelegramSender
+from .exceptions import TelegramException
+from ..core.interfaces import TelegramSender
 
 
-logger = logging.getLogger(__name__)
-
-
-class TelegramSenderImpl(TelegramSender):
+class TelegramSenderBot(TelegramSender):
     def __init__(self, bot: Bot) -> None:
+        self.logger = logging.getLogger(self.__class__.__name__)
         self.bot = bot
 
-    async def send(
-            self,
-            telegram_id: int,
-            text: str,
-            image_url: Optional[str] = None,
-            image_base64: Optional[str] = None
-    ) -> None:
-        if image_base64:
-            photo = BufferedInputFile(base64.b64decode(image_base64), filename=f"{uuid.uuid4()}.jpg")
-            await self.__send_photo(telegram_id, photo, text)
-        elif image_url:
-            photo = URLInputFile(image_url)
-            await self.__send_photo(telegram_id, photo, text)
-        await self.__send_message(telegram_id, text)
-
-    async def __send_message(self, telegram_id: int, text: str) -> None:
+    async def send(self, telegram_id: int, text: str) -> Optional[int]:
         try:
-            message = await self.bot.send_message(chat_id=telegram_id, text=text)
-            if message:
-                logger.info("Message delivered successfully to user with id %s", telegram_id)
-        except Exception as ex:
-            logger.warning("Message is not delivered with error %s", ex)
+            message = await self.bot.send_message(
+                chat_id=telegram_id,
+                text=text
+            )
+            self.logger.info("Message with id %s delivered successfully", telegram_id)
+            return message.message_id
+        except Exception as e:
+            self.logger.error("Error while sending message with id %s: %s", telegram_id, e)
+            raise TelegramException(f"Error while sending message with id {telegram_id}: {e}")
 
-    async def __send_photo(self, telegram_id: int, photo: InputFile, caption: str) -> None:
+    async def send_with_photo(self, telegram_id: int, photo: str, text: str) -> Optional[int]:
         try:
-            await self.bot.send_photo(
+            photo = BufferedInputFile(base64.b64decode(photo), filename=f"{uuid.uuid4()}.jpg")
+            message = await self.bot.send_photo(
                 chat_id=telegram_id,
                 photo=photo,
-                caption=caption
+                caption=text
             )
-            logger.info("Photo message delivered successfully to user with id %s", telegram_id)
-        except Exception as ex:
-            logger.error("Photo message is not delivered with error: %s", ex)
+            self.logger.info("Photo with id %s delivered successfully", telegram_id)
+            return message.message_id
+        except Exception as e:
+            self.logger.error("Error while sending photo with id %s: %s", telegram_id, e)
+            raise TelegramException(f"Error while sending photo with id {telegram_id}: {e}")
