@@ -7,15 +7,15 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from src.tyuiu_bot import PostgresSettings
+from src.tyuiu_bot.settings import PostgresSettings
 from src.tyuiu_bot.infrastructure.database.base import Base
+from src.tyuiu_bot.infrastructure.database.models import UserModel, NotificationModel
 
-sqlalchemy_url = PostgresSettings().sqlalchemy_url
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", sqlalchemy_url)
+config.set_main_option("sqlalchemy.url", PostgresSettings().sqlalchemy_url)
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
