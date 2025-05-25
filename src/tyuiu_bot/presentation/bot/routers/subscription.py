@@ -10,6 +10,7 @@ from src.tyuiu_bot.core.dto import UserContactDTO
 from src.tyuiu_bot.settings import Settings
 from src.tyuiu_bot.constants import SITE_URL
 
+from ..templates import SUBSCRIPTION_DETAIL_TEMPLATE
 from ..keyboards import share_contact_keyboard, follow_to_register_keyboard
 
 
@@ -18,7 +19,7 @@ subscription_router = Router()
 
 @subscription_router.message(Command("subscribe"))
 async def subscription_details(message: Message, settings: FromDishka[Settings]) -> None:
-    await message.answer(text=settings.messages.subscription, reply_markup=share_contact_keyboard())
+    await message.answer(text=SUBSCRIPTION_DETAIL_TEMPLATE, reply_markup=share_contact_keyboard())
 
 
 @subscription_router.message(F.contact)
