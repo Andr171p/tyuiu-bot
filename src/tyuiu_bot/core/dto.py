@@ -36,3 +36,8 @@ class NotificationReadDTO(Notification):
     notification_id: UUID
     status: NOTIFICATION_STATUSES
     created_at: datetime
+
+
+class SentNotificationDTO(BaseModel):
+    notification_id: UUID
+    sent_at: datetime

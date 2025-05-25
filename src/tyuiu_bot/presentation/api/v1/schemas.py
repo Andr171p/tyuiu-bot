@@ -20,10 +20,6 @@ UserIdUpdate = Annotated[
 ]
 
 
-class CreatedNotificationResponse(BaseModel):
-    notification_id: UUID
-
-
 class UserNotificationsResponse(BaseModel):
     user_id: UUID
     notifications: list[NotificationReadDTO]

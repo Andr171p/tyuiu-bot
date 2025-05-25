@@ -1,15 +1,11 @@
 from typing import Optional
 
 from uuid import UUID
+from datetime import datetime
 
 from .entities import Notification, User
-from .dto import NotificationCreateDTO, UserContactDTO
-from .interfaces import (
-    TelegramSender,
-    UserRepository,
-    NotificationRepository,
-    UserRegistration
-)
+from .dto import NotificationCreateDTO, UserContactDTO, SentNotificationDTO
+from .interfaces import TelegramSender, UserRepository, UserRegistration, NotificationRepository
 from ..constants import NOTIFICATION_STATUSES, USER_STATUSES
 
 
@@ -24,20 +20,22 @@ class NotificationService:
         self._user_repository = user_repository
         self._notification_repository = notification_repository
 
-    async def notify(self, notification: Notification) -> UUID:
+    async def notify(self, notification: Notification) -> SentNotificationDTO:
         user = await self._user_repository.get_by_user_id(notification.user_id)
         if not user:
-            return await self._save(notification=notification, status="NOT_DELIVERED")
+            notification_id = await self._save(notification=notification, status="NOT_DELIVERED")
+            return SentNotificationDTO(notification_id=notification_id, sent_at=datetime.now())
         message_id = await self._send(
             telegram_id=user.telegram_id,
             photo=notification.photo,
             text=notification.text
         )
-        return await self._save(
+        notification_id = await self._save(
             notification=notification,
             status="DELIVERED" if message_id else "ERROR",
             message_id=message_id
         )
+        return SentNotificationDTO(notification_id=notification_id, sent_at=datetime.now())
 
     async def _send(self, telegram_id: int, photo: Optional[str], text: str) -> int:
         if photo:
