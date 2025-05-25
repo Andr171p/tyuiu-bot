@@ -1,38 +1,26 @@
-version: "3.8"
-
 services:
-  bot:
-    build: .
-    restart: unless-stopped
-    depends_on:
-      - postgres
-    environment:
-      - POSTGRES_HOST=postgres
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-database}
-
   postgres:
-    image: postgres:alpine
+    image: postgres:13-alpine
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-database}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=suchef
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "8434:5432"
 
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
+  bot:
+    build: .
+    restart: unless-stopped
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - .:/tyuiu_bot
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/tyuiu_bot
     depends_on:
-      - bot
+      - postgres
+
 
 volumes:
   postgres_data:

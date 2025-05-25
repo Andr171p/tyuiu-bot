@@ -50,7 +50,10 @@ class AppProvider(Provider):
         return create_session_maker(config.postgres)
 
     @provide(scope=Scope.REQUEST)
-    async def get_session(self, session_maker: async_sessionmaker[AsyncSession]) -> AsyncIterable[AsyncSession]:
+    async def get_session(
+            self,
+            session_maker: async_sessionmaker[AsyncSession]
+    ) -> AsyncIterable[AsyncSession]:
         async with session_maker() as session:
             yield session
 
@@ -64,7 +67,7 @@ class AppProvider(Provider):
 
     @provide(scope=Scope.APP)
     def get_user_registration(self, config: Settings) -> UserRegistration:
-        return UserRegistrationAPI(config.registration.url)
+        return UserRegistrationAPI(config.api.REGISTRATION_URL)
 
     @provide(scope=Scope.REQUEST)
     def get_user_service(
