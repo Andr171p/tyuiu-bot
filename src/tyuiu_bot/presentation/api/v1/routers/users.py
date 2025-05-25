@@ -45,4 +45,4 @@ async def get_user_notifications(
     notifications = await notification_repository.get_by_user_id(user_id)
     if not notifications:
         raise HTTPException(status_code=404, detail="Notifications not found")
-    return UserNotificationsResponse(user_id=user_id, notifications=notifications)
+    return UserNotificationsResponse(notifications=notifications)

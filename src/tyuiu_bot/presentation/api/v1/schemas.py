@@ -21,5 +21,4 @@ UserIdUpdate = Annotated[
 
 
 class UserNotificationsResponse(BaseModel):
-    user_id: UUID
     notifications: list[NotificationReadDTO]
