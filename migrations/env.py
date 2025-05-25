@@ -7,9 +7,8 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from src.settings import PostgresSettings
-from src.infrastructure.database.base import Base
-from src.infrastructure.database.models import UserModel
+from src.tyuiu_bot import PostgresSettings
+from src.tyuiu_bot.infrastructure.database.base import Base
 
 sqlalchemy_url = PostgresSettings().sqlalchemy_url
 
