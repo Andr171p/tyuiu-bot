@@ -34,7 +34,7 @@ async def update_user_id(
 
 
 @users_router.get(
-    path="/notifications/{user_id}",
+    path="/{user_id}/notifications",
     status_code=status.HTTP_200_OK,
     response_model=UserNotificationsResponse
 )
