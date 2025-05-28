@@ -17,6 +17,18 @@ users_router = APIRouter(
 )
 
 
+@users_router.get(
+    path="/{user_id}",
+    status_code=status.HTTP_200_OK,
+    response_model=UserReadDTO
+)
+async def get_user(user_id: UUID, user_repository: FromDishka[UserRepository]) -> UserReadDTO:
+    user = await user_repository.get_by_user_id(user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user
+
+
 @users_router.patch(
     path="/",
     status_code=status.HTTP_200_OK,
