@@ -37,7 +37,7 @@ class AppProvider(Provider):
     @provide(scope=Scope.APP)
     def get_bot(self, config: Settings) -> Bot:
         return Bot(
-            token=config.bot.token,
+            token=config.bot.TOKEN,
             default=DefaultBotProperties(parse_mode=ParseMode.HTML)
         )
 
