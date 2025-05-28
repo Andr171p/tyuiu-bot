@@ -2,11 +2,7 @@ from typing import Annotated
 
 from uuid import UUID
 
-from pydantic import BaseModel
-
 from fastapi import Query, Form
-
-from src.tyuiu_bot.core.dto import NotificationReadDTO
 
 
 PhoneNumberQuery = Annotated[
@@ -16,9 +12,5 @@ PhoneNumberQuery = Annotated[
 
 UserIdUpdate = Annotated[
     UUID,
-    Form(..., description="Id пользователя в сервисе регистрации")
+    Form(..., description="ID пользователя в сервисе регистрации")
 ]
-
-
-class UserNotificationsResponse(BaseModel):
-    notifications: list[NotificationReadDTO]

@@ -4,10 +4,10 @@ from fastapi import APIRouter, status, HTTPException
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.tyuiu_bot.core.dto import UserReadDTO
+from src.tyuiu_bot.core.dto import UserReadDTO, NotificationReadDTO
 from src.tyuiu_bot.core.interfaces import UserRepository, NotificationRepository
 
-from ..schemas import PhoneNumberQuery, UserIdUpdate, UserNotificationsResponse
+from ..schemas import PhoneNumberQuery, UserIdUpdate
 
 
 users_router = APIRouter(
@@ -36,13 +36,13 @@ async def update_user_id(
 @users_router.get(
     path="/{user_id}/notifications",
     status_code=status.HTTP_200_OK,
-    response_model=UserNotificationsResponse
+    response_model=list[NotificationReadDTO]
 )
 async def get_user_notifications(
         user_id: UUID,
         notification_repository: FromDishka[NotificationRepository]
-) -> UserNotificationsResponse:
+) -> list[NotificationReadDTO]:
     notifications = await notification_repository.get_by_user_id(user_id)
     if not notifications:
         raise HTTPException(status_code=404, detail="Notifications not found")
-    return UserNotificationsResponse(notifications=notifications)
+    return notifications
