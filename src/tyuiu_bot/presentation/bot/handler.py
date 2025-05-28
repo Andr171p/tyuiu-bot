@@ -8,7 +8,7 @@ from faststream.rabbit import RabbitBroker
 
 from .templates import START_TEMPLATE, INFO_TEMPLATE, SUBSCRIPTION_DETAIL_TEMPLATE
 from .keyboards import follow_to_register_keyboard, share_contact_keyboard
-from src.tyuiu_bot.core.services import UserService
+from src.tyuiu_bot.core.services import SubscriptionService
 from src.tyuiu_bot.core.entities import UserMessage
 from src.tyuiu_bot.core.dto import UserContactDTO
 from src.tyuiu_bot.constants import SITE_URL
@@ -33,7 +33,7 @@ async def subscription_details(message: Message) -> None:
 
 
 @router.message(F.contact)
-async def subscribe(message: Message, user_service: FromDishka[UserService]) -> None:
+async def subscribe(message: Message, subscription_service: FromDishka[SubscriptionService]) -> None:
     contact = UserContactDTO(
         telegram_id=message.from_user.id,
         first_name=message.from_user.first_name,
@@ -41,7 +41,7 @@ async def subscribe(message: Message, user_service: FromDishka[UserService]) -> 
         username=message.from_user.username,
         phone_number=message.contact.phone_number
     )
-    status = await user_service.subscribe(contact)
+    status = await subscription_service.subscribe(contact)
     if status == "READY":
         await message.answer("Вы успешно поделились контактом")
     elif status == "REGISTRATION_REQUIRE":

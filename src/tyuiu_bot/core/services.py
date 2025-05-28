@@ -63,7 +63,7 @@ class NotificationService:
         return await self._notification_repository.create(notification_dto)
 
 
-class UserService:
+class SubscriptionService:
     def __init__(
             self,
             user_repository: UserRepository,

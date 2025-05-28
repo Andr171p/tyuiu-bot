@@ -22,7 +22,7 @@ from .infrastructure.telegram import TelegramBotSender
 from .infrastructure.database.session import create_session_maker
 from .infrastructure.database.repositories import SQLUserRepository, SQLNotificationRepository
 
-from .core.services import UserService, NotificationService
+from .core.services import SubscriptionService, NotificationService
 from .core.interfaces import (
     TelegramSender,
     UserRepository,
@@ -70,12 +70,12 @@ class AppProvider(Provider):
         return UserRegistrationAPI(config.api.REGISTRATION_URL)
 
     @provide(scope=Scope.REQUEST)
-    def get_user_service(
+    def get_subscription_service(
             self,
             user_registration: UserRegistration,
             user_repository: UserRepository,
-    ) -> UserService:
-        return UserService(
+    ) -> SubscriptionService:
+        return SubscriptionService(
             user_registration=user_registration,
             user_repository=user_repository,
         )
