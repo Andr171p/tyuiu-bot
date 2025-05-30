@@ -10,7 +10,8 @@ from faststream.rabbit import RabbitBroker
 from .states import ChangePasswordForm
 from .templates import START_TEMPLATE, INFO_TEMPLATE, SUBSCRIPTION_DETAIL_TEMPLATE
 from .keyboards import follow_to_register_keyboard, share_contact_keyboard
-from src.tyuiu_bot.core.services import SubscriptionService, PasswordChangerService
+
+from src.tyuiu_bot.core.services import SubscriptionService, PasswordChangeService
 from src.tyuiu_bot.core.dto import UserContactDTO, NewPasswordDTO
 from src.tyuiu_bot.core.entities import UserMessage
 from src.tyuiu_bot.constants import SITE_URL
@@ -30,7 +31,7 @@ async def info(message: Message) -> None:
 
 
 @router.message(Command("subscribe"))
-async def subscription_details(message: Message) -> None:
+async def get_subscription_details(message: Message) -> None:
     await message.answer(text=SUBSCRIPTION_DETAIL_TEMPLATE, reply_markup=share_contact_keyboard())
 
 
@@ -55,7 +56,7 @@ async def subscribe(message: Message, subscription_service: FromDishka[Subscript
         )
 
 
-@router.callback_query(F.data == "cancel-changing-password")
+@router.callback_query(F.data == "cancel-password-changing")
 async def cancel_changing_password(message: Message) -> None:
     await message.answer("Смена пароля отменена")
 
@@ -77,16 +78,16 @@ async def enter_new_password(message: Message, state: FSMContext) -> None:
 async def confirm_and_change_password(
         message: Message,
         state: FSMContext,
-        password_changer_service: FromDishka[PasswordChangerService]
+        password_change_service: FromDishka[PasswordChangeService]
 ) -> None:
     await state.update_data(confirm_password=message.text)
-    change_password_data = await state.get_data()
+    change_password_data = await state.get_state()
     new_password = NewPasswordDTO(
         telegram_id=message.from_user.id,
-        new_password=change_password_data["new_password"],
-        confirm_password=change_password_data["confirm_password"]
+        new_password=change_password_data.new_password,
+        confirmed_password=change_password_data.confirm_password
     )
-    status = await password_changer_service.change_password(new_password)
+    status = await password_change_service.change_password(new_password)
 
 
 @router.message(F.text)

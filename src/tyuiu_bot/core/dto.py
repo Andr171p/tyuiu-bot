@@ -50,7 +50,7 @@ class SentNotificationDTO(BaseModel):
 class NewPasswordDTO(BaseModel):
     telegram_id: int
     new_password: str
-    confirm_password: str
+    confirmed_password: str
 
     @field_validator("password", mode="before")
     def check_is_password_valid(cls, password: str) -> Optional[str]:
@@ -58,7 +58,7 @@ class NewPasswordDTO(BaseModel):
 
     @model_validator(mode="before")
     def check_confirm_password(self) -> "NewPasswordDTO":
-        if self.new_password != self.confirm_password:
+        if self.new_password != self.confirmed_password:
             raise ValueError("Password not confirmed")
         return self
 

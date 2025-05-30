@@ -24,6 +24,6 @@ def follow_to_register_keyboard(url: str) -> InlineKeyboardMarkup:
 def want_to_change_password_keyboard() -> InlineKeyboardMarkup:
     inline_keyboard = [
         [InlineKeyboardButton(text="Да", callback_data="change-password")],
-        [InlineKeyboardButton(text="Нет", callback_data="cancel-changing-password")]
+        [InlineKeyboardButton(text="Нет", callback_data="cancel-password-changing")]
     ]
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
