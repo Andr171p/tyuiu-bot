@@ -19,3 +19,11 @@ def share_contact_keyboard() -> ReplyKeyboardMarkup:
 def follow_to_register_keyboard(url: str) -> InlineKeyboardMarkup:
     inline_keyboard = [[InlineKeyboardButton(text="Зарегистрироваться", url=url)]]
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
+
+
+def want_to_change_password_keyboard() -> InlineKeyboardMarkup:
+    inline_keyboard = [
+        [InlineKeyboardButton(text="Да", callback_data="change-password")],
+        [InlineKeyboardButton(text="Нет", callback_data="cancel-changing-password")]
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)

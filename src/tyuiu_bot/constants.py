@@ -22,20 +22,22 @@ DEFAULT_LIMIT = 5
 DEFAULT_IS_PAGINATED = True
 
 # Статусы пользователя:
-USER_STATUSES = Literal[
+USER_STATUS = Literal[
     "READY",
     "REGISTRATION_REQUIRE"
 ]
 
 # Уровни уведомлений:
-NOTIFICATION_LEVELS = Literal[
+NOTIFICATION_LEVEL = Literal[
+    "CHANGE_PASSWORD",  # Смена пароля
     "INFO",  # Информационный характер
     "POSITIVE",  # Положительное уведомление (призыв к подаче оригинала)
     "WARNING",  # Предупреждение
     "CRITICAL"  # Критический уровень (призыв к подаче документов на другое направление)
 ]
+
 # Статусы уведомлений:
-NOTIFICATION_STATUSES = Literal[
+NOTIFICATION_STATUS = Literal[
     "DELIVERED",
     "NOT_DELIVERED",
     "ERROR"

@@ -1,16 +1,18 @@
 from aiogram import F, Router
 from aiogram.types import Message
 from aiogram.filters import Command
+from aiogram.fsm.context import FSMContext
 
 from dishka.integrations.aiogram import FromDishka
 
 from faststream.rabbit import RabbitBroker
 
+from .states import ChangePasswordForm
 from .templates import START_TEMPLATE, INFO_TEMPLATE, SUBSCRIPTION_DETAIL_TEMPLATE
 from .keyboards import follow_to_register_keyboard, share_contact_keyboard
-from src.tyuiu_bot.core.services import SubscriptionService
+from src.tyuiu_bot.core.services import SubscriptionService, PasswordChangerService
+from src.tyuiu_bot.core.dto import UserContactDTO, NewPasswordDTO
 from src.tyuiu_bot.core.entities import UserMessage
-from src.tyuiu_bot.core.dto import UserContactDTO
 from src.tyuiu_bot.constants import SITE_URL
 
 
@@ -51,6 +53,40 @@ async def subscribe(message: Message, subscription_service: FromDishka[Subscript
             """,
             reply_markup=follow_to_register_keyboard(SITE_URL)
         )
+
+
+@router.callback_query(F.data == "cancel-changing-password")
+async def cancel_changing_password(message: Message) -> None:
+    await message.answer("Смена пароля отменена")
+
+
+@router.callback_query(F.data == "change-password")
+async def send_change_password_form(message: Message, state: FSMContext) -> None:
+    await message.answer("Введите новый пароль: ")
+    await state.set_state(ChangePasswordForm.new_password)
+
+
+@router.message(ChangePasswordForm.new_password)
+async def enter_new_password(message: Message, state: FSMContext) -> None:
+    await state.update_data(new_password=message.text)
+    await message.answer("Теперь подтвердите пароль: ")
+    await state.set_state(ChangePasswordForm.confirm_password)
+
+
+@router.message(ChangePasswordForm.confirm_password)
+async def confirm_and_change_password(
+        message: Message,
+        state: FSMContext,
+        password_changer_service: FromDishka[PasswordChangerService]
+) -> None:
+    await state.update_data(confirm_password=message.text)
+    change_password_data = await state.get_data()
+    new_password = NewPasswordDTO(
+        telegram_id=message.from_user.id,
+        new_password=change_password_data["new_password"],
+        confirm_password=change_password_data["confirm_password"]
+    )
+    status = await password_changer_service.change_password(new_password)
 
 
 @router.message(F.text)

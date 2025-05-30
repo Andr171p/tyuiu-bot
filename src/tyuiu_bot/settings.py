@@ -42,8 +42,13 @@ class APISettings(BaseSettings):
     REGISTRATION_URL: str = os.getenv("REGISTRATION_URL")
 
 
+class HashSettings(BaseSettings):
+    SECRET_HASH_KEY: str = os.getenv("SECRET_HASH_KEY")
+
+
 class Settings(BaseSettings):
     api: APISettings = APISettings()
     bot: BotSettings = BotSettings()
     postgres: PostgresSettings = PostgresSettings()
     rabbit: RabbitSettings = RabbitSettings()
+    hash: HashSettings = HashSettings()

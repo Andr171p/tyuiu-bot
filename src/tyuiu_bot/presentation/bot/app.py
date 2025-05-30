@@ -4,7 +4,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from dishka.integrations.aiogram import setup_dishka
 
 from src.tyuiu_bot.ioc import container
-from .handler import router
+from .handlers import router
 
 
 def create_aiogram_app() -> Dispatcher:

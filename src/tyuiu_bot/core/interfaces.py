@@ -3,17 +3,28 @@ from typing import Optional
 from abc import ABC, abstractmethod
 from uuid import UUID
 
-from .dto import UserReadDTO, NotificationCreateDTO, NotificationReadDTO
+from .dto import UserReadDTO, NotificationCreateDTO, NotificationReadDTO, KEYBOARD
 from .entities import User, UserMessage, AssistantMessage
-from ..constants import USER_STATUSES
+from ..constants import USER_STATUS
 
 
 class TelegramSender(ABC):
     @abstractmethod
-    async def send(self, telegram_id: int, text: str) -> Optional[int]: pass
+    async def send(
+            self,
+            telegram_id: int,
+            text: str,
+            keyboard: Optional[KEYBOARD] = None
+    ) -> Optional[int]: pass
 
     @abstractmethod
-    async def send_with_photo(self, telegram_id: int, photo: str, text: str) -> Optional[int]: pass
+    async def send_with_photo(
+            self,
+            telegram_id: int,
+            photo: str,
+            text: str,
+            keyboard: Optional[KEYBOARD] = None
+    ) -> Optional[int]: pass
 
 
 class UserRepository(ABC):
@@ -27,7 +38,7 @@ class UserRepository(ABC):
     async def update(self, phone_number: str, **kwargs) -> Optional[UserReadDTO]: pass
 
     @abstractmethod
-    async def get_by_status(self, status: USER_STATUSES = "READY") -> list[UserReadDTO]: pass
+    async def get_by_status(self, status: USER_STATUS = "READY") -> list[UserReadDTO]: pass
 
     @abstractmethod
     async def get_by_user_id(self, user_id: UUID) -> Optional[UserReadDTO]: pass
@@ -52,3 +63,6 @@ class ChatAssistant(ABC):
 class UserRegistration(ABC):
     @abstractmethod
     async def get_user_id(self, phone_number: str) -> UUID: pass
+
+    @abstractmethod
+    async def update_password(self, user_id: UUID, hash_password: str) -> ...: pass

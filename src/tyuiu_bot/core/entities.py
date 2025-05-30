@@ -1,21 +1,21 @@
 from typing import Literal, Optional
 
-import uuid
+from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
 from ..utils import format_phone_number
-from ..constants import USER_STATUSES, NOTIFICATION_LEVELS
+from ..constants import USER_STATUS, NOTIFICATION_LEVEL
 
 
 class User(BaseModel):
     telegram_id: int
-    user_id: Optional[uuid.UUID] = None
+    user_id: Optional[UUID] = None
     first_name: Optional[str]
     last_name: Optional[str]
     username: Optional[str]
     phone_number: str
-    status: USER_STATUSES = "READY"
+    status: USER_STATUS = "READY"
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -33,8 +33,8 @@ class User(BaseModel):
 
 
 class Notification(BaseModel):
-    level: NOTIFICATION_LEVELS
-    user_id: uuid.UUID
+    level: NOTIFICATION_LEVEL
+    user_id: UUID
     photo: Optional[str] = None
     text: str
 
