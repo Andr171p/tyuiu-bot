@@ -17,18 +17,14 @@ from faststream.rabbit import RabbitBroker
 from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
 
 from .settings import Settings
+
 from .infrastructure.rest import UserRegistrationAPI
 from .infrastructure.telegram import TelegramBotSender
 from .infrastructure.database.session import create_session_maker
 from .infrastructure.database.repositories import SQLUserRepository, SQLNotificationRepository
 
 from .core.services import SubscriptionService, NotificationService
-from .core.interfaces import (
-    TelegramSender,
-    UserRepository,
-    UserRegistration,
-    NotificationRepository
-)
+from .core.interfaces import TelegramSender, UserRepository, UserRegistration, NotificationRepository
 
 
 class AppProvider(Provider):

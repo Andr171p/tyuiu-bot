@@ -7,7 +7,7 @@ import logging
 from aiogram import Bot
 from aiogram.types import BufferedInputFile
 
-from .exceptions import TelegramException
+from .exceptions import TelegramError
 from ..core.interfaces import TelegramSender
 from ..core.dto import KEYBOARD
 
@@ -33,7 +33,7 @@ class TelegramBotSender(TelegramSender):
             return message.message_id
         except Exception as e:
             self.logger.error("Error while sending message with id %s: %s", telegram_id, e)
-            raise TelegramException(f"Error while sending message with id {telegram_id}: {e}") from e
+            raise TelegramError(f"Error while sending message with id {telegram_id}: {e}") from e
 
     async def send_with_photo(
             self,
@@ -54,4 +54,4 @@ class TelegramBotSender(TelegramSender):
             return message.message_id
         except Exception as e:
             self.logger.error("Error while sending photo with id %s: %s", telegram_id, e)
-            raise TelegramException(f"Error while sending photo with id {telegram_id}: {e}") from e
+            raise TelegramError(f"Error while sending photo with id {telegram_id}: {e}") from e
