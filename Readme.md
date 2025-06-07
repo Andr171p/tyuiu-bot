@@ -159,4 +159,8 @@
   ```json
   {"detail": "Error while sending notification"}
   ```
+
+## Смена пароля пользователя
+
+  ![](./assets/image.png)
   
