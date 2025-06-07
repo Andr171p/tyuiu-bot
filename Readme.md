@@ -35,6 +35,8 @@
 ### Базовый ендпоинт `/api/v1/users`
 
 * ### <b>GET</b> `/{user_id}`</br>
+    Метод для получения пользователя по его user_id.
+
     ### Запрос</br>
     - <b>user_id</b> - uuid</br>
     Уникальный ID пользователя получаемый при регистрации
@@ -60,11 +62,46 @@
     ```
 
 * ### <b>PATCH</b> `/`
+   Метод для обновления поля user_id пользователя (если пользователь не зарегестрирован на сайте, но поделился контактом).
+
    ### Запрос (Query params)</br>
    - <b>phone_number</b> - string</br>
    Номер телефона пользователя в формате +7(XXX)XXX-XX-XX
    - <b>user_id</b> - uuid</br>
    Уникальный ID пользователя получаемый при регистрации (обновляемый параметр)
   ### Ответ
-  - <span style="color: green;">
+  - <span style="color: green;">200 OK</span></br>
+  Возвращает обнавлённую user schema
+  - <span style="color: red;">404 Not found</span></br>
+  ```json
+  {"detail": "User has not yet shared contact"}
+  ```
+  Когда пользоватль ещё не поделился контактом.
+
+* ### <b>GET</b> `/{user_id}/notifications`
+Метод для просмотря уведомлений отвравленных пользователю.
+
+### Запрос</br>
+- <b>user_id</b> - uuid</br>
+Униакльный ID пользователя полученный при регистрации.</br>
+### Ответ</br>
+ - <span style="color: green;">200 OK</span></br>
+ Возвращает список отправленных уведомлений.
+ ```json
+ [
+  {
+    "level": "INFO",
+    "user_id": "string",
+    "photo": "string",
+    "text": "string",
+    "notification_id": "string",
+    "status": "DELIVERED",
+    "created_at": ""
+  }
+ ]
+ ```
+ - <span style="color: red;">404 Not found</span></br>
+ ```json
+ {"detail": "Notification not found"}
+ ```
   
