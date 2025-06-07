@@ -39,7 +39,7 @@
     - <b>user_id</b> - uuid</br>
     Уникальный ID пользователя получаемый при регистрации
     ### Ответ</br>
-    - <font style="color: green;">200 OK</font></br>
+    - <font style="color: #22863a;">200 OK</font></br>
      Возвращает user schema</br>
      ```json
      {
