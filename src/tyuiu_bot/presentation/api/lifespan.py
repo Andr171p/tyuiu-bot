@@ -1,7 +1,7 @@
-import logging
-
 from typing import Any, AsyncGenerator
 from contextlib import asynccontextmanager
+
+import logging
 
 from aiogram import Bot
 from fastapi import FastAPI
@@ -9,9 +9,9 @@ from fastapi import FastAPI
 from ..bot.app import dp
 from ..bot.commands import set_commands
 
-from src.tyuiu_bot.ioc import container
-from src.tyuiu_bot.settings import Settings
-from src.tyuiu_bot.infrastructure.broker.app import create_faststream_app
+from ...ioc import container
+from ...settings import Settings
+from ...infrastructure.broker.app import create_faststream_app
 
 
 logger = logging.getLogger(__name__)
