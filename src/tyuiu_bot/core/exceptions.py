@@ -1,0 +1,4 @@
+
+
+class ConfirmedPasswordError(Exception):
+    pass

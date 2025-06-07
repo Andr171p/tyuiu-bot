@@ -7,10 +7,11 @@ from aiogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup
 
 from pydantic import BaseModel, field_validator, model_validator
 
-from ..utils import format_phone_number
 from .entities import User, Notification
-from ..constants import NOTIFICATION_STATUS, NOTIFICATION_LEVEL
+from .exceptions import ConfirmedPasswordError
 
+from ..utils import format_phone_number
+from ..constants import NOTIFICATION_STATUS, NOTIFICATION_LEVEL
 from ..presentation.bot.keyboards import want_to_change_password_keyboard
 
 
@@ -59,7 +60,7 @@ class NewPasswordDTO(BaseModel):
     @model_validator(mode="before")
     def check_confirm_password(self) -> "NewPasswordDTO":
         if self.new_password != self.confirmed_password:
-            raise ValueError("Password not confirmed")
+            raise ConfirmedPasswordError("Password not confirmed")
         return self
 
 

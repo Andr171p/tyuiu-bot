@@ -4,10 +4,10 @@ from sqlalchemy import select, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.tyuiu_bot.constants import USER_STATUSES
+from src.tyuiu_bot.core.interfaces import UserRepository
+from src.tyuiu_bot.constants import USER_STATUS
 from src.tyuiu_bot.core.dto import UserReadDTO
 from src.tyuiu_bot.core.entities import User
-from src.tyuiu_bot.core.interfaces import UserRepository
 from ..models import UserModel
 
 
@@ -53,7 +53,7 @@ class SQLUserRepository(UserRepository):
             await self.session.rollback()
             raise RuntimeError(f"Error while updating user: {ex}")
 
-    async def get_by_status(self, status: USER_STATUSES = "READY") -> list[UserReadDTO]:
+    async def get_by_status(self, status: USER_STATUS = "READY") -> list[UserReadDTO]:
         try:
             stmt = (
                 select(UserModel)

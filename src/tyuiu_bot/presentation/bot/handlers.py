@@ -11,10 +11,11 @@ from .states import ChangePasswordForm
 from .templates import START_TEMPLATE, INFO_TEMPLATE, SUBSCRIPTION_DETAIL_TEMPLATE
 from .keyboards import follow_to_register_keyboard, share_contact_keyboard
 
-from src.tyuiu_bot.core.services import SubscriptionService, PasswordChangeService
-from src.tyuiu_bot.core.dto import UserContactDTO, NewPasswordDTO
-from src.tyuiu_bot.core.entities import UserMessage
-from src.tyuiu_bot.constants import SITE_URL
+from ...core.services import SubscriptionService, PasswordChangeService
+from ...core.dto import UserContactDTO, NewPasswordDTO
+from ...core.exceptions import ConfirmedPasswordError
+from ...core.entities import UserMessage
+from ...constants import WEBSITE_URL
 
 
 router = Router()
@@ -52,7 +53,7 @@ async def subscribe(message: Message, subscription_service: FromDishka[Subscript
             """<b>Контакт успешно отправлен.</b>
             Осталось зарегистрироваться на нашем сайте...
             """,
-            reply_markup=follow_to_register_keyboard(SITE_URL)
+            reply_markup=follow_to_register_keyboard(WEBSITE_URL)
         )
 
 
@@ -81,13 +82,23 @@ async def confirm_and_change_password(
         password_change_service: FromDishka[PasswordChangeService]
 ) -> None:
     await state.update_data(confirm_password=message.text)
-    change_password_data = await state.get_state()
-    new_password = NewPasswordDTO(
-        telegram_id=message.from_user.id,
-        new_password=change_password_data.new_password,
-        confirmed_password=change_password_data.confirm_password
-    )
-    status = await password_change_service.change_password(new_password)
+    change_password_data = await state.get_data()
+    try:
+        new_password = NewPasswordDTO(
+            telegram_id=message.from_user.id,
+            new_password=change_password_data["new_password"],
+            confirmed_password=change_password_data["confirm_password"]
+        )
+    except ConfirmedPasswordError:
+        await message.answer(f"Вы не подтвердили пароль...")
+        await state.clear()
+        await state.set_state(ChangePasswordForm.new_password)
+        return
+    is_changed = await password_change_service.change_password(new_password)
+    if is_changed:
+        await message.answer("Вы успешно сменили пароль")
+    else:
+        await message.answer("Произошла ошибка при смене пароля, попробуйте позже")
 
 
 @router.message(F.text)

@@ -1,8 +1,8 @@
 
 
-class TelegramException(Exception):
+class TelegramError(Exception):
     pass
 
 
-class RestException(Exception):
+class APIError(Exception):
     pass

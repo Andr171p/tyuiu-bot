@@ -7,7 +7,7 @@ from dishka.integrations.fastapi import FromDishka, DishkaRoute
 from src.tyuiu_bot.core.dto import UserReadDTO, NotificationReadDTO
 from src.tyuiu_bot.core.interfaces import UserRepository, NotificationRepository
 
-from ..schemas import PhoneNumberQuery, UserIdUpdate
+from ..params import PhoneNumberQuery, UserIdUpdate
 
 
 users_router = APIRouter(

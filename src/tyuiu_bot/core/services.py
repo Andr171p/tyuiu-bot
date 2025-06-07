@@ -124,13 +124,14 @@ class PasswordChangeService:
         self._user_repository = user_repository
         self._hash_settings = hash_settings
 
-    async def change_password(self, new_password: NewPasswordDTO) -> ...:
+    async def change_password(self, new_password: NewPasswordDTO) -> bool:
         hashed_password = get_password_hash(
             password=new_password.confirm_password,
             secret_hash_key=self._hash_settings.SECRET_HASH_KEY
         )
         user = await self._user_repository.read(new_password.telegram_id)
-        _ = await self._user_registration.update_password(
+        is_updated = await self._user_registration.update_password(
             user_id=user.user_id,
             hash_password=hashed_password
         )
+        return is_updated

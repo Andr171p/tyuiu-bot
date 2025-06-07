@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ENV_PATH = BASE_DIR / ".env"
 
 # Основной сайт:
-SITE_URL = "https://online-service-for-applicants.onrender.com/"
+WEBSITE_URL = "https://online-service-for-applicants.onrender.com/"
 
 # Postgres драйверы:
 POSTGRES_DRIVER: Literal["asyncpg"] = "asyncpg"

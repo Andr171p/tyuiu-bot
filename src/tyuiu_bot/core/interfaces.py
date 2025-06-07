@@ -65,4 +65,4 @@ class UserRegistration(ABC):
     async def get_user_id(self, phone_number: str) -> UUID: pass
 
     @abstractmethod
-    async def update_password(self, user_id: UUID, hash_password: str) -> ...: pass
+    async def update_password(self, user_id: UUID, hash_password: str) -> bool: pass
