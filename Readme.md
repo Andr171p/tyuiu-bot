@@ -91,10 +91,10 @@
  [
   {
     "level": "INFO",
-    "user_id": "string",
+    "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "photo": "string",
     "text": "string",
-    "notification_id": "string",
+    "notification_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "status": "DELIVERED",
     "created_at": ""
   }
@@ -112,10 +112,10 @@
 ```json
 {
   "level": "INFO",
-  "user_id": "string",
+  "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "photo": "string",
   "text": "string",
-  "notification_id": "string",
+  "notification_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "status": "DELIVERED",
   "created_at": ""
 }
@@ -145,7 +145,7 @@
   ```json
   {
     "level": "INFO",
-    "user_id": "string",
+    "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "photo": "string",
     "text": "string"
   }
@@ -153,7 +153,7 @@
   ### Ответ
   - <span style="color: green;">201 Created</span></br>
   ```json
-  {"notification_id": "string", "sent_at": ""}
+  {"notification_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "sent_at": ""}
   ```
   - <span style="color: red;">500 Internal server error</span></br>
   ```json
