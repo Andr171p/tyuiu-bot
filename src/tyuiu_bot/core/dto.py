@@ -1,9 +1,7 @@
-from typing import Optional, Union
+from typing import Optional
 
 from uuid import UUID
 from datetime import datetime
-
-from aiogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup
 
 from pydantic import BaseModel, field_validator, model_validator
 
@@ -11,8 +9,7 @@ from .entities import User, Notification
 from .exceptions import ConfirmedPasswordError
 
 from ..utils import format_phone_number
-from ..constants import NOTIFICATION_STATUS, NOTIFICATION_LEVEL
-from ..presentation.bot.keyboards import want_to_change_password_keyboard
+from ..constants import NOTIFICATION_STATUS
 
 
 class UserReadDTO(User):
@@ -62,10 +59,3 @@ class NewPasswordDTO(BaseModel):
         if self.new_password != self.confirmed_password:
             raise ConfirmedPasswordError("Password not confirmed")
         return self
-
-
-KEYBOARD = Union[ReplyKeyboardMarkup, InlineKeyboardMarkup]
-
-LEVEL_TO_KEYBOARD: dict[NOTIFICATION_LEVEL: KEYBOARD] = {
-    "CHANGE_PASSWORD": want_to_change_password_keyboard()
-}

@@ -4,15 +4,9 @@ from uuid import UUID
 from datetime import datetime
 
 from .entities import Notification, User
+from .factory import get_keyboard_by_notification_level, KEYBOARD
+from .dto import NotificationCreateDTO, UserContactDTO, SentNotificationDTO, NewPasswordDTO
 from .interfaces import TelegramSender, UserRepository, UserRegistration, NotificationRepository
-from .dto import (
-    NotificationCreateDTO,
-    UserContactDTO,
-    SentNotificationDTO,
-    NewPasswordDTO,
-    KEYBOARD,
-    LEVEL_TO_KEYBOARD
-)
 
 from ..constants import NOTIFICATION_STATUS, USER_STATUS
 from ..utils import get_password_hash
@@ -39,7 +33,7 @@ class NotificationService:
             telegram_id=user.telegram_id,
             photo=notification.photo,
             text=notification.text,
-            keyboard=LEVEL_TO_KEYBOARD.get(notification.level)
+            keyboard=get_keyboard_by_notification_level(notification.level)
         )
         notification_id = await self._save(
             notification=notification,
