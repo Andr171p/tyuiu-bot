@@ -50,10 +50,6 @@ class NewPasswordDTO(BaseModel):
     new_password: str
     confirmed_password: str
 
-    @field_validator("password", mode="before")
-    def check_is_password_valid(cls, password: str) -> Optional[str]:
-        ...
-
     @model_validator(mode="before")
     def check_confirm_password(self) -> "NewPasswordDTO":
         if self.new_password != self.confirmed_password:
