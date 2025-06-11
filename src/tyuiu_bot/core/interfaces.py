@@ -3,8 +3,10 @@ from typing import Optional
 from abc import ABC, abstractmethod
 from uuid import UUID
 
-from .dto import UserReadDTO, NotificationCreateDTO, NotificationReadDTO, KEYBOARD
+from .dto import UserReadDTO, NotificationCreateDTO, NotificationReadDTO
 from .entities import User, UserMessage, AssistantMessage
+from .factory import KEYBOARD
+
 from ..constants import USER_STATUS
 
 
