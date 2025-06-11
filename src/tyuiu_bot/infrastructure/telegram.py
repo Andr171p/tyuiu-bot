@@ -9,7 +9,7 @@ from aiogram.types import BufferedInputFile
 
 from .exceptions import TelegramError
 from ..core.interfaces import TelegramSender
-from ..core.dto import KEYBOARD
+from ..core.factory import KEYBOARD
 
 
 class TelegramBotSender(TelegramSender):
